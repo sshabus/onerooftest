@@ -2,7 +2,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
-<div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color">
+<div style="width:100%; right:0;">
+<div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color" style="border-top-left-radius: 25px;">
                <div class="mobile-sidebar-header d-md-none">
                     <div class="header-logo">
                         <a href="${Wayuparty_appUrl}/dashboard"><img src="/resources/img/logo.png" alt="logo" class="dashboardLogoImg"></a>
@@ -13,7 +14,7 @@
                         
                             <li class="nav-item">
                             <a href="${Wayuparty_appUrl}/dashboard" class="${sessionData.nav == 'Dashboard' ? 'nav-link menu-active' : 'nav-link'}"><i
-                                    class="flaticon-dashboard"></i><span>Home</span></a>
+                                    class="flaticon-dashboard"></i><span>HOME</span></a>
                             </li>
                             
                             <sec:authorize access="hasRole('ROLE_ADMIN')"> 
@@ -26,13 +27,13 @@
                             <sec:authorize access="hasRole('ROLE_USER')"> 
 	                            <li class="nav-item">
 	                            <a href="${Wayuparty_appUrl}/myOrders" class="${sessionData.nav == 'Orders' ? 'nav-link menu-active' : 'nav-link'}"><i
-	                                    class="flaticon-shopping-list"></i><span>Orders</span></a>
+	                                    class="flaticon-shopping-list"></i><span>MY ORDERS</span></a>
 	                            </li>
                             </sec:authorize>
                             
                             <li class="nav-item">
                             <a href="${Wayuparty_appUrl}/profile" class="${sessionData.nav == 'Profile' ? 'nav-link menu-active' : 'nav-link'}"><i
-                                    class="flaticon-user"></i><span>Profile</span></a>
+                                    class="flaticon-user"></i><span> MY PROFILE</span></a>
                             </li>
                             
                               <sec:authorize access="hasRole('ROLE_SUPER_ADMIN')"> 
@@ -46,7 +47,7 @@
                             <sec:authorize access="hasRole('ROLE_USER')"> 
 	                            <li class="nav-item">
 	                            <a href="${Wayuparty_appUrl}/guestClubs" class="${sessionData.nav == 'Guests' ? 'nav-link menu-active' : 'nav-link'}"><i
-	                                    class="fas fa-building"></i><span>Guest Clubs</span></a>
+	                                    class="fas fa-building"></i><span>GUEST VENUES</span></a>
 	                            </li>
                             </sec:authorize>
                             
@@ -75,9 +76,11 @@
                             </sec:authorize>
                             
                             <li class="nav-item">
-                            <a href="${Wayuparty_appUrl}/logout" class="nav-link" ><i class="flaticon-turn-off"></i><span>Sign Out</span></a>
+                            <a href="${Wayuparty_appUrl}/logout" class="nav-link" ><i class="flaticon-turn-off"></i><span>SIGN OUT</span></a>
                             </li>
                             
                     </ul>
                 </div>
             </div>
+            </div>
+           

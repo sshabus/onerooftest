@@ -42,20 +42,26 @@
     <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
     
 </head>
+<style>
 
+.toggle-button {
+    margin-bottom: 0px;
+    margin-bottom: 20px;
+}
+</style>
 
 <body>
 
  <!-- Header Menu Area Start Here -->
- 
-        <div class="navbar navbar-expand-md header-menu-one bg-light">
-            <div class="nav-bar-header-one">
-                <div class="header-logo">
+ <div class="header-logo">
                     <a href="${Wayuparty_appUrl}/dashboard">
-                        <img src="/resources/img/logo.png" alt="logo" class="dashboardLogoImg">
+                        <img src="/resources/img/logo_icon.png" alt="logo" class="dashboardLogoImg">
                     </a>
                 </div>
-                 <div class="toggle-button sidebar-toggle">
+        <div class="navbar navbar-expand-md header-menu-one bg-light">
+            <div class="nav-bar-header-one">
+                
+ <!--              <div class="toggle-button sidebar-toggle">
                     <button type="button" class="item-link">
                         <span class="btn-icon-wrap">
                             <span></span>
@@ -64,6 +70,7 @@
                         </span>
                     </button>
                 </div>
+  -->               
             </div>
             <div class="d-md-none mobile-nav-bar">
                <button class="navbar-toggler pulse-animation" type="button" data-toggle="collapse" data-target="#mobile-navbar" aria-expanded="false">
@@ -73,6 +80,7 @@
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
+           
             <div class="header-main-menu collapse navbar-collapse" id="mobile-navbar">
                 <ul class="navbar-nav">
                    <li>
@@ -107,8 +115,20 @@
          		</li>
             </sec:authorize>         
                 </ul>
+         </div>         
+               <div class="nav-bar-header-one"> 
+                <div class="toggle-button sidebar-toggle">
+                    <button type="button" class="item-link">
+                        <span class="btn-icon-wrap">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </button>
+                </div>
+              </div>
             </div>
-        </div>
+       
         <!-- Header Menu Area End Here -->
  
 </body>

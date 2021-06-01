@@ -20,8 +20,8 @@
 
 </head>
   
-<body>
-    <div><img alt="privacypolicy" src="/resources/website/images/privacy-policy.jpg">
+	<body>
+    <div><img alt="privacypolicy" src="/resources/website/images/Oneroof_Privacy_Policy_Page.jpg" style="height: 2280px";>
     </div>
     
    </body>

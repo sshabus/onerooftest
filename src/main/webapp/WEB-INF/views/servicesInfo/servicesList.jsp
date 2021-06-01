@@ -1,13 +1,13 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="sec"
-	uri="http://www.springframework.org/security/tags"%>
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
 
 <style>
+
 .timeslot{
 	display:none;
 }
@@ -15,13 +15,75 @@
 	background: #be9c52 !important;
 	color: #fff !important;
 }
+.card{
+	padding-bottom: 30px;
+}
+.sidebar-color{
+			padding-bottom: 10px;
+}
+
+img{
+	max-width: 85%;
+    height: auto;
+    border-radius: 150px;
+    border-color: white;
+}
+.header-inline{
+	margin: 50px 0 0px -40px;
+}
+span.view-subtitle{
+	ont-size: 15px !important;
+    color: white;
+    line-height: 40px;
+    font-weight: 100;
+}
+.p1{
+	color: white;
+	margin: -7px 0px 0px -38px !important;
+}
+.btn-toolbar .btn-group a{
+	background: white;
+	font-size: 14px;
+}
+.service_wrap_inn{
+	width: 61%;
+    margin: 2.5% 2.1% 1.5% 18.9%;
+    background-color: #eb9b9b2b;
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px rgb(0 0 0 / 30%);
+    float: inherit;
+}
+.service_wrap_name {
+    padding: 110px 15px 7px 50px;
+    position: relative;
+    font-weight: 600;
+    color: white;
+    font-size: 18px;
+}
+.service_wrap_user_img {
+    width: 146px;
+    left: 75px;
+    top: -45px;
+    background: none;
+    border-radius: 100px;
+    height: 151px;
+}
+.service_wrap_name span{
+	font-size: 15px;
+	color: white;
+    padding-top: 12px;
+}
+.service_wrap_top_text{
+	font-size: 18px;
+	padding: 0 32px 0px 0px;
+}
 </style>
 
-<div class="card height-auto">
+<div class="card height-auto" style="margin-left: 160px;top: -30px;">
       <div class="card-body">
           <div class="single-info-details">
                  <div class="vendor_images_img item-img"  id="vendorProfileImage" class="mb-3"></div>
-                 <div class="item-content">
+                 <div class="item-content" style="margin-top: 40px;">
                      <div class="header-inline item-header">
                          <h3 class="text-dark-medium font-medium"><span id="vendorName"></span><br/>
                          <span class="view-subtitle" style="font-size: 15px;">
@@ -30,7 +92,7 @@
                                         <span id="directions"></span>
                                         </h3>
                      </div>
-                     <p style="color: black;" id="vendorDescription"></p>
+                     <p class="p1"  id="vendorDescription"></p>
                  </div>
              </div>
      </div>
@@ -38,14 +100,18 @@
 
   <div class="card height-auto">   
      <div class="card ui-tab-card">
-     <div id="serviceslistLoadingDiv"></div>
+     <div id="serviceslistLoadingDiv" ></div>
        <div class="card-body">
 	       <div class="icon-tab">
-	       		<div id="servicesListDiv"></div>
+	       			<div style="text-align:center;background: #eb9b9b2b;padding-left: 472px;margin-left: -30px;margin-right: -30px;padding-bottom: 15px;">
+	       		
+	       		<div id="servicesListDiv" ></div>
+	       			</div>
 	       </div>
+	       <div style="text-align:center;background: #fff;margin-left: -30px;margin-right: -30px;display:list-item;margin-top: -35px;"></div>
        </div>
                  
-      <div class="ui-btn-wrap">   
+      <div class="ui-btn-wrap" style="align-self: center;margin-top: 35px;">   
        <div class="card-body">
           <div id="categoriesListDiv"></div>
         </div> 
@@ -110,12 +176,12 @@
 	    			    	 var serviceUUID = '';
 	    			    	 var isEntryRatioEnabled = '';
 	    			    	 
-	    			    	 $("#vendorProfileImage").html('<img src="'+response.object.profileImage+'" onerror="predefineVendorProfileImage(this);" data-id= "vendorProfileImage" >');
+	    			    	 $("#vendorProfileImage").html('<img src="'+response.object.profileImage+'" onerror="predefineVendorProfileImage(this);" data-id= "vendorProfileImage" style="border-style: solid;margin-top: 50px; height: 210px;" >');
 	    			    	 $("#vendorName").html(response.object.vendorName);
 	    					 $("#vendorLocation").html(response.object.location);
 	    					 if(response.object.latitude != '' && response.object.longitude != ''){
 	    						var cordinates =  response.object.latitude+","+response.object.longitude;
-	    						var directions = '<a class="view-subtitle" style="font-size: 15px; font-weight: normal;" id="vendorDirections" href="https://www.google.com/maps/place/'+cordinates+'" target="_blank">Get Directions</a>';
+	    						var directions = '<a class="view-subtitle" style="font-size: 15px; font-weight: normal; color: white;" id="vendorDirections" href="https://www.google.com/maps/place/'+cordinates+'" target="_blank">Get Directions</a>';
 	    						$("#directions").append(directions);
 	    					 }
 	    					 $("#vendorDescription").html(response.object.description);
@@ -139,7 +205,7 @@
 	    			        		  
 	    			        		  if(service.serviceName != 'Events'){
 	    			        			  result = result +'<li class="nav-item">';
-		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;" class="nav-link border-pastel-gold '+active+'" data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\')" role="tab" aria-selected="true" ><img src="'+service.serviceImage+'"></img></a><span><strong> <div align="center" >'+service.serviceName+'</strong></span>';
+		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\')" role="tab" aria-selected="true" ><img style="max-width: 75px;margin-left: -8px;" src="'+service.serviceImage+'"></img></a><span><strong> <div align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;">'+service.serviceName+'</strong></span>';
 		    			        		  result = result +'</li>';
 	    			        		  }
 	    			        		  
@@ -299,8 +365,8 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							  
 							  result = result+'<div class="service_wrap_inn" data-id="4">';
 							  result = result+'<div class="service_wrap_top">';
-							  result = result+'<img src="/resources/img/logo.png" width="180" height="130">';
-							  result = result+'<div class="service_wrap_top_text">Price<br><span>'+currencyCode+' '+servicePrice+'</span></div>';
+							  //result = result+'<img src="/resources/img/logo.png" width="180" height="130">';
+							  result = result+'<div class="service_wrap_top_text">Price :&nbsp;<span>'+currencyCode+' '+servicePrice+'</span></div>';
 							  result = result+'</div>';
 							  result = result+'<div class="service_wrap_name">';
 							  result = result+opt.subCategory;
@@ -319,8 +385,8 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 								  }
 								 
 							  }else{
-								  result = result+'<span class="col-xl-6 col-lg-6 col-12">Actual Price :&nbsp;'+currencyCode+' '+opt.actualPrice+' per slot</span>';
-								  result = result+'<span class="col-xl-6 col-lg-6 col-12">Offer Price :&nbsp;'+currencyCode+' '+opt.offerPrice+' per slot</span>';
+								  result = result+'<span class="col-xl-6 col-lg-6 col-12" >Actual Price :&nbsp;'+currencyCode+' '+opt.actualPrice+' per slot</span>';
+								  result = result+'<span class="col-xl-6 col-lg-6 col-12" style="color: gold;margin: 0 0 0 1px;">Offer Price :&nbsp;'+currencyCode+' '+opt.offerPrice+' per slot </span>';
 							  }
 							 
 							//   result = result+'<span class="col-xl-6 col-lg-6 col-12">Start Date : '+opt.startDate+'</span>';
@@ -356,11 +422,11 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
                               
 							//   }
 							 
-							  result = result+'<span class="col-xl-6 col-lg-6 col-12 text-danger mt-2" data-toggle="modal" data-target="#pop-up-modal" onclick="getTermsAndConditions(\''+opt.termsAndConditions+'\')">Terms & Conditions</span>';
-							  result = result+'<span class="col-xl-6 col-lg-6 col-12 text-danger mt-2" data-toggle="modal" data-target="#pop-up-modal" onclick="getServiceOffer(\''+opt.serviceOffer+'\')">Service Offer</span>';
+							  result = result+'<span class="col-xl-6 col-lg-6 col-12  mt-2" data-toggle="modal" data-target="#pop-up-modal" onclick="getTermsAndConditions(\''+opt.termsAndConditions+'\')"style="color: white;">Terms & Conditions</span>';
+							  result = result+'<span class="col-xl-6 col-lg-6 col-12  mt-2" data-toggle="modal" data-target="#pop-up-modal" onclick="getServiceOffer(\''+opt.serviceOffer+'\')"style="margin: 0 0 0 1px;">Service Offer</span>';
 							  result = result+'</div>';
 							  result = result+'<div class="service_wrap_user_img">';
-							  result = result+'<img src="'+opt.serviceImage+'" onerror="predefineVendorServiceImage(this);" >';
+							  result = result+'<img src="'+opt.serviceImage+'" onerror="predefineVendorServiceImage(this);" style="height: 148px;border-radius: 73px;max-height: none;">';
 							  result = result+'</div>';
 							  
 							//   if(isEntryRatioEnabled == 'Y'){
@@ -388,17 +454,17 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 
 
 
-								result = result+'<div class="row">';
+								result = result+'<div class="row" style="margin: -185px -80px 30px 320px;">';
 									result = result+'<div class="col-xl-4 col-lg-6 col-12 form-group">';
-										result = result+'<label>Start Date<span class="text-danger">&nbsp;*</span></label>';
+										result = result+'<label style="color:white;">Start Date<span class="text-danger">&nbsp;*</span></label>';
 										result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control start-date-datepicker" data-position="bottom right" name="startDate" id="startDate" data-validation="required" field-name="Start Date"> ';
 										result = result+'<i class="far fa-calendar-alt"></i>';
 										result = result+'</div>';
 
 										result = result+'<div class="col-xl-4 col-lg-6 col-12 form-group">';
-											result = result+'	<label>End Date<span class="text-danger">&nbsp;*</span></label>';
+											result = result+'<label style="color:white;">End Date<span class="text-danger">&nbsp;*</span></label>';
 											result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control end-date-datepicker" data-position="bottom right" name="endDate" id="endDate" data-validation="required" field-name="End Date">';
-											result = result+'	<i class="far fa-calendar-alt"></i>';
+											result = result+'<i class="far fa-calendar-alt"></i>';
 											result = result+'</div>';
 											result = result+'</div>';
 
@@ -416,7 +482,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 
 
 
-								result = result+'<div class="modal-footer">';
+								result = result+'<div class="modal-footer" style="margin-top: -51px;margin-right: 84px;">';
 								result = result+'<input type="submit" id="selectedFirstSlot" value="First Half" onclick="selectedFirstSlot()" class="btn btn-success" style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
 								result = result+'<input type="button"  id="selectedSecondSlot" value="Second Half" onclick="selectedSecondSlot()" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
 								result = result+' </div>';
@@ -499,14 +565,17 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							  
 							  result = result+'<div class="clear"></div>';
 							  result = result+'</div>';
+							  result = result+'<div style="margin: 60px 0px -43px 367px;color: white;">PRICE :&nbsp;<span style="color:gold">'+currencyCode+' '+servicePrice+'/-</span></div>';
 							 
 							  result = result+'<div class="service_wrap_bot">';
+							  
  							  if(opt.serviceName == 'Packages'){
  								 result = result+'<a data-button="customize" data-id="4" href="javascript:void(0)" id="customizeService'+opt.masterServiceUUID+'" data-toggle="modal" style="display:none" data-target="#right-slide-modal" onclick="getServiceDetails(\''+opt.masterServiceUUID+'\',\''+categoryUUID+'\',\''+isEntryRatioEnabled+'\')">Customize</a>';
- 								result = result+'<a data-button="customize" data-id="4" href="javascript:void(0)" onclick="getPackagesServiceInfo(\''+opt.masterServiceUUID+'\',\''+isEntryRatioEnabled+'\',\''+opt.allowed+'\')">Customize</a>';
+ 								 result = result+'<a data-button="customize" data-id="4" href="javascript:void(0)" onclick="getPackagesServiceInfo(\''+opt.masterServiceUUID+'\',\''+isEntryRatioEnabled+'\',\''+opt.allowed+'\')">Customize</a>';
  							  }else{
-								  result = result+'<a data-button="buyService" data-id="4" href="javascript:void(0)" id="buyService'+opt.masterServiceUUID+'" data-toggle="modal" data-target="#right-slide-modal" style="display:none"  onclick="getServiceDetails(\''+opt.masterServiceUUID+'\',\''+categoryUUID+'\',\''+isEntryRatioEnabled+'\')">Buy Now</a>';
-								  result = result+'<a data-button="buyService" data-id="4" href="javascript:void(0)" onclick="getServiceInfo(\''+opt.masterServiceUUID+'\',\''+opt.serviceName+'\',\''+isEntryRatioEnabled+'\',\''+opt.allowed+'\')">Buy Now</a>';
+ 								 
+								  result = result+'<a data-button="buyService" data-id="4" href="javascript:void(0)" id="buyService'+opt.masterServiceUUID+'" data-toggle="modal" data-target="#right-slide-modal" style="display:none"  onclick="getServiceDetails(\''+opt.masterServiceUUID+'\',\''+categoryUUID+'\',\''+isEntryRatioEnabled+'\')"style="color:red;">Book Now</a>';
+								  result = result+'<a data-button="buyService" data-id="4" href="javascript:void(0)" onclick="getServiceInfo(\''+opt.masterServiceUUID+'\',\''+opt.serviceName+'\',\''+isEntryRatioEnabled+'\',\''+opt.allowed+'\')">Book Now</a>';
 							  }
 							 
  							  

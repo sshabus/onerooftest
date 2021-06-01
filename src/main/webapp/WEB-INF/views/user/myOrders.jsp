@@ -5,20 +5,42 @@
 <div id="preloader"></div>
 
  <style>
+ #wrapper {
+  background-image: url('/resources/img/Oneroof_bg_page.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: 100% 100%;
+  width: 100%;
+}
    body { background-color: #f2f3f7; padding-top: 0px; box-sizing: border-box; }
-.cart_widget { background-color: #fff; padding: 15px; border: 1px solid rgba(203,213,224,var(--border-opacity))!important; border-radius: 6px; min-height: 200px;
+.cart_widget { padding: 15px; border: 1px solid rgba(203,213,224,var(--border-opacity))!important; border-radius: 6px; min-height: 200px;
  font-size: 14px;
 }
-   </style>
+.sidebar-expand-md {
+   float:right;
+  }
+.navbar {
+	margin: -135px 0 0 0;
+}
+.breadcrumbs-area {
+    	 padding: 35px 40px 35px;
+}
+
+</style>
 
    <div id="wrapper" class="wrapper bg-ash">
     <jsp:include page="../wayupartyMasterHeader.jsp" />
         <!-- Page Area Start Here -->
+        <jsp:include page="../wayupartyMasterSideNav.jsp" />
         <div class="dashboard-page-one">
-          <jsp:include page="../wayupartyMasterSideNav.jsp" />
+          
             <div class="dashboard-content-one">
                 <div class="breadcrumbs-area">
-	                    <h3>My Orders</h3>
+	                 <h3>My Orders</h3>    
 	                    <ul>
 	                        <li>
 	                            <a href="${Wayuparty_appUrl}/dashboard">Home</a>
@@ -35,7 +57,7 @@
                     
 						 <div class="row">
 						    <div class="col-sm-12 col-md-12">
-						    <h4>Orders</h4>
+					 <!-- 	    <h4>Orders</h4>            -->  
 						    <div class="cart_widget">
 								<div id="ordersListDiv"></div>
 						    </div>
@@ -127,7 +149,7 @@
 		   	    	 $("#ordersListDiv").append(result);
 		   	    	 $("#ordersLoaderDiv").removeAttr("style");
 	        	 }else{
-	        		 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/no_order_icon.png" alt=""/></td>';
+	        		 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/No_Order_oneroof.png" alt=""/></td>';
 					 $("#ordersListDiv").empty();  
 		   	    	 $("#ordersListDiv").append(result);
 	        		 $("#ordersLoaderDiv").removeAttr("style");

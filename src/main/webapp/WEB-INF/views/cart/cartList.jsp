@@ -5,10 +5,32 @@
 	.mt-5px{
 		margin-top:5px;
 	}
+	.card{
+	padding-bottom: 90px;
+}
+.sidebar-color{
+			padding-bottom: 335px;
+}
 
    body { background-color: #f2f3f7; padding-top: 0px; box-sizing: border-box; }
 .cart_widget { background-color: #fff; padding: 15px; border: 1px solid rgba(203,213,224,var(--border-opacity))!important; border-radius: 6px; min-height: 200px;
  font-size: 14px;
+}
+.cart_widget{
+		background-color: #eb9b9b2b;
+}
+.cart_widget h4{
+		border-bottom: 2px solid #ccc;
+}
+cart_widget_inner {
+		border-bottom: 2px solid #ccc;
+}
+.cart_widget_inner a{
+		background: white;
+		color: black;			
+}
+.cart_pricelist ul li{
+		border-bottom: 2px solid #ccc;
 }
 </style>
 <div class="container">
@@ -24,16 +46,16 @@
     
     <div class="col-sm-12 col-md-8">
     <div class="cart_widget">
-      <h4>My Cart<span  id="mycartDiv"></span></h4>
+      <h4 style="color: white;">My Cart<span  id="mycartDiv"></span></h4>
       <div id="cartListDiv"></div>
     </div>
   </div>
 
     <div class="col-sm-12 col-md-4" id="priceDetailsDiv">
         <div class="cart_widget">
-        <h4 class="text-muted text-uppercase">Price Details</h4>        
+        <h4 class="text-uppercase" style="color: white;">Price Details</h4>        
             <div class="clearfix cart_pricelist">
-                    <ul class="list-unstyled">
+                    <ul class="list-unstyled" style="color:white">
                         <li>Price<span id="cartItemsDiv"></span><span class="pull-right" id="totalPrice"></span></li>
                         
                         <li><span id="couponsAppliedDiv"></span></li>
@@ -57,11 +79,11 @@
     	    <div class="row mt-10px"> 
     	    
 	    	     <div class="col-xl-6 col-lg-6 col-6 form-group mt-5px">
-		    	      <button type="button" class="btn-fill-sm radius-30 text-light gradient-dodger-blue" data-toggle="modal" data-target="#coupons-modal" style="padding: 6px 12px;" onclick="getCouponsList('${couponList}')">&nbsp;Get Deal</button>
+		    	      <button type="button" class="btn-fill-sm radius-30 text-light gradient-dodger-blue" data-toggle="modal" data-target="#coupons-modal" style="padding: 6px 12px;background: white;margin-left: 30px;color: goldenrod;font-size: 15px;font-weight: 500;" onclick="getCouponsList('${couponList}')">&nbsp;Get Deal</button>
 		    	 </div>
 		    	 
 		    	 <div class="col-xl-6 col-lg-6 col-6 form-group mt-5px">
-		    	      <button type="button" class="btn-fill-sm radius-30 text-light gradient-orange-peel" style="padding: 8px 8px;font-size: 12px;" onclick="applyCoupon()">&nbsp;Apply Coupon</button>
+		    	      <button type="button" class="btn-fill-sm radius-30 text-light gradient-orange-peel" style="padding: 8px 8px;font-size: 14px;background: white;color: goldenrod;font-weight: 500;" onclick="applyCoupon()">&nbsp;Apply Coupon</button>
 		    	 </div>
 	    	         
 	    	</div>
@@ -72,7 +94,7 @@
 
   <div class="clearfix col-sm-12 col-md-8" id="placeOrderDiv">
     <div class="modal-footer">
-          <button type="button" class="btn-fill-lmd radius-30 text-light gradient-pastel-green" onclick="placeOrder();"><i class="fa fa-shopping-bag mg-l-10"></i>&nbsp;Place Order</button>
+          <button type="button" class="btn-fill-lmd radius-30 text-light gradient-pastel-green" onclick="placeOrder();" style="background: white;"><i class="fa fa-shopping-bag mg-l-10"></i>&nbsp;Place Order</button>
       </div>
   </div>
 
@@ -140,17 +162,17 @@ function getCartList(){
 							  result = result +'</div>';
 							  result = result +'<div class="col-sm-12 col-md-10">';
 							  result = result +'<div class="row">';
-							  result = result +'<div class="col-sm-12 col-md-8 cart_margn_top">';
+							  result = result +'<div class="col-sm-12 col-md-8 cart_margn_top" >';
 							  result = result +'<p>'+opt.serviceName+'</p>';
-							  result = result +'<p class="text-muted">Price : '+currencyCode+' '+orderAmount+'</p>';
-							  result = result +'<p class="text-muted">Quantity : '+opt.quantity+'</p>';
-							  result = result +'<p class="text-muted">Amount : '+currencyCode+' '+opt.totalAmount+'</p>';
+							  result = result +'<p>Price : '+currencyCode+' '+orderAmount+'</p>';
+							  result = result +'<p>Quantity : '+opt.quantity+'</p>';
+							  result = result +'<p>Amount : '+currencyCode+' '+opt.totalAmount+'</p>';
 							  result = result +'</div>';
 							  result = result +'<div class="col-sm-12 col-md-4">';
 							  result = result +'<div class="cart_margn_top">';
 							  result = result +'<p>'+opt.serviceOrderDate+'</p>';
 							  result = result +'<p>'+opt.timeSlot+'</p>';
-							  result = result +'<p class="small text-danger">No Order Replacement</p>';
+							  result = result +'<p style="color:gold">No Order Replacement</p>';
 							  result = result +'<a href="javascript:void(0)" onclick="removeCartItem(\''+opt.cartUUID+'\')" class="text-uppercase btn">Remove</a>';
 							  result = result +'</div>';
 							  result = result +'</div>';

@@ -1,6 +1,20 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
+<style>
+.sidebar-color{
+		padding-bottom: 157px;
+}
+.noRecords-dashboard-portlets{
+		background-color: #c31d6f;
+    	opacity: 0.1;
+}
+</style>
+
+
+
+
 <div class="ui-modal-box">
   <div class="modal-box">
        <div class="modal right-slide-modal fade sidebar-align" id="right-slide-modal" tabindex="-1"

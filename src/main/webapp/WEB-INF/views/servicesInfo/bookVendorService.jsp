@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -26,7 +25,57 @@
 .nav-item {
 max-width: 150px !important;
 } 
+#wrapper{
+  background-image: url('/resources/img/Oneroof_bg_page.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: 100% 100%;
+  width: 100%;
+  
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  float: right;
+  margin: 45px 12px 0px 0px;
+}
 
+.dropbtn {
+  color: lightcyan;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #890052;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: goldenrod;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.navbar {
+	margin-bottom: -80px;
+}
+service_wrap_inn {
+		width: 71px;
+}
 </style>
 
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -34,15 +83,43 @@ max-width: 150px !important;
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <body>
-<nav class="navbar navbar-dark bg-dark">
+  
+<nav class="navbar navbar-dark ">
+<!--
                 <a href="/home" id="homeLinkIcon" style="color: #be9c52;" class="fa fa-home fa-2x"></a>
                 <a class="navbar-brand" href="#" style="padding-left: 21px; text-align: center;">
                     <img id="Image1" src="/resources/img/logo.png" style="height:50px;width:200px;">
                 </a>
                 <a id="user" class="nav-link" href="/login"><span class="fa fa-user fa-2x" style="color: #be9c52;"></span></a>
+-->
 </nav>
 
+
+
 <div id="wrapper" class="wrapper bg-ash mt-5">
+		
+		<img id="Image1" src="/resources/img/logo_icon.png" style="height: 150px; margin-left: 8px;">
+		
+		
+				<div class="dropdown">
+  					<button class="dropbtn" style="background-color: transparent;">M E N U</button>
+ 			 			<div class="dropdown-content">
+		    				<a href="/clubs">VENUE</a>
+		    				<a href="/services" target="_blank">SERVICES</a>
+		    				<a href="/deals">DEALS</a>
+		    				<a href="/login">LOGIN</a>
+  			  			</div>
+			    </div>
+		
+				<ul style="margin: -97px 1px 129px 1104px;">
+                <li >
+                        <a class="navbar-nav-link dropdown-toggle" href="${Wayuparty_appUrl}/cart" aria-expanded="false">
+                            <i class="shopping-cart"></i>
+                            <span id="cartCount">${Wayuparty_cartCount}</span>
+                        </a>
+         		</li>
+              </ul >
+		 	
         <div class="dashboard-page-one">
 	          <div class="dashboard-content-one">
 	           <div class="dashboard-content-one">
@@ -52,9 +129,9 @@ max-width: 150px !important;
 	             </div>
 	     </div>
  </div>
-  <footer class="footer" style="background-color: #343a40;">
+  <footer class="footer" style="background-color: white;">
             <div class="container">
-               ONEROOF � 2019. copyrights all rights reserved. Developed by Acculytixs Pvt Ltd.
+               ONEROOF 2021. copyrights all rights reserved. Developed by Acculytixs Pvt Ltd.
             </div>
  </footer>
   <script src="/resources/js/datepicker.min.js"></script>
@@ -88,11 +165,3 @@ max-width: 150px !important;
 </script>
 
 </html>
-
-
-
-
- 
- 
-	 
-	             

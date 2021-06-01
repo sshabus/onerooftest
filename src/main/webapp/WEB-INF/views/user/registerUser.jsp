@@ -1,5 +1,3 @@
-
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
@@ -20,23 +18,77 @@
     <link href="/resources/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   
   <style>
-  p {
-    margin: 0 0 0px 0 !important;
-    font-size: 11px !important;
-    font-weight: bold !important;
+ 	p {
+    margin: -2px 0px -4px 33px !important;
+    font-size: 9px !important;
+    font-weight: 100;
+  }
+  .p1 {
+    margin: 0 0 13px -13px !important;
+    font-size: 15px !important;
+    font-weight: 100;
+    color: white;
+  }
+  .p2 {
+    margin: 0 0 13px -13px !important;
+    font-size: 15px !important;
+    font-weight: 100;
+    color: white;
   }
   
   img:hover {
     cursor: pointer;
   }
+  .list-group{
+  	flex-direction: row;
+  }
+  .input-box{
+	margin: 10px auto;
+	width: 95%;
+	border-bottom: 1px solid black;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+.input-box input{
+	width: 90%;
+	border: none;
+	outline: none;
+	background: none;
+	color: black;
+	background-color: white;
+	margin: -21px 0 0px 28px;
+	font-size: small;
+}
+  .checkmark{
+  		top: 3px;
+  		height: 14px;
+    	width: 14px;
+    	border-radius: 80%;
+  
+  }
+  
   </style>  
 </head>
 
 <body>
-    <div id="preloader"></div>
+<div id="preloader"></div>
     <!-- Login Page Start Here -->
-    <div class="login-page-wrap">
-        <div class="login-page-content">
+<div class="login-page-wrap">
+<div style="margin-top: 10px;">
+			<div style="float:left;width:50%;position: absolute;bottom: 170px;">
+				<div> <img src="/resources/img/logo_icon.png" alt="Project Logo" align="middle" style="width: -25%;padding-right: 1135px; position: fixed;left: 375px; top:150px"/></div>
+					
+					<div class="p1" style="text-align:center;position: fixed;left: 131px;top:325px;">
+						
+						<h1 style="color:white;">Lorem Ipsum</h1>
+						<p  class ="p1" >'Neque porro quisquam est dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.'<p>
+						<p  class ="p2" >'There is no one who loves pain itself, who seeks after it and want to have it, simple because it is a pain.'<p>
+					</div> 
+			</div>
+
+
+    <div class="login-page-content">
         <div id="userLoadingDiv"></div>
               <div class="alert icon-alart bg-light-green2" id="successMsgDiv" role="alert" style="display: none;">
                                     <i class="far fa-hand-point-right bg-light-green3"></i>
@@ -47,39 +99,48 @@
                                     <i class="fas fa-times bg-pink3"></i>
                                    <span id="invalidMsg" style="color: white;"></span> 
              </div>
-            <div class="login-box">
-                <div class="item-logo">
+            
+      <!--          
+      			 <div class="item-logo">
                     <img src="/resources/img/logo.png" alt="logo" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/home'" style="width: 250px; height: auto">
                 </div>
-              <form class="loginForm" id="register_user_form"  name="register_user_form">
-                    <div class="row"> 
-                     <div class="col-xl-6 col-lg-6 col-12 form-group">
-                        <label>Name<span class="text-danger">&nbsp;*</span></label>
+      -->           
+         
+    <div  style="min-width: 370px;padding: 4rem 2rem;border-radius: 4px;border-top-left-radius: 45px;background-color: #ffffff;float:right;height:101%;width:19%;position: relative;bottom: -35px;">   
+               
+               <h2 style="margin: -3px 0 0px 25px;">Sign <span style= "border-bottom: 1px solid black;">Up</span></h2>
+				<h6 style="margin: 10px 0 0 26px;color: darkgray;">Please fill in this form to create an account!</h6>
+               
+               
+               <form class="loginForm" id="register_user_form"  name="register_user_form" style="width: 357px;padding: 3rem;margin: -11px 0px 0px 0px;">
+                    <div class="input-box">
+            <!--            <label>Name<span class="text-danger">&nbsp;*</span></label>    --> 
+            			<img src="/resources/img/user_icon.png" style="width: 5%;"/>
                         <input type="text" placeholder="Enter your name" class="form-control" name="loginUserName"  field-name="Name" data-validation="required validate_Space validate_AlphaNumber validate_length length1-250">
-                        
-                    </div>
-                     
-                    <div class="col-xl-6 col-lg-6 col-12 form-group" id="emailDiv">
-                        <label>Email<span class="text-danger">&nbsp;*</span></label>
+                    </div>      
+                                    
+                    <div class="input-box" id="emailDiv">
+            <!--           <label>Email<span class="text-danger">&nbsp;*</span></label>	   -->
+            			<img src="/resources/img/email_icon.png" style="width: 5%;"/>
                         <input type="text" placeholder="Enter your email " class="form-control" onblur="validateUserEmail();" name="email" id="email" field-name="Email" data-validation="required validate_Space validate_email validate_length length1-100">
                     </div>
-                   </div> 
-                    <div class="row"> 
-                    <div class="col-xl-4 col-lg-6 col-12 form-group" id="mobileDiv">
-                        <label>Mobile<span class="text-danger">&nbsp;*</span></label>
+                   
+                    <div class="input-box" id="mobileDiv">
+             <!--           <label>Mobile<span class="text-danger">&nbsp;*</span></label>   -->
+             				<img src="/resources/img/mobile_icon.png" style="width: 5%;"/>
                         <input type="text" placeholder="Enter your mobile " class="form-control" onblur="validateUserMobile();" name="mobile" id="mobile"  field-name="Mobile" data-validation="required validate_Space validate_int">
                     </div>
-                    
-		            <div class="col-xl-4 col-lg-6 col-12 form-group">
-		                <label>DOB<span class="text-danger">&nbsp;*</span></label>
-		                <input type="text" placeholder="dd/mm/yyyy" class="form-control dob-datepicker"
-		                                             data-position='bottom right' name="dob" id="dob" readonly="readonly" data-validation="required" field-name="Date Of Birth">
-		                                         <i class="far fa-calendar-alt"></i>
+                  <!--  
+		            <div class="input-box">
+		      	          <label>DOB<span class="text-danger">&nbsp;*</span></label>	   
+		      				<img src="/resources/img/mobile_icon.png" style="width: 5%;"/>
+		                <input type="text" placeholder="dd/mm/yyyy" class="form-control dob-datepicker"data-position='bottom right' name="dob" id="dob" readonly="readonly" data-validation="required" field-name="Date Of Birth"><i class="far fa-calendar-alt"></i>
 		            </div>
-		            
-		           <div class="col-xl-4 col-lg-6 col-12 form-group" id="genderDiv">
-		             <label>Gender<span class="text-danger">&nbsp;*</span></label>
-			             <ul class="list-group list-group-horizontal">
+ 	            -->
+		 <!--            <div class="input-box" id="genderDiv">
+		            <label>Gender<span class="text-danger">&nbsp;*</span></label>		 
+			             <img src="/resources/img/mobile_icon.png" style="width: 4%;"/>
+			             <ul class="list-group list-group-horizontal" style="margin: -16px 4px -4px 28px;">
 			                            <li class="radiobtnstyles">
 			                                <label>Male
 			                                    <input type="radio"  name="genderTypeFilter" id="genderMale" value="Male" onclick="changeGenderType();">
@@ -94,13 +155,12 @@
 			                            </li>
 			              </ul>
 			              <input type="hidden" id="gender" name="gender" data-validation="required" field-name="Gender">
-		            </div> 
-              </div>
-              
-              <div class="row">      
-                    <div class="col-xl-6 col-lg-6 col-12  form-group passwordConditions" id="passwordDiv">
-                        <label>Password<span class="text-danger">&nbsp;*</span></label>
-                        <input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d.*)(?=.*\W.*)[a-zA-Z0-9\S]{8,}$" field-name="Password"  data-validation="required validate_length length8-15" onblur="checkPasswords();" placeholder="Enter password" class="form-control" name="password" value="${password}" id="password"  onkeydown="$(this).clear();" onkeyup="passwordValidation('password','fp_letter','fp_capital','fp_number','fp_special','fp_length');">
+		             </div>
+        -->                   		     
+                    <div class="input-box" id="passwordDiv">
+            <!--            <label>Password<span class="text-danger">&nbsp;*</span></label>  -->
+            				<img src="/resources/img/password_icon.png" style="width: 5%;"/>
+                        <input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d.*)(?=.*\W.*)[a-zA-Z0-9\S]{8,}$" field-name="Password"  data-validation="required validate_length length8-15" onblur="checkPasswords();" placeholder="Enter password"  name="password" value="${password}" id="password"  onkeydown="$(this).clear();" onkeyup="passwordValidation('password','fp_letter','fp_capital','fp_number','fp_special','fp_length');">
                     
                       <div id="fp_message" class="passHint" style="left:-300px; box-shadow: 1px 1px 1px 2px #ddd; top:-10px;">
 				  			<p  id="fp_letter" class="invalid">At least one lowercase letter</p>
@@ -110,25 +170,49 @@
 				  			<p  id="fp_length" class="invalid">Minimum 8 characters required</p>
 						</div> 
                     </div>
-                    
-                    
-                    <div class="col-xl-6 col-lg-6 col-12  form-group">
-                        <label>Confirm Password<span class="text-danger">&nbsp;*</span></label>
+                                          
+                    <div class="input-box">
+              <!--           <label>Confirm Password<span class="text-danger">&nbsp;*</span></label>	-->
+              				<img src="/resources/img/password_icon.png" style="width: 5%;"/>
                         <input type="password" placeholder="Enter confirm password" class="form-control" name="confirmPassword" id="confirmPassword"  data-validation="required" field-name="Confirm Password" onblur="checkPasswords();">
                     </div>
                     
-                    <div class="modal-footer">
+                    <div style="margin-left: -22px;" class="input-button" >
+                    <ul>
+                       <li class="radiobtnstyles">
+							<input type="button" Value=""/><p style="color:black; font-size: 13px;  font-weight: 50;">I accept the TERMS of Use &  Privacy Policy</p>
+							<span class="checkmark" style="left: 31px;top: 0px;"></span>                  
+			           </li>
+			        </ul>   
+			           		<input type="hidden" id="policy" name="policy" field-name="policy">
+					</div>
+                
+                    <div style="padding: 0rem;" class="modal-footer">
+                         <input type="image" src="/resources/img/Login_Button.png" style="width: 50px;height: 50px;background: transparent; border-color: snow; margin-right: -9px;" align="right" value="Submit" id="submit_button" class="btn btn-success" onclick="saveUser();"/>
+                    </div>
+                                          
+            <!--    <div class="modal-footer">
                          <input type="button"  value="Submit" id="submit_button" class="btn btn-success" onclick="saveUser();"/>
                          <input type="button"  value="Cancel" class="btn btn-success" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/home'" class="btn btn-danger" />
                          <input type="button"  value="Login" class="btn btn-success" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/login'" class="btn btn-login" />
                     </div>
-                </div>    
-                    
-                    
-                </form>
-            </div>
-        </div>
-    </div>
+            -->  
+           
+  			  </form>
+  			  
+ 					<div style="margin: -45px 0px 0 73px;">
+                    <p style="align:center;color:black; font-size: 13px; font-weight: 50;">Already have an Account?
+        				<input type="button" value="Login" class="btn btn-success" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/login'" class="btn btn-login" />     
+   					</div>  
+    
+    	</div>
+   	  </div> 
+   </div>
+</div>           
+
+
+
+
     <!-- Login Page End Here -->
     
     <!-- jquery-->
@@ -182,10 +266,9 @@ $('body').on('blur', '#register_user_form', function() {
 	    		$('input#password').attr('class','error form-control');
 	    		$("input#password").after("<p class='jquery_form_error_message'>Passwords Not Matched</p>");
 				$('input#password').attr('record-exist','yes');
-				$('input#password').attr('record-exist-errorMsg',' Password and confirm password should be same'); 
+				$('input#password').attr('record-exist-errorMsg',' Both passwords should be same'); 
 	    }
    }
-
 	
 	 function saveUser(){
 		   if ($('#register_user_form').validate(false, validationSettings)){
@@ -241,7 +324,6 @@ $(document).ready(function(){
 		$(".passHint").hide();
 	});	
 });
-
 </script>
 
 <script>
@@ -285,8 +367,6 @@ function passwordValidation(idValue,fp_letter,fp_capital,fp_number,fp_special,fp
 	}
 	
 }
-
-
 </script>
 
 <script>
@@ -375,5 +455,3 @@ function passwordValidation(idValue,fp_letter,fp_capital,fp_number,fp_special,fp
  }
  
  </script>  
-
-

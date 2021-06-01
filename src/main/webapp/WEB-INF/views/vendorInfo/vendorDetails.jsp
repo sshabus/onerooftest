@@ -2,6 +2,41 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
+<style>
+#wrapper{
+  background-image: url('/resources/img/Oneroof_bg_page.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: 100% 100%;
+  width: 100%;
+}
+.nav{
+	padding-left: 175px;
+    padding-right: 170px;
+}
+.row{
+	margin-left: 20px;
+}
+.card-body{
+		padding: 15px 0px 0px;
+}
+.single-info-details{
+	margin-left: 370px;
+}
+.vendor_images_img{
+	width: 230px;
+}
+.img{
+	max-width: 85%;
+    height: 193px;
+    border-radius: 100px;
+    margin-top: -20px;
+}
+</style>
  <div class="card height-auto">
       <div class="card-body">
           <div class="single-info-details">
@@ -28,7 +63,7 @@
                                         <span id="directions"></span>
                                         </h3>
                      </div>
-                     <p style="color: black;" id="vendorDescription"></p>
+                     <p style="color: white;" id="vendorDescription"></p>
                  </div>
              </div>
      </div>
@@ -40,45 +75,51 @@
                     <div id="vendorDetailsLoaderDiv"></div>
                         <div class="heading-layout1 mg-b-25">
                            <div class="custom-tab">
+                           <div style="background: white;">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" data-toggle="tab" href="#basic" role="tab"  aria-selected="true">Basic</a>
                                 </li>
+                     <!--             
                                 <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#category"  role="tab" aria-selected="false">Category</a>
                                 </li>
+                               
                                 <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#menu" role="tab" aria-selected="false">Menu</a>
                                 </li>
+                               
                                 <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#facilities" role="tab" aria-selected="false" >Facilities</a>
                                 </li>
+                                 
                                 <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#music" role="tab" aria-selected="false" >Music Genre</a>
                                 </li>
+                       -->            
                                 <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#cuisine" role="tab" aria-selected="false" >Cuisine</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#workinghours" role="tab" aria-selected="false" >Working Hours</a>
+                                    <a class="nav-link" data-toggle="tab" href="#workinghours" role="tab" aria-selected="false" >Scheduling</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#termsandcondidtions" role="tab" aria-selected="false" >T&C</a>
+                                    <a class="nav-link" data-toggle="tab" href="#termsandcondidtions" role="tab" aria-selected="false" >Terms&Conditions</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#gallery" role="tab" aria-selected="false" >Gallery</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#ratings" role="tab" aria-selected="false" >Ratings</a>
+                                    <a class="nav-link" data-toggle="tab" href="#ratings" role="tab" aria-selected="false" >Review&Ratings</a>
                                 </li>
                             </ul>
-                            
+                         </div>   
                             <div class="tab-content">
                                      <jsp:include page="vendorBasicInfo.jsp" />
-                                     <jsp:include page="vendorCategoriesInfo.jsp" />
+                              <!--         <jsp:include page="vendorCategoriesInfo.jsp" />   -->
                                      <jsp:include page="vendorMenuInfo.jsp" />
-                                     <jsp:include page="vendorFacilitiesInfo.jsp" />
-                                     <jsp:include page="vendorMusicGenreInfo.jsp" />
+                               <!--      <jsp:include page="vendorFacilitiesInfo.jsp" />	-->
+                               <!--      <jsp:include page="vendorMusicGenreInfo.jsp" />	 -->
                                      <jsp:include page="vendorCuisineInfo.jsp" />
                                      <jsp:include page="vendorWorkingHoursInfo.jsp" />
                                      <jsp:include page="vendorTermsAndConditionsInfo.jsp" />
@@ -90,6 +131,7 @@
                     </div>
                   </div>
                 </div>
+                
 </div>
 
 <script type="text/javascript">
@@ -112,7 +154,7 @@
 	    					 $("#vendorLocation").html(response.object.location);
 	    					 if(response.object.latitude != '' && response.object.longitude != ''){
 	    						var cordinates =  response.object.latitude+","+response.object.longitude;
-	    						var directions = '<a class="view-subtitle" style="font-size: 15px; font-weight: normal;" id="vendorDirections" href="https://www.google.com/maps/place/'+cordinates+'" target="_blank">Get Directions</a>';
+	    						var directions = '<a class="view-subtitle" style="font-size: 15px; font-weight: normal;color: white;" id="vendorDirections" href="https://www.google.com/maps/place/'+cordinates+'" target="_blank">Get Directions</a>';
 	    						$("#directions").append(directions);
 	    					 }
 	    					 $("#vendorDescription").html(response.object.vendorDescription);
@@ -322,7 +364,7 @@
 		    		   	    	$("#vendorsGalleryInfoDiv").append('<div class="noRecords"><img src="/resources/img/no-records.png" alt=""/></div>');
  							}
  							
-	    		   	    	  
+	       	  
 	    		   	    	if(response.object.ratingsList != '' && response.object.ratingsList.length > 0){
 	    						 var result = "";
 	    			        	  for (var i=0; i<response.object.ratingsList.length; i++)
@@ -368,6 +410,8 @@
 	    					 $("#vendorInfoLoadingDiv").removeAttr("style");
 	    					 
 	    					},
+	    					
+ 							 
 	    		});
 			 
 			 

@@ -1,6 +1,6 @@
 <style>
 .modal-content {
-  background-image: url(/resources/img/cities/bg-img.jpg);
+  background-image: url(/resources/img/cities/bg_one_roof.jpg);
 }
 </style>
 <div class="ui-modal-box">
@@ -23,7 +23,7 @@
 											              <img src="/resources/img/cities/search-icon.png" alt="srarch" />
 											            </div>
 											            <div class="s-f-right">
-											               <input name="clubs_txtSearch" type="text"  id="clubs_txtSearch" class="clubs_txtSearch"  placeholder="Search">
+											               <input name="clubs_txtSearch" type="text"  id="clubs_txtSearch" class="clubs_txtSearch"  placeholder="Search" >
 											            </div>
 											          </div>
 											        </div>

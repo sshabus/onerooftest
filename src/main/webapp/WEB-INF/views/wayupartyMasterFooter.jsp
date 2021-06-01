@@ -1,8 +1,8 @@
                
                
-  <footer class="footer" style="background-color: #000000;">
-            <div class="container">
-               ONEROOF � 2019. Copyrights all rights reserved. Developed by Acculytixs Pvt Ltd.
+  <footer class="footer" style="background-color: white;">
+            <div class="container" style="color: black;">
+               ONEROOF 2021. Copyrights all rights reserved. Developed by Acculytixs Pvt Ltd.
             </div>
  </footer>
   

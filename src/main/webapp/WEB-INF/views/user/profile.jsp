@@ -4,13 +4,42 @@
 
 <div id="preloader"></div>
 
+<style>
+
+#wrapper {
+  background-image: url('/resources/img/Oneroof_bg_page.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: 100% 100%;
+  width: 100%;
+} 
+.sidebar-expand-md {
+   float:right;
+  }
+.navbar {
+	margin: -135px 0 0 0;
+}
+.sidebar-menu-one{	
+		padding-bottom: 384px;	
+}
+.fas {
+	line-height: 2;
+
+}
+</style>
+
 <div id="wrapper" class="wrapper bg-ash">
   <jsp:include page="../wayupartyMasterHeader.jsp" />
         <!-- Page Area Start Here -->
-        <div class="dashboard-page-one">
-           <jsp:include page="../wayupartyMasterSideNav.jsp" />
+        <jsp:include page="../wayupartyMasterSideNav.jsp" /> 
+        	<div class="dashboard-page-one">
+           
 	          <div class="dashboard-content-one">
-	            <div class="breadcrumbs-area">
+	   <!--         <div class="breadcrumbs-area">
 	                    <h3>Profile</h3>
 	                    <ul>
 	                        <li>
@@ -20,7 +49,7 @@
 	                        <li>Profile</li>
 	                    </ul>
 	             </div>
-	             
+	-->             
        <sec:authorize access="hasRole('ROLE_USER')">     
             <div class="card height-auto">
              <div id="profileDetailsLoadingDiv"></div>
@@ -33,6 +62,7 @@
 			                             <div class="MpanBodyPersonal">
 					                         <div class="MpanSection">
 						                          <div class="tab-content">
+						                         
 						                          	<jsp:include page="userProfile.jsp"/>
 						                          	<jsp:include page="resetPassword.jsp"/>
 						                          </div>
@@ -45,19 +75,20 @@
 										        <li>
 										            <a data-toggle="tab" href="#userProfile" id="profileDetails" aria-selected="true" role="tab" onclick="getUserProfileInfo();"
 										              class="leftTabSection active show">
-										                <i class="fas fa-user"></i><br/>
+										                <i class="fas fa-user" style="line-height: 2;"></i><br/>
 										                <span class="tab-name mt-2">User Profile</span>
 										            </a>
 										        </li>
 										        <li>
 										            <a data-toggle="tab" href="#resetPassword" id="passwordDetails" onclick="getUserPasswordInfo();" role="tab" aria-selected="false"   
 										            class="leftTabSection">
-										                <i class="fas fa-key"></i><br/>
+										                <i class="fas fa-key" style="line-height: 2;"></i><br/>
 										                <span class="tab-name mt-2">Reset Password</span>
 										            </a>
 										        </li>
 										    </ul>
 										</div>
+										
 			                     </div>
 			                 </div>
                     	 </div>
@@ -77,9 +108,11 @@
           </sec:authorize>
             </div>
         </div>
-        <jsp:include page="../wayupartyMasterFooter.jsp" />
- </div>
- 
+         
+ </div>       
+  <jsp:include page="../wayupartyMasterFooter.jsp" />
+ 		
+  
  <script>
    document.getElementById("uploadImageBtn").onchange = function () {
        $('#uploadImageFile').val($(this).val().replace(/C:\\fakepath\\/i, ''));
@@ -127,7 +160,8 @@ function validate_doc_fileupload(fileName)
  
  <style>
  .leftTabSection.active.show{
- color:#be9c52 !important;
+ 	color: #fea801;
+    margin-top: -22px;
  }
  .row {
     margin-right: -30px !important;

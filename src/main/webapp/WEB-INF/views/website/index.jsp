@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
-    <title>ONEROOF | CLUBS</title>
+    <title>ONEROOF | VENUES</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -28,11 +28,17 @@
 <script src="/resources/website/js/bootstrap.bundle.min.js"></script>
 <style>
 body {
-    position: absolute;
+    position: relative;
 }
 .navbar-default .navbar-nav>li>a {
     color: white !important;
 }
+
+.navbar-default{
+    background-color: #890052;
+    padding-bottom: 0px;
+}
+
 .col-sm-2 {
     width: 10.666667%;
 }
@@ -81,25 +87,89 @@ body {
     border-bottom-right-radius: 10px !important; 
     border-top-right-radius: 10px !important; 
 } 
+.row{
+    width:100%;
+    margin-left: -51px;
+}
+.col-sm-11{
+	width: 83%;
+}
+.col-md-6{
+	height: 250px;
+
+}
+hr.dashed {
+  border-top: 3px dashed #bbb;
+ }
 
 .search-blo .input-group-btn {
     position: relative;
     white-space: nowrap;
     left: -29px;
 }
-        .carousel-inner {
-            position: relative;
-            width: 100%;
-            overflow: hidden
-        }
-        .mg-bt-20 {
- 	    	margin-bottom: 20px;
- 	    }
- 	    .club-text-black{
- 	    	font-weight: 900;color: #fff;
- 	    }
- 	    .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group {
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden
+}
+.mg-bt-20 {
+   	margin-bottom: 20px;
+}
+.club-text-black{
+   	font-weight: 600;color: black;
+}
+.input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group {
     margin-left: -9px;
+}
+.container-fluid a{
+	color: white;
+}
+.card-footer.text-muted{
+	background-color: #890052;
+	margin: -87px -11px -28px 234px;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  float: right;
+  margin: 9px -15px 0 -8px;
+}
+.dropbtn {
+  color: lightcyan;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #890052;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: black;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.searchbar{
+	border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    margin: 0px 0px 0 100px;
+    width: 465px;
+}
+.navbar-fixed-top{
+	top: -15px;
 }
 
 </style>
@@ -107,59 +177,106 @@ body {
 <body>
 
 <nav class="navbar navbar-default navbar-fixed-top">
-	  <div class="clearfix">
-	    <div class="navbar-header">
+	 <div class="clearfix">
+	   <div class="navbar-header">
 	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-	      <img src="/resources/img/logo.png" alt="logo" class="homeHeader">
+	      <img src="/resources/img/logo_icon.png" alt="logo" class="homeHeader">
 	    </div>
-	      <div class="collapse navbar-collapse" id="myNavbar">
-	      <ul class="nav navbar-nav navbar-right">
-	       
-	       
-	        <li><a href="/clubs">CLUBS</a></li>
-	         <li><a href="/services" target="_blank">SERVICES</a></li>
-	        <li><a href="/deals">DEALS</a></li>	        
-	        <li><a href="/login">LOGIN</a></li>
-	      </ul>
-	      </div>
-	  </div>
-</nav>
+	    
+<!--   this code is to used for dropdown 	-->
 
-
-    <div class="container mt-10">
-		   <div class="card mb-3 search_blo">
+	   <div class="collapse navbar-collapse" id="myNavbar">
+	      <div class="nav-bar-header-one" style="float: right;">  
+              <div class="toggle-button sidebar-toggle">
+                    <button type="button" class="item-link">
+                        <span class="btn-icon-wrap">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </button>
+                </div>               
+            </div>
+	     
+	     <div class="dropdown">
+  			<button class="dropbtn" style="background-color: transparent;">M E N U</button>
+ 			 	<div class="dropdown-content">
+    				<a href="/clubs">VENUE</a>
+    				<a href="/services" target="_blank">SERVICES</a>
+    				<a href="/deals">DEALS</a>
+    				<a href="/login">LOGIN</a>
+  			  </div>
+		 </div>  
+	     
+	     <div>
+	     	<input type="image"  src="/resources/img/DEALS_ICON.png" alt="Offers" style="height:50px;margin: 11px 0 0 945px;"/>
+	     
+	     </div>
+	  
+	     
+	     <div class="card mb-3 search_blo" style="margin: -47px 204px -54px 628px;">
 	            <div class="input-group search-blo">
 	                <input name="vendors_txtSearch" type="text"  id="vendors_txtSearch" class="form-control"  placeholder="Search Clubs">
 	                <div class="input-group-btn">
 	                    <a class="btn btn-vendor-search" style="border-bottom-right-radius: 0px !important;border-top-right-radius: 0px !important;"><span class="fa fa-refresh" onclick="clearClubSearch();"></span></a>
-	                     <a href="#" class="btn btn-vendor-search" data-toggle="modal" data-target="#large-modal" onclick="getPopularCities()">
+	                     <a href="#" class="btn btn-vendor-search" data-toggle="modal" data-target="#large-modal" onclick="getPopularCities()" style="margin-top: -3px;">
 			            <img src="/resources/img/cities/Locate_icon_1.png" alt="locate" style="width: 30%;float: left;"/>Cities
 			          </a>
 	                </div>
 	            </div>
 	        </div><br/>
+	     
+	     
+	     <div>
+	     
+	     	<input  type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Function Halls.." title="Type in a name" style="margin: 80px 0px 0 755px;border-radius: 20px;width: 87%;margin-left: 156px;">
+	     		<img src="/resources/img/search-icon.png" alt="Search" style="height: 23px;margin: -60px 0px 1px 1192px;" />
+	     </div>
+	       
+<!--  	     
+	      <ul class="nav navbar-nav navbar-right">
+	     
+	        <li><a href="/clubs">VENUE</a></li>
+	         <li><a href="/services" target="_blank">SERVICES</a></li>
+	        <li><a href="/deals">DEALS</a></li>	        
+	        <li><a href="/login">LOGIN</a></li>
+	      </ul>	      
+-->
+	     
+	       </div>
+	</div>
+</nav>
+
+ <div style="background: white; border-top-left-radius: 70px;margin-top: 225px;">	
+    <div class="container mt-10">
+    
+		  <h3 style="margin: 40px -23px 19px -1px;">WELCOME TO</h3>
+		  <h3 style="margin: -16px -23px 19px -1px;">ONEROOF</h3>
+		  
 
 				<div class="mg-bt-20">
+					<h4 style="margin: 0px -25px 0px 0px; color: black;font-weight: 100;">OFFERS</h4>
 		 	       <jsp:include page="../packageBanner.jsp" />
 				</div>
-					      
- 	<div id="registeredVendorsList" class="row"></div>
+				<h4 style="margin-bottom: 19px; color: black;font-weight: 100;">Party Halls</h4>   
+ 	<div id="registeredVendorsList" class="row" style="margin-left: 25px;"></div>
+ 	
  	<jsp:include page="../clubLocationSearch.jsp" />
  	</div>
  
-<footer class="footer" style="background-color: none;">
-      <div align="center">ONEROOF � 2019. copyrights all rights reserved. Developed by Acculytixs Pvt Ltd.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+ 
+<footer class="footer" style="background-color: #890059;">
+      <div align="center">ONEROOF 2021. copyrights all rights reserved. Developed by Acculytixs Pvt Ltd.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
          	<a href="/privacyPolicy" target="_blank" style="color:rgb(212,175,55);">PRIVACY POLICY</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
       		<a href="/termsAndConditions" target="_blank" style="color:rgb(212,175,55);">TERMS AND CONDITIONS</a>
       </div>            
 			
 </footer>
-
-
+</div>
  <script>
 getSpecialPackageBannersList();
 function googleApiLocation(locationId) {
@@ -272,7 +389,7 @@ function openNewWindow(path){
 			        		
 			        		currencyCode = getCurrency(opt.currency);
 			        		
-			        		result = result +'<a href="'+appUrl+'/ws/bookService?vendorUUID='+opt.vendorUUID+'" class="card-link"><div class="col-md-4 mb-5">';
+			        		result = result +'<a href="'+appUrl+'/ws/vendorInfo?vendorUUID='+opt.vendorUUID+'" class="card-link"><div class="col-md-6 mb-5">';
 			        		result = result +'<div class="vendors-card">';
 			        		result = result +'<div class="cardbody">';
 			        		result = result +'<img src="'+opt.vendorProfileImg+'" onerror="predefineVendorProfileImage(this)">';
@@ -280,7 +397,7 @@ function openNewWindow(path){
 			        		result = result +'<div class="card">';
 			        		result = result +'<div class="card-footer">';
 			        		result = result +'<div class="clearfix vendors-title text-success">';
-			        		result = result +'<h5 style="font-size: 25px !important;font-weight: 800 !important;">';
+			        		result = result +'<h5 style="font-size: 25px !important;font-family: unset;margin: 27px 0 0 -40px;font-weight: 500 !important;">';
 			        		result = result +opt.vendorName;
 			        		result = result +'</h5>';
 			        		result = result +'</div>';
@@ -289,15 +406,15 @@ function openNewWindow(path){
 			        		result = result +'<div class="col-sm-1 col-xs-2">';
 			        		result = result +'<i class="fa fa-map-marker club-text-black" aria-hidden="true"></i>';
 			        		result = result +'</div>';
-			        		result = result +'<div class="col-sm-11 col-xs-10 club-text-black">'+location+'</div>';
+			        		result = result +'<div class="col-sm-11 col-xs-10 club-text-black" style="font-size: inherit;margin-left: -14px;">'+location+'</div>';
 			        		result = result +'<div class="col-sm-1 col-xs-2">';
-			        		result = result +'<i class="fa fa-th-list club-text-black" aria-hidden="true"></i>';
+			        		//result = result +'<i class="fa fa-th-list club-text-black" aria-hidden="true"></i>';
 			        		result = result +'</div>';
-			        		result = result +'<div class="col-sm-11 col-xs-10 club-text-black">'+opt.bestSellingItems+'</div>';
-			        		result = result +'<div class="col-sm-1 col-xs-2 club-text-black">';
-			        		result = result +'<span>'+currencyCode+'</span>';
+			        		//result = result +'<div class="col-sm-11 col-xs-10 club-text-black">'+opt.bestSellingItems+'</div>';
+			        		//result = result +'<div class="col-sm-1 col-xs-2 club-text-black">';
+			        		//result = result +'<span>'+currencyCode+'</span>';
 			        		result = result +'</div>';
-			        		result = result +'<div class="col-sm-11 col-xs-10 club-text-black">'+opt.costForTwoPeople+'</div>';
+			        		//result = result +'<div class="col-sm-11 col-xs-10 club-text-black">'+opt.costForTwoPeople+'</div>';
 			        		//result = result +'<div class="col-sm-1 col-xs-2">';
 			        		//result = result +'<i class="fa fa-map text-black" aria-hidden="true"></i>';
 			        		//result = result +'</div>';
@@ -308,19 +425,23 @@ function openNewWindow(path){
 			        		result = result +'&nbsp;';
 			        		result = result +'<div class="container-fluid" style="position: relative; text-align: center; color: white;">';
 			        		result = result +'<div class="bottom_left" style="position: absolute; bottom: -5px; left: 5px;">';
-			        		result = result +'<a href="'+appUrl+'/ws/vendorInfo?vendorUUID='+opt.vendorUUID+'" class="card-link" style="font-weight: 700;"><span class="fa fa-search-plus">&nbsp;</span>Explore</a>';
+			        		//result = result +'<a href="'+appUrl+'/ws/vendorInfo?vendorUUID='+opt.vendorUUID+'" class="card-link" style="font-weight: 700;"><span class="fa fa-search-plus">&nbsp;</span>Explore</a>';
 			        		result = result +'</div>';
 			        		result = result +'<div class="bottom_left" style="position: absolute; bottom: -5px; right: 5px;">';
-			        		result = result +'<a href="'+appUrl+'/ws/bookService?vendorUUID='+opt.vendorUUID+'" class="card-link" style="font-weight: 700;"><i class="fa fa-bullhorn" aria-hidden="true"></i>&nbsp;Services </a>';
+			        		result = result +'<a href="'+appUrl+'/ws/bookService?vendorUUID='+opt.vendorUUID+'" class="card-link" style="font-weight: 700;"><i class="fa fa-bullhorn" aria-hidden="true"></i>&nbsp; Get Services </a>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
-			        		result = result +'</div></a>';
+			          		result = result +'</div></a>';
 			        		
-			        		if( ( ( (i+1) % 3 ) == 0 ) && ( resultData.data.length > ( i+1 ) ) ){
+			        		
+			        		
+			        		
+			        		
+			        		if( ( ( (i+1) % 4 ) == 0 ) && ( resultData.data.length > ( i+1 ) ) ){
 			        			
 			        			if(bannerIndex >= 4){
 			        			 	bannerIndex = 0;
@@ -328,10 +449,10 @@ function openNewWindow(path){
 			        			
 			        			bannerIndex++;
 			        			
-				        		result = result+'<br><div class=" row noRecords-dashboard-portlets"><img style="height: 150px; width: 85%;" src="/resources/img/addBanners/adv_banner_0'+bannerIndex+'.jpg" alt=""/></div>';
+				        		result = result+'<br><div class=" row noRecords-dashboard-portlets"><img style="height: 150px; width: 85%; margin-top: -59px;" src="/resources/img/addBanners/adv_banner_0'+bannerIndex+'.jpg" alt=""/></div>';
 			        		}
 			        		
-			        	
+			        		
 		   				}
 		        	}else{
 	   					result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_clubs_found.jpg" alt=""/></td>';

@@ -1,3 +1,16 @@
+<style>
+
+.sidebar-expand-md {
+   float:right;
+  }
+.card{
+	padding-bottom: 90px;
+}
+.sidebar-color{
+			padding-bottom: 305px;
+}
+</style>
+
 <div class="tab-pane fade show active" id="orders" role="tabpanel">
 		<div class="modal-body">
 		    <div class="table-responsive">
@@ -28,7 +41,7 @@
 	 	result = result + '<table id="guestsListTable" class="display mt10" cellspacing="0" width="100%" >';
 		result = result + '<thead>';
 		result = result + '<tr>';
-	  	result = result +'  <th><i class="fas fa-building mr-2"></i>Club</th>';
+	  	result = result +'  <th><i class="fas fa-building mr-2"></i>Venues</th>';
 	  	result = result +'  <th><i class="fas fa-map-marked-alt mr-2"></i>Location</th>';
 	  	result = result +'  <th><i class="fas fa-code mr-2"></i>Guest Code</th>'
 	  	result = result +'  <th><i class="fas fa-calendar-alt mr-2"></i>Date</th>';

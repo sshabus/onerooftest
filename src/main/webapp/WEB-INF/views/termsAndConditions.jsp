@@ -21,7 +21,7 @@
 </head>
   
 <body>
-    <div><img alt="termsandconditions" src="/resources/website/images/termsandconditions.jpg">
+    <div><img alt="termsandconditions" src="/resources/website/images/Terms_Conditions_Page.jpg" style="height: 4790px;">
     </div>
     
    

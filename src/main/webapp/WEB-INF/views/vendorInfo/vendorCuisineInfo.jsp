@@ -1,3 +1,10 @@
+<style>
+body{
+	color:white;
+}
+</style>
+
+
 <div class="tab-pane fade show" id="cuisine" role="tabpanel">
 	<div class="row">	
 		<div class="modal-body">

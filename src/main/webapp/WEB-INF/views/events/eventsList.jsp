@@ -1,3 +1,15 @@
+<style>
+
+.row{
+
+	display: contents;
+}
+
+</style>
+
+
+
+
 <div id="wrapper" class="wrapper bg-ash">
         <div class="dashboard-page-one">
                           <div class="container">
@@ -65,7 +77,7 @@
 	                        
 		   				}
 		        	}else{
-		        		result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/no-records.png" alt=""/></td>';
+		        		result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/No_events.png" alt=""/></td>';
 	   				}
 		        	
 		        	 $("#eventInfoLoadingDiv").removeAttr("style");

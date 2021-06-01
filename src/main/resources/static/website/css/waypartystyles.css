@@ -6,8 +6,8 @@
 * {margin: 0; padding: 0; box-sizing: border-box; }
 html{ margin: 0; padding: 0; }
 body {
-  font-family: 'Raleway', sans-serif; background: #000000; color: #fff; font-size: 1rem; margin: 0; padding: 0;
-  background-image: url('/resources/img/Wayuparty_bg_Page.jpg');
+  /*font-family: 'Raleway', sans-serif;  font-size: 1rem; margin: 0; padding: 0;   */
+  background-image: url('/resources/img/Oneroof_bg_page.jpg');
   background-repeat: no-repeat;
   background-position: center;
   position: fixed;
@@ -17,8 +17,9 @@ body {
   right: 0;
   height: 100%;
   width: 100%;
-  background-size: cover;
+  background-size: 100% 100%;
 }
+
 
 .sidebar {
   height: 100%;  width: 0;  position: fixed; z-index: 1; top: 0;
