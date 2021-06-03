@@ -9,6 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>ONEROOF | Login</title>
@@ -70,13 +71,14 @@ img:hover {
     <div class="login-page-wrap">
 		<div style="margin-top: 100px;">
 			<div style="float:left;width:50%;position: absolute;bottom: 170px;">
-				<div> <img src="/resources/img/logo_icon.png" alt="Project Logo" align="middle" style="width: -25%;padding-right: 1135px; position: fixed;left: 375px; top:150px"/></div>
+				<div> <img src="/resources/img/logo_icon.png" alt="Project Logo" align="middle" style="width: -25%;padding-right: 1126px; position: fixed;left: 372px; top:142px"/></div>
 					
-					<div style="text-align:center;position: fixed;left: 131px;top:325px;">
+					<div style="text-align:center;position: fixed;left: 152px;top:302px;">
 						
-						<h1 style="color:white;">Lorem Ipsum</h1>
-						<p style=" margin: 0 0 -11px 0;color: white;font-weight: 100;">'Neque porro quisquam est dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.'<p>
-						<p style=" margin: 0 0 -11px -34px;color: white;font-weight: 100;">'There is no one who loves pain itself, who seeks after it and want to have it, simple because it is a pain.'<p>
+						<h1 style="color:white;font-family: 'Poppins', -webkit-body;">ONE ROOF</h1>
+						<p style=" margin: 3px 0 -6px 0;color: white;font-weight: 100;font-family: 'Poppins', 'Roboto';font-size: 16px;">'The luxury, quality and innovative venues.'<p>
+						<p style=" margin: 0 0 -21px 0px;color: white;font-weight: 100;font-family: 'Poppins', 'Roboto';font-size: 16px;">'The most successful event is the one that archives your<p>
+						<p style=" margin: 0 0 -11px -3px;color: white;font-weight: 100;font-family: 'Poppins', 'Roboto';font-size: 16px;">goals and exceeds your expectations and it happens only with One Roof..!'<p>
 					</div>
 			</div>
 		<div style="min-width: 420px;padding: 2rem 4rem;border-radius: 4px;border-top-left-radius: 45px;background-color: #ffffff;float:right;height:100%;width:25%;position: relative;bottom: -45px;">

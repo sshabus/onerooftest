@@ -7,6 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
     <title>ONEROOF | Login</title>
     <meta name="description" content="">
@@ -24,18 +25,32 @@
     font-weight: 100;
   }
   .p1 {
-    margin: 0 0 13px -13px !important;
-    font-size: 15px !important;
+    margin: 3px 0 16px 0 !important;
+    font-size: 16px !important;
     font-weight: 100;
     color: white;
+    font-family: 'Poppins', 'Roboto';
   }
   .p2 {
-    margin: 0 0 13px -13px !important;
-    font-size: 15px !important;
+    margin: 7px 0 2px 0 !important;
+    font-size: 16px !important;
     font-weight: 100;
     color: white;
+    font-family: 'Poppins', 'Roboto';
   }
-  
+  .p3 {
+    margin: 0 0 -21px 0px; !important;
+    font-size: 16px !important;
+    font-weight: 100;
+    color: white;
+    font-family: 'Poppins', 'Roboto';
+  }
+  .p4{
+  	align:center;
+  	color:black; 
+  	font-size: 12px; 
+  	font-weight: 100;
+  }
   img:hover {
     cursor: pointer;
   }
@@ -77,13 +92,14 @@
 <div class="login-page-wrap">
 <div style="margin-top: 10px;">
 			<div style="float:left;width:50%;position: absolute;bottom: 170px;">
-				<div> <img src="/resources/img/logo_icon.png" alt="Project Logo" align="middle" style="width: -25%;padding-right: 1135px; position: fixed;left: 375px; top:150px"/></div>
+				<div> <img src="/resources/img/logo_icon.png" alt="Project Logo" align="middle" style="width: -25%;padding-right: 1126px; position: fixed;left: 372px; top:142px"/></div>
 					
-					<div class="p1" style="text-align:center;position: fixed;left: 131px;top:325px;">
+					<div class="p1" style="text-align:center;position: fixed;left: 138px;top:302px;">
 						
-						<h1 style="color:white;">Lorem Ipsum</h1>
-						<p  class ="p1" >'Neque porro quisquam est dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.'<p>
-						<p  class ="p2" >'There is no one who loves pain itself, who seeks after it and want to have it, simple because it is a pain.'<p>
+						<h1 style="color:white;">ONE ROOF</h1>
+						<p  class ="p1" >'The luxury, quality and innovative venues.'<p>
+						<p  class ="p2" >'The most successful event is the one that archives your<p>
+						<p  class ="p3">goals and exceeds your expectations and it happens only with One Roof..!'<p>
 					</div> 
 			</div>
 
@@ -201,7 +217,7 @@
   			  </form>
   			  
  					<div style="margin: -45px 0px 0 73px;">
-                    <p style="align:center;color:black; font-size: 13px; font-weight: 50;">Already have an Account?
+                    <a class="p4">Already have an Account?</a>
         				<input type="button" value="Login" class="btn btn-success" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/login'" class="btn btn-login" />     
    					</div>  
     

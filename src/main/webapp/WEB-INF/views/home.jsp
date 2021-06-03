@@ -165,7 +165,7 @@ body {
 		 </div>  
 	      
 	      <div>
-	     	<input type="image"  src="/resources/img/DEALS_ICON.png" alt="Offers" style="height:50px;margin: 11px 0 0 945px;"/>
+	     	<input type="image"  src="/resources/img/DEALS_ICON.png" alt="Offers" style="height:50px;margin: 12px 0 0 921px;"/>
 	     
 	     </div>
 	     
@@ -183,7 +183,7 @@ body {
 	      
 	      <div>
 	     
-	     	<input  type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Function Halls.." title="Type in a name" style="margin: 80px 0px 0 755px;border-radius: 20px;width: 87%;margin-left: 156px;">
+	     	<input  type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Function Halls.." title="Type in a Function Halls Name" style="margin: 80px 0px 0 755px;border-radius: 20px;width: 87%;margin-left: 156px;">
 	     		<img src="/resources/img/search-icon.png" alt="Search" style="height: 23px;margin: -60px 0px 1px 1192px;" />
 	     </div>
 	          
@@ -195,13 +195,13 @@ body {
 <div style="background: white; border-top-left-radius: 70px;margin-top: 225px;">	
 	 <div class="container mt-10">
 	 
-	 
+<!--  	 
 	 		 <h3 style="margin: 40px -23px 19px -1px;">WELCOME TO</h3>
 		     <h3 style="margin: -16px -23px 19px -1px;">ONEROOF</h3>
 		   
-
+-->
 				<div class="mg-bt-20">
-				<h4 style="margin: 0px -25px 0px 0px; color: black;font-weight: 100;">OFFERS</h4>
+				<h4 style="margin: 50px -25px 0px 0px;color: black;font-weight: 100;">OFFERS</h4>
 		 	       <jsp:include page="packageBanner.jsp" />
 				</div>
 				<h4 style="margin-bottom: 19px; color: black;font-weight: 100;">Party Halls</h4>  
@@ -301,7 +301,7 @@ function clearClubSearch(){
 			        		
 			        		currencyCode = getCurrency(opt.currency);
 			        		
-			        		result = result +'<a href="'+appUrl+'/ws/bookService?vendorUUID='+opt.vendorUUID+'" class="card-link"><div class="col-md-6 mb-5">';
+			        		result = result +'<a href="'+appUrl+'/ws/vendorInfo?vendorUUID='+opt.vendorUUID+'" class="card-link"><div class="col-md-6 mb-5">';
 			        		result = result +'<div class="vendors-card">';
 			        		result = result +'<div class="cardbody">';
 			        		result = result +'<img src="'+opt.vendorProfileImg+'" onerror="predefineVendorProfileImage(this)">';

@@ -603,7 +603,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 						 if(serviceType == 'Book a bottle'){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_bottles_found.jpg" alt=""/></td>';
 						 }else if(serviceType == 'Venue'){
-							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_table_found.jpg" alt=""/></td>';
+							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_entry_found.jpg" alt=""/></td>';
 						 }else if(serviceType == 'Entry'){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_entry_found.jpg" alt=""/></td>';
 						 }else if(serviceType == 'Surprise'){

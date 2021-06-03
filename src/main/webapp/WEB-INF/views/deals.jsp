@@ -20,14 +20,14 @@
 
 <style>
 body {
-  background-image: url('/resources/img/Wayuparty_bg_Page.jpg');
+  background-image: url('/resources/img/Oneroof_bg_page.jpg');
   background-repeat: no-repeat;
   background-position: center;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-size: cover;
+  background-size: 100% 100%;
 }
 .navbar-default .navbar-nav>li>a {
     color: white !important;
@@ -59,7 +59,7 @@ body {
 </style>
 
 <body>
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav ">
 	  <div class="clearfix">
 	    <div class="navbar-header">
 	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -67,15 +67,15 @@ body {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-	      <img src="/resources/img/logo.png" alt="logo" class="homeHeader">
+	      <img src="/resources/img/logo_icon.png" alt="logo" class="homeHeader">
 	    </div>
 	      <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav navbar-right">
 	        
-	        <li><a href="/clubs">CLUBS</a></li>
-	       <li><a href="/services" target="_blank">SERVICES</a></li>
-	        <li><a href="/deals">DEALS</a></li>	        
-	        <li><a href="/login">LOGIN</a></li>
+	        <li><a href="/clubs" style="color:white">VENUES</a></li>
+	<!--     <li><a href="/services" target="_blank">SERVICES</a></li>		-->
+	        <li><a href="/deals"style="color:white">DEALS</a></li>	        
+	        <li><a href="/login"style="color:white">LOGIN</a></li>
 	      </ul>
 	      </div>
 	  </div>
@@ -83,7 +83,7 @@ body {
 
 
     <div class="container mt-10">
-		   <div class="card mb-3 search_blo">
+		   <div class="card mb-3 search_blo" style="margin-top: -60px;">
 	            <div class="input-group search-blo">
 	                <input name="vendors_txtSearch" type="text"  id="vendors_txtSearch" class="form-control"  placeholder="Search Deals">
 	                <div class="input-group-btn">
@@ -98,8 +98,8 @@ body {
  	<jsp:include page="clubLocationSearch.jsp" />
  	</div>
  
- <footer class="footer" style="background-color: #000;">
-      <div align="center">ONEROOF � 2019. copyrights all rights reserved. Developed by Acculytixs Pvt Ltd.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+ <footer class="footer" style="background-color: white;">
+      <div align="center" style="color: black;">ONEROOF 2021. copyrights all rights reserved. Developed by Acculytixs Pvt Ltd.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
          	<a href="/privacyPolicy" target="_blank" style="color:rgb(212,175,55);">PRIVACY POLICY</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
       		<a href="/termsAndConditions" target="_blank" style="color:rgb(212,175,55);">TERMS AND CONDITIONS</a>
       </div>            
@@ -240,7 +240,7 @@ function clearClubSearch(){
 			        	
 		   				}
 		        	}else{
-		        		result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_clubs_found.jpg" alt=""/></td>';
+		        		result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_deals_found.jpg" alt=""/></td>';
 	   				}
 		        	
 		        	 $("#registeredVendorsList").empty();  
