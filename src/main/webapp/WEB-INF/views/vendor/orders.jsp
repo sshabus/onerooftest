@@ -3,12 +3,20 @@
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <div id="preloader"></div>
-
+<style>
+.sidebar-expand-md {
+   float:right;
+  }
+  .navbar {
+	margin: -135px 0 0 0;
+}
+</style>
    <div id="wrapper" class="wrapper bg-ash">
     <jsp:include page="../wayupartyMasterHeader.jsp" />
         <!-- Page Area Start Here -->
+        <jsp:include page="../wayupartyMasterSideNav.jsp" />
         <div class="dashboard-page-one">
-          <jsp:include page="../wayupartyMasterSideNav.jsp" />
+          
             <div class="dashboard-content-one">
                 <div class="breadcrumbs-area">
 	                    <h3>Orders</h3>

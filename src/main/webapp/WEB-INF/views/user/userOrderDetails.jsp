@@ -4,7 +4,7 @@
 
 <style>
 .sidebar-color{
-		padding-bottom: 157px;
+		padding-bottom: 257px;
 }
 .noRecords-dashboard-portlets{
 		background-color: #c31d6f;

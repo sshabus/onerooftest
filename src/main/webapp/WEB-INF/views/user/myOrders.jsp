@@ -57,7 +57,7 @@
                     
 						 <div class="row">
 						    <div class="col-sm-12 col-md-12">
-					 <!-- 	    <h4>Orders</h4>            -->  
+					  	    <h4 style="color:white;margin-left: 40px;">Orders</h4>            
 						    <div class="cart_widget">
 								<div id="ordersListDiv"></div>
 						    </div>

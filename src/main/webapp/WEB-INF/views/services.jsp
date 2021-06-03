@@ -22,7 +22,7 @@
   
 <body>
     
-    <div><img alt="services" src="/resources/website/images/services.jpg" width="100%">
+    <div><img alt="services" src="/resources/website/images/Service.jpg" width="100%">
     </div>
     
    </body>
