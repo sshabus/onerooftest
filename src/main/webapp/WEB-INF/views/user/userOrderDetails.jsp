@@ -7,8 +7,8 @@
 		padding-bottom: 257px;
 }
 .noRecords-dashboard-portlets{
-		background-color: #c31d6f;
-    	opacity: 0.1;
+		background-color: #eb9b9b2b;
+    	
 }
 </style>
 

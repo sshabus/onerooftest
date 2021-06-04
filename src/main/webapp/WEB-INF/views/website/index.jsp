@@ -456,7 +456,7 @@ function openNewWindow(path){
 			        		
 		   				}
 		        	}else{
-	   					result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_clubs_found.jpg" alt=""/></td>';
+	   					result = result+'<div class="noRecords-dashboard-portlets"><img  src="/resources/img/services/No_Venue.png" alt=""style="background: #880052;"/></td>';
 	   				}
 		        	
 		        	 $("#registeredVendorsList").empty();  

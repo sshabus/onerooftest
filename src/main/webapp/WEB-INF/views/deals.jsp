@@ -72,10 +72,10 @@ body {
 	      <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav navbar-right">
 	        
-	        <li><a href="/clubs" style="color:white">VENUES</a></li>
-	<!--     <li><a href="/services" target="_blank">SERVICES</a></li>		-->
-	        <li><a href="/deals"style="color:white">DEALS</a></li>	        
-	        <li><a href="/login"style="color:white">LOGIN</a></li>
+	        	<li><a href="/clubs" style="color:white;">VENUES</a></li>
+	     		<li><a href="/services" style="color:white;" target="_blank">SERVICES</a></li>		
+	<!--        <li><a href="/deals">DEALS</a></li>	   -->     
+	        	<li><a href="/login"style="color:white;">LOGIN</a></li>
 	      </ul>
 	      </div>
 	  </div>
@@ -240,7 +240,7 @@ function clearClubSearch(){
 			        	
 		   				}
 		        	}else{
-		        		result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_deals_found.jpg" alt=""/></td>';
+		        		result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/No_Venue.png" alt=""style="width:260px; height:260px"/></td>';
 	   				}
 		        	
 		        	 $("#registeredVendorsList").empty();  

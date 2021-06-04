@@ -194,7 +194,7 @@ function getCartList(){
 					 }else{
 						 document.getElementById("priceDetailsDiv").style.display="none";
 						 document.getElementById("placeOrderDiv").style.display="none";
-						 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/empty-cart-icon.png" alt=""/></td>';
+						 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/No_Cart.png" alt=""/></td>';
 						 $("#cartListDiv").empty();  
    		   	    	     $("#cartListDiv").append(result);
 					 }

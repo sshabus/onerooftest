@@ -5328,8 +5328,8 @@ color: #FB8C00 !important;
 	background-color: #fff; border-radius: 2px; padding: 20px;
 	margin: 0px 0px 0px 0px; background-image: url(../img/no-records.png); background-position: center center;
 	background-repeat: no-repeat; min-height: 200px; height: 200px !important; background-size: 130px;
-	background-color: #be1f73;
-    opacity: 0.38;
+	background-color: #eb9b9b2b;;
+    
 }
  
  
@@ -6609,7 +6609,7 @@ font-size: 14px;
 .service_tabs_inn_table table tr th:last-child { text-align:center;}
 .service_tabs_inn_table.service_tabs_inn_table_a table tr th:last-child { text-align:center;}
 .service_tabs_inn_table table tr td {
-    color:#333; padding:0px 10px; border-left:1px solid #eae6e6; height:42px; font-weight:400; vertical-align: inherit;}
+    color:#333; padding:0px 10px;  height:42px; font-weight:400; vertical-align: inherit;}
 .service_tabs_inn_table table tr td:last-child { padding:0px 10px; text-align:center;}
 .service_tabs_inn_table.service_tabs_inn_table_a table tr td:last-child {
     color:#333; padding:0px 10px; border-left:1px solid #eae6e6; height:42px; font-weight:400; width:50%;}
