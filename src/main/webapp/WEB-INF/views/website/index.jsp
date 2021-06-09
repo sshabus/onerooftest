@@ -62,7 +62,7 @@
 
 .homeHeaderimg{
 	max-width: 300px;
-    margin-left: 481px;
+    margin-left: 475px;
     margin-top: 70px;
 }
 .btn{
@@ -71,7 +71,7 @@
     border-radius: 20px;
     font-size: 17px;
     font-weight: 500;
-    margin-left: 6px;
+    
 }
 .footer{
 	height: 18px;
@@ -89,6 +89,7 @@
   right: 0;
   background-size: 100% 100%;
   width: 100%;">
+  
   
   		<div class="nav-bar-header-one" style="float: right;margin-right: 38px;">  
               <div class="toggle-button sidebar-toggle">
@@ -142,16 +143,16 @@
 			<div style="margin-top: 50px;">
 	     		<h1 style="color:white;font-size: 30px;margin-left: 592px;margin-bottom: 25px;">VENUE</h1>
 	     		
-	     		<a style="color: white;margin-left: 275px;font-family: -webkit-pictograph;font-size: 18px;">Find your perfect location for a most memorable event, So look no further than finding your </a><br>
-	     		<a style="color: white;margin-left: 380px;font-family: -webkit-pictograph;font-size: 18px;">perfect venue in our directory of thousands of venues across India.</a>
+	     		<a style="color: white;margin-left: 275px;font-family:'Poppins', 'Roboto';font-size: 18px;">Find your perfect location for a most memorable event, So look no further than finding your </a><br>
+	     		<a style="color: white;margin-left: 380px;font-family: 'Poppins', 'Roboto';font-size: 18px;">perfect venue in our directory of thousands of venues across India.</a>
 	     		
 	     	</div>
 	     	
 	     	<div style="margin-top: 50px;">
 	     		<h1 style="color:white;font-size: 30px;margin-left: 575px;margin-bottom: 25px;">CUISINES</h1>
 	     	
-	     		<a style="color: white;margin-left: 275px;font-family: -webkit-pictograph;font-size: 18px;">Any occasion is incomplete without the food and our team of talented chefs have extensive</a><br>
-	     		<a style="color: white;margin-left: 395px;font-family: -webkit-pictograph;font-size: 18px;">and rich experience, choosing from our list of finest caterers.</a>
+	     		<a style="color: white;margin-left: 275px;font-family: 'Poppins', 'Roboto';font-size: 18px;">Any occasion is incomplete without the food and our team of talented chefs have extensive</a><br>
+	     		<a style="color: white;margin-left: 395px;font-family: 'Poppins', 'Roboto';font-size: 18px;">and rich experience, choosing from our list of finest caterers.</a>
 	     	
 	     	</div>
 	     	
