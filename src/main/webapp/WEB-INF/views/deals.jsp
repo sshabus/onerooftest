@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
+      <link rel="shortcut icon" type="image/x-icon" href="/resources/img/One_Roof_Icon.jpg">
     <title>ONEROOF | DEALS</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -67,7 +67,7 @@ body {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-	      <img src="/resources/img/logo_icon.png" alt="logo" class="homeHeader">
+	      <img src="/resources/img/One_Roof_logo_Png.png" alt="logo" class="homeHeader">
 	    </div>
 	      <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav navbar-right">

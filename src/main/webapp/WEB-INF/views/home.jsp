@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
+    <link rel="shortcut icon" type="image/x-icon" href="/resources/img/One_Roof_Icon.jpg">
     <title>ONEROOF | CLUBS</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -139,7 +139,7 @@ body {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-	      <img src="/resources/img/logo_icon.png" alt="logo" class="homeHeader">
+	      <img src="/resources/img/One_Roof_logo_Png.png" alt="logo" class="homeHeader">
 	    </div>
 	      <div class="collapse navbar-collapse" id="myNavbar">
 	      	<div class="nav-bar-header-one" style="float: right;">  
@@ -171,7 +171,7 @@ body {
 	     
 	     <div class="card mb-3 search_blo" style="margin: -47px 204px -54px 628px;">
 	            <div class="input-group search-blo">
-	                <input name="vendors_txtSearch" type="text"  id="vendors_txtSearch" class="form-control"  placeholder="Search Clubs">
+	                <input name="vendors_txtSearch" type="text"  id="vendors_txtSearch" class="form-control"  placeholder="Search Venues">
 	                <div class="input-group-btn">
 	                    <a class="btn btn-vendor-search" style="border-bottom-right-radius: 0px !important;border-top-right-radius: 0px !important;"><span class="fa fa-refresh" onclick="clearClubSearch();"></span></a>
 	                     <a href="#" class="btn btn-vendor-search" data-toggle="modal" data-target="#large-modal" onclick="getPopularCities()" style="margin-top: -3px;">
@@ -211,7 +211,7 @@ body {
  	</div>
  </div>
  <footer class="footer" style="background-color: #890059;">
-      <div align="center">ONEROOF 2021. copyrights all rights reserved. Developed by Acculytixs Pvt Ltd.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      <div align="center">ONEROOF@2021. copyrights all rights reserved. Developed by Acculytixs Pvt Ltd.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
          	<a href="/privacyPolicy" target="_blank" style="color:rgb(212,175,55);">PRIVACY POLICY</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
       		<a href="/termsAndConditions" target="_blank" style="color:rgb(212,175,55);">TERMS AND CONDITIONS</a>
       </div>            

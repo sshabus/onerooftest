@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
+      <link rel="shortcut icon" type="image/x-icon" href="/resources/img/One_Roof_Icon.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>ONEROOF | Login</title>
     <meta name="description" content="">

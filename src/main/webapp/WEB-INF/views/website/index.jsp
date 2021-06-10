@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
+     <link rel="shortcut icon" type="image/x-icon" href="/resources/img/One_Roof_Icon.jpg">
     <title>ONEROOF | VENUES</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -113,7 +113,7 @@
   			  </div>
 		</div>  
 
-		<img src="/resources/img/logo_icon.png" alt="logo" class="homeHeaderimg">
+		<img src="/resources/img/One_Roof_logo_Png.png" alt="logo" class="homeHeaderimg">
   
   		<div style="text-align:center;position: relative;">		
 				
