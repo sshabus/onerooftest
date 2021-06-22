@@ -5,34 +5,36 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-     <link rel="shortcut icon" type="image/x-icon" href="/resources/img/One_Roof_Icon.jpg">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
     <title>ONEROOF | VENUES</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-   <link rel="stylesheet" href="/resources/css/style.css">
-<link rel="stylesheet" href="/resources/website/css/docs.theme.min.css" type="text/css">
-<link rel="stylesheet" href="/resources/website/css/owl.carousel.min.css" type="text/css">
-<link rel="stylesheet" href="/resources/website/css/animate.min.css" type="text/css">
-<link href="/resources/website/css/waypartystyles.css" rel="stylesheet" type="text/css">
+   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   	<link rel="stylesheet" href="/resources/css/style.css">
+	<link rel="stylesheet" href="/resources/website/css/docs.theme.min.css" type="text/css">
+	<link rel="stylesheet" href="/resources/website/css/owl.carousel.min.css" type="text/css">
+	<link rel="stylesheet" href="/resources/website/css/animate.min.css" type="text/css">
+	<link href="/resources/website/css/waypartystyles.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://maps.google.com/maps/api/js?libraries=places&v=3&key=${googleMapsLocationApiKey}" type="text/javascript"></script>
 	   
-    	<script src="/resources/website/js/jquery-3.5.1.min.js"></script>
-<script src="/resources/website/js/owl.carousel.min.js"></script>
-<script src="/resources/website/js/owl.carousel.js"></script>
-<script src="/resources/website/js/bootstrap.min.js"></script>
-<script src="/resources/website/js/bootstrap.bundle.min.js"></script>
+    <script src="/resources/website/js/jquery-3.5.1.min.js"></script>
+	<script src="/resources/website/js/owl.carousel.min.js"></script>
+	<script src="/resources/website/js/owl.carousel.js"></script>
+	<script src="/resources/website/js/bootstrap.min.js"></script>
+	<script src="/resources/website/js/bootstrap.bundle.min.js"></script>
 <style>
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 .dropdown {
   position: relative;
   display: inline-block;
   float: right;
-  margin: 9px -15px 0 -8px;
+  margin: 16px 20px 0 0px;
 }
 .dropbtn {
   color: lightcyan;
@@ -44,7 +46,7 @@
   display: none;
   position: absolute;
   background-color: #890052;
-  min-width: 160px;
+ /* min-width: 36px; */
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -61,37 +63,92 @@
 .dropdown:hover .dropdown-content {display: block;}
 
 .homeHeaderimg{
-	max-width: 300px;
-    margin-left: 475px;
-    margin-top: 70px;
+	max-width: 270px;
+/*    margin-left: 475px;
+    margin-top: 70px; */
 }
+ .carousel-inner {
+            position: relative;
+            width: 100%;
+            overflow: hidden
+        }
 .btn{
 	color: mediumvioletred;
 	margin-bottom: 40px;
     border-radius: 20px;
     font-size: 17px;
-    font-weight: 500;
+    font-weight: 600;
     
 }
 .footer{
 	height: 18px;
 }
-
+.servicematter{
+	margin-top: 50px;
+	text-align:center;
+	position: relative;
+}
+.serviceheader{
+	color:white;
+	font-size: 30px;
+	margin-bottom: 25px;
+}
+.servicetext{
+	color: white;
+	font-family: 'Poppins', 'Roboto';
+	font-size: 18px;"
+}
+.servicename{
+	color: mediumvioletred;
+	font-size: 20px;
+}
+.serviceimg{
+	height:100px; 
+	width:100px;
+	background: white;
+	margin-right: 16px;
+	border-radius: 60px;
+}
+.services{
+	text-align: center;
+	background: #eb9b9b2b;
+	padding-left: 22px;
+	margin-right: 0px;
+	padding-bottom: 20px;
+}
+.text{
+	color:white;
+	font-family: 'Poppins', -webkit-body;
+	font-size: 30px;
+	margin-bottom: 40px;
+}
+.onerooftext{
+	color: white;
+	font-weight: 100;
+	font-family: 'Poppins', 'Roboto';
+	font-size: 22px;
+}
+.wraptext{
+	text-align: center;
+	background: #fff;
+	margin-left: -20px;
+	margin-right: 0px;
+	display: list-item;
+	margin-top: -30px;
+}
 </style>
 </head>
 <body>
-<div style="background-image: url('/resources/img/Oneroof_bg_page.jpg');
+ <div style="background-image: url('/resources/img/Oneroof_bg_page.jpg');
   background-repeat: no-repeat;
-  background-position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   background-size: 100% 100%;
-  width: 100%;">
-  
-  
-  		<div class="nav-bar-header-one" style="float: right;margin-right: 38px;">  
+  width:100%;">
+  <!--  
+    	<div class="nav-bar-header-one" style="float: right;margin-right: 38px;">  
               <div class="toggle-button sidebar-toggle">
                     <button type="button" class="item-link">
                         <span class="btn-icon-wrap">
@@ -103,7 +160,7 @@
               </div>               
         </div>
   
-  		 <div class="dropdown">
+      <div class="dropdown">
   			<button class="dropbtn" style="background-color: transparent;">M E N U</button>
  			 	<div class="dropdown-content">
     				<a href="/clubs">VENUE</a>
@@ -112,59 +169,65 @@
     				<a href="/login">LOGIN</a>
   			  </div>
 		</div>  
-
-		<img src="/resources/img/One_Roof_logo_Png.png" alt="logo" class="homeHeaderimg">
-  
-  		<div style="text-align:center;position: relative;">		
+ 	
+	-->  		
+				 
+ 		<div style="text-align:center;position: relative;">		
+ 		
+ 			<img src="/resources/img/logo_icon.png" alt="logo" class="homeHeaderimg">	
 				
-			 <p style=" margin: 8px 0 -27px 0;color: white;font-weight: 100;font-family: 'Poppins', 'Roboto';;font-size: 22px;">'The luxury, quality and innovative venues.'<p>
-			 <p style=" margin: 0 0 -26px 0px;color: white;font-weight: 100;font-family: 'Poppins', 'Roboto';;font-size: 22px;">'The most successful event is the one that archives your<p>
-			 <p style="color: white;font-weight: 100;font-family: 'Poppins', 'Roboto';font-size: 22px;">goals and exceeds your expectations and it happens only with One Roof..!'<p>
+			 <p class="onerooftext" style=" margin: 8px 0 -27px 0;">The luxury, quality and innovative venues.<p>
+			 <p class="onerooftext" style=" margin: 0 0 -26px 0px;">The most successful event is the one that archives your<p>
+			 <p class="onerooftext" >goals and exceeds your expectations and it happens only with One Roof..!<p>
 		   
 		   <input type="button" value="Get Started" class="btn" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/clubs'"/>
 		   
-		   <h1 style="color:white;font-family: 'Poppins', -webkit-body;font-size: 30px;margin-bottom: 40px;">OUR SERVICES</h1>
+		   <h1 class="text">OUR SERVICES</h1>
 		   
 		</div>
-		<div style="text-align: center;background: #eb9b9b2b;padding-left: 22px;margin-right: 0px;padding-bottom: 20px;">
+		
+			<div class = "services">
 				<div>
-					<img src="/resources/img/venue.jpg" alt="logo" style="height:100px; width:100px;background: white;margin-right: 16px;border-radius: 60px;">
 					
-					<img src="/resources/img/cuisine.jpg" alt="logo" style="height:100px; width:100px;border-radius: 60px;">	
-					<img src="/resources/img/event.jpg" alt="logo" style="height:100px; width:100px;margin-left:16px;border-radius: 60px;">	
-					<p style="color: mediumvioletred;margin: 13px 0 0 -242px;font-size: 20px;">Venue</p>
-					<p style="color: mediumvioletred;margin: -32px 0 0 0px;font-size: 20px;">Cusine</p>
-					<p style="color: mediumvioletred;margin: -32px 0 0 249px;;font-size: 20px;">Events</p>
+					<img src="/resources/img/venue.jpg" alt="logo" class="serviceimg" style="background: white;margin-right: 16px;">
+					<img src="/resources/img/cuisine.jpg" alt="logo" class="serviceimg">	
+					<img src="/resources/img/event.jpg" alt="logo" class="serviceimg"style="margin-left:16px;">	
+					
+					<p class="servicename" style="margin: 13px 0 0 -242px;">Venue</p>
+					<p class="servicename"style="margin: -32px 0 0 0px;">Cusine</p>
+					<p class="servicename"style="margin: -32px 0 0 249px;">Events</p>
 				
-				<div style="text-align: center;background: #fff;margin-left: -20px;margin-right: 0px;display: list-item;margin-top: -30px;"> </div>
+				<div class="wraptext"></div>
 			
 				</div>
 			</div>
-			<div style="margin-top: 50px;">
-	     		<h1 style="color:white;font-size: 30px;margin-left: 592px;margin-bottom: 25px;">VENUE</h1>
+		
+	  		<div class="servicematter">
+	     		<h1 class="serviceheader">VENUE</h1>
 	     		
-	     		<a style="color: white;margin-left: 275px;font-family:'Poppins', 'Roboto';font-size: 18px;">Find your perfect location for a most memorable event, So look no further than finding your </a><br>
-	     		<a style="color: white;margin-left: 380px;font-family: 'Poppins', 'Roboto';font-size: 18px;">perfect venue in our directory of thousands of venues across India.</a>
+	     		<a class="servicetext" >Find your perfect location for a most memorable event, So look no further than finding your </a><br>
+	     		<a class="servicetext" >perfect venue in our directory of thousands of venues across India.</a>
 	     		
 	     	</div>
 	     	
-	     	<div style="margin-top: 50px;">
-	     		<h1 style="color:white;font-size: 30px;margin-left: 575px;margin-bottom: 25px;">CUISINES</h1>
+	     	<div class="servicematter">
+	     		<h1 class="serviceheader">CUISINES</h1>
 	     	
-	     		<a style="color: white;margin-left: 275px;font-family: 'Poppins', 'Roboto';font-size: 18px;">Any occasion is incomplete without the food and our team of talented chefs have extensive</a><br>
-	     		<a style="color: white;margin-left: 395px;font-family: 'Poppins', 'Roboto';font-size: 18px;">and rich experience, choosing from our list of finest caterers.</a>
+	     		<a class="servicetext" >Any occasion is incomplete without the food and our team of talented chefs have extensive</a><br>
+	     		<a class="servicetext" >and rich experience, choosing from our list of finest caterers.</a>
 	     	
 	     	</div>
-	     	
-	     	<div style="margin-top: 50px;">
-	     		<h1 style="color:white;font-size: 30px;margin-left: 586px;margin-bottom: 25px;">EVENTS</h1>
+	<!--      	
+	     	<div class="servicematter">
+	     		<h1 class="serviceheader">EVENTS</h1>
 	     	</div>
-	     	<footer class="footer" style="background-color: white;">
-               			
-			</footer>
-	</div>
-  
+ 	
+ 	--> 
+
  
+ 
+			<footer class="footer" style="background-color: white;"></footer>
+	</div>
  <script>
 getSpecialPackageBannersList();
 function googleApiLocation(locationId) {
@@ -248,7 +311,115 @@ function openNewWindow(path){
 		 };
  </script>
  
-
+ <script>
+   function getRestaurantsList(latitude,longitude){
+	    var appUrl ='${appUrl}';
+	   $("#registeredVendorsLoadingDiv").attr('style','position:absolute; width:100%; height:100%; background-color:rgba(255,255,255,0.8); top:0px; left:0px; z-index:100;background-image:url("/resources/img/preloader.gif"); background-position:center; background-repeat:no-repeat; background-size:75px;');
+	     $.ajax({
+		    	type: "GET",
+		    	 url: appUrl+"/ws/getAllregisteredRestaurantsList?latitude="+latitude+"&longitude="+longitude, 
+		        success: function(resultData) {
+		   			
+		        	var result = "";
+		        	var currencyCode = '';
+		        	 
+		        	if(resultData.data.length > 0){
+		        	
+		        		var bannerIndex = 0; 
+		        	
+			        	for (var i=0; i<resultData.data.length; i++)
+		   				{  
+			        		var opt = resultData.data[i];
+			        		
+			        		var location = '';
+			        		if(opt.location != ''){
+			        			location = opt.location;
+			        		}else{
+			        			location = 'NO DATA';
+			        		}
+			        		
+			        		currencyCode = getCurrency(opt.currency);
+			        		
+			        		result = result +'<a href="'+appUrl+'/ws/vendorInfo?vendorUUID='+opt.vendorUUID+'" class="card-link"><div class="col-md-6 mb-5">';
+			        		result = result +'<div class="vendors-card">';
+			        		result = result +'<div class="cardbody">';
+			        		result = result +'<img src="'+opt.vendorProfileImg+'" onerror="predefineVendorProfileImage(this)">';
+			        		result = result +'</div>';
+			        		result = result +'<div class="card">';
+			        		result = result +'<div class="card-footer">';
+			        		result = result +'<div class="clearfix vendors-title text-success">';
+			        		result = result +'<h5 style="font-size: 25px !important;font-family: unset;margin: 27px 0 0 -40px;font-weight: 500 !important;">';
+			        		result = result +opt.vendorName;
+			        		result = result +'</h5>';
+			        		result = result +'</div>';
+			        		result = result +'<div class="divpadding">';
+			        		result = result +'<div class="clearfix row">';
+			        		result = result +'<div class="col-sm-1 col-xs-2">';
+			        		result = result +'<i class="fa fa-map-marker club-text-black" aria-hidden="true"></i>';
+			        		result = result +'</div>';
+			        		result = result +'<div class="col-sm-11 col-xs-10 club-text-black" style="font-size: inherit;margin-left: -14px;">'+location+'</div>';
+			        		result = result +'<div class="col-sm-1 col-xs-2">';
+			        		//result = result +'<i class="fa fa-th-list club-text-black" aria-hidden="true"></i>';
+			        		result = result +'</div>';
+			        		//result = result +'<div class="col-sm-11 col-xs-10 club-text-black">'+opt.bestSellingItems+'</div>';
+			        		//result = result +'<div class="col-sm-1 col-xs-2 club-text-black">';
+			        		//result = result +'<span>'+currencyCode+'</span>';
+			        		result = result +'</div>';
+			        		//result = result +'<div class="col-sm-11 col-xs-10 club-text-black">'+opt.costForTwoPeople+'</div>';
+			        		//result = result +'<div class="col-sm-1 col-xs-2">';
+			        		//result = result +'<i class="fa fa-map text-black" aria-hidden="true"></i>';
+			        		//result = result +'</div>';
+			        		//result = result +'<div class="col-sm-11 col-xs-10 club-text-black">'+opt.kilometers+' KM</div>';
+			        		result = result +'</div>';
+			        		result = result +'</div>';
+			        		result = result +'<div class="card-footer text-muted">';
+			        		result = result +'&nbsp;';
+			        		result = result +'<div class="container-fluid" style="position: relative; text-align: center; color: white;">';
+			        		result = result +'<div class="bottom_left" style="position: absolute; bottom: -5px; left: 5px;">';
+			        		//result = result +'<a href="'+appUrl+'/ws/vendorInfo?vendorUUID='+opt.vendorUUID+'" class="card-link" style="font-weight: 700;"><span class="fa fa-search-plus">&nbsp;</span>Explore</a>';
+			        		result = result +'</div>';
+			        		result = result +'<div class="bottom_left" style="position: absolute; bottom: -5px; right: 5px;">';
+			        		result = result +'<a href="'+appUrl+'/ws/bookService?vendorUUID='+opt.vendorUUID+'" class="card-link" style="font-weight: 700;"><i class="fa fa-bullhorn" aria-hidden="true"></i>&nbsp; Get Services </a>';
+			        		result = result +'</div>';
+			        		result = result +'</div>';
+			        		result = result +'</div>';
+			        		result = result +'</div>';
+			        		result = result +'</div>';
+			        		result = result +'</div>';
+			          		result = result +'</div></a>';
+			        		
+			        		
+			        		
+			        		
+			        		
+			        		if( ( ( (i+1) % 4 ) == 0 ) && ( resultData.data.length > ( i+1 ) ) ){
+			        			
+			        			if(bannerIndex >= 4){
+			        			 	bannerIndex = 0;
+			        			}
+			        			
+			        			bannerIndex++;
+			        			
+				        		result = result+'<br><div class=" row noRecords-dashboard-portlets"><img style="height: 150px; width: 85%; margin-top: -59px;" src="/resources/img/addBanners/adv_banner_0'+bannerIndex+'.jpg" alt=""/></div>';
+			        		}
+			        		
+			        		
+		   				}
+		        	}else{
+	   					result = result+'<div class="noRecords-dashboard-portlets"><img  src="/resources/img/services/No_Venue.png" alt=""style="background: #880052;"/></td>';
+	   				}
+		        	
+		        	 $("#registeredVendorsList").empty();  
+	   	    	     $("#registeredVendorsList").append(result);
+	   	    	     $("#vendors_txtSearch").val('');
+	   	    	     closeDataModal();
+	   	    	     googleApiLocation('vendors_txtSearch','country'); 
+	   	    	     
+		        },
+		    }); 
+	   
+   }
+   </script>
    
    <script>
 function getCurrency(currency){

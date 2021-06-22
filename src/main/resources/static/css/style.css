@@ -3403,9 +3403,9 @@ ul {
   background-size: 100% 100%;
 }
 @media only screen and (max-width: 1024px) {
-  .login-page-wrap {
+ /* .login-page-wrap {
     position: relative;
-    height: auto;
+    height: auto; */
   }
 }
 .login-page-content {
