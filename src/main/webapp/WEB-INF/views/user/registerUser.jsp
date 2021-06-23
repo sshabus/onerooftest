@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
+    <link rel="shortcut icon" type="image/x-icon" href="/resources/img/logo_icon.png">
     <title>ONEROOF | Login</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -173,7 +173,7 @@
 			              <input type="hidden" id="gender" name="gender" data-validation="required" field-name="Gender">
 		             </div>
         -->                   		     
-                    <div class="input-box" id="passwordDiv">
+                    <div class="input-box form-group passwordConditions" id="passwordDiv">
             <!--            <label>Password<span class="text-danger">&nbsp;*</span></label>  -->
             				<img src="/resources/img/password_icon.png" style="width: 5%;"/>
                         <input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d.*)(?=.*\W.*)[a-zA-Z0-9\S]{8,}$" field-name="Password"  data-validation="required validate_length length8-15" onblur="checkPasswords();" placeholder="Enter password"  name="password" value="${password}" id="password"  onkeydown="$(this).clear();" onkeyup="passwordValidation('password','fp_letter','fp_capital','fp_number','fp_special','fp_length');">
@@ -193,27 +193,30 @@
                         <input type="password" placeholder="Enter confirm password" class="form-control" name="confirmPassword" id="confirmPassword"  data-validation="required" field-name="Confirm Password" onblur="checkPasswords();">
                     </div>
                     
-                    <div style="margin-left: -22px;" class="input-button" >
+                    <div style="margin-left: 8px; font-size:11px;" class="input-button" >
                     <ul>
-                       <li class="radiobtnstyles">
-							<input type="button" Value=""/><p style="color:black; font-size: 13px;  font-weight: 50;">I accept the TERMS of Use &  Privacy Policy</p>
-							<span class="checkmark" style="left: 31px;top: 0px;"></span>                  
-			           </li>
-			        </ul>   
+                      <li class="radiobtnstyles">
+			                                <label>I Accept the Terms of Use & Privacy Policy
+			                                    <input type="radio"  name="Terms and conditions" id="accept" value="termsandconditions" onclick="check();">
+			                                    <span class="checkmark"></span>
+			                                  </label>
+			                            </li>
+			        </ul>  
+			         
 			           		<input type="hidden" id="policy" name="policy" field-name="policy">
 					</div>
                 
-                    <div style="padding: 0rem;" class="modal-footer">
+                   <!--   <div style="padding: 0rem;" class="modal-footer">
                          <input type="image" src="/resources/img/Login_Button.png" style="width: 50px;height: 50px;background: transparent; border-color: snow; margin-right: -9px;" align="right" value="Submit" id="submit_button" class="btn btn-success" onclick="saveUser();"/>
-                    </div>
+                    </div> -->
                                           
-            <!--    <div class="modal-footer">
+               <div class="modal-footer">
                          <input type="button"  value="Submit" id="submit_button" class="btn btn-success" onclick="saveUser();"/>
-                         <input type="button"  value="Cancel" class="btn btn-success" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/home'" class="btn btn-danger" />
+                       <!--  <input type="button"  value="Cancel" class="btn btn-success" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/home'" class="btn btn-danger" />
                          <input type="button"  value="Login" class="btn btn-success" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/login'" class="btn btn-login" />
                     </div>
             -->  
-           
+           </div>
   			  </form>
   			  
  					<div style="margin: -45px 0px 0 73px;">
