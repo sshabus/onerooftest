@@ -3,11 +3,23 @@
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <div id="preloader"></div>
+<style>
 
+.sidebar-expand-md {
+   float:right;
+  }
+.navbar {
+	margin: -135px 0 0 0;
+}
+.breadcrumbs-area {
+    padding: 35px 40px 35px;
+}
+</style>
 <div id="wrapper" class="wrapper bg-ash">
   <jsp:include page="../wayupartyMasterHeader.jsp" />
+  <jsp:include page="../wayupartyMasterSideNav.jsp" />
         <div class="dashboard-page-one">
-           <jsp:include page="../wayupartyMasterSideNav.jsp" />
+           
 	          <div class="dashboard-content-one">
 	            <div class="breadcrumbs-area">
 	                    <h3>Add Package</h3>

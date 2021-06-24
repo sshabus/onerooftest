@@ -70,7 +70,8 @@
                                     </c:if>
                                     
                                     <c:if test="${service.serviceDisplayName == 'Cuisine'}">
-                         				 <a class="dropdown-item" href="${Wayuparty_appUrl}/offers?vendorUUID=${vendorUUID}&serviceUUID=${service.serviceUUID}"><img src="/resources/img/offers.jpg"></img>&nbsp;&nbsp;Cuisine</a>
+                         				 <a class="dropdown-item" href="${Wayuparty_appUrl}/packageSettings?vendorUUID=${vendorUUID}"><img src="/resources/img/packages.jpg"></img>&nbsp;&nbsp;Package Settings</a>
+                         				 <a class="dropdown-item" href="${Wayuparty_appUrl}/packages?vendorUUID=${vendorUUID}&serviceUUID=${service.serviceUUID}"><img src="/resources/img/packages.jpg"></img>&nbsp;&nbsp;Add Packages</a>
                                     </c:if>
                                     
                                     <c:if test="${service.serviceDisplayName == 'Packages'}">
