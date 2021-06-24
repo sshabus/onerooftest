@@ -1,12 +1,12 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-
+ 
 <div id="preloader"></div>
 
 <style>
 #wrapper{
-	background-image: url(/resources/img/Oneroof_bg_page.jpg);
+	  background-image: url('/resources/img/Oneroof_icon.png');
     background-repeat: no-repeat;
     background-position: center;
     top: 0;

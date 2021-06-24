@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
+     <link rel="shortcut icon" type="image/x-icon" href="/resources/img/Oneroof_icon.png">
     <title>ONEROOF | TERMS AND CONDITIONS</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">

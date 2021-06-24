@@ -4,7 +4,7 @@
 
 <style>
 #wrapper {
-  background-image: url('/resources/img/Oneroof_bg_page.jpg');
+  background-image: url('/resources/img/Oneroof_icon.png');
   background-repeat: no-repeat;
   background-position: center;
   top: 0;

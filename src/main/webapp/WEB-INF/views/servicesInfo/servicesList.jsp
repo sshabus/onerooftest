@@ -3,7 +3,7 @@
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+ <link rel="shortcut icon" type="image/x-icon" href="/resources/img/Oneroof_icon.png">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
 
 <style>

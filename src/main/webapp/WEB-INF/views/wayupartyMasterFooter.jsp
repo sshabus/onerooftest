@@ -1,4 +1,4 @@
-               
+ <link rel="shortcut icon" type="image/x-icon" href="/resources/img/Oneroof_icon.png">               
                
   <footer class="footer" style="background-color: white;">
             <div class="container" style="color: black;">

@@ -1,6 +1,7 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+ <link rel="shortcut icon" type="image/x-icon" href="/resources/img/Oneroof_icon.png">
 <div class="ui-modal-box">
   <div class="modal-box">
        <div class="modal right-slide-modal fade sidebar-align" id="right-slide-modal" tabindex="-1"
