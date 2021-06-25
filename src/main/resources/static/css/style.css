@@ -2415,7 +2415,7 @@ ul {
 }
 @media only screen and (max-width: 1199px) {
   .single-info-details {
-    display: block;
+  /*  display: block; */
   }
 }
 .single-info-details .item-img {

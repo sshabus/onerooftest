@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-      <link rel="shortcut icon" type="image/x-icon" href="/resources/img/Oneroof_icon.png">
+      <link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>ONEROOF | Login</title>
     <meta name="description" content="">
@@ -51,6 +51,9 @@ img:hover {
     float: right;
     background: transparent;
 }
+.logo{
+	max-width: 18%;
+}
 .logina{
 	color: red; 
 	font-weight: 600;
@@ -66,6 +69,14 @@ img:hover {
 	width:25%;
 	position: relative;
 	bottom: -100px;
+}
+.mainline{
+	color: white;
+	font-weight: 100;
+	font-family: 'Poppins', 'Roboto';
+	font-size: 16px;
+	text-align:center;
+	position: relative;
 }
 .text{
 	color: white;
@@ -83,6 +94,86 @@ img:hover {
 	text-align: center;
 	margin-top: 145px;
 }
+.login_page_wrap_1{
+	
+	text-align:center;
+	position: fixed;
+	top: 160px;
+	right: 404px;
+}
+@media (max-width: 1024px){
+
+	.logo{
+			max-width: 40%;
+		}
+}
+@media (max-width: 968px){
+		
+		
+		.logo{
+			max-width: 40%;
+		}
+		.loginpage{
+			bottom: -25%;
+		    height: 75%;
+		    min-width: 42%;
+		}
+		
+}
+@media (max-width: 768px){
+		
+		
+		.logo{
+			max-width: 55%;
+		}
+		.loginpage{
+			bottom: -23%;
+		    height: 75%;
+		    min-width: 52%;
+		}
+		
+}
+@media (max-width: 680px){
+		
+		
+		.logo{
+			max-width: 55%;
+		}
+		.loginpage{
+			bottom: -25%;
+		    height: 75%;
+		    min-width: 52%;
+		}
+		
+}
+
+@media (max-width: 480px){
+		
+		.login_page_wrap_1{
+			position: initial;
+		}
+		.login_page_wrap_1 .header{
+			font-size: 30px;
+			display: none
+		}
+		.logo{
+			max-width: 40%;
+		}
+		.loginpage{
+			bottom: 10px;
+			min-width: 100%;
+		}
+		.mainline{
+			bottom: 17px;
+			font-size: 16px;
+			display: none
+		}
+		.text{
+			display: none
+		}
+		
+
+}
 </style>
 
 <body>
@@ -90,12 +181,12 @@ img:hover {
     	<!-- Login Page Start Here -->
     		<div class="login-page-wrap">
 		
-					<div style="text-align:center;position: fixed;top: 160px;right: 404px;">
+					<div class="login_page_wrap_1">
 					
-						<img src="/resources/img/logo_icon.png" alt="Project Logo" style=" max-width: 18%;"/>
+						<img src="/resources/img/One_Roof_logo.png" alt="Project Logo" class="logo" />
 						
 						<h1 class = "header" >ONE ROOF</h1>
-						<p  class="text" style=" margin: 3px 0 -6px 0;">The luxury, quality and innovative venues.<p>
+						<p  class="mainline" style=" margin: 3px 0 -6px 0;">The luxury, quality and innovative Venues.<p>
 						<p  class="text" style=" margin: 0 0 -21px 0px;">The most successful event is the one that archives your<p>
 						<p  class="text" style=" margin: 0 0 -11px -3px;">goals and exceeds your expectations and it happens only with One Roof..!<p>
 					</div>

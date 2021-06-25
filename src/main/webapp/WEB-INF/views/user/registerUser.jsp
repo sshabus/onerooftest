@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="shortcut icon" type="image/x-icon" href="/resources/img/logo_icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
     <title>ONEROOF | Login</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,27 +19,28 @@
     <link href="/resources/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   
   <style>
+.login-page-wrap {
+    background-image: url(/resources/img/Oneroof_bg_page.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-size: 100% 100%;
+    
+    }  
  	p {
     margin: -2px 0px -4px 33px !important;
     font-size: 9px !important;
     font-weight: 100;
   }
+  
   .p1 {
     margin: 3px 0 16px 0 !important;
-    font-size: 16px !important;
-    font-weight: 100;
-    color: white;
-    font-family: 'Poppins', 'Roboto';
-  }
-  .p2 {
-    margin: 7px 0 2px 0 !important;
-    font-size: 16px !important;
-    font-weight: 100;
-    color: white;
-    font-family: 'Poppins', 'Roboto';
-  }
-  .p3 {
-    margin: 0 0 -21px 0px; !important;
     font-size: 16px !important;
     font-weight: 100;
     color: white;
@@ -76,32 +77,125 @@
 	font-size: small;
 }
   .checkmark{
-  		top: 3px;
-  		height: 14px;
-    	width: 14px;
-    	border-radius: 80%;
+  	top: 3px;
+  	height: 14px;
+    width: 14px;
+    border-radius: 80%;
   
-  }
-  
+}  
+.loginForm{
+	width: 357px;
+	padding: 3rem;
+	margin-top: -30px;
+}
+.login_page_wrap_1{
+	
+	text-align:center;
+	position: fixed;
+	top: 160px;
+	right: 404px;
+}  
+.header{
+	color:white;
+	font-family: 'Poppins', -webkit-body;
+}
+.logo{
+	max-width: 18%;
+}
+.mainline{
+	color: white;
+	font-weight: 100;
+	font-family: 'Poppins', 'Roboto';
+	font-size: 16px;
+	text-align:center;
+	position: relative;
+}
+.signup_page{
+	min-width: 385px;
+	padding: 4rem 2rem;
+	border-radius: 4px;
+	border-top-left-radius: 45px;
+	background-color: #ffffff;
+	float:right;height:89%;
+	width:19%;
+	position: relative;
+	bottom: -60px
+}
+@media (max-width: 1024px){
+		.logo{
+			max-width: 50%;
+		}
+		.signup_page{
+			bottom: -125px;
+    		
+		}
+}
+@media (max-width: 575px){
+
+		.login_page_wrap_1{
+			position: initial;
+		}
+		.login_page_wrap_1 .header{
+			font-size: 30px;
+			display: none
+		}
+		.logo{
+			max-width: 30%;
+		}
+		.signup_page{
+			bottom: 43px;
+    		height: 80%;
+    		min-width: 100%;
+		}
+		.p1{
+			display: none
+		}
+		.loginForm{
+			min-width: 100%;
+		}
+}
+@media (max-width: 480px){
+		.login_page_wrap_1{
+			position: initial;
+		}
+		.login_page_wrap_1 .header{
+			font-size: 30px;
+			display: none
+		}
+		.logo{
+			max-width: 30%;
+		}
+		.signup_page{
+			bottom: 43px;
+    		height: 80%;
+    		min-width: 100%;
+		}
+		.p1{
+			display: none
+		}
+		.loginForm{
+			min-width: 100%;
+		}
+		
+}
+
   </style>  
 </head>
 
 <body>
 <div id="preloader"></div>
     <!-- Login Page Start Here -->
-<div class="login-page-wrap">
-<div style="margin-top: 10px;">
-			<div style="float:left;width:50%;position: absolute;bottom: 170px;">
-				<div> <img src="/resources/img/logo_icon.png" alt="Project Logo" align="middle" style="width: -25%;padding-right: 1126px; position: fixed;left: 372px; top:142px"/></div>
+				<div class="login-page-wrap">
+					<div class="login_page_wrap_1">
 					
-					<div class="p1" style="text-align:center;position: fixed;left: 138px;top:302px;">
+						<img src="/resources/img/One_Roof_logo.png" alt="Project Logo" class="logo" />
 						
-						<h1 style="color:white;">ONE ROOF</h1>
-						<p  class ="p1" >'The luxury, quality and innovative venues.'<p>
-						<p  class ="p2" >'The most successful event is the one that archives your<p>
-						<p  class ="p3">goals and exceeds your expectations and it happens only with One Roof..!'<p>
-					</div> 
-			</div>
+						<h1 class = "header" >ONE ROOF</h1>
+						<p  class="p1" >The luxury, quality and innovative Venues.<p>
+						<p  class="p1" style="  margin: 7px 0 2px 0 !important;">The most successful event is the one that archives your<p>
+						<p  class="p1" style=" margin: 0 0 -21px 0px; !important;">goals and exceeds your expectations and it happens only with One Roof..!<p>
+					</div>
+			
 
 
     <div class="login-page-content">
@@ -122,28 +216,28 @@
                 </div>
       -->           
          
-    <div  style="min-width: 370px;padding: 4rem 2rem;border-radius: 4px;border-top-left-radius: 45px;background-color: #ffffff;float:right;height:101%;width:19%;position: relative;bottom: -35px;">   
+    <div class="signup_page">   
                
                <h2 style="margin: -3px 0 0px 25px;">Sign <span style= "border-bottom: 1px solid black;">Up</span></h2>
 				<h6 style="margin: 10px 0 0 26px;color: darkgray;">Please fill in this form to create an account!</h6>
                
                
-               <form class="loginForm" id="register_user_form"  name="register_user_form" style="width: 357px;padding: 3rem;margin: -11px 0px 0px 0px;">
+               <form class="loginForm" id="register_user_form"  name="register_user_form">
                     <div class="input-box">
             <!--            <label>Name<span class="text-danger">&nbsp;*</span></label>    --> 
-            			<img src="/resources/img/user_icon.png" style="width: 5%;"/>
+            			<img src="/resources/img/user_icon.png" style="width: 6%;"/>
                         <input type="text" placeholder="Enter your name" class="form-control" name="loginUserName"  field-name="Name" data-validation="required validate_Space validate_AlphaNumber validate_length length1-250">
                     </div>      
                                     
                     <div class="input-box" id="emailDiv">
             <!--           <label>Email<span class="text-danger">&nbsp;*</span></label>	   -->
-            			<img src="/resources/img/email_icon.png" style="width: 5%;"/>
+            			<img src="/resources/img/email_icon.png" style="width: 6%;"/>
                         <input type="text" placeholder="Enter your email " class="form-control" onblur="validateUserEmail();" name="email" id="email" field-name="Email" data-validation="required validate_Space validate_email validate_length length1-100">
                     </div>
                    
                     <div class="input-box" id="mobileDiv">
              <!--           <label>Mobile<span class="text-danger">&nbsp;*</span></label>   -->
-             				<img src="/resources/img/mobile_icon.png" style="width: 5%;"/>
+             				<img src="/resources/img/mobile_icon.png" style="width: 6%;"/>
                         <input type="text" placeholder="Enter your mobile " class="form-control" onblur="validateUserMobile();" name="mobile" id="mobile"  field-name="Mobile" data-validation="required validate_Space validate_int">
                     </div>
                   <!--  
@@ -173,9 +267,9 @@
 			              <input type="hidden" id="gender" name="gender" data-validation="required" field-name="Gender">
 		             </div>
         -->                   		     
-                    <div class="input-box form-group passwordConditions" id="passwordDiv">
+                    <div class="input-box passwordConditions" id="passwordDiv">
             <!--            <label>Password<span class="text-danger">&nbsp;*</span></label>  -->
-            				<img src="/resources/img/password_icon.png" style="width: 5%;"/>
+            				<img src="/resources/img/password_icon.png" style="width: 6%;"/>
                         <input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d.*)(?=.*\W.*)[a-zA-Z0-9\S]{8,}$" field-name="Password"  data-validation="required validate_length length8-15" onblur="checkPasswords();" placeholder="Enter password"  name="password" value="${password}" id="password"  onkeydown="$(this).clear();" onkeyup="passwordValidation('password','fp_letter','fp_capital','fp_number','fp_special','fp_length');">
                     
                       <div id="fp_message" class="passHint" style="left:-300px; box-shadow: 1px 1px 1px 2px #ddd; top:-10px;">
@@ -189,44 +283,28 @@
                                           
                     <div class="input-box">
               <!--           <label>Confirm Password<span class="text-danger">&nbsp;*</span></label>	-->
-              				<img src="/resources/img/password_icon.png" style="width: 5%;"/>
+              				<img src="/resources/img/password_icon.png" style="width: 6%;"/>
                         <input type="password" placeholder="Enter confirm password" class="form-control" name="confirmPassword" id="confirmPassword"  data-validation="required" field-name="Confirm Password" onblur="checkPasswords();">
                     </div>
                     
                     <div style="margin-left: 8px; font-size:11px;" class="input-button" >
-                    <ul>
-                      <li class="radiobtnstyles">
-			                                <label>I Accept the Terms of Use & Privacy Policy
-			                                    <input type="radio"  name="Terms and conditions" id="accept" value="termsandconditions" onclick="check();">
-			                                    <span class="checkmark"></span>
-			                                  </label>
-			                            </li>
-			        </ul>  
-			         
-			           		<input type="hidden" id="policy" name="policy" field-name="policy">
-					</div>
-                
-                   <!--   <div style="padding: 0rem;" class="modal-footer">
-                         <input type="image" src="/resources/img/Login_Button.png" style="width: 50px;height: 50px;background: transparent; border-color: snow; margin-right: -9px;" align="right" value="Submit" id="submit_button" class="btn btn-success" onclick="saveUser();"/>
-                    </div> -->
-                                          
-               <div class="modal-footer">
-                         <input type="button"  value="Submit" id="submit_button" class="btn btn-success" onclick="saveUser();"/>
-                       <!--  <input type="button"  value="Cancel" class="btn btn-success" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/home'" class="btn btn-danger" />
-                         <input type="button"  value="Login" class="btn btn-success" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/login'" class="btn btn-login" />
+                    	<div onload="disableSubmit()">
+ 							<input type="checkbox" name="terms" id="terms" onchange="activateButton(this)"> <a style=" margin-left:10px;" > I Accept the Terms of Use & Privacy Policy </a>
+										<div class="modal-footer">
+  											<input type="button"  value="Submit" id="submit_button" class="btn btn-success" onclick="saveUser();"/>
+  									    </div>		
+							</div>
                     </div>
-            -->  
-           </div>
-  			  </form>
+                    
+  		</form>
   			  
  					<div style="margin: -45px 0px 0 73px;">
-                    <a class="p4">Already have an Account?</a>
-        				<input type="button" value="Login" class="btn btn-success" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/login'" class="btn btn-login" />     
+                    		<a class="p4">Already have an Account?</a>
+        					<input type="button" value="Login" class="btn btn-success" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/login'" class="btn btn-login" />     
    					</div>  
     
     	</div>
    	  </div> 
-   </div>
 </div>           
 
 
@@ -243,7 +321,22 @@
     <script src="/resources/js/common.js?"></script>
     <script src="/resources/js/formvalidator.js?"></script>
    
-    
+<script>
+ function disableSubmit() {
+  document.getElementById("submit").disabled = true;
+ }
+
+  function activateButton(element) {
+
+      if(element.checked) {
+        document.getElementById("submit").disabled = false;
+       }
+       else  {
+        document.getElementById("submit").disabled = true;
+      }
+
+  }
+</script>    
 <script>
 $('body').on('blur', '#register_user_form', function() {
 	$("#register_user_form").showHelpOnFocus();
