@@ -54,7 +54,7 @@ max-width: 150px !important;
   display: none;
   position: absolute;
   background-color: #890052;
-  min-width: 160px;
+  min-width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -66,7 +66,7 @@ max-width: 150px !important;
   display: block;
 }
 
-.dropdown-content a:hover {background-color: goldenrod;}
+.dropdown-content a:hover {background-color: black;}
 
 .dropdown:hover .dropdown-content {display: block;}
 
@@ -82,9 +82,10 @@ max-width: 150px !important;
 .dropdown-toggle{
 	color: white;
 }
-.dashboard-content-one{
+/*.dashboard-content-one{
 	align-items: center;
 }
+*/
 </style>
 
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>

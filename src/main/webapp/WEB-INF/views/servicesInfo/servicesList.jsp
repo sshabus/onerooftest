@@ -77,16 +77,57 @@ img{
 	font-size: 18px;
 	padding: 0 32px 0px 0px;
 }
+.ui-btn-wrap{
+	align-self: center;
+    margin-top: 35px;
+}
+.single-info-details{
+	margin-left: 0px;
+}
+/*.item-content{
+	margin-top: 40px;
+}*/
+.servicebackground{
+	text-align:center;
+	background: #eb9b9b2b;
+	padding-left: 46%;
+	margin-left: -72px;
+	margin-right: -30px;
+	padding-bottom: 15px;
+}
+.servicesbackground{
+	text-align:center;
+	background: #fff;
+	margin-left: -30px;
+	margin-right: -30px;
+	display:list-item;
+	margin-top: -36px;
+}
+@media (max-width: 768px){
+
+	.servicebackground{
+		padding-left: 38%;
+	}
+}
+@media (max-width: 480px){
+
+	.servicebackground{
+		padding-left: 40%;
+	}
+	.single-info-details{
+		margin-left: -13%;
+	}
+}
 </style>
 
-<div class="card height-auto" style="margin-left: 160px;top: -30px;">
+<div class="card height-auto" style="align-items: center;top: -30px;">
       <div class="card-body">
-          <div class="single-info-details">
+          <div class="single-info-details" >
                  <div class="vendor_images_img item-img"  id="vendorProfileImage" class="mb-3"></div>
-                 <div class="item-content" style="margin-top: 40px;">
+                 <div class="item-content">
                      <div class="header-inline item-header">
                          <h3 class="text-dark-medium font-medium"><span id="vendorName"></span><br/>
-                         <span class="view-subtitle" style="font-size: 15px;">
+                         <span class="view-subtitle">
                          <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;
                                         <span id="vendorLocation"></span></span><br/>
                                         <span id="directions"></span>
@@ -103,15 +144,15 @@ img{
      <div id="serviceslistLoadingDiv" ></div>
        <div class="card-body">
 	       <div class="icon-tab">
-	       			<div style="text-align:center;background: #eb9b9b2b;padding-left: 472px;margin-left: -30px;margin-right: -30px;padding-bottom: 15px;">
+	       			<div class="servicebackground">
 	       		
 	       		<div id="servicesListDiv" ></div>
 	       			</div>
 	       </div>
-	       <div style="text-align:center;background: #fff;margin-left: -30px;margin-right: -30px;display:list-item;margin-top: -35px;"></div>
+	       <div class="servicesbackground"></div>
        </div>
                  
-      <div class="ui-btn-wrap" style="align-self: center;margin-top: 35px;">   
+      <div class="ui-btn-wrap" >   
        <div class="card-body">
           <div id="categoriesListDiv"></div>
         </div> 
@@ -205,7 +246,7 @@ img{
 	    			        		  
 	    			        		  if(service.serviceName != 'Events'){
 	    			        			  result = result +'<li class="nav-item">';
-		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\')" role="tab" aria-selected="true" ><img style="max-width: 75px;margin-left: -8px;background-color: white" src="'+service.serviceImage+'"></img></a><span><strong> <div align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;">'+service.serviceName+'</strong></span>';
+		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\')" role="tab" aria-selected="true" ><img style="max-width: 80px;margin-left: -8px;background-color: white" src="'+service.serviceImage+'"></img></a><span><strong> <div <!--align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;margin-top: 10px;">'+service.serviceName+'</strong></span>';
 		    			        		  result = result +'</li>';
 	    			        		  }
 	    			        		  
