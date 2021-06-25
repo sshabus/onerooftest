@@ -5,28 +5,29 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-     <link rel="shortcut icon" type="image/x-icon" href="/resources/img/Oneroof_icon.png">
-    <title>ONEROOF | CLUBS</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
+    <title>ONEROOF | Venues</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-   <link rel="stylesheet" href="/resources/css/style.css">
-<link rel="stylesheet" href="/resources/website/css/docs.theme.min.css" type="text/css">
-<link rel="stylesheet" href="/resources/website/css/owl.carousel.min.css" type="text/css">
-<link rel="stylesheet" href="/resources/website/css/animate.min.css" type="text/css">
-<link href="/resources/website/css/waypartystyles.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/resources/css/style.css">
+	<link rel="stylesheet" href="/resources/website/css/docs.theme.min.css" type="text/css">
+	<link rel="stylesheet" href="/resources/website/css/owl.carousel.min.css" type="text/css">
+	<link rel="stylesheet" href="/resources/website/css/animate.min.css" type="text/css">
+	<link href="/resources/website/css/waypartystyles.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://maps.google.com/maps/api/js?libraries=places&v=3&key=${googleMapsLocationApiKey}" type="text/javascript"></script>
 	   
-    	<script src="/resources/website/js/jquery-3.5.1.min.js"></script>
-<script src="/resources/website/js/owl.carousel.min.js"></script>
-<script src="/resources/website/js/owl.carousel.js"></script>
-<script src="/resources/website/js/bootstrap.min.js"></script>
-<script src="/resources/website/js/bootstrap.bundle.min.js"></script>
+    <script src="/resources/website/js/jquery-3.5.1.min.js"></script>
+	<script src="/resources/website/js/owl.carousel.min.js"></script>
+	<script src="/resources/website/js/owl.carousel.js"></script>
+	<script src="/resources/website/js/bootstrap.min.js"></script>
+	<script src="/resources/website/js/bootstrap.bundle.min.js"></script>
 <style>
+
 body {
     position: absolute;
 }
@@ -58,26 +59,28 @@ body {
     white-space: nowrap;
     left: -29px;
 }
-        .carousel-inner {
-            position: relative;
-            width: 100%;
-            overflow: hidden
-        }
-        .mg-bt-20 {
- 	    	margin-bottom: 20px;
- 	    }
- 	     .club-text-black{
- 	    	font-weight: 600;color: black;
- 	    }
- 	    .navbar-default{
- 	    	background-color: #890059;
- 	    }
+.carousel-inner {
+	position: relative;
+	width: 100%;
+    overflow: hidden
+}
+.mg-bt-20 {
+   	margin-bottom: 20px;
+}
+.club-text-black{
+ 	font-weight: 600;
+ 	color: black;
+ 	width: 60%;
+ /*	margin-left: 6px; */
+}
+.navbar-default{
+ 	 background-color: #890059;
+}
 .col-md-6{
 	height: 250px;
-
 }
 .card-footer .divpadding{
-	margin-left: -33px;
+	margin-left: -14px;
 }
 .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group {
     margin-left: -9px;
@@ -87,25 +90,31 @@ body {
 }
 .card-footer.text-muted{
 	background-color: #890052;
-	margin: -89px -11px -28px 244px;
+	width: 113px;
+    float: right;
+    margin-right:-5px;
+    margin-top: -70px;
 }
 .dropdown {
   position: relative;
   display: inline-block;
   float: right;
-  margin: 9px -15px 0 -8px;
+ /*margin: 9px -15px 0 -8px; */
+  /* margin: 22px 6px 0 0px;  */
+ /* margin: 22px 31px 0 0px; */
 }
 .dropbtn {
   color: lightcyan;
   padding: 16px;
   font-size: 16px;
   border: none;
+  margin-top: 10px
 }
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #890052;
-  min-width: 160px;
+  min-width: 115px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -124,75 +133,216 @@ body {
 .navbar-fixed-top{
 		padding-top: 0px;
 }
-.vendors-title h5{
-	font-size: 18px;
-} 
- 	    
+.homeHeaderimg{
+	max-width: 150px;
+}
+.btn-vendor-search span{
+	padding: 0px 0 0;
+}
+.dealsimg{
+	height: 50px;
+	cursor: default;
+	float: right;
+	margin-top: 10px;
+}
+.card.mb-3{
+	width: 368px;
+	float: right;
+	margin-right: 19px;
+	margin-top: 17px;
+}
+#myInput{
+	border-radius: 20px;
+	width: 85%;
+	margin-left: 15px;
+	margin-right: 16px;
+	float: right;
+	margin-top: 10px;
+	height: auto;
+}
+.search_icon{
+	height: 30px;  
+	margin: -48px 32px -2px 1184px;
+	float: right;
+}
+.venue_container{
+	background: white; 
+	border-top-left-radius: 70px;
+	margin-top: 170px;
+}
+.offers{
+	color: black;
+	font-weight: 100;
+}	    
+.halls{
+	margin-bottom: 19px; 
+	color: black;
+	font-weight: 100;
+}
+.vendors-card .card{
+		width: 67%;
+}
+@media (max-width: 1199px){
+
+		.vendors-card .cardbody img{
+				width: 110%;
+				height: 100%;
+			}
+		.cardbody{
+			
+		    width: 34%;
+		    height: auto;
+    		padding: 14px;
+		}
+		.vendors-card .card{
+			width: 62%;
+		}
+		.vendors-title h5{
+			font-size: 25px	
+			}
+		.club-text-black{
+			font-size: 14px;
+		}
+		.card-footer.text-muted{
+			margin-right: -31px;
+		    margin-top: -65px;
+		    width: 122px;
+		    height: 30px;
+		    font-size: 14px;
+		}
+		
+		.halls{
+			font-size: 35px;
+		}
+		.offers{
+			margin-top: 100px;
+    		font-size: 30px;
+		}
+
+
+}
+@media (max-width: 768px){
+
+		.col-xs-2{
+			width: 6%;
+		}
+		.cardbody{
+			
+		    width: 34%;
+		    height: auto;
+    		padding: 14px;
+		}
+		.vendors-card .card{
+			width: 62%;
+		}
+		.vendors-title h5{
+			font-size: 35px	
+			}
+		.club-text-black{
+			font-size: 18px;
+		}
+		.card-footer.text-muted{
+			margin-right: 15px;
+		    margin-top: -50px;
+		    width: 145px;
+		    height: 36px;
+		    font-size: 17px;
+		}
+		.halls{
+			font-size: 35px;
+		}
+		.offers{
+			font-size: 35px;
+		}
+}
+@media (max-width: 480px){
+
+			.vendors-card .cardbody img{
+				width: 75%;
+				height: auto;
+			}
+
+			.cardbody {
+			    width: 100%;
+			 }
+			.vendors-card .card{
+				width: 95%;
+			}
+			.club-text-black{
+				width: 90%;
+			}
+			.card-footer.text-muted {  
+				width:	100%;
+			    margin-right: 11px;
+			    margin-top: -48px;
+			    font-size: 19px;
+			}
+}
 </style>
 
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
-	  <div class="clearfix">
-	    <div class="navbar-header">
-	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-	      <img src="/resources/img/One_Roof_logo_Png.png" alt="logo" class="homeHeader">
-	    </div>
-	      <div class="collapse navbar-collapse" id="myNavbar">
-	      	<div class="nav-bar-header-one" style="float: right;">  
-              <div class="toggle-button sidebar-toggle">
+	  	<div class="clearfix">
+	    	<div class="navbar-header">
+	    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        				<span class="icon-bar"></span>
+        				<span class="icon-bar"></span>
+        				<span class="icon-bar"></span>                        
+      			</button>
+	      				<img src="/resources/img/One_Roof_logo.png" alt="logo" class="homeHeaderimg">
+	    	</div>
+	    	
+	      	<div class="collapse navbar-collapse" id="myNavbar">
+	      <div>
+	      	<div class="nav-bar-header-one" style="float: right;width: 5%;">  
+              	<div class="toggle-button sidebar-toggle">
                     <button type="button" class="item-link">
-                        <span class="btn-icon-wrap">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
+                        	<span class="btn-icon-wrap">
+	                            <span></span>
+	                            <span></span>
+	                            <span></span>
+                        	</span>
                     </button>
                 </div>               
             </div>
             
-             <div class="dropdown">
-  			<button class="dropbtn" style="background-color: transparent;">M E N U</button>
- 			 	<div class="dropdown-content">
-    				<a href="/clubs">VENUE</a>
-    				<a href="/services" target="_blank">SERVICES</a>
-    				<a href="/deals">DEALS</a>
-    				<a href="/login">LOGIN</a>
-  			  </div>
-		 </div>  
+            <div class="dropdown">
+  				<button class="dropbtn" style="background-color: transparent;">M E N U</button>
+ 			 		<div class="dropdown-content">
+	    				<a href="/clubs">VENUE</a>
+	    				<a href="/services" target="_blank">SERVICES</a>
+	    				<a href="/deals">DEALS</a>
+	    				<a href="/login">LOGIN</a>
+  			  		</div>
+		 	</div>  
 	      
-	      <div>
-	     	<input type="image"  src="/resources/img/DEALS_ICON.png" alt="Offers" style="height:50px;margin: 12px 0 0 921px;"/>
+		    <div>
+		     	<input type="image"  src="/resources/img/DEALS_ICON.png" alt="Offers" class="dealsimg" />
+		    </div>
 	     
-	     </div>
-	     
-	     <div class="card mb-3 search_blo" style="margin: -47px 204px -54px 628px;">
+	     	<div class="card mb-3 search_blo" >
 	            <div class="input-group search-blo">
-	                <input name="vendors_txtSearch" type="text"  id="vendors_txtSearch" class="form-control"  placeholder="Search Venues">
-	                <div class="input-group-btn">
-	                    <a class="btn btn-vendor-search" style="border-bottom-right-radius: 0px !important;border-top-right-radius: 0px !important;"><span class="fa fa-refresh" onclick="clearClubSearch();"></span></a>
-	                     <a href="#" class="btn btn-vendor-search" data-toggle="modal" data-target="#large-modal" onclick="getPopularCities()" style="margin-top: -3px;">
-			            <img src="/resources/img/cities/Locate_icon_1.png" alt="locate" style="width: 30%;float: left;"/>Cities
-			          </a>
-	                </div>
+	                	<input name="vendors_txtSearch" type="text"  id="vendors_txtSearch" class="form-control"  placeholder="Search Venues">
+	                		<div class="input-group-btn">
+	                    			<a class="btn btn-vendor-search" style="border-bottom-right-radius: 0px !important;border-top-right-radius: 0px !important;"><span class="fa fa-refresh" onclick="clearClubSearch();"></span></a>
+	                     			<a href="#" class="btn btn-vendor-search" data-toggle="modal" data-target="#large-modal" onclick="getPopularCities()" style="margin-top: -3px;position: initial;">
+			            				<img src="/resources/img/cities/Locate_icon_1.png" alt="locate" style="width: 30%;float: left;"/>Cities
+			          				</a>
+	               		   </div>
 	            </div>
-	        </div><br/> 
+	       </div>
+	    </div>
+	    
+	    <div>
+	    	<input  type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Function Halls.." title="Type in a Function Halls Name" class="venuesearch" >
+	    	<img src="/resources/img/search-icon.png" alt="Search" class="search_icon" />
+	    </div>
 	      
-	      <div>
-	     
-	     	<input  type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Function Halls.." title="Type in a Function Halls Name" style="margin: 80px 0px 0 755px;border-radius: 20px;width: 87%;margin-left: 156px;">
-	     		<img src="/resources/img/search-icon.png" alt="Search" style="height: 23px;margin: -60px 0px 1px 1192px;" />
 	     </div>
-	          
-	      
-	      </div>
-	  </div>
+	 </div>
 </nav>
 
-<div style="background: white; border-top-left-radius: 70px;margin-top: 225px;">	
+<div class ="venue_container">	
 	 <div class="container mt-10">
 	 
 <!--  	 
@@ -201,18 +351,18 @@ body {
 		   
 -->
 				<div class="mg-bt-20">
-				<h4 style="margin: 50px -25px 0px 0px;color: black;font-weight: 100;">OFFERS</h4>
-		 	       <jsp:include page="packageBanner.jsp" />
+						<h4 class ="offers">OFFERS</h4>
+		 	       		<jsp:include page="packageBanner.jsp" />
 				</div>
-				<h4 style="margin-bottom: 19px; color: black;font-weight: 100;">Party Halls</h4>  
+						<h4 class = "halls" >Party Halls</h4>  
 					      
- 	<div id="registeredVendorsList" class="row"></div>
- 	<jsp:include page="clubLocationSearch.jsp" />
- 	</div>
+ 				<div id="registeredVendorsList" class="row"></div>
+ 					<jsp:include page="clubLocationSearch.jsp" />
+ 		</div>
  </div>
  <footer class="footer" style="background-color: #890059;">
-      <div align="center">ONEROOF@2021. copyrights all rights reserved. Developed by Acculytixs Pvt Ltd.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-         	<a href="/privacyPolicy" target="_blank" style="color:rgb(212,175,55);">PRIVACY POLICY</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      <div align="center">ONEROOF 2021. copyrights all rights reserved. Developed by Acculytixs Pvt Ltd. &nbsp&nbsp&nbsp
+         	<a href="/privacyPolicy" target="_blank" style="color:rgb(212,175,55);">PRIVACY POLICY</a>&nbsp&nbsp&nbsp
       		<a href="/termsAndConditions" target="_blank" style="color:rgb(212,175,55);">TERMS AND CONDITIONS</a>
       </div>            
 </footer>
@@ -309,7 +459,7 @@ function clearClubSearch(){
 			        		result = result +'<div class="card">';
 			        		result = result +'<div class="card-footer">';
 			        		result = result +'<div class="clearfix vendors-title text-success">';
-			        		result = result +'<h5 style="font-size: 25px !important;font-family: unset;margin: 27px 0 0 -40px;font-weight: 500 !important;">';
+			        		result = result +'<h5 >';
 			        		result = result +opt.vendorName;
 			        		result = result +'</h5>';
 			        		result = result +'</div>';
@@ -318,7 +468,7 @@ function clearClubSearch(){
 			        		result = result +'<div class="col-sm-1 col-xs-2">';
 			        		result = result +'<i class="fa fa-map-marker club-text-black" aria-hidden="true"></i>';
 			        		result = result +'</div>';
-			        		result = result +'<div class="col-sm-11 col-xs-10 club-text-black" style="font-size: inherit;margin-left: -14px;">'+location+'</div>';
+			        		result = result +'<div class="col-sm-11 col-xs-10 club-text-black" >'+location+'</div>';
 			        		result = result +'<div class="col-sm-1 col-xs-2">';
 			        		//result = result +'<i class="fa fa-th-list club-text-black" aria-hidden="true"></i>';
 			        		result = result +'</div>';
@@ -336,7 +486,7 @@ function clearClubSearch(){
 			        		result = result +'<div class="card-footer text-muted">';
 			        		result = result +'&nbsp;';
 			        		result = result +'<div class="container-fluid" style="position: relative; text-align: center; color: white;">';
-			        		result = result +'<div class="bottom_left" style="position: absolute; bottom: -5px; left: 5px;">';
+			        		result = result +'<div class="bottom_left" style="position: absolute; bottom: -5px;">';
 			        		//result = result +'<a href="'+appUrl+'/ws/vendorInfo?vendorUUID='+opt.vendorUUID+'" class="card-link" style="font-weight: 700;"><span class="fa fa-search-plus">&nbsp;</span>Explore</a>';
 			        		result = result +'</div>';
 			        		result = result +'<div class="bottom_left" style="position: absolute; bottom: -5px; right: 5px;">';

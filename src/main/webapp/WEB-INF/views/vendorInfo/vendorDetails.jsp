@@ -14,9 +14,12 @@
   background-size: 100% 100%;
   width: 100%;
 }
+.card{
+	align-items: center;
+}
 .nav{
 	padding-left: 175px;
-    padding-right: 170px;
+    padding-right: 171px;
 }
 .row{
 	margin-left: 20px;
@@ -25,7 +28,7 @@
 		padding: 15px 0px 0px;
 }
 .single-info-details{
-	margin-left: 370px;
+/*	margin-left: 370px; */
 }
 .vendor_images_img{
 	width: 230px;
@@ -36,6 +39,100 @@
     border-radius: 100px;
     margin-top: -20px;
 }
+@media (max-width: 1199px){
+
+		.card{
+	align-items: center;
+	width:100%;
+}
+
+		.single-info-details{
+			margin-left: 37%;
+		}
+		.single-info-details .item-content p {
+			    width: 100%;
+			    margin-left: 35%;
+			}
+} 
+
+@media (max-width: 768px){
+
+		 .card{
+			align-items: center;
+			width:100%;
+			}
+
+		.single-info-details{
+			margin-left: 17%;
+		}
+		.single-info-details .item-content p {
+			    width: 100%;
+			   	margin-left: 48%;
+			}
+		.single-info-details .item-img{
+			width:38%;
+			height: auto;
+		}
+		.ui-tab-card .card-body .custom-tab .nav-tabs .nav-item .nav-link{
+			margin-right: 24px;
+		}
+		.nav{
+			padding-left: 2px;
+	    	padding-right: 3px;
+		}
+
+}
+@media (max-width: 575px) {
+
+		.card{
+			 align-items: center;
+			 width:100%;
+		}
+		.single-info-details{
+			margin-left: 2%;
+		}
+		.single-info-details .item-content p{
+			margin-left: 50%;
+		}
+
+}
+@media (max-width: 480px){
+
+
+		 .card{
+			 align-items: center;
+			 width:100%;
+		}
+				
+		.single-info-details{
+			margin-left: 17%;
+		}
+		.single-info-details .item-content{
+		/*	float: left; */
+		}
+		.single-info-details .item-content p {
+			    width: 100%;
+			/*   	float: left; */
+				margin-left: 140px
+			   	
+			}
+		.single-info-details .item-img{
+			width: 20%;
+    		height: auto;
+    		float: left;
+		}
+		.ui-tab-card .card-body .custom-tab .nav-tabs .nav-item .nav-link{
+			margin-right: 24px;
+		}
+		.nav{
+			padding-left: 2px;
+	    	padding-right: 3px;
+		}
+		.container, .container-sm{
+			max-width: 320px;
+		}
+}   
+
 </style>
  <div class="card height-auto">
       <div class="card-body">
@@ -61,7 +158,9 @@
                          <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;
                                         <span id="vendorLocation"></span></span><br/>
                                         <span id="directions"></span>
+                                        
                                         </h3>
+                                        
                      </div>
                      <p style="color: white;" id="vendorDescription"></p>
                  </div>
@@ -116,10 +215,10 @@
                          </div>   
                             <div class="tab-content">
                                      <jsp:include page="vendorBasicInfo.jsp" />
-                              <!--         <jsp:include page="vendorCategoriesInfo.jsp" />   -->
+                               <!--  <jsp:include page="vendorCategoriesInfo.jsp" />    -->
                                      <jsp:include page="vendorMenuInfo.jsp" />
-                               <!--      <jsp:include page="vendorFacilitiesInfo.jsp" />	-->
-                               <!--      <jsp:include page="vendorMusicGenreInfo.jsp" />	 -->
+                               <!--  <jsp:include page="vendorFacilitiesInfo.jsp" />	-->
+                               <!--  <jsp:include page="vendorMusicGenreInfo.jsp" />	-->
                                      <jsp:include page="vendorCuisineInfo.jsp" />
                                      <jsp:include page="vendorWorkingHoursInfo.jsp" />
                                      <jsp:include page="vendorTermsAndConditionsInfo.jsp" />

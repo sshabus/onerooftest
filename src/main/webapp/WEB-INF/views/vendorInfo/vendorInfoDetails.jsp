@@ -6,8 +6,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="shortcut icon" type="image/x-icon" href="/resources/img/faviconlogo.png">
-    <title>ONEROOF | Login</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
+    <title>ONEROOF | Explore</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -29,7 +29,8 @@
   position: relative;
   display: inline-block;
   float: right;
-  margin: 29px 15px 0px 0;
+  width: 115px;
+  margin-top: 20px;
 }
 
 .dropbtn {
@@ -42,7 +43,7 @@
   display: none;
   position: absolute;
   background-color: #890052;
-  min-width: 160px;
+  min-width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -53,10 +54,16 @@
   display: block;
 }
 
-.dropdown-content a:hover {background-color: goldenrod;}
+.dropdown-content a:hover {background-color: black;}
 
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {display: block;} 
 
+.dropdown-toggle{
+	color: white;
+}
+.headerimg{
+	max-width: 150px;
+}
 </style>
 
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -76,7 +83,7 @@
 
 <div id="wrapper" class="wrapper bg-ash mt-5">
 	
-		<img id="Image1" src="/resources/img/logo_icon.png" style="height: 150px; margin-left: 8px;">
+		<img id="Image1" src="/resources/img/One_Roof_logo.png"  class ="headerimg"/>
 					
 				<div class="dropdown">
   					<button class="dropbtn" style="background-color: transparent;">M E N U</button>
@@ -88,7 +95,7 @@
   			  			</div>
 			    </div>
 			    
-			    <ul style="margin: -115px 1px 100px 1095px;">
+			    <ul style="float: right;margin-top: 27px;">
                 	<li >
                         <a class="navbar-nav-link dropdown-toggle" href="${Wayuparty_appUrl}/cart" aria-expanded="false">
                             <i class="shopping-cart"></i>
@@ -109,7 +116,7 @@
  </div>
  
   <footer class="footer" >
-            <div class="container">
+            <div class="container" style="color: black;">
                 ONEROOF 2021. copyrights all rights reserved. Developed by Acculytixs Pvt Ltd.
             </div>
  </footer>

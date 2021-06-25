@@ -5,8 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="shortcut icon" type="image/x-icon" href="/resources/img/faviconlogo.png">
-    <title>ONEROOF | Login</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
+    <title>ONEROOF | SERVICES</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -73,8 +73,17 @@ max-width: 150px !important;
 .navbar {
 	margin-bottom: -80px;
 }
-service_wrap_inn {
+.service_wrap_inn {
 		width: 71px;
+}
+.headerimg{
+	max-width: 150px;
+}
+.dropdown-toggle{
+	color: white;
+}
+.dashboard-content-one{
+	align-items: center;
 }
 </style>
 
@@ -98,7 +107,7 @@ service_wrap_inn {
 
 <div id="wrapper" class="wrapper bg-ash mt-5">
 		
-		<img id="Image1" src="/resources/img/logo_icon.png" style="height: 150px; margin-left: 8px;">
+		<img id="Image1" src="/resources/img/One_Roof_logo.png" class="headerimg">
 		
 		
 				<div class="dropdown">
@@ -111,7 +120,7 @@ service_wrap_inn {
   			  			</div>
 			    </div>
 		
-				<ul style="margin: -97px 1px 129px 1104px;">
+				<ul style="float: right;margin-top: 54px;">
                 <li >
                         <a class="navbar-nav-link dropdown-toggle" href="${Wayuparty_appUrl}/cart" aria-expanded="false">
                             <i class="shopping-cart"></i>
@@ -130,7 +139,7 @@ service_wrap_inn {
 	     </div>
  </div>
   <footer class="footer" style="background-color: white;">
-            <div class="container">
+            <div class="container" style="color:black">
                ONEROOF 2021. copyrights all rights reserved. Developed by Acculytixs Pvt Ltd.
             </div>
  </footer>

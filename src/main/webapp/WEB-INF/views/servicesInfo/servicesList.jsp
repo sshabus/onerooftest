@@ -3,7 +3,7 @@
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
- <link rel="shortcut icon" type="image/x-icon" href="/resources/img/Oneroof_icon.png">
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
 
 <style>
@@ -31,7 +31,7 @@ img{
 .header-inline{
 	margin: 50px 0 0px -40px;
 }
-span.view-subtitle{
+.span.view-subtitle{
 	ont-size: 15px !important;
     color: white;
     line-height: 40px;
@@ -205,7 +205,7 @@ span.view-subtitle{
 	    			        		  
 	    			        		  if(service.serviceName != 'Events'){
 	    			        			  result = result +'<li class="nav-item">';
-		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\')" role="tab" aria-selected="true" ><img style="max-width: 75px;margin-left: -8px;" src="'+service.serviceImage+'"></img></a><span><strong> <div align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;">'+service.serviceName+'</strong></span>';
+		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\')" role="tab" aria-selected="true" ><img style="max-width: 75px;margin-left: -8px;background-color: white" src="'+service.serviceImage+'"></img></a><span><strong> <div align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;">'+service.serviceName+'</strong></span>';
 		    			        		  result = result +'</li>';
 	    			        		  }
 	    			        		  
