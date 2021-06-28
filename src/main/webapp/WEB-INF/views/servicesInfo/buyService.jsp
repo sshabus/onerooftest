@@ -22,6 +22,8 @@
                                                <li class="col-xl-6 col-lg-6 col-12" id="minimumOrderDiv" style="display: none"><strong>Minimum Order	: </strong><span id="minimumOrder"></span></li>
                                                <li class="col-xl-6 col-lg-6 col-12" id="discountValueDiv" style="display: none"><strong>Discount Value	: </strong><span id="discountValue"></span></li>
                                                <li class="col-xl-6 col-lg-6 col-12"><strong>Order Date  : </strong><span id="orderDate"></span></li>
+                                               <li class="col-xl-6 col-lg-6 col-12"><strong>Start Date  : </strong><span id="fromDate"></span></li>
+                                               <li class="col-xl-6 col-lg-6 col-12"><strong>End Date  : </strong><span id="toDate"></span></li>
                                                <li class="col-xl-6 col-lg-6 col-12"><strong>Time Slot  : </strong><span id="timeslot"></span></li>
                                                <li class="col-xl-6 col-lg-6 col-12" style="display: none;" id="guestEntryTimeDiv"><strong>Guest Entry Time  : </strong><span id="guestEntryTime"></span></li>
                                                <li class="col-xl-6 col-lg-6 col-12" style="display: none;" ><strong>Allowed  : </strong><span id="allowed"></span></li>
@@ -89,6 +91,9 @@
        function getServiceDetails(serviceUUID,categoryUUID,isEntryRatioEnabled){
     	   $("#orderDate").html('');
 	       $("#timeslot").html('');
+	       $("#fromDate").html('');
+		   $("#toDate").html('');
+		   
     	   var orderDate = getSelectedDateFromCalendar($("#serviceCalendar"+serviceUUID).val());
     	   //var timeslot = $("input[name='timeslot"+serviceUUID+"']:checked").val();
 		   
@@ -99,8 +104,10 @@
 			}else if($("#selectedSecondSlot").hasClass('selectedSlot')) {
 				var timeslot = $("#selectedSecondSlot").val();
 			}
-
-
+           
+           var fromDate = $("#startDate").val();
+		   var toDate = $("#endDate").val();
+		   
     	   $("#totalPriceCurrency").html(currencyCode);
     	   var appUrl ='${appUrl}';
     	   $("#serviceDetailsLoaderDiv").attr('style','position:absolute; width:100%; height:180%; background-color:rgba(255,255,255,0.8); top:50px; left:0px; z-index:100;background-image:url("/resources/img/preloader.gif"); background-position:center; background-repeat:no-repeat; background-size:75px;');
@@ -115,6 +122,8 @@
     			    	 $("#actualPrice").html(response.object.actualPrice);
     			    	 $("#offerPrice").html(response.object.offerPrice);
     			    	 $("#orderDate").html(orderDate);
+    			    	 $("#fromDate").html(fromDate);
+    			    	 $("#toDate").html(toDate);
     			    	 $("#timeslot").html(timeslot);
     			    	 
     			    	 
@@ -352,6 +361,8 @@
 			}
 
 
+    	   var fromDate = $("#startDate").val();
+    	   var toDate = $("#endDate").val();
     	   
     	   if(orderDate == '' || timeslot == ''){
     		     $("#invalidMsgDiv").removeAttr("style");
@@ -387,6 +398,8 @@
    			   formData.append("serviceId", vendorMasterServiceId);
    			   formData.append("vendorId", vendorId);
    			   formData.append("serviceOrderDate", orderDate);
+   			   formData.append("startDate", fromDate);
+   			   formData.append("endDate", toDate);
    			   formData.append("timeslot", timeslot);
    			   formData.append("quantity", quantity);
    			   formData.append("orderAmount", offerPrice);

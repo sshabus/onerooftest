@@ -14,6 +14,10 @@ public class UserCartDTO implements Serializable{
 	
 	private String serviceOrderDate;
 	
+	private String startDate;
+	
+	private String endDate;
+	
 	private String timeslot;
 	
 	private Double orderAmount;
@@ -157,7 +161,21 @@ public class UserCartDTO implements Serializable{
 	public void setSurpriseInstructions(String surpriseInstructions) {
 		this.surpriseInstructions = surpriseInstructions;
 	}
-	
-	
 
+	public String getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+	}
+
+	public String getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
+	
 }

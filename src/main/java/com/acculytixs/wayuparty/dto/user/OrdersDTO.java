@@ -61,6 +61,10 @@ public class OrdersDTO {
 	
 	private String isUserArrived;
 	
+	private String startDate;
+	
+	private String endDate;
+	
 
 	public String getUserName() {
 		return userName;
@@ -278,5 +282,20 @@ public class OrdersDTO {
 		this.isUserArrived = isUserArrived;
 	}
 
-	
+	public String getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+	}
+
+	public String getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
+
 }

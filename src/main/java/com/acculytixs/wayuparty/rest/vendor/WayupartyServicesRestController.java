@@ -734,5 +734,41 @@ public class WayupartyServicesRestController {
 		return response;
 	}
 	
+	@RequestMapping(value = { "/validateVendorTimeSlot", "/rest/validateVendorTimeSlot" }, method = RequestMethod.POST)
+	public  Response<String> validateVendorTimeSlot(
+			@RequestParam(value = "startDate", required = true) String startDate,
+			@RequestParam(value = "endDate", required = true) String endDate,
+			@RequestParam(value = "vendorUUID", required = true) String vendorUUID, HttpServletRequest request)
+			throws Exception {
+		Response<String> response = new Response<>();
+
+		try {
+			Long vendorId = vendorService.getVendorIdByUUID(vendorUUID);
+			Date serviceStartDate = new SimpleDateFormat("dd/MM/yyyy").parse(startDate);  
+			Date serviceEndDate = new SimpleDateFormat("dd/MM/yyyy").parse(endDate);  
+			
+			 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");  
+			 startDate = formatter.format(serviceStartDate);  
+			 endDate = formatter.format(serviceEndDate); 
+			 boolean flag;
+			
+			 flag = vendorServicesService.isVendorTimeSlotValid(startDate, endDate, vendorUUID); 
+
+				if (flag == true) {
+					response.setResponse(Result.INVALID_DATA.name());
+				} else {
+					response.setResponse(Result.VALID_DATA.name());
+				}
+
+
+		} catch (Exception e) {
+			response.setResponse(Result.AWKWARD.name());
+			response.setResponseMessage(Result.AWKWARD.getValue());
+			e.printStackTrace();
+		}
+
+		return response;
+	}
+	
 
 }

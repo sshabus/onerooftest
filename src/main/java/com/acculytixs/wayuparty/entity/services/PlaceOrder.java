@@ -96,6 +96,11 @@ public class PlaceOrder implements Serializable{
 	@Column(name = "status")
 	private Integer status;
 	
+	@Column(name = "start_date")
+	private Date startDate;
+	
+	@Column(name = "end_date")
+	private Date endDate;
 	
 
 	public Long getId() {
@@ -304,6 +309,26 @@ public class PlaceOrder implements Serializable{
 
 	public void setOrderCanceledDate(Date orderCanceledDate) {
 		this.orderCanceledDate = orderCanceledDate;
+	}
+
+	public Date getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 	
 

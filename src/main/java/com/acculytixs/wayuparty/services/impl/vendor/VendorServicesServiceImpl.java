@@ -1061,4 +1061,10 @@ public class VendorServicesServiceImpl implements VendorServicesService{
 	public String getServiceNameByServiceId(Long serviceId) throws Exception {
 		return vendorServicesDao.getServiceNameByServiceId(serviceId);
 	}
+	
+	@Override
+	public boolean isVendorTimeSlotValid(String serviceStartDate, String serviceEndDate, String vendorUUID)
+			throws Exception {
+		return vendorServicesDao.isVendorTimeSlotValid(serviceStartDate, serviceEndDate, vendorUUID);
+	}
 }

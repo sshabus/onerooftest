@@ -23,6 +23,11 @@ public class PlaceOrderDTO implements Serializable{
 	
 	private String serviceOrderDate;
 	
+	private String startDate;
+
+	private String endDate;
+
+	
 	private String serviceTimeSlot;
 	
 	private String vendorUUID;
@@ -303,5 +308,20 @@ public class PlaceOrderDTO implements Serializable{
 		this.rating = rating;
 	}
 
-	
+	public String getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+	}
+
+	public String getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
+
 }

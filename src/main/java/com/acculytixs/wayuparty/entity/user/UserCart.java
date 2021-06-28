@@ -54,6 +54,12 @@ public class UserCart implements Serializable{
 	@Column(name = "service_ordered_date")
 	private Date serviceOrderedDate;
 	
+	@Column(name = "start_date")
+	private Date startDate;
+	
+	@Column(name = "end_date")
+	private Date endDate;
+	
 	@Column(name = "service_time_slot",columnDefinition = "TEXT default NULL")
 	private String serviceTimeSlot;
 	
@@ -204,6 +210,21 @@ public class UserCart implements Serializable{
 	public void setStatus(Integer status) {
 		this.status = status;
 	}
-	
 
+	public Date getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+	
 }

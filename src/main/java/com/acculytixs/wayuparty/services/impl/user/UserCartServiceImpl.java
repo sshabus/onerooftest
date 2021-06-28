@@ -142,6 +142,13 @@ public class UserCartServiceImpl implements UserCartService{
 		
 		Date serviceOrderDate = new SimpleDateFormat("dd/MM/yyyy").parse(userCartDTO.getServiceOrderDate());  
 		userCart.setServiceOrderedDate(serviceOrderDate);
+		
+		Date startDate = new SimpleDateFormat("dd/MM/yyyy").parse(userCartDTO.getStartDate());  
+		userCart.setStartDate(startDate);
+		
+		Date endDate = new SimpleDateFormat("dd/MM/yyyy").parse(userCartDTO.getEndDate());  
+		userCart.setEndDate(endDate);
+		
 		userCart.setCreatedDate(new Date());
 		userCart.setUuid(RandomCodeHelper.generateRandomUUID());
 		userCart.setStatus(1);
@@ -230,6 +237,9 @@ public class UserCartServiceImpl implements UserCartService{
 				}
 				
 				placeOrder.setServiceOrderedDate(userCart.getServiceOrderedDate());
+				placeOrder.setStartDate(userCart.getStartDate());
+				placeOrder.setEndDate(userCart.getEndDate());
+
 				placeOrder.setCreatedDate(new Date());
 				String orderUUID = RandomCodeHelper.generateRandomUUID();
 				placeOrder.setUuid(orderUUID);

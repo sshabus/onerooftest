@@ -600,6 +600,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							  result = result+'<p id="entryErrorMessage'+opt.masterServiceUUID+'" style="display:none"><i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;Invalid men and women entry ratio.</p>';
 							  result = result+'<p id="personsErrorMessage'+opt.masterServiceUUID+'" style="display:none"><i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;Invalid entry count</p>';
 							  result = result+'<p id="stagsErrorMessage'+opt.masterServiceUUID+'" style="display:none"><i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;Invalid entry count</p>';
+							  result = result+'<p id="alreadyBookSlotErrorMessage'+opt.masterServiceUUID+'" style="display:none"><i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;Selected slots are already booked.</p>';
 							  result = result+'</div>';
 							  result = result+'</div>';
 							  
@@ -842,100 +843,148 @@ function getTimeSlotValidation(serviceUUID){
 </script>
 
 <script>
-   function getServiceInfo(serviceUUID,service,isEntryRatioEnabled,allowed){
-	   if(getTimeSlotValidation(serviceUUID)){
-		   var orderDate = getSelectedDateFromCalendar($("#serviceCalendar"+serviceUUID).val());
-		   var timeslot = $("input[name='timeslot"+serviceUUID+"']:checked").val();
-		   $("#number"+serviceUUID).val(getDaysDiff($("#startDate").val(), $("#endDate").val()))
-		   var quantity = $("#number"+serviceUUID).val();
-		   var totalAllowed = allowed*quantity;
-		   if(service == 'Surprise'){
-				var surpriseFor = $("#surpriseFor").val();
-		  		var surpriseOccation = $("#surpriseOccation").val();
-		  		var surpriseInstructions = $("#occationInstructions").val();
-			   if(orderDate != '' && orderDate != 'undefined' && timeslot !=  '' && typeof(timeslot) != 'undefined'
-					   && surpriseFor != '' && surpriseFor != 'undefined' && surpriseOccation != '' && surpriseOccation != 'undefined'
-						   && surpriseInstructions != '' && surpriseInstructions != 'undefined'){
-				   $("#surpriseErrorMessage"+serviceUUID).css({ display: "none" });
-				   if(isEntryRatioEnabled == 'Y'){
-					   var menRatio = $("#menRatio"+serviceUUID).val();
-					   var womenRatio = $("#womenRatio"+serviceUUID).val();
-					   
-					   if(Number(womenRatio) >= 1){
-						   $("#stagsErrorMessage"+serviceUUID).css({ display: "none" });
-						   var personEntryCount = Number(menRatio) + Number(womenRatio)
-						   if(personEntryCount == 0 || (Number(personEntryCount) > Number(totalAllowed))){
-							   $("#personsErrorMessage"+serviceUUID).css({ display: "block" });
-						   }else{
-							   $("#personsErrorMessage"+serviceUUID).css({ display: "none" });
-							   var enabledRatio = Number(menRatio) - Number(womenRatio);
-							   if((parseInt(womenRatio) >= parseInt(enabledRatio)) || Number(menRatio) == 1){
-								   $("#entryErrorMessage"+serviceUUID).css({ display: "none" });
-								   $("#buyService"+serviceUUID).click();
-							   }else{
-								   $("#entryErrorMessage"+serviceUUID).css({ display: "block" });
-							   }
-						   }
-					   }else{
-						   $("#stagsErrorMessage"+serviceUUID).css({ display: "block" });
-					   }
-					   
-				
-					   
-				   }else{
-					   $("#buyService"+serviceUUID).click();
-				   }
-				   
-			   }else{
-				   $("#surpriseErrorMessage"+serviceUUID).css({ display: "block" });
-			   }
-		   }else{
-			   var fromDate = $("#startDate").val();
-			   var toDate = $("#endDate").val();
-			  
-			   var orderDate = $("#startDate").val();
-			   $("#serviceCalendar"+serviceUUID).val(fromDate);
+   function getServiceInfo(serviceUUID, service, isEntryRatioEnabled, allowed) {
 
-			   if(fromDate != '' && fromDate != 'undefined' && toDate != '' && toDate != 'undefined'){
-				   $("#errorMessage"+serviceUUID).css({ display: "none" });
-				   if(isEntryRatioEnabled == 'Y'){
-					   var menRatio = $("#menRatio"+serviceUUID).val();
-					   var womenRatio = $("#womenRatio"+serviceUUID).val();
-			   		   
-					   if(Number(womenRatio) >= 1){
-						   $("#stagsErrorMessage"+serviceUUID).css({ display: "none" });
-						   var personEntryCount = Number(menRatio) + Number(womenRatio)
-						   if(personEntryCount == 0 || (Number(personEntryCount) > Number(totalAllowed))){
-							   $("#personsErrorMessage"+serviceUUID).css({ display: "block" });
-						   }else{
-							   $("#personsErrorMessage"+serviceUUID).css({ display: "none" });
-							   var enabledRatio = Number(menRatio) - Number(womenRatio);
-							   if((parseInt(womenRatio) >= parseInt(enabledRatio)) || Number(menRatio) == 1){
-								   $("#entryErrorMessage"+serviceUUID).css({ display: "none" });
-								   $("#buyService"+serviceUUID).click();
-							   }else{
-								   $("#entryErrorMessage"+serviceUUID).css({ display: "block" });
-							   }
-						   }
-					   }else{
-						   $("#stagsErrorMessage"+serviceUUID).css({ display: "block" });
-					   }
-					   
-				   }else{
-					   $("#buyService"+serviceUUID).click();
-				   }
-			   }else{
-				   $("#errorMessage"+serviceUUID).css({ display: "block" });
-			   }
-		   }
-	   }else{
-		   alert("Invalid time slot. Choose another time slot");
-	   }
-	  
+
+		var vendorUUID = '${vendorUUID}';
+		var appUrl = '${appUrl}';
+		var formData = new FormData();
+
+		formData.append("vendorUUID", vendorUUID);
+		formData.append("startDate", $("#startDate").val());
+		formData.append("endDate", $("#endDate").val());
+
+		$.ajax({
+			data: formData,
+			contentType: false,
+			processData: false,
+			type: "POST",
+			url: appUrl + "/validateVendorTimeSlot?${_csrf.parameterName}=${_csrf.token}",
+			success: function (result) {
+				if (result.response == "INVALID_DATA") {
+					alert("Selected slots are already booked.");
+					$("#alreadyBookSlotErrorMessage" + serviceUUID).css({ display: "block" });
+
+				} else {
+					$("#alreadyBookSlotErrorMessage" + serviceUUID).css({ display: "none" });
+					var orderDate = getSelectedDateFromCalendar($("#serviceCalendar" + serviceUUID).val());
+					var timeslot = $("input[name='timeslot" + serviceUUID + "']:checked").val();
+					$("#number" + serviceUUID).val(getDaysDiff($("#startDate").val(), $("#endDate").val()))
+					var quantity = $("#number" + serviceUUID).val();
+					var totalAllowed = allowed * quantity;
+					if (service == 'Surprise') {
+						var surpriseFor = $("#surpriseFor").val();
+						var surpriseOccation = $("#surpriseOccation").val();
+						var surpriseInstructions = $("#occationInstructions").val();
+						if (orderDate != '' && orderDate != 'undefined' && timeslot != '' && typeof (timeslot) != 'undefined'
+							&& surpriseFor != '' && surpriseFor != 'undefined' && surpriseOccation != '' && surpriseOccation != 'undefined'
+							&& surpriseInstructions != '' && surpriseInstructions != 'undefined') {
+							$("#surpriseErrorMessage" + serviceUUID).css({ display: "none" });
+							if (isEntryRatioEnabled == 'Y') {
+								var menRatio = $("#menRatio" + serviceUUID).val();
+								var womenRatio = $("#womenRatio" + serviceUUID).val();
+
+								if (Number(womenRatio) >= 1) {
+									$("#stagsErrorMessage" + serviceUUID).css({ display: "none" });
+									var personEntryCount = Number(menRatio) + Number(womenRatio)
+									if (personEntryCount == 0 || (Number(personEntryCount) > Number(totalAllowed))) {
+										$("#personsErrorMessage" + serviceUUID).css({ display: "block" });
+									} else {
+										$("#personsErrorMessage" + serviceUUID).css({ display: "none" });
+										var enabledRatio = Number(menRatio) - Number(womenRatio);
+										if ((parseInt(womenRatio) >= parseInt(enabledRatio)) || Number(menRatio) == 1) {
+											$("#entryErrorMessage" + serviceUUID).css({ display: "none" });
+											$("#buyService" + serviceUUID).click();
+										} else {
+											$("#entryErrorMessage" + serviceUUID).css({ display: "block" });
+										}
+									}
+								} else {
+									$("#stagsErrorMessage" + serviceUUID).css({ display: "block" });
+								}
+							} else {
+
+								$("#buyService" + serviceUUID).click();
+							}
+
+						} else {
+							$("#surpriseErrorMessage" + serviceUUID).css({ display: "block" });
+						}
+					} else {
+						var fromDate = $("#startDate").val();
+						var toDate = $("#endDate").val();
+
+						var orderDate = $("#startDate").val();
+						$("#serviceCalendar" + serviceUUID).val(fromDate);
+
+						if (fromDate != '' && fromDate != 'undefined' && toDate != '' && toDate != 'undefined') {
+							$("#errorMessage" + serviceUUID).css({ display: "none" });
+
+							if (isEntryRatioEnabled == 'Y') {
+								var menRatio = $("#menRatio" + serviceUUID).val();
+								var womenRatio = $("#womenRatio" + serviceUUID).val();
+
+								if (Number(womenRatio) >= 1) {
+									$("#stagsErrorMessage" + serviceUUID).css({ display: "none" });
+									var personEntryCount = Number(menRatio) + Number(womenRatio)
+									if (personEntryCount == 0 || (Number(personEntryCount) > Number(totalAllowed))) {
+										$("#personsErrorMessage" + serviceUUID).css({ display: "block" });
+									} else {
+										$("#personsErrorMessage" + serviceUUID).css({ display: "none" });
+										var enabledRatio = Number(menRatio) - Number(womenRatio);
+										if ((parseInt(womenRatio) >= parseInt(enabledRatio)) || Number(menRatio) == 1) {
+											$("#entryErrorMessage" + serviceUUID).css({ display: "none" });
+											$("#buyService" + serviceUUID).click();
+										} else {
+											$("#entryErrorMessage" + serviceUUID).css({ display: "block" });
+										}
+									}
+								} else {
+									$("#stagsErrorMessage" + serviceUUID).css({ display: "block" });
+								}
+
+							} else {
+
+								$("#buyService" + serviceUUID).click();
+							}
+						} else {
+							$("#errorMessage" + serviceUUID).css({ display: "block" });
+						}
+					}
+
+				}
+			},
+		});
+	}  
+
+   function isTimeSlotAlreadyBook(startDate, endDate){
+	    	 var vendorUUID = '${vendorUUID}';
+    		 var appUrl ='${appUrl}';
+    		 var formData = new FormData();
+    		 
+    		 formData.append("vendorUUID", vendorUUID);
+    		 formData.append("startDate", startDate);
+    		 formData.append("endDate", endDate);
+    		 
+    		 $.ajax({
+    	   		data: formData,
+   	    	    contentType: false,
+		   	    processData: false,
+    		   	type: "POST",
+    			url: appUrl+"/validateVendorTimeSlot?${_csrf.parameterName}=${_csrf.token}", 
+    				success: function(result) {
+	    		    	 if(result.response == "INVALID_DATA"){
+	    		    	 	   		return false;
+	    		    	 }else{
+	    		    	 		return true;
+	    		    	 }
+	    		},
+	    	});
    }
 
    function getPackagesServiceInfo(serviceUUID,isEntryRatioEnabled,allowed){
-	   if(getTimeSlotValidation(serviceUUID)){
+
+   if(getTimeSlotValidation(serviceUUID) && isTimeSlotAlreadyBook($("#startDate").val(),$("#endDate").val())){
 		   var orderDate = getSelectedDateFromCalendar($("#serviceCalendar"+serviceUUID).val());
 		   var timeslot = $("input[name='timeslot"+serviceUUID+"']:checked").val();
 		   $("#number"+serviceUUID).val(getDaysDiff($("#startDate").val(), $("#endDate").val()))
@@ -944,6 +993,7 @@ function getTimeSlotValidation(serviceUUID){
 		   
 		   if(orderDate != '' && orderDate != 'undefined' && timeslot !=  '' && typeof(timeslot) != 'undefined'){
 			   $("#errorMessage"+serviceUUID).css({ display: "none" });
+			   
 			   if(isEntryRatioEnabled == 'Y'){
 				   var menRatio = $("#menRatio"+serviceUUID).val();
 				   var womenRatio = $("#womenRatio"+serviceUUID).val();

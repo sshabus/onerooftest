@@ -68,4 +68,6 @@ public interface VendorServicesService {
 	String getServiceNameByServiceUUID(String serviceUUID) throws Exception;
 	
 	String getServiceNameByServiceId(Long serviceId) throws Exception;
+	
+	boolean isVendorTimeSlotValid(String serviceStartDate, String serviceEndDate, String vendorUUID) throws Exception;
 }

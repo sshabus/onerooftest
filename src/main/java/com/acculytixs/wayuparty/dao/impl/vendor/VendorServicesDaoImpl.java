@@ -687,5 +687,30 @@ public class VendorServicesDaoImpl implements VendorServicesDao{
 		String serviceName = (String) queryObj.uniqueResult();
 		return serviceName;
 	}
+	
+	@Override
+	public boolean isVendorTimeSlotValid(String serviceStartDate, String serviceEndDate, String vendorUUID)
+			throws Exception {
+		
+		boolean flag = false;
+		Session currentSession = entityManager.unwrap(Session.class);
+		String query = null;
+		Query queryObj = null;
+		
+		query = "SELECT COUNT(*) " 
+				+" FROM "
+			    +" place_order placeOrder where ((STR_TO_DATE('"+serviceStartDate+"', '%Y-%m-%d')  BETWEEN placeOrder.start_date" + 
+			    " and  placeOrder.end_date) OR (STR_TO_DATE('"+serviceEndDate+"', '%Y-%m-%d')  BETWEEN placeOrder.start_date" + 
+			    " and  placeOrder.end_date)) and "
+			    +" placeOrder.vendor_uuid = :vendorUUID";
+		
+		queryObj = currentSession.createSQLQuery(query);
+		queryObj.setString("vendorUUID", vendorUUID);
+		BigInteger servicesCount = (BigInteger) queryObj.uniqueResult();
+		if(servicesCount.intValue() > 0) {
+			flag = true;
+		}
+		return flag;
+	}
 
 }
