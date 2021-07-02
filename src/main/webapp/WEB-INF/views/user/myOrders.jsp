@@ -22,13 +22,140 @@
 }
 .sidebar-expand-md {
    float:right;
-  }
+}
 .navbar {
 	margin: -135px 0 0 0;
 }
 .breadcrumbs-area {
     	 padding: 35px 40px 35px;
 }
+
+/* my orders changes  */
+
+.myorders_background{
+	background: #eb9b9b45;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+.orderdate{
+	color:white;
+	margin-top: 12px;
+	padding-left: 28px;
+} 
+
+.order_on{
+	color:white;
+	margin-top: 8px;
+	padding-left: 51px;
+	width: 50%;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 18px;
+}
+.club_name{
+	color: white;
+	width: 153%;
+	font-size: 27px;
+}
+.amount{
+	float:right;
+	margin-right: -100px;
+	margin-top: -23px;
+	color:white;
+}
+.rating_bg{
+
+	background: white;
+	text-align: center;
+	line-height: 2;
+	
+}
+.qr_margn_top{
+	float:right;
+	margin-right: -50%;
+}
+
+.a{
+	font-size: 16px;
+}
+.cart_widget_inner{
+	border-bottom: 0px solid #ccc;
+}
+
+@media (max-width: 786px){
+	.sidebar-menu-one .mobile-sidebar-header{
+		display: none;
+	}
+	.sidebar-color {
+	    margin-top: 51px;
+	    padding-bottom: 42%;  
+    }
+    .sidebar-collapsed-mobile .sidebar-main{
+		margin-left: 74%;
+	    width: 20rem;
+	    margin-top: 26%;
+	}
+	.sidebar-menu-one .sidebar-menu-content{
+		margin-top: 18%;
+	}
+	.dashboard-content-one {
+    	margin-top: 47px;
+    }
+    .row {
+    	flex-wrap: unset;
+    }
+}
+@media (max-width: 480px){
+	.sidebar-menu-one .mobile-sidebar-header{
+		display: none;
+	}
+	.sidebar-color {
+	    margin-top: 51px;
+	    padding-bottom: 42%;  
+    }
+    .sidebar-collapsed-mobile .sidebar-main{
+		margin-left: 53%;
+	    width: 20rem;
+	    margin-top: 34%;
+	}
+	.sidebar-menu-one .sidebar-menu-content{
+		margin-top: 18%;
+	}
+	
+}
+@media (max-width: 360px){
+
+	.myorders_background {
+	    margin-left: 0%;
+	    margin-right: 0%;
+	}
+	.orderdate {
+	   
+	    padding-left: 13px;
+}
+	.order_on{
+		padding-left: 23px;
+   		width: 23%;
+	}
+	.club_name{
+		
+		width: 135%;
+		font-size: 16px;
+		margin-top: -107px;
+	}
+
+	.amount{
+		margin-right: 12px;
+    	margin-top: -5px;
+	}
+	.qr_margn_top{
+		
+		margin-right: 34%;
+	}
+}
+
+
+
 
 </style>
 
@@ -59,7 +186,9 @@
 						    <div class="col-sm-12 col-md-12">
 					  	    <h4 style="color:white;margin-left: 40px;">Orders</h4>            
 						    <div class="cart_widget">
+						    <div class="myorders_background">
 								<div id="ordersListDiv"></div>
+							</div>
 						    </div>
 						  </div>
 						  </div>
@@ -103,34 +232,29 @@
 	   				{ 
 		        		 var opt = resultData.data[i];
 		        		 var currencyType = getCurrency(opt.currency);
-		        		 if(opt.isUserRated == 'N'){
-		        			 result = result +'<a  href="#" data-toggle="modal" data-target="#rating-modal" onclick="placeOrderRating(\''+opt.placeOrderCode+'\',);"><i class="fas fa-plus text-dark-pastel-green"></i>&nbsp;Add Rating</a>';
-		        		 }else{
-		        			 result = result +'<ul>';
-			        		 for(var j=0; j<5; j++){
-			        			 if(j < opt.rating){
-			        				 result = result +'<li class="fa fa-star textStarFilling"></li>';
-			        			 }else{
-			        				 result = result +'<li class="fa fa-star text-muted"></li>';
-			        			 }
-			        		 }
-			        		 result = result +'</ul>'; 
-		        		 }
+		        		 
 		        		 
 		        		 result = result +'<a href="#" data-toggle="modal" data-target="#right-slide-modal" onclick="getUserOrderDetails(\''+opt.orderItems+'\',\''+opt.orderRates+'\',\''+opt.totalAmount+'\',\''+opt.orderUUIDs+'\',\''+currencyType+'\',\''+opt.orderDateStatus+'\',\''+opt.orderItemsCanceled+'\',\''+opt.orderItemsReschedule+'\',\''+opt.orderStatus+'\',\''+opt.userArrivedStatus+'\')">';
 		        		 result = result +'<div class="clearfix row cart_widget_inner">';
 		        		 result = result +'<div class="col-sm-12 col-md-10">';
 		        		 result = result +'<div class="row">';
-		        		 result = result +'<div class="col-sm-12 col-md-8 cart_margn_top">';
-		        		 result = result +'<p>'+opt.clubName+'</p>';
-		        		 result = result +'<p class="small text-muted">'+opt.clubLocation+'</p>';
-		        		 result = result +'<p>'+opt.orderItems+'</p>';
-		        		 result = result +'<p>'+currencyType+' '+opt.totalAmount+'</p>';
+		        		 result = result +'<div class="col-sm-12 col-md-4">';
+		        		 result = result +'<h4 class="orderdate" style="margin-top: 12px;">Ordered Date</h4>';
+		        		 result = result +'<h4 class="order_on"style="margin-top: 8px;font-size: 18px;">'+opt.orderDate+'</h4>';
+		        		 result = result +'</div>';
+		        		 result = result +'<div class="col-sm-12 col-md-4 cart_margn_top" style="text-align: center;">';
+		        	     result = result +'<h1 class="club_name">'+opt.clubName+'</h1>';
+		        	     
+		        	     
+		        		 result = result +'<h4 class="small text-muted"style="margin-right: -50%;">'+opt.clubLocation+'</h4>';
+		        		 result = result +'<h4 style="color:white;margin-left: -63%;">'+opt.orderItems+'</h4>';
+		        		 result = result +'<h4 class="amount" style="margin-right: -100px; margin-top: -23px;" >'+currencyType+' '+opt.totalAmount+'</h4>';
 		        		 result = result +'</div>';
 		        		 
+		        	
 		        		 result = result +'<div class="col-sm-12 col-md-4">';
 		        		 result = result +'<div class="cart_margn_top">';
-		        		 result = result +'<p>Order date on '+opt.orderDate+'</p>';
+		        		 
 		        		 
 	        			 result = result +'<div class="qr_code_img qr_margn_top">';
 						 result = result +'<img src="'+opt.qrCode+'" onerror="predefineQRImage(this);" class="img-responsive" />';
@@ -143,6 +267,23 @@
 		        		 result = result +'</div>';
 		        		 result = result +'</div>';
 		        		 result = result +'</a>';
+		        		 
+		        		 
+		        		 if(opt.isUserRated == 'N'){
+		        			 result = result +'<div class="rating_bg">';
+		        			 result = result +'<a  href="#" data-toggle="modal" data-target="#rating-modal" onclick="placeOrderRating(\''+opt.placeOrderCode+'\',);"><i class="fas fa-plus text-dark-pastel-green"></i>&nbsp;Rate Your Order</a>';
+		        			 result = result +'</div>';
+		        		 }else{
+		        			 result = result +'<ul>';
+			        		 for(var j=0; j<5; j++){
+			        			 if(j < opt.rating){
+			        				 result = result +'<li class="fa fa-star textStarFilling"></li>';
+			        			 }else{
+			        				 result = result +'<li class="fa fa-star text-muted"></li>';
+			        			 }
+			        		 }
+			        		 result = result +'</ul>'; 
+		        		 }
 	   				}
 		        	
 		        	 $("#ordersListDiv").empty();  

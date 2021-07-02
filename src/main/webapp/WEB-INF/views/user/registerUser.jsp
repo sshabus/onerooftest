@@ -84,7 +84,7 @@
   
 }  
 .loginForm{
-	width: 357px;
+/*	width: 357px;	*/
 	padding: 3rem;
 	margin-top: -30px;
 }
@@ -92,7 +92,7 @@
 	
 	text-align:center;
 	position: fixed;
-	top: 160px;
+	top: 90px;
 	right: 404px;
 }  
 .header{
@@ -100,7 +100,8 @@
 	font-family: 'Poppins', -webkit-body;
 }
 .logo{
-	max-width: 18%;
+	max-width: 30%;
+    height: auto;
 }
 .mainline{
 	color: white;
@@ -163,12 +164,36 @@
 			display: none
 		}
 		.logo{
-			max-width: 30%;
+			max-width: 40%;
 		}
 		.signup_page{
-			bottom: 43px;
-    		height: 80%;
-    		min-width: 100%;
+			bottom: 28px;
+		    height: 75%;
+		    min-width: 100%;
+		}
+		.p1{
+			display: none
+		}
+		.loginForm{
+			min-width: 100%;
+		}
+		
+}
+@media (max-width: 280px){
+		.login_page_wrap_1{
+			position: initial;
+		}
+		.login_page_wrap_1 .header{
+			font-size: 30px;
+			display: none
+		}
+		.logo{
+			max-width: 50%;
+		}
+		.signup_page{
+			bottom: 28px;
+		    height: 70%;
+		    min-width: 100%;
 		}
 		.p1{
 			display: none
@@ -188,9 +213,10 @@
 				<div class="login-page-wrap">
 					<div class="login_page_wrap_1">
 					
-						<img src="/resources/img/One_Roof_logo.png" alt="Project Logo" class="logo" />
-						
-						<h1 class = "header" >ONE ROOF</h1>
+						<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/clubs'" class="logina">
+							<img src="/resources/img/One_Roof.png" alt="Project Logo" class="logo"  />
+						 </a>
+			<!--  		<h1 class = "header" >ONE ROOF</h1>		-->
 						<p  class="p1" >The luxury, quality and innovative Venues.<p>
 						<p  class="p1" style="  margin: 7px 0 2px 0 !important;">The most successful event is the one that archives your<p>
 						<p  class="p1" style=" margin: 0 0 -21px 0px; !important;">goals and exceeds your expectations and it happens only with One Roof..!<p>
@@ -298,7 +324,7 @@
                     
   		</form>
   			  
- 					<div style="margin: -45px 0px 0 73px;">
+ 					<div style="margin: -20px 0px 0 73px;">
                     		<a class="p4">Already have an Account?</a>
         					<input type="button" value="Login" class="btn btn-success" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/login'" class="btn btn-login" />     
    					</div>  

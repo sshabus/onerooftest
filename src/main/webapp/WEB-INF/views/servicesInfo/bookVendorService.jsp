@@ -77,7 +77,8 @@ max-width: 150px !important;
 		width: 71px;
 }
 .headerimg{
-	max-width: 150px;
+	height: 160px;
+    width: 176px;
 }
 .dropdown-toggle{
 	color: white;
@@ -107,8 +108,10 @@ max-width: 150px !important;
 
 
 <div id="wrapper" class="wrapper bg-ash mt-5">
-		
-		<img id="Image1" src="/resources/img/One_Roof_logo.png" class="headerimg">
+
+		<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/clubs'" class="logina">
+			<img id="Image1" src="/resources/img/One_Roof.png" class="headerimg">
+		</a>	
 		
 		
 				<div class="dropdown">

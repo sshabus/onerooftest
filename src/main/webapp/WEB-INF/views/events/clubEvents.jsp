@@ -33,6 +33,28 @@
 .sidebar-main {
 	padding-bottom: 189px;
 }
+@media (max-width: 768px){
+.breadcrumbs-area{
+		margin-top:	30px;
+	}
+	
+	.sidebar-menu-one .mobile-sidebar-header{
+		display: none;
+	}
+	.sidebar-color {
+	    margin-top: 51px;
+	    padding-bottom: 42%;  
+    }
+    .sidebar-collapsed-mobile .sidebar-main{
+		margin-left: 51%;
+	    width: 20rem;
+	    margin-top: 34%;
+	}
+	.sidebar-menu-one .sidebar-menu-content{
+		margin-top: 18%;
+	}
+}
+
 </style>
 
 

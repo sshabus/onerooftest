@@ -63,15 +63,13 @@
 .dropdown:hover .dropdown-content {display: block;}
 
 .homeHeaderimg{
-	max-width: 270px;
-/*    margin-left: 475px;
-    margin-top: 70px; */
+	max-width: 325px;
 }
  .carousel-inner {
-            position: relative;
-            width: 100%;
-            overflow: hidden
-        }
+    position: relative;
+    width: 100%;
+    overflow: hidden
+}
 .btn{
 	color: mediumvioletred;
 	margin-bottom: 40px;
@@ -136,6 +134,18 @@
 	display: list-item;
 	margin-top: -30px;
 }
+@media (max-width: 768px){
+
+	.serviceimg{
+		width: 97px;
+	}
+}
+@media (max-width: 375px){
+
+	.serviceimg{
+		width: 94px;
+	}
+}
 </style>
 </head>
 <body>
@@ -172,10 +182,12 @@
  	
 	-->  		
 				 
- 		<div style="text-align:center;position: relative;">		
+ 		<div style="text-align:center;position: relative;">	
  		
- 			<img src="/resources/img/logo_icon.png" alt="logo" class="homeHeaderimg">	
-				
+ 			<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/clubs'" class="logina">
+				<img src="/resources/img/One_Roof.png" alt="logo" class="homeHeaderimg"/>
+			</a>	
+ 		
 			 <p class="onerooftext" style=" margin: 8px 0 -27px 0;">The luxury, quality and innovative venues.<p>
 			 <p class="onerooftext" style=" margin: 0 0 -26px 0px;">The most successful event is the one that archives your<p>
 			 <p class="onerooftext" >goals and exceeds your expectations and it happens only with One Roof..!<p>
@@ -191,11 +203,11 @@
 					
 					<img src="/resources/img/venue.jpg" alt="logo" class="serviceimg" style="background: white;margin-right: 16px;">
 					<img src="/resources/img/cuisine.jpg" alt="logo" class="serviceimg">	
-					<img src="/resources/img/event.jpg" alt="logo" class="serviceimg"style="margin-left:16px;">	
+					<img src="/resources/img/event.jpg" alt="logo" class="serviceimg"style="margin-left:-3px;">	
 					
-					<p class="servicename" style="margin: 13px 0 0 -242px;">Venue</p>
+					<p class="servicename" style="margin: 13px 0 0 -250px;">Venue</p>
 					<p class="servicename"style="margin: -32px 0 0 0px;">Cusine</p>
-					<p class="servicename"style="margin: -32px 0 0 249px;">Events</p>
+					<p class="servicename"style="margin: -32px 0 0 230px;">Events</p>
 				
 				<div class="wraptext"></div>
 			

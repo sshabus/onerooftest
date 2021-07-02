@@ -29,7 +29,7 @@ img{
     border-color: white;
 }
 .header-inline{
-	margin: 50px 0 0px -40px;
+	margin: 87px 0 0px -40px;
 }
 .span.view-subtitle{
 	ont-size: 15px !important;
@@ -103,19 +103,148 @@ img{
 	display:list-item;
 	margin-top: -36px;
 }
+
+/*new designs*/
+.price{
+	margin: 35px 0px -40px 353px;
+	color: white;"
+}
+.single-info-details{
+	margin-left: 0px;
+}
+.totalamount{
+	margin: 60px 0px -43px 367px;
+	color: white;	
+}
+.row1{
+	display: flex;
+    flex-wrap: wrap;
+    margin-right: -20%;
+    margin-left: 50%;
+    margin: -184px -78px 33px 320px;
+}
+.modal-footer{
+	margin-top: -51px;
+	margin-right: 84px;
+}
+@media (max-width: 1480px){
+	
+	.service_wrap_bot{ 
+	    width: 20%;
+		
+	}
+
+}
+@media (max-width: 1199px){
+	.row1{
+		 margin: -192px 57px 14px 230px;
+	}
+	.single-info-details{
+		margin-left: 4%;
+	}
+	.header-inline {
+    	margin: 75px 0 0px 0px;
+    }
+	.single-info-details .item-content p{
+		margin: 0px !important;
+	}
+	.row1{
+		margin-left: 50%;
+   		width: 50%;
+   		margin-right: -20%;
+	}
+	.totalamount{
+		margin-left: 47%;	
+	}
+	.service_wrap_bot{ 
+		margin: -37px 50px 15px 415px;
+	}
+	.price {
+    	margin: 35px 0px -40px 280px;
+    }
+}
+
 @media (max-width: 768px){
 
-	.servicebackground{
-		padding-left: 38%;
+	.header-main-menu{
+		padding: 0 18px 0 140px;
 	}
-}
-@media (max-width: 480px){
-
+	.header-inline {
+    	margin: 64px 0 0px -40px;
+    	}
+	.dashboard-content-one {
+    	margin-top: 47px;
+    	}
 	.servicebackground{
 		padding-left: 40%;
 	}
 	.single-info-details{
-		margin-left: -13%;
+		margin-left: -4%;
+	}
+	.single-info-details .item-img{
+		margin: -23px 38px -1px 0px;
+	}
+	.service_wrap{
+		margin-top: 15px;
+	}
+	.service_wrap_inn{
+		width: 100%;
+		margin: 0% 0% 0% 0%;
+	}
+	.service_wrap_top_text{
+		top: 17px;
+	}
+	.service_wrap_user_img{
+		left: 90px;
+    	top: -27px;
+	}
+	.service_wrap_name{
+		padding: 151px 12px 7px 36px;
+	}
+	.row1{
+		margin-left: 50%;
+   		width: 45%;
+   		margin-right: -20%;
+	}
+	.modal-footer{
+		margin-top: -10px;
+	}
+	.totalamount{
+		    margin: 30px 0px 20px 30px;
+			color: white;	
+	} 
+	.service_wrap_bot{
+		width: 100%;
+		margin: 0 0 0 0;
+	}
+	.price {
+    	margin: 9px 0px 20px 10px;
+	}
+	
+}
+@media (max-width: 480px){
+	
+	.row1{
+		margin-left: 60%;
+   		width: 45%;
+   		margin-right: -20%;
+	}
+	.price{
+		margin: 45px 0px 20px 20px;
+	}
+}
+@media (max-width: 380px){
+	
+	.row1{
+   		width: 66%;
+    	margin: 9px 0px 0px -29px;
+	}
+	
+	.modal-footer{
+		margin-right: 10px;
+	}
+	.price {
+    	margin: 9px 0px 20px 10px;
 	}
 }
 </style>
@@ -467,7 +596,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							  result = result+'<span class="col-xl-6 col-lg-6 col-12  mt-2" data-toggle="modal" data-target="#pop-up-modal" onclick="getServiceOffer(\''+opt.serviceOffer+'\')"style="margin: 0 0 0 1px;">Service Offer</span>';
 							  result = result+'</div>';
 							  result = result+'<div class="service_wrap_user_img">';
-							  result = result+'<img src="'+opt.serviceImage+'" onerror="predefineVendorServiceImage(this);" style="height: 148px;border-radius: 73px;max-height: none;">';
+							  result = result+'<img src="'+opt.serviceImage+'" onerror="predefineVendorServiceImage(this);" style="height: 148px;border-radius: 73px;max-height: none;width: 100%">';
 							  result = result+'</div>';
 							  
 							//   if(isEntryRatioEnabled == 'Y'){
@@ -495,7 +624,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 
 
 
-								result = result+'<div class="row" style="margin: -185px -80px 30px 320px;">';
+								result = result+'<div class="row1" >';
 									result = result+'<div class="col-xl-4 col-lg-6 col-12 form-group">';
 										result = result+'<label style="color:white;">Start Date<span class="text-danger">&nbsp;*</span></label>';
 										result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control start-date-datepicker" data-position="bottom right" name="startDate" id="startDate" data-validation="required" field-name="Start Date"> ';
@@ -523,7 +652,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 
 
 
-								result = result+'<div class="modal-footer" style="margin-top: -51px;margin-right: 84px;">';
+								result = result+'<div class="modal-footer">';
 								result = result+'<input type="submit" id="selectedFirstSlot" value="First Half" onclick="selectedFirstSlot()" class="btn btn-success" style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
 								result = result+'<input type="button"  id="selectedSecondSlot" value="Second Half" onclick="selectedSecondSlot()" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
 								result = result+' </div>';
@@ -607,7 +736,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							  
 							  result = result+'<div class="clear"></div>';
 							  result = result+'</div>';
-							  result = result+'<div style="margin: 60px 0px -43px 367px;color: white;">PRICE :&nbsp;<span style="color:gold">'+currencyCode+' '+servicePrice+'/-</span></div>';
+							  result = result+'<div class="price">PRICE :&nbsp;<span style="color:gold">'+currencyCode+' '+servicePrice+'/-</span></div>';
 							 
 							  result = result+'<div class="service_wrap_bot">';
 							  
@@ -645,7 +774,8 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 						 if(serviceType == 'Book a bottle'){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_bottles_found.jpg" alt=""/></td>';
 						 }else if(serviceType == 'Venue'){
-							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/No_Venue.png" alt=""/></td>';
+							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/No_Venue.png" alt=""style="width: 10%;"/></td>';
+							 result = result+'<a style="color:white;font-size:15px;">sorry..! No Venues Found...</a>'
 						 }else if(serviceType == 'Entry'){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_entry_found.jpg" alt=""/></td>';
 						 }else if(serviceType == 'Surprise'){
@@ -654,6 +784,9 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_deals_found.jpg" alt=""/></td>';
 						 }else if(serviceType == 'Packages'){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_packages_found.jpg" alt=""/></td>';
+						 }else if(serviceType == 'Cuisine'){
+							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_cuisine.png" alt="" style="width: 10%;"/></td>';
+							 result = result+'<a style="color:white;font-size:15px;">sorry..! No Cuisine Found...</a>'
 						 }
 						
 						 $("#categoryServicesListDiv").empty(); 

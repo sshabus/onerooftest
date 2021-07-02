@@ -53,7 +53,12 @@ body {
     border-bottom-right-radius: 10px !important; 
     border-top-right-radius: 10px !important; 
 } 
-
+.navbar-default .navbar-toggle .icon-bar{
+	background-color: white;
+}
+.navbar-toggle{
+	margin-top: 20px;
+}
 .search-blo .input-group-btn {
     position: relative;
     white-space: nowrap;
@@ -68,10 +73,11 @@ body {
    	margin-bottom: 20px;
 }
 .club-text-black{
- 	font-weight: 600;
+ 	font-weight: 600; 
  	color: black;
  	width: 60%;
  /*	margin-left: 6px; */
+ 	font-size: 12px;
 }
 .navbar-default{
  	 background-color: #890059;
@@ -90,11 +96,20 @@ body {
 }
 .card-footer.text-muted{
 	background-color: #890052;
-	width: 113px;
+	width: 34%;
     float: right;
     margin-right:-5px;
     margin-top: -70px;
 }
+.bottom_left{
+	position: absolute; 
+	bottom: -5px; 
+	right: 9px;"
+}
+.card-link{
+ 	font-weight: 700;
+ 	font-size: 14px;"
+} 
 .dropdown {
   position: relative;
   display: inline-block;
@@ -135,6 +150,8 @@ body {
 }
 .homeHeaderimg{
 	max-width: 150px;
+    height: 156px;
+    width: 176px;
 }
 .btn-vendor-search span{
 	padding: 0px 0 0;
@@ -146,19 +163,29 @@ body {
 	margin-top: 10px;
 }
 .card.mb-3{
-	width: 368px;
+	width: 313px;
 	float: right;
-	margin-right: 19px;
+	margin-right: 14px;
 	margin-top: 17px;
 }
 #myInput{
 	border-radius: 20px;
 	width: 85%;
-	margin-left: 15px;
-	margin-right: 16px;
+	margin-left: 17px;
+	margin-right: 17px;
 	float: right;
-	margin-top: 10px;
+	margin-top: 13px;
 	height: auto;
+}
+.modal-title{
+	color: white;
+}
+.s-res{
+	color: white;	
+}
+.s-field{
+	width: 105%;
+	margin-left: -15px;
 }
 .search_icon{
 	height: 30px;  
@@ -181,6 +208,16 @@ body {
 }
 .vendors-card .card{
 		width: 67%;
+		
+		padding-bottom: 0px;
+		border: none;
+		height: 100%;
+		background-color: initial;
+		ont-size: 13px;
+		float: right;
+		/* width: 62%; */
+		left: 33px
+
 }
 @media (max-width: 1199px){
 
@@ -215,7 +252,7 @@ body {
 			font-size: 35px;
 		}
 		.offers{
-			margin-top: 100px;
+			margin-top: 20px;
     		font-size: 30px;
 		}
 
@@ -236,10 +273,10 @@ body {
 			width: 62%;
 		}
 		.vendors-title h5{
-			font-size: 35px	
+			font-size: 22px	
 			}
 		.club-text-black{
-			font-size: 18px;
+			font-size: 16px;
 		}
 		.card-footer.text-muted{
 			margin-right: 15px;
@@ -252,16 +289,30 @@ body {
 			font-size: 35px;
 		}
 		.offers{
-			font-size: 35px;
+			font-size: 30px;
 		}
 }
 @media (max-width: 480px){
 
 			.vendors-card .cardbody img{
-				width: 75%;
+				width: 60%;
 				height: auto;
 			}
-
+			.card.mb-3 {
+   				width: 285px;
+   			}
+   			#myInput{
+   				width: 93%;
+   			}
+   			.dropdown {
+    			position: inherit;
+		    }
+		    .halls {
+    			font-size: 28px;
+			}
+			.offers {
+			    font-size: 28px;
+			}
 			.cardbody {
 			    width: 100%;
 			 }
@@ -277,6 +328,73 @@ body {
 			    margin-top: -48px;
 			    font-size: 19px;
 			}
+			.vendors-title h5 {
+    			font-size: 30px;
+			}
+			.modal-title{
+				color: white;
+			}
+			.s-res{
+				color: white;	
+			}
+			.s-field{
+				width: 105%;
+    			margin-left: -15px;
+			}
+			.bottom_left{
+				right: 102px;
+			}
+}
+@media (max-width: 320px){
+
+			.vendors-card .cardbody img{
+				width: 75%;
+				height: auto;
+			}
+			.card.mb-3{
+				width: 280px;
+				margin-right: -9px;
+			}
+			#myInput {
+				width: 107%;
+				margin-right: -7px;
+			}
+			.search_icon {
+			    height: 27px;
+			    margin: -46px 6px -2px 1183px;
+			}
+			.halls {
+    			font-size: 25px;
+    		}
+    		.offers {
+    			font-size: 25px;
+    			margin-top: 36px;
+    		}
+    		.vendors-title h5 {
+		   		font-size: 22px;
+		    }
+			.cardbody {
+			    width: 100%;
+			 }
+			.vendors-card .card{
+				width: 95%;
+			}
+			.club-text-black{
+				width: 85%;
+				font-size: 13px;
+			}
+			.modal-title{
+				color: white;
+			}
+			.card-footer.text-muted {  
+				width:	100%;
+			    margin-right: 11px;
+			    margin-top: -48px;
+			    font-size: 19px;
+			}
+			.bottom_left{
+				right: 100px;
+			}
 }
 </style>
 
@@ -289,7 +407,9 @@ body {
         				<span class="icon-bar"></span>
         				<span class="icon-bar"></span>                        
       			</button>
-	      				<img src="/resources/img/One_Roof_logo.png" alt="logo" class="homeHeaderimg">
+	      			 <a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/clubs'" class="logina">
+		      				<img src="/resources/img/One_Roof.png" alt="logo" class="homeHeaderimg">
+		      		</a>		
 	    	</div>
 	    	
 	      	<div class="collapse navbar-collapse" id="myNavbar">
@@ -489,8 +609,8 @@ function clearClubSearch(){
 			        		result = result +'<div class="bottom_left" style="position: absolute; bottom: -5px;">';
 			        		//result = result +'<a href="'+appUrl+'/ws/vendorInfo?vendorUUID='+opt.vendorUUID+'" class="card-link" style="font-weight: 700;"><span class="fa fa-search-plus">&nbsp;</span>Explore</a>';
 			        		result = result +'</div>';
-			        		result = result +'<div class="bottom_left" style="position: absolute; bottom: -5px; right: 5px;">';
-			        		result = result +'<a href="'+appUrl+'/ws/bookService?vendorUUID='+opt.vendorUUID+'" class="card-link" style="font-weight: 700;"><i class="fa fa-bullhorn" aria-hidden="true"></i>&nbsp; Get Services </a>';
+			        		result = result +'<div class="bottom_left">';
+			        		result = result +'<a href="'+appUrl+'/ws/bookService?vendorUUID='+opt.vendorUUID+'" class="card-link" ><i class="fa fa-bullhorn" aria-hidden="true"></i>&nbsp; Get Services </a>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
@@ -515,7 +635,8 @@ function clearClubSearch(){
 			        		
 		   				}
 		        	}else{
-	   					result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/No_Venue.png" alt=""style="background: #880052;"/></td>';
+	   					result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/No_Venue.png" alt=""style="background: #880052;width: 18%;"/></td>';
+	   					result = result+'<p style="color:black;">Venues Coming Soon...</p>'
 	   				}
 		        	
 		        	 $("#registeredVendorsList").empty();  

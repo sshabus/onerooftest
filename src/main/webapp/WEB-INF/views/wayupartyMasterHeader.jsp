@@ -48,6 +48,13 @@
     margin-bottom: 0px;
     margin-bottom: 20px;
 }
+.homeHeaderimg{
+	max-width: 150px;
+}
+.dashboardLogoImg{
+	height: 180px;
+    width: 180px;
+}
 </style>
 
 <body>
@@ -55,7 +62,7 @@
  <!-- Header Menu Area Start Here -->
  <div class="header-logo">
                     <a href="${Wayuparty_appUrl}/dashboard">
-                        <img src="/resources/img/logo_icon.png" alt="logo" class="dashboardLogoImg">
+                        <img src="/resources/img/One_Roof.png" alt="logo" class="dashboardLogoImg">
                     </a>
                 </div>
         <div class="navbar navbar-expand-md header-menu-one bg-light">

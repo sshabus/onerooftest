@@ -2,6 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<link rel="icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg" />
 <style>
 #wrapper {
   background-image: url('/resources/img/Oneroof_bg_page.jpg');
@@ -19,21 +20,42 @@
  }
 .sidebar-color {
   margin-top: 16px;
-  padding-bottom: 1195px;
-  
+  padding-bottom: 10%; 
+}
+.noRecords-dashboard-portlets{
+	margin-left: 30%;
+}
+.noRecords-dashboard-portlets .img {
+	width: 37%;
+    background: #8a2929;
 }
 .sidebar-expand-md {
    float:right;
   }
+.vendors-card .card{
+	left:33px;
+	width: 62%;
+}  
 .navbar {
 	margin: -155px 0 0 0;
 }
 .breadcrumbs-area {
     padding: 35px 40px 35px;
 }
-
 <!-- changes made for user dashboard page  -->
 
+.vendors-card .card{
+		width: 67%;
+		padding-bottom: 0px;
+		border: none;
+		height: 100%;
+		background-color: initial;
+		ont-size: 13px;
+		float: right;
+		/* width: 62%; */
+		left: 33px
+
+}
 .cardbody{
 	height: 180px;
     width: 180px;
@@ -44,19 +66,173 @@
     height: 110px;
     margin-left: -12px;
 }
+.card.mb-3{
+	width: 70%;
+    margin-left: 28%;
+}
 .search_blo{
 	width: 830px;
     margin-left: 423px;
     top: -13px;
-
 }
+.col-xs-2 {
+    width: 6%;
+}    
+.venuesservices{
+	margin-top: 27px;
+	background: white;
+	border-top-left-radius: 90px;
+	margin-right: 210px;
+}
+.mb-5{
+	margin-left: 60px;
+}
+.s-f-right .input {
+    width: 100%;
+    background: transparent;
+    border: 1px solid white;
+ }
+ .modal-title{
+				color: white;
+			}
+			.s-res{
+				color: white;	
+			}
+			.s-field{
+				width: 105%;
+    			margin-left: -15px;
+			}
+
+@media (max-width: 1199px){
+
+	.venuesservices{
+		border-top-left-radius: 0px;
+	}
+	.sidebar-menu-one .mobile-sidebar-header{
+		display: none;
+	}
+	.sidebar-collapsed-mobile .sidebar-main{
+		margin-left: 58%;
+		width: 19rem;
+		margin-top: 180px;
+	}
+	.sidebar-menu-one .sidebar-menu-content{
+		margin-top: 3%;
+	}
+	.sidebar-color {
+	    margin-top: 90px;
+	    padding-bottom: 9%;
+    }
+	.card.mb-3 {
+	    width: 95%;
+	    margin-left: 3%;
+	    top: 77px;
+    }
+	.venuesservices{
+		margin-top: 100px;
+		margin-right: 0%;
+	}
+	.mb-5{
+	margin-left: 2px;
+	}
+	.vendors-card .card{
+    	left: 33px;
+    /*	width: 135%; */
+   		width:81%;
+	}
+	.col-lg-6 {
+    	
+      	flex: 0 0 0;
+   	 	max-width: 0%;
+    }	
+	.col-sm-1 col-xs-2 {
+		width: 100%;
+	}
+	.werp{
+		width:100%;
+	}
+}
+@media (max-width: 768px){
+
+	.vendors-card .cardbody img {
+    	width: 75%;
+    	height: auto;
+    }
+    .vendors-card .card{
+		margin-right: 27px;
+    	width: 60%;
+	}
+}
+@media (max-width: 480px){
+
+		.vendors-card .card {
+		    margin-right: 32px;
+		    width: 60%;
+		 }
+		.sidebar-menu-one .sidebar-menu-content {
+    		margin-top: 38%;
+    	}
+		.sidebar-collapsed-mobile .sidebar-main{
+			margin-left: 60%;
+			width: 19rem;
+			margin-top: 240px;
+	}
+		.col-xs-2{
+			margin-left: -30px;
+		}
+		.text-black{
+			margin-left: 30px;
+   			margin-top: -18px;
+		}
+}
+@media (max-width: 380px){
+
+		.vendors-card .card{
+			margin-right: 27px;
+    		width: 90%;
+		}
+		.cardbody img{
+			margin-left: 80px
+		}
+		.sidebar-menu-one .sidebar-menu-content {
+    		margin-top: 48%;
+    	}
+    	.cardbody {
+		    margin-left: 85px;
+		 }
+		 .col-xs-2 {
+    			width: 6%;
+    	}		
+    	.werp{
+			width:100%;
+		}
+		.sidebar-collapsed-mobile .sidebar-main{
+			margin-left: 48%;
+			width: 19rem;
+			margin-top: 241px;
+		}
+		.modal .modal-dialog .modal-content .modal-body{
+			padding: 0px;
+		}
+		.text-black{
+			width: -1px;
+		}
+		.col-xs-2{
+			margin-left: -30px;
+		}
+		.text-black{
+			margin-left: 30px;
+   			margin-top: -18px;
+		}
+}
+
 </style>
 <div id="preloader"></div>
 
    <div id="wrapper" class="wrapper bg-ash">
-    <jsp:include page="../wayupartyMasterHeader.jsp" />
+    	<jsp:include page="../wayupartyMasterHeader.jsp" />
     
-    	<div class="card mb-3 search_blo">
+    			<div class="card mb-3 search_blo">
 					            <div class="input-group search-blo">
 					                <input name="vendors_txtSearch" type="text"  id="vendors_txtSearch" class="form-control"  placeholder="Search">
 					                <div class="input-group-btn">
@@ -65,9 +241,8 @@
 							            <img src="/resources/img/cities/Locate_icon_1.png" alt="locate" style="width: 22%;margin-left: -42px;"/> Cities
 							          </a>
 					                </div>
-							         
 					            </div>
-					        </div>
+			   </div>
    
     
         <!-- Page Area Start Here -->
@@ -155,7 +330,7 @@
         
          
                     
-               <div style="margin-top: 27px;background: white;border-top-left-radius: 90px;margin-right: 210px;">   
+               <div class="venuesservices" >   
                		  <div class="dashboard-page-one">
                			<div id="registeredVendorsLoadingDiv"></div>
                           <div class="container mt-5">
@@ -284,8 +459,8 @@ function clearClubSearch(){
 			        		
 			        		currencyCode = getCurrency(opt.currency);
 			        		
-			        	    result = result +'<a href="'+appUrl+'/bookService?vendorUUID='+opt.vendorUUID+'" class="card-link">';
-			        		result = result +'<div class="col-md-5 mb-5" style="margin-left: 60px;">';
+			        	    result = result +'<a href="'+appUrl+'/ws/vendorInfo?vendorUUID='+opt.vendorUUID+'" class="card-link">';
+			        		result = result +'<div class="col-md-5 mb-5" >';
 			        		result = result +'<div class="vendors-card">';
 			        		result = result +'<div class="cardbody">';
 			        		result = result +'<img src="'+opt.vendorProfileImg+'" onerror="predefineVendorProfileImage(this)">';
@@ -345,7 +520,8 @@ function clearClubSearch(){
 			        	
 		   				}
 		        	}else{
-		        		result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/No_Venue.png" alt=""/></td>';
+		        		result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/No_Venue.png" alt="" style="background: #880052;width: 37%;"/></td>';
+		        		result = result+'<p style="color:black;">Venues Coming Soon...</p>'
 	   				}
 		        	
 		        	 $("#registeredVendorsLoadingDiv").removeAttr("style");

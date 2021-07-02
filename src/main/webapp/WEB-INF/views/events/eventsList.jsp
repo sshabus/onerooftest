@@ -77,7 +77,8 @@
 	                        
 		   				}
 		        	}else{
-		        		result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/No_events.png" alt=""/></td>';
+		        		result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/No_events.png" alt=""style="width:26%;"/></td>';
+		        		result = result+'<a style="color:white;font-size:15px;">sorry..! No Events Found...</a>'
 	   				}
 		        	
 		        	 $("#eventInfoLoadingDiv").removeAttr("style");

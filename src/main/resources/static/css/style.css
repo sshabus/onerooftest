@@ -777,7 +777,8 @@ h6 {
   padding: 14px;
 }
 .modal .modal-dialog .modal-content .modal-footer {
-  padding: 15px 20px;
+  /*padding: 15px 20px;*/
+  padding: 30px 20px;
 }
 .modal .modal-dialog .modal-content .modal-footer .footer-btn {
   cursor: pointer;
@@ -1605,7 +1606,8 @@ ul {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0 20px 0 50px;
+ /* padding: 0 20px 0 50px; */
+  padding: 0 10px 0 140px;
 }
 @media only screen and (min-width: 768px) {
   .header-main-menu .navbar-nav {
@@ -6075,7 +6077,7 @@ footer.footer {
     padding:0px;
 }
 
-.vendors-card .card {
+/*.vendors-card .card {
   padding-bottom: 0px;
   border: none;
   height: 100%;
@@ -6084,7 +6086,7 @@ footer.footer {
   float: right;
   width: 62%;
   left: 33px
-}
+}*/
 
 .content-body {position: relative;}
 .cardbody { height: 170px; width: 155px;float: left;}
@@ -6378,7 +6380,7 @@ pre {
 @media only screen and (max-width: 900px){
 	.service_wrap_inn {width: 100%;}
     .service_wrap_user_img { width:100px; left:10px;}
-    .service_wrap_user_img img {max-width: 100px; max-height: 92px; min-width: 92px; min-height:92px;}
+    .service_wrap_user_img img {max-width: 100%; max-height: 92px; min-width: 92px; min-height:92px;}
     .service_wrap_name { padding:10px 15px 15px 120px;}
     .service_wrap_name a { font-size:15px;}
     .service_wrap_name span, .service_wrap_name b { font-size:12px; padding-top: 1px;}
@@ -6438,7 +6440,7 @@ position: absolute; top: 2px; font-size: 10px; right: 0; width: 50px; text-align
 .cart_widget { background-color: #fff; padding: 15px; border: 1px solid rgba(203,213,224,var(--border-opacity))!important; border-radius: 6px; min-height: 200px;
  font-size: 14px;
 } */
-.cart_widget h4 { border-bottom: 1px solid #ccc; margin:0px; padding: 0 0 15px 0; font-size: 16px;}
+.cart_widget h4 {/* border-bottom: 1px solid #ccc; */ margin:0px;/* padding: 0 0 15px 0; */ font-size: 16px;}
 .cart_widget span { padding: 0 5px;}
 .cart_pricelist ul li { border-bottom: 1px solid #ccc; padding: 10px 0; clear: both;}
 .cart_pricelist ul li:first-child { padding-top: 0;}
@@ -6446,15 +6448,14 @@ position: absolute; top: 2px; font-size: 10px; right: 0; width: 50px; text-align
 .textSuccess { color:#4CAF50;}
 .cart_pricelist { margin-top: 15px;}
 .cart_margn_top { margin-top: 7px;}
-.cart_widget_inner { margin-bottom: 15px; border-bottom: 1px solid #ccc;}
+.cart_widget_inner { margin-bottom: 15px; /*  border-bottom: 1px solid #ccc; */ }
 .item_img { width: 100px; height: 100px; display: block; margin: 10px auto 0; }
 .qr_code_img { width: 100px; height: 100px; display: block;}
-.qr_margn_top { margin-top: 0px;}
+.qr_margn_top { margin-top: 7px;}
 .cart_widget_footer {
   background-color: #fff; padding: 15px; border: 1px solid rgba(203,213,224,var(--border-opacity))!important; border-radius: 6px;
 margin-bottom: 15px; font-size: 14px;
  }
-
  .cart_margn_top p {
     margin: 0 0 5px 0;
     color: white;
@@ -6580,7 +6581,7 @@ font-size: 14px;
 .services_wrap_table span { display:inline-block; max-width:220px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;}
 
 .datatable_filter .dataTables_length {
-	position: absolute !important; left: 5px; margin: -10px 0px; padding: 0px 0px 0px 0px !important; bottom:20px; color: white;
+	position: absolute !important; left: 5px; margin: -10px 0px; padding: 0px 0px 0px 0px !important; bottom:11px; color: white;
 }
 .datatable_filter .dataTables_length select {
     padding: 4px 5px !important;  height:32px; -webkit-border-radius:3px; -moz-border-radius:3px; -ms-border-radius:3px; border-radius:3px; box-sizing:border-box; -webkit-appearance:none; -moz-appearance:none; appearance:none;
@@ -6595,7 +6596,18 @@ font-size: 14px;
 .datatable_filter .dataTables_info {
     padding-left:148px !important;
     color: white;
-    margin: 7px 0px 0px 6px;
+    margin: 15px 0px 0px 6px;
+ 
+}
+@media screen and (max-width: 767px){
+	.datatable_filter .dataTables_info{
+		 margin: 22px 0px 0px 9px;
+	}	
+}
+@media screen and (max-width: 550px){
+	.datatable_filter .dataTables_info{
+		 display:none;
+	}	
 }
 
 .service_tabs_inn_table { text-align: left; border-bottom:1px solid #EFEFEF !important;}  
@@ -6830,7 +6842,8 @@ a.event-cards:hover{ text-decoration: none; }
 } */
 
 .werp {
-  width: 800px;
+ /* width: 800px; */
+  width: 100%;
   margin: 0px auto;
   padding: 60px;
 }

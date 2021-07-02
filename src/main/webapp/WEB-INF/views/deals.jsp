@@ -56,6 +56,10 @@ body {
 .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group {
     margin-left: -9px;
 }
+.homeHeader{
+	height: 160px;
+    width: 176px;
+}
 </style>
 
 <body>
@@ -67,14 +71,16 @@ body {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-	      <img src="/resources/img/One_Roof_logo.png" alt="logo" class="homeHeader">
+      <a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/clubs'" class="logina">
+	      <img src="/resources/img/One_Roof.png" alt="logo" class="homeHeader">
+	  </a>    
 	    </div>
 	      <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav navbar-right">
 	        
 	        	<li><a href="/clubs" style="color:white;">VENUES</a></li>
 	     		<li><a href="/services" style="color:white;" target="_blank">SERVICES</a></li>		
-	<!--        <li><a href="/deals">DEALS</a></li>	   -->     
+	       		 <li><a href="/deals">DEALS</a></li>	   
 	        	<li><a href="/login"style="color:white;">LOGIN</a></li>
 	      </ul>
 	      </div>
@@ -240,7 +246,8 @@ function clearClubSearch(){
 			        	
 		   				}
 		        	}else{
-		        		result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/No_Venue.png" alt=""style="width:260px; height:260px"/></td>';
+		        		result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/No_Venue.png" alt=""style="width:18%;"/></td>';
+		        		result = result+'<p style="color:white;"> Deals coming soon...</p>'
 	   				}
 		        	
 		        	 $("#registeredVendorsList").empty();  

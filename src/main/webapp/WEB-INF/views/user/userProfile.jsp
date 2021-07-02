@@ -52,7 +52,9 @@
   left:20px;
   margin-bottom: -12px;
 }
-
+.col-12 ui-btn-wrap mt-5{
+	margin-left: -92px;
+}
 .form-group1>input{
   border:none;
 }
@@ -65,7 +67,109 @@
 .breadcrumbs-area{
 		margin-left: 40px;
 }
+.userprofileform{
+	color: white;
+	margin: 80px 0 0 300px;
+}
+.userprofilepic{
+	margin-left: 425px;
+	margin-bottom: -31px;
+	margin: -76px 0px -31px 415px;
+	max-width: 150px;
+	border: 1px solid black;
+	border-radius: 15%;"
+}
+@media (max-width: 980px){
 
+	.sidebar-menu-one .mobile-sidebar-header{
+		display: none;
+	}
+	.sidebar-color {
+	    margin-top: 51px;
+	    padding-bottom: 42%;  
+    }
+    .sidebar-collapsed-mobile .sidebar-main{
+		margin-left: 74%;
+	    width: 20rem;
+	    margin-top: 26%;
+	}
+	.sidebar-menu-one .sidebar-menu-content{
+		margin-top: 18%;
+	}
+	.dashboard-content-one {
+    	margin-top: 47px;
+    	align-item: center;
+    }
+    .breadcrumbs-area{
+    	margin-left: -35px;
+    }
+    .MpanNav{
+    	left: 15px;
+    }
+    .userprofileform{
+		margin: 80px 0 0 75px;
+	}
+	.userprofilepic{
+		margin: -57px 0px 0px 227px;
+	}
+}
+@media (max-width: 480px){
+		
+	.sidebar-menu-one .mobile-sidebar-header{
+		display: none;
+	}
+	.sidebar-color {
+	    margin-top: 51px;
+	    padding-bottom: 42%;  
+    }
+    .sidebar-collapsed-mobile .sidebar-main{
+		margin-left: 60%;
+	    width: 20rem;
+	    margin-top: 30%;
+	}
+	.sidebar-menu-one .sidebar-menu-content{
+		margin-top: 18%;
+	}
+	.dashboard-content-one {
+    	margin-top: 47px;
+    	align-item: center;
+    }
+    .breadcrumbs-area{
+    	margin-left: -35px;
+    }
+    .MpanNav{
+    	left: -15px;
+    }
+    .userprofileform{
+		margin: 82px -190px 0px 40px;
+	}
+	.userprofilepic{
+		margin: -57px 0px 0px 227px;
+	}
+	.mg-l-10 {
+    margin-left: -5px;
+	}
+	.mt-5{
+		margin-left: -120px;"
+	}
+
+}
+@media (max-width: 380px){
+		
+    .sidebar-collapsed-mobile .sidebar-main{
+		margin-left: 50%;
+	    width: 20rem;
+	    margin-top: 35%;
+	}
+	.userprofilepic{
+		margin: -57px 0px 0px 140px; 	
+	}
+    .userprofileform{
+	/*	margin: 81px -143px 0px 24px; */
+		width: 140%;
+	}
+	
+}
 </style>
 <div class="tab-pane fade show active" id="userProfile" role="tabpanel">
 	<form class="new-added-form" id="user_profile_form" name="user_profile_form" >
@@ -80,9 +184,9 @@
 	                    </ul>
 	             </div>
  	 			<div style="color: white;">
-  					<img src="" alt="Userprofilepic" style="margin-left: 425px;margin-bottom: -31px;margin: -76px 0px -31px 415px;max-width: 150px;border: 1px solid black;border-radius: 15%;"/>
+  					<img src="" alt="Userprofilepic" class="userprofilepic"/>
 				</div>
- 	 	<div  style="color: white;margin: 80px 0 0 300px;">  
+ 	 	<div class="userprofileform">  
 	   		<div class="col-xl-4 col-lg-6 col-12 form-group">
                    		<label style="background-color: #9d0f71; width: 84px;">First Name</label>
                         <input type="text" class="form-control"  name="firstName" id="firstName" data-validation="required validate_Space validate_AlphaNumber validate_length length1-100"  field-name="First Name">
@@ -168,7 +272,7 @@
                  </select>
 	          </div>
         -->        
-              <div class="col-12 ui-btn-wrap mt-5" style="margin-left: -92px;">
+              <div class="col-12 ui-btn-wrap mt-5" style="margin-left: -90px;" >
 				               <ul>
 				               <li><button type="button" class="btn-fill-lg font-normal text-light gradient-pastel-green" id="save_button" onclick="saveUserProfileDetails()"><i class="fas fa-save mg-l-10"></i>&nbsp;Save</button></li>
 				               <li><button type="button" class="btn-fill-lg font-normal text-light btn-gradient-yellow" onclick="javascript:window.location.href = '${Wayuparty_appUrl}/profile'"><i class="fas fa-undo mg-l-10"></i>&nbsp;Reset</button></li>

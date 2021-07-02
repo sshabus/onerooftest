@@ -52,7 +52,9 @@ img:hover {
     background: transparent;
 }
 .logo{
-	max-width: 18%;
+	max-width:30%;
+	height:auto;
+	
 }
 .logina{
 	color: red; 
@@ -98,13 +100,21 @@ img:hover {
 	
 	text-align:center;
 	position: fixed;
-	top: 160px;
+	top: 113px;
 	right: 404px;
 }
 @media (max-width: 1024px){
 
-	.logo{
+		.logo{
 			max-width: 40%;
+		}
+		.loginpage{
+			bottom: -33%;
+		    height: 70%;
+		    min-width: 40%;
+		}
+		.login_page_wrap_1{
+			top: 35%;
 		}
 }
 @media (max-width: 968px){
@@ -122,15 +132,18 @@ img:hover {
 }
 @media (max-width: 768px){
 		
-		
 		.logo{
-			max-width: 55%;
+			max-width: 65%;
 		}
 		.loginpage{
-			bottom: -23%;
-		    height: 75%;
+			bottom: -30%;
+		    height: 70%;
 		    min-width: 52%;
 		}
+		.login_page_wrap_1{
+			top: 35%;
+		}
+		
 		
 }
 @media (max-width: 680px){
@@ -157,10 +170,10 @@ img:hover {
 			display: none
 		}
 		.logo{
-			max-width: 40%;
+			max-width: 50%;
 		}
 		.loginpage{
-			bottom: 10px;
+			bottom: 13px;
 			min-width: 100%;
 		}
 		.mainline{
@@ -183,9 +196,10 @@ img:hover {
 		
 					<div class="login_page_wrap_1">
 					
-						<img src="/resources/img/One_Roof_logo.png" alt="Project Logo" class="logo" />
-						
-						<h1 class = "header" >ONE ROOF</h1>
+						 <a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/clubs'" class="logina">
+							<img src="/resources/img/One_Roof.png" alt="Project Logo" class="logo"  />
+						 </a>
+				<!-- 	<h1 class = "header" >ONE ROOF</h1>		 -->
 						<p  class="mainline" style=" margin: 3px 0 -6px 0;">The luxury, quality and innovative Venues.<p>
 						<p  class="text" style=" margin: 0 0 -21px 0px;">The most successful event is the one that archives your<p>
 						<p  class="text" style=" margin: 0 0 -11px -3px;">goals and exceeds your expectations and it happens only with One Roof..!<p>

@@ -9,6 +9,13 @@
 .sidebar-color{
 			padding-bottom: 305px;
 }
+@media (max-width: 768px){
+
+	.dashboard-content-one {
+    	margin-top: 47px;
+    }
+    
+}
 </style>
 
 <div class="tab-pane fade show active" id="orders" role="tabpanel">

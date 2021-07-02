@@ -24,6 +24,46 @@
     padding: 35px 40px 35px;
 }
 
+
+@media (max-width: 786px){
+	.sidebar-menu-one .mobile-sidebar-header{
+		display: none;
+	}
+	.sidebar-color {
+	    margin-top: 51px;
+	    padding-bottom: 42%;  
+    }
+    .sidebar-collapsed-mobile .sidebar-main{
+		margin-left: 74%;
+	    width: 20rem;
+	    margin-top: 26%;
+	}
+	.sidebar-menu-one .sidebar-menu-content{
+		margin-top: 18%;
+	}
+}
+@media (max-width: 480px){
+	.sidebar-menu-one .mobile-sidebar-header{
+		display: none;
+	}
+	.sidebar-color {
+	    margin-top: 51px;
+	    padding-bottom: 42%;  
+    }
+    .sidebar-collapsed-mobile .sidebar-main{
+		margin-left: 50%;
+	    width: 20rem;
+	    margin-top: 35%;
+	}
+	.sidebar-menu-one .sidebar-menu-content{
+		margin-top: 18%;
+	}
+	.dataTables_wrapper .dataTables_paginate{
+		float:right;
+	}
+	
+}
+
 </style>
   <div id="wrapper" class="wrapper bg-ash">
     <jsp:include page="../wayupartyMasterHeader.jsp" />

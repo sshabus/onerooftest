@@ -26,6 +26,44 @@
 .breadcrumbs-area {
     padding: 35px 40px 35px;
 }
+@media (max-width: 768px){
+	
+	.breadcrumbs-area{
+		margin-top: 30px;
+	}
+	.col-sm-12 .col-md-4{
+		margin-left: 60%; 
+    	margin-top: -107px;	
+	}
+	.modal-footer{
+		margin-right: 100px;
+	}
+	
+}
+@media (max-width: 480px){
+	.breadcrumbs-area{
+		margin-top: 30px;
+	}
+	.col-sm-12 .col-md-8{
+		width:150%;
+	}
+	.col-sm-12 .col-md-4{
+		margin-left: 45%;
+    	margin-top: -107px;
+	}
+	.item_img{
+		width: 150px;
+		margin-left: 45px;
+		height: 95px;
+	}
+	.modal-footer{
+		margin-right: 45px;
+	}
+	.row .mt-10px{
+		
+    	margin-left: -20px;
+	}
+}
 
 </style>
 
