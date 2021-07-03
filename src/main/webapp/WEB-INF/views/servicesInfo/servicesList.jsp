@@ -107,7 +107,7 @@ img{
 /*new designs*/
 .price{
 	margin: 35px 0px -40px 353px;
-	color: white;"
+	color: white;
 }
 .single-info-details{
 	margin-left: 0px;
@@ -540,6 +540,15 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							  result = result+'</div>';
 							  result = result+'<div class="service_wrap_name">';
 							  result = result+opt.subCategory;
+							  
+							  if(opt.serviceName == 'Cuisine'){
+							  
+								  result = result+'<div class="row" >';
+								  result = result+'<span class="col-xl-6 col-lg-6 col-12">Plates : <button type="button"  onclick="platesQuantityDec(\''+opt.masterServiceUUID+'\')">-</button><input type="number" step="1" min="0" value="0" id="platesRatio'+opt.masterServiceUUID+'" style="max-width: 60px;"><button type="button" onclick="platesQuantityInc(\''+opt.masterServiceUUID+'\')">+</button></span><br/>';
+								  result = result+'</div>';
+							  
+							  }
+							  
 							  result = result+'<div class="row">';
 							  
 							  if(opt.minimumOrder != 0){
@@ -555,8 +564,16 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 								  }
 								 
 							  }else{
-								  result = result+'<span class="col-xl-6 col-lg-6 col-12" >Actual Price :&nbsp;'+currencyCode+' '+opt.actualPrice+' per slot</span>';
-								  result = result+'<span class="col-xl-6 col-lg-6 col-12" style="color: gold;margin: 0 0 0 1px;">Offer Price :&nbsp;'+currencyCode+' '+opt.offerPrice+' per slot </span>';
+							  	  if(opt.serviceName == 'Cuisine'){
+								  	 
+								  	  result = result+'<span class="col-xl-6 col-lg-6 col-12" >Per Plate :&nbsp;'+currencyCode+' '+opt.actualPrice+' </span>';
+									  result = result+'<span class="col-xl-6 col-lg-6 col-12" style="color: gold;margin: 0 0 0 1px;">Offer Price :&nbsp;'+currencyCode+' '+opt.offerPrice+' </span>';
+							  
+							  	  }else{
+
+									  result = result+'<span class="col-xl-6 col-lg-6 col-12" >Actual Price :&nbsp;'+currencyCode+' '+opt.actualPrice+' per slot</span>';
+									  result = result+'<span class="col-xl-6 col-lg-6 col-12" style="color: gold;margin: 0 0 0 1px;">Offer Price :&nbsp;'+currencyCode+' '+opt.offerPrice+' per slot </span>';
+							  	  }
 							  }
 							 
 							//   result = result+'<span class="col-xl-6 col-lg-6 col-12">Start Date : '+opt.startDate+'</span>';
@@ -625,21 +642,35 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 
 
 								result = result+'<div class="row1" >';
-									result = result+'<div class="col-xl-4 col-lg-6 col-12 form-group">';
+									if(opt.serviceName == 'Cuisine'){
+									
+										result = result+'<div class="col-xl-12 col-lg-12 col-12 form-group">';
+											result = result+'<label style="color:white;">Start Date<span class="text-danger">&nbsp;*</span></label>';
+											result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control start-date-datepicker" data-position="bottom right" name="startDate" id="startDate" data-validation="required" field-name="Start Date"> ';
+											result = result+'<i class="far fa-calendar-alt"></i>';
+										result = result+'</div>';
+	
+									} else {
+							  		
+							  		result = result+'<div class="col-xl-4 col-lg-6 col-12 form-group">';
 										result = result+'<label style="color:white;">Start Date<span class="text-danger">&nbsp;*</span></label>';
 										result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control start-date-datepicker" data-position="bottom right" name="startDate" id="startDate" data-validation="required" field-name="Start Date"> ';
 										result = result+'<i class="far fa-calendar-alt"></i>';
+									result = result+'</div>';
+							  	
+
+									result = result+'<div class="col-xl-4 col-lg-6 col-12 form-group">';
+									
+										result = result+'<label style="color:white;">End Date<span class="text-danger">&nbsp;*</span></label>';
+										result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control end-date-datepicker" data-position="bottom right" name="endDate" id="endDate" data-validation="required" field-name="End Date">';
+										result = result+'<i class="far fa-calendar-alt"></i>';
 										result = result+'</div>';
-
-										result = result+'<div class="col-xl-4 col-lg-6 col-12 form-group">';
-											result = result+'<label style="color:white;">End Date<span class="text-danger">&nbsp;*</span></label>';
-											result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control end-date-datepicker" data-position="bottom right" name="endDate" id="endDate" data-validation="required" field-name="End Date">';
-											result = result+'<i class="far fa-calendar-alt"></i>';
-											result = result+'</div>';
-											result = result+'</div>';
-
-
-
+										
+									result = result+'</div>';
+									
+									}
+									
+									
 
 								
 								// result = result+'<div class="form-group" style="padding-left: 15px;">';
@@ -650,12 +681,19 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 								
 								 result = result+'</div>';
 
-
-
-								result = result+'<div class="modal-footer">';
-								result = result+'<input type="submit" id="selectedFirstSlot" value="First Half" onclick="selectedFirstSlot()" class="btn btn-success" style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
-								result = result+'<input type="button"  id="selectedSecondSlot" value="Second Half" onclick="selectedSecondSlot()" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
-								result = result+' </div>';
+							
+							  	if(opt.serviceName == 'Cuisine'){
+									result = result+'<div>';
+									result = result+'<input type="submit" id="breakfastSlot" value="Breakfast" onclick="selectedBreakfastSlot()" class="btn btn-success" style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
+									result = result+'<input type="button"  id="lunchSlot" value="Lunch" onclick="selectedLunchSlot()" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
+									result = result+'<input type="button"  id="dinnerSlot" value="Dinner" onclick="selectedDinnerSlot()" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
+									result = result+' </div>';
+								}else{
+									result = result+'<div class="modal-footer">';
+									result = result+'<input type="submit" id="selectedFirstSlot" value="First Half" onclick="selectedFirstSlot()" class="btn btn-success" style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
+									result = result+'<input type="button"  id="selectedSecondSlot" value="Second Half" onclick="selectedSecondSlot()" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
+									result = result+' </div>';
+								}
 
 
 							  result = result+'<div class="row">';
@@ -678,7 +716,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							  
 
 							 
-							  result = result+'<div class="col-lg-4 col-sm-6 col-12">';
+							  result = result+'<div class="col-lg-8 col-sm-8 col-12">';
 							  result = result+'<div class="heading-layout1 mg-b-17">';
 							  result = result+'<div class="item-title">';
 							  result = result+'<div id="eventTitleDiv"></div>';
@@ -742,11 +780,11 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							  
  							  if(opt.serviceName == 'Packages'){
  								 result = result+'<a data-button="customize" data-id="4" href="javascript:void(0)" id="customizeService'+opt.masterServiceUUID+'" data-toggle="modal" style="display:none" data-target="#right-slide-modal" onclick="getServiceDetails(\''+opt.masterServiceUUID+'\',\''+categoryUUID+'\',\''+isEntryRatioEnabled+'\')">Customize</a>';
- 								 result = result+'<a data-button="customize" data-id="4" href="javascript:void(0)" onclick="getPackagesServiceInfo(\''+opt.masterServiceUUID+'\',\''+isEntryRatioEnabled+'\',\''+opt.allowed+'\')">Customize</a>';
+ 								 result = result+'<a data-button="customize" data-id="4" href="javascript:void(0)" onclick="getPackagesServiceInfo(\''+opt.masterServiceUUID+'\',\''+isEntryRatioEnabled+'\',\''+opt.allowed+'\',\''+opt.serviceName+'\')">Customize</a>';
  							  }else{
  								 
 								  result = result+'<a data-button="buyService" data-id="4" href="javascript:void(0)" id="buyService'+opt.masterServiceUUID+'" data-toggle="modal" data-target="#right-slide-modal" style="display:none"  onclick="getServiceDetails(\''+opt.masterServiceUUID+'\',\''+categoryUUID+'\',\''+isEntryRatioEnabled+'\')"style="color:red;">Book Now</a>';
-								  result = result+'<a data-button="buyService" data-id="4" href="javascript:void(0)" onclick="getServiceInfo(\''+opt.masterServiceUUID+'\',\''+opt.serviceName+'\',\''+isEntryRatioEnabled+'\',\''+opt.allowed+'\')">Book Now</a>';
+								  result = result+'<a data-button="buyService" data-id="4" href="javascript:void(0)" onclick="getServiceInfo(\''+opt.masterServiceUUID+'\',\''+opt.serviceName+'\',\''+isEntryRatioEnabled+'\',\''+opt.allowed+'\',\''+opt.serviceName+'\')">Book Now</a>';
 							  }
 							 
  							  
@@ -847,6 +885,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
     });
     
     function getEndDateDatePicker(){
+    if( typeof ($("#endDate").val()) != 'undefined' ){
     	 var endDatepicker = $('#endDate').datepicker().data('datepicker');
     	 endDatepicker.clear();
     	 var startDate = $('#startDate').val();
@@ -869,6 +908,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
           	 }
             
         });
+       }
     }
     
     function getSavedEndDateDatePicker(){
@@ -901,6 +941,15 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 	 
 	 
 	 
+}
+function platesQuantityInc(masterServiceUUID){
+	var quantity = document.getElementById("platesRatio"+masterServiceUUID);
+	quantity.stepUp(1); 
+}
+
+function platesQuantityDec(masterServiceUUID){
+	var quantity = document.getElementById("platesRatio"+masterServiceUUID);
+	quantity.stepDown(1); 
 }
 </script>
 
@@ -976,7 +1025,7 @@ function getTimeSlotValidation(serviceUUID){
 </script>
 
 <script>
-   function getServiceInfo(serviceUUID, service, isEntryRatioEnabled, allowed) {
+   function getServiceInfo(serviceUUID, service, isEntryRatioEnabled, allowed, serviceName) {
 
 
 		var vendorUUID = '${vendorUUID}';
@@ -985,7 +1034,12 @@ function getTimeSlotValidation(serviceUUID){
 
 		formData.append("vendorUUID", vendorUUID);
 		formData.append("startDate", $("#startDate").val());
-		formData.append("endDate", $("#endDate").val());
+					
+		if(serviceName !== "Cuisine"){
+			formData.append("endDate", $("#endDate").val());
+		}else{
+			formData.append("endDate",'');
+		}
 
 		$.ajax({
 			data: formData,
@@ -1002,8 +1056,13 @@ function getTimeSlotValidation(serviceUUID){
 					$("#alreadyBookSlotErrorMessage" + serviceUUID).css({ display: "none" });
 					var orderDate = getSelectedDateFromCalendar($("#serviceCalendar" + serviceUUID).val());
 					var timeslot = $("input[name='timeslot" + serviceUUID + "']:checked").val();
-					$("#number" + serviceUUID).val(getDaysDiff($("#startDate").val(), $("#endDate").val()))
-					var quantity = $("#number" + serviceUUID).val();
+					
+					var quantity = $("#platesRatio"+serviceUUID).val();
+					if(serviceName !== "Cuisine"){
+						$("#number" + serviceUUID).val(getDaysDiff($("#startDate").val(), $("#endDate").val()));
+						quantity = $("#number"+serviceUUID).val();
+					}
+					
 					var totalAllowed = allowed * quantity;
 					if (service == 'Surprise') {
 						var surpriseFor = $("#surpriseFor").val();
@@ -1013,6 +1072,7 @@ function getTimeSlotValidation(serviceUUID){
 							&& surpriseFor != '' && surpriseFor != 'undefined' && surpriseOccation != '' && surpriseOccation != 'undefined'
 							&& surpriseInstructions != '' && surpriseInstructions != 'undefined') {
 							$("#surpriseErrorMessage" + serviceUUID).css({ display: "none" });
+							
 							if (isEntryRatioEnabled == 'Y') {
 								var menRatio = $("#menRatio" + serviceUUID).val();
 								var womenRatio = $("#womenRatio" + serviceUUID).val();
@@ -1045,12 +1105,16 @@ function getTimeSlotValidation(serviceUUID){
 						}
 					} else {
 						var fromDate = $("#startDate").val();
-						var toDate = $("#endDate").val();
+						var toDate = '';
+    	       			
+				    	if(serviceName !== "Cuisine"){
+				    		toDate = $("#endDate").val();
+				    	}
 
 						var orderDate = $("#startDate").val();
 						$("#serviceCalendar" + serviceUUID).val(fromDate);
 
-						if (fromDate != '' && fromDate != 'undefined' && toDate != '' && toDate != 'undefined') {
+						if (fromDate != '' && fromDate != 'undefined' && ((toDate != '' && toDate != 'undefined') || (serviceName == "Cuisine"))) {
 							$("#errorMessage" + serviceUUID).css({ display: "none" });
 
 							if (isEntryRatioEnabled == 'Y') {
@@ -1115,13 +1179,18 @@ function getTimeSlotValidation(serviceUUID){
 	    	});
    }
 
-   function getPackagesServiceInfo(serviceUUID,isEntryRatioEnabled,allowed){
+   function getPackagesServiceInfo(serviceUUID,isEntryRatioEnabled,allowed,serviceName){
 
    if(getTimeSlotValidation(serviceUUID) && isTimeSlotAlreadyBook($("#startDate").val(),$("#endDate").val())){
 		   var orderDate = getSelectedDateFromCalendar($("#serviceCalendar"+serviceUUID).val());
 		   var timeslot = $("input[name='timeslot"+serviceUUID+"']:checked").val();
-		   $("#number"+serviceUUID).val(getDaysDiff($("#startDate").val(), $("#endDate").val()))
-		   var quantity = $("#number"+serviceUUID).val();
+		   
+    	   var quantity = $("#platesRatio"+serviceUUID).val();
+		   if(serviceName !== 'Cuisine'){
+			   $("#number"+serviceUUID).val(getDaysDiff($("#startDate").val(), $("#endDate").val()))
+		   	   quantity = $("#number"+serviceUUID).val();
+		   }
+		   
 		   var totalAllowed = allowed*quantity;
 		   
 		   if(orderDate != '' && orderDate != 'undefined' && timeslot !=  '' && typeof(timeslot) != 'undefined'){
@@ -1298,6 +1367,42 @@ function quantityDec(maserServiceUUID){
 </script>
 
 <script>
+
+	function selectedDinnerSlot(){
+
+		if($("#dinnerSlot").hasClass('selectedSlot')){
+			$("#dinnerSlot").removeClass('selectedSlot');
+		}else{
+			$("#dinnerSlot").addClass( 'selectedSlot' );
+			$("#breakfastSlot").removeClass('selectedSlot');
+			$("#lunchSlot").removeClass('selectedSlot');
+		}
+
+	}
+	
+	function selectedLunchSlot(){
+
+		if($("#lunchSlot").hasClass('selectedSlot')){
+			$("#lunchSlot").removeClass('selectedSlot');
+		}else{
+			$("#dinnerSlot").removeClass('selectedSlot');
+			$("#breakfastSlot").removeClass('selectedSlot');
+			$("#lunchSlot").addClass( 'selectedSlot' );
+		}
+
+	}
+	
+	function selectedBreakfastSlot(){
+
+		if($("#breakfastSlot").hasClass('selectedSlot')){
+			$("#breakfastSlot").removeClass('selectedSlot');
+		}else{
+			$("#lunchSlot").removeClass('selectedSlot');
+			$("#dinnerSlot").removeClass('selectedSlot');
+			$("#breakfastSlot").addClass( 'selectedSlot' );
+		}
+
+	}
 
 	function selectedFirstSlot(){
 

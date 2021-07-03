@@ -27,7 +27,7 @@
                                                <li class="col-xl-6 col-lg-6 col-12"><strong>Time Slot  : </strong><span id="timeslot"></span></li>
                                                <li class="col-xl-6 col-lg-6 col-12" style="display: none;" id="guestEntryTimeDiv"><strong>Guest Entry Time  : </strong><span id="guestEntryTime"></span></li>
                                                <li class="col-xl-6 col-lg-6 col-12" style="display: none;" ><strong>Allowed  : </strong><span id="allowed"></span></li>
-                                               <li class="col-xl-6 col-lg-6 col-12"><strong>No of Slots  : </strong><span id="quantity"></span></li>
+                                               <li class="col-xl-6 col-lg-6 col-12"><strong>No of Slots/Plates  : </strong><span id="quantity"></span></li>
                                                <li class="col-xl-6 col-lg-6 col-12"><strong>Total Amount  : </strong><span id="totalPriceCurrency"></span>&nbsp;<span id="totalAmount"></span></li>
                                                <li class="col-xl-6 col-lg-6 col-12" style="display: none;" id="eventLocationDiv"><strong>Event Location  : </strong><span id="eventLocation"></span></li>
                                                <li class="col-xl-6 col-lg-6 col-12" style="display: none;" id="musicGenreDiv"><strong>Music Genre  : </strong><span id="musicGenre"></span></li>
@@ -106,7 +106,11 @@
 			}
            
            var fromDate = $("#startDate").val();
-		   var toDate = $("#endDate").val();
+		   var toDate = '';
+    	
+    	   if($("#serviceName").val() !== "Cuisine"){
+    	   		toDate = $("#endDate").val();
+    	   }
 		   
     	   $("#totalPriceCurrency").html(currencyCode);
     	   var appUrl ='${appUrl}';
@@ -125,7 +129,6 @@
     			    	 $("#fromDate").html(fromDate);
     			    	 $("#toDate").html(toDate);
     			    	 $("#timeslot").html(timeslot);
-    			    	 
     			    	 
     			    	 if(response.object.minimumOrder != 0){
 			    			     document.getElementById('minimumOrderDiv').style.display='block'
@@ -191,7 +194,10 @@
     			    	 }
     			    	 
     			    	 $("#description").html(response.object.description);
-    			    	 var quantity = getDaysDiff($("#startDate").val(), $("#endDate").val());
+						var quantity = $("#platesRatio"+serviceUUID).val();;
+						if(response.object.service != "Cuisine"){
+								quantity = getDaysDiff($("#startDate").val(), $("#endDate").val());
+						}
     			    	 $("#quantity").html(quantity);
     			    	 $("#allowed").html(response.object.allowed*quantity);
     			    	 var totalAmount = '';
@@ -361,8 +367,12 @@
 			}
 
 
-    	   var fromDate = $("#startDate").val();
-    	   var toDate = $("#endDate").val();
+		   var fromDate = $("#startDate").val();
+    	   var toDate = '';
+    	   
+    	   if($("#serviceName").val() !== "Cuisine"){
+    	   		toDate = $("#endDate").val();
+    	   }
     	   
     	   if(orderDate == '' || timeslot == ''){
     		     $("#invalidMsgDiv").removeAttr("style");
@@ -496,7 +506,6 @@
        }
        
 	function getDaysDiff(fromDate, toDate){
-		   alert();
 		   var timeslotCount = 1;
 		   var fromDateParts = fromDate.split('/');
 		   var toDateParts = toDate.split('/');

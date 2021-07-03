@@ -145,9 +145,12 @@ public class UserCartServiceImpl implements UserCartService{
 		
 		Date startDate = new SimpleDateFormat("dd/MM/yyyy").parse(userCartDTO.getStartDate());  
 		userCart.setStartDate(startDate);
-		
-		Date endDate = new SimpleDateFormat("dd/MM/yyyy").parse(userCartDTO.getEndDate());  
-		userCart.setEndDate(endDate);
+		System.out.println("endDate 1-- "+userCartDTO.getEndDate());
+
+		if(StringUtils.isNotBlank(userCartDTO.getEndDate()) && !"undefined".equalsIgnoreCase(userCartDTO.getEndDate())) {
+			Date endDate = new SimpleDateFormat("dd/MM/yyyy").parse(userCartDTO.getEndDate());  
+			userCart.setEndDate(endDate);
+		}
 		
 		userCart.setCreatedDate(new Date());
 		userCart.setUuid(RandomCodeHelper.generateRandomUUID());

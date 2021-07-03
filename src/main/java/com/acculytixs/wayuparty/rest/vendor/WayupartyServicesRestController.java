@@ -744,12 +744,18 @@ public class WayupartyServicesRestController {
 
 		try {
 			Long vendorId = vendorService.getVendorIdByUUID(vendorUUID);
-			Date serviceStartDate = new SimpleDateFormat("dd/MM/yyyy").parse(startDate);  
-			Date serviceEndDate = new SimpleDateFormat("dd/MM/yyyy").parse(endDate);  
+			Date serviceStartDate = new SimpleDateFormat("dd/MM/yyyy").parse(startDate);
+			Date serviceEndDate = null;
+
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");  
+			startDate = formatter.format(serviceStartDate);  
 			
-			 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");  
-			 startDate = formatter.format(serviceStartDate);  
-			 endDate = formatter.format(serviceEndDate); 
+			if (StringUtils.isNotBlank(endDate)) {
+				
+				 serviceEndDate = new SimpleDateFormat("dd/MM/yyyy").parse(endDate);  
+				 endDate = formatter.format(serviceEndDate); 
+			}
+			
 			 boolean flag;
 			
 			 flag = vendorServicesService.isVendorTimeSlotValid(startDate, endDate, vendorUUID); 
