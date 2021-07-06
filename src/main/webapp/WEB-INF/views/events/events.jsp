@@ -4,6 +4,8 @@
 
 <div id="preloader"></div>
 <style>
+body{background-image: url('/resources/img/Oneroof_bg_page.jpg');
+}
 .sidebar-expand-md {
    float:right;
   }
@@ -18,7 +20,7 @@
         <div class="dashboard-page-one">
           
             <div class="dashboard-content-one">
-                <div class="breadcrumbs-area">
+                <div class="breadcrumbs-area">&nbsp&nbsp
 	                    <h3>Guests</h3>
 	                    <ul>
 	                        <li>
@@ -123,7 +125,7 @@
 		   				}
 		        	}else{
 		        		result = result +"<tr>";
-	   					result = result+'<td colspan="5" class="noRecords-dashboard-portlets"><img src="/resources/img/no-records.png" alt=""/></td>';
+	   					result = result+'<td colspan="5" class="noRecords-dashboard-portlets"><img src="/resources/img/No_events.png" alt=""/></td>';
 	   					result = result +"</tr>";
 	   				}
 		        	
