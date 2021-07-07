@@ -26,14 +26,12 @@
 		        	result = result +"<th>Image</th>";
 		        	result = result +"<th>Service</th>";
 		        	result = result +"<th>Category</th>";
-		        	if(serviceType == 'Book a bottle'){
-		        		result = result +"<th>Bottle Name</th>";
-		        	}else if(serviceType == 'Venue'){
+		        	if(serviceType == 'Venue'){
 		        		result = result +"<th>Table Name</th>";
 		        	}else if(serviceType == 'Entry' || serviceType == 'Guest List'){
 		        		result = result +"<th>Event Name</th>";
-		        	}else if(serviceType == 'Packages'){
-		        		result = result +"<th>Package Name</th>";
+		        	}else if(serviceType == 'Cuisine'){
+		        		result = result +"<th>Cuisine Name</th>";
 		        	}else if(serviceType == 'Surprise'){
 		        		result = result +"<th>Surprise Name</th>";
 		        	}else if(serviceType == 'Deals and Offers'){
@@ -82,7 +80,7 @@
 				        			result = result +'&nbsp;&nbsp;<a href="'+appUrl+'/entry?vendorUUID='+vendorUUID+'&serviceUUID='+serviceUUID+'&entryUUID='+opt.masterServiceUUID+'" ><i class="fa fa-edit" title="Services"></i></a></li>';
 				        		}else if(serviceType == 'Guest List'){
 				        			result = result +'&nbsp;&nbsp;<a href="'+appUrl+'/guest?vendorUUID='+vendorUUID+'&serviceUUID='+serviceUUID+'&guestUUID='+opt.masterServiceUUID+'" ><i class="fa fa-edit" title="Services"></i></a></li>';
-				        		}else if(serviceType == 'Packages'){
+				        		}else if(serviceType == 'Cuisine'){
 				        			result = result +'&nbsp;&nbsp;<a href="'+appUrl+'/packages?vendorUUID='+vendorUUID+'&serviceUUID='+serviceUUID+'&packageUUID='+opt.masterServiceUUID+'" ><i class="fa fa-edit" title="Services"></i></a></li>';
 				        		}else if(serviceType == 'Surprise'){
 				        			result = result +'&nbsp;&nbsp;<a href="'+appUrl+'/surprise?vendorUUID='+vendorUUID+'&serviceUUID='+serviceUUID+'&surpriseUUID='+opt.masterServiceUUID+'" ><i class="fa fa-edit" title="Services"></i></a></li>';
@@ -115,7 +113,7 @@
 							   serviceImage = '/resources/img/services/no_surprise_found.jpg';
 						   }else if(serviceName == 'Deals and Offers'){
 							   serviceImage = '/resources/img/services/no_deals_found.jpg';
-						   }else if(serviceName == 'Packages'){
+						   }else if(serviceName == 'Cuisine'){
 							   serviceImage = '/resources/img/services/no_packages_found.jpg';
 						   }
 						   

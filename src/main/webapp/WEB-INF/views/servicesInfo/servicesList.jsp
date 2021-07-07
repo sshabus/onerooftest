@@ -682,13 +682,8 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 								 result = result+'</div>';
 
 							
-							  	if(opt.serviceName == 'Cuisine'){
-									result = result+'<div>';
-									result = result+'<input type="submit" id="breakfastSlot" value="Breakfast" onclick="selectedBreakfastSlot()" class="btn btn-success" style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
-									result = result+'<input type="button"  id="lunchSlot" value="Lunch" onclick="selectedLunchSlot()" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
-									result = result+'<input type="button"  id="dinnerSlot" value="Dinner" onclick="selectedDinnerSlot()" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
-									result = result+' </div>';
-								}else{
+							  	if(opt.serviceName == 'Venue'){
+									
 									result = result+'<div class="modal-footer">';
 									result = result+'<input type="submit" id="selectedFirstSlot" value="First Half" onclick="selectedFirstSlot()" class="btn btn-success" style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
 									result = result+'<input type="button"  id="selectedSecondSlot" value="Second Half" onclick="selectedSecondSlot()" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
@@ -781,7 +776,11 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
  							  if(opt.serviceName == 'Packages'){
  								 result = result+'<a data-button="customize" data-id="4" href="javascript:void(0)" id="customizeService'+opt.masterServiceUUID+'" data-toggle="modal" style="display:none" data-target="#right-slide-modal" onclick="getServiceDetails(\''+opt.masterServiceUUID+'\',\''+categoryUUID+'\',\''+isEntryRatioEnabled+'\')">Customize</a>';
  								 result = result+'<a data-button="customize" data-id="4" href="javascript:void(0)" onclick="getPackagesServiceInfo(\''+opt.masterServiceUUID+'\',\''+isEntryRatioEnabled+'\',\''+opt.allowed+'\',\''+opt.serviceName+'\')">Customize</a>';
- 							  }else{
+ 							  }
+ 							  if(opt.serviceName == 'Cuisine'){
+ 							 	  result = result+'<a data-button="buyService" data-id="4" href="javascript:void(0)" id="buyService'+opt.masterServiceUUID+'" data-toggle="modal" data-target="#right-slide-modal" style="display:none"  onclick="getServiceDetails(\''+opt.masterServiceUUID+'\',\''+categoryUUID+'\',\''+isEntryRatioEnabled+'\')"style="color:red;">Menu Items</a>';
+								  result = result+'<a data-button="buyService" data-id="4" href="javascript:void(0)" onclick="getServiceInfo(\''+opt.masterServiceUUID+'\',\''+opt.serviceName+'\',\''+isEntryRatioEnabled+'\',\''+opt.allowed+'\',\''+opt.serviceName+'\')">Menu Items</a>';
+							  } else{
  								 
 								  result = result+'<a data-button="buyService" data-id="4" href="javascript:void(0)" id="buyService'+opt.masterServiceUUID+'" data-toggle="modal" data-target="#right-slide-modal" style="display:none"  onclick="getServiceDetails(\''+opt.masterServiceUUID+'\',\''+categoryUUID+'\',\''+isEntryRatioEnabled+'\')"style="color:red;">Book Now</a>';
 								  result = result+'<a data-button="buyService" data-id="4" href="javascript:void(0)" onclick="getServiceInfo(\''+opt.masterServiceUUID+'\',\''+opt.serviceName+'\',\''+isEntryRatioEnabled+'\',\''+opt.allowed+'\',\''+opt.serviceName+'\')">Book Now</a>';
@@ -1367,42 +1366,6 @@ function quantityDec(maserServiceUUID){
 </script>
 
 <script>
-
-	function selectedDinnerSlot(){
-
-		if($("#dinnerSlot").hasClass('selectedSlot')){
-			$("#dinnerSlot").removeClass('selectedSlot');
-		}else{
-			$("#dinnerSlot").addClass( 'selectedSlot' );
-			$("#breakfastSlot").removeClass('selectedSlot');
-			$("#lunchSlot").removeClass('selectedSlot');
-		}
-
-	}
-	
-	function selectedLunchSlot(){
-
-		if($("#lunchSlot").hasClass('selectedSlot')){
-			$("#lunchSlot").removeClass('selectedSlot');
-		}else{
-			$("#dinnerSlot").removeClass('selectedSlot');
-			$("#breakfastSlot").removeClass('selectedSlot');
-			$("#lunchSlot").addClass( 'selectedSlot' );
-		}
-
-	}
-	
-	function selectedBreakfastSlot(){
-
-		if($("#breakfastSlot").hasClass('selectedSlot')){
-			$("#breakfastSlot").removeClass('selectedSlot');
-		}else{
-			$("#lunchSlot").removeClass('selectedSlot');
-			$("#dinnerSlot").removeClass('selectedSlot');
-			$("#breakfastSlot").addClass( 'selectedSlot' );
-		}
-
-	}
 
 	function selectedFirstSlot(){
 
