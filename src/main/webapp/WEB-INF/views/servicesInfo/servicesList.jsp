@@ -46,12 +46,12 @@ img{
 	font-size: 14px;
 }
 .service_wrap_inn{
-	width: 61%;
-    margin: 2.5% 2.1% 1.5% 18.9%;
+	width: 100%;
+ /*   margin: 2.5% 2.1% 1.5% 18.9%; 	*/
     background-color: #eb9b9b2b;
     border-radius: 5px;
     box-shadow: 0px 0px 8px rgb(0 0 0 / 30%);
-    float: inherit;
+  /*  float: inherit; */
 }
 .service_wrap_name {
     padding: 110px 15px 7px 50px;
@@ -76,6 +76,9 @@ img{
 .service_wrap_top_text{
 	font-size: 18px;
 	padding: 0 32px 0px 0px;
+}
+.nav-item:hover {
+  transform: scale(1.1);
 }
 .ui-btn-wrap{
 	align-self: center;
@@ -106,7 +109,7 @@ img{
 
 /*new designs*/
 .price{
-	margin: 35px 0px -40px 353px;
+	margin: 35px 0px -36px 370px;
 	color: white;
 }
 .single-info-details{
@@ -121,11 +124,24 @@ img{
     flex-wrap: wrap;
     margin-right: -20%;
     margin-left: 50%;
-    margin: -184px -78px 33px 320px;
+    margin: -160px -78px 33px 300px;
 }
 .modal-footer{
-	margin-top: -51px;
-	margin-right: 84px;
+	margin-top: -55px;
+	margin-right: 110px;
+}
+.service_wrap_bot{
+	margin: -14px 45px 29px 503px;
+    border-radius: 12px;
+    width: 20%;
+}
+.service_wrap_bot a{
+	padding: 10px 19px;
+	font-size: 16px;
+}
+#categoryServicesListDiv{
+	width: 60%;
+	margin-left: 20%;
 }
 @media (max-width: 1480px){
 	
@@ -249,7 +265,7 @@ img{
 }
 </style>
 
-<div class="card height-auto" style="align-items: center;top: -30px;">
+<div class="card height-auto" style="align-items: center;top: -30px">
       <div class="card-body">
           <div class="single-info-details" >
                  <div class="vendor_images_img item-img"  id="vendorProfileImage" class="mb-3"></div>
@@ -288,7 +304,7 @@ img{
        </div> 
       
        
-       <div class="card-body">
+       <div class="card-body">			<!-- style="align-self: center;" -->
        		<div class="service_wrap">
           	<div id="categoryServicesListDiv"></div>
           </div>
@@ -375,7 +391,7 @@ img{
 	    			        		  
 	    			        		  if(service.serviceName != 'Events'){
 	    			        			  result = result +'<li class="nav-item">';
-		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\')" role="tab" aria-selected="true" ><img style="max-width: 80px;margin-left: -8px;background-color: white" src="'+service.serviceImage+'"></img></a><span><strong> <div <!--align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;margin-top: 10px;">'+service.serviceName+'</strong></span>';
+		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\')" role="tab" aria-selected="true" ><img style="max-width: 80px;margin-left: -8px;background-color: white;transition: transform ease-in-out 0.3s;" src="'+service.serviceImage+'"></img></a><span><strong> <div <!--align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;margin-top: 10px;">'+service.serviceName+'</strong></span>';
 		    			        		  result = result +'</li>';
 	    			        		  }
 	    			        		  
@@ -609,8 +625,8 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
                               
 							//   }
 							 
-							  result = result+'<span class="col-xl-6 col-lg-6 col-12  mt-2" data-toggle="modal" data-target="#pop-up-modal" onclick="getTermsAndConditions(\''+opt.termsAndConditions+'\')"style="color: white;">Terms & Conditions</span>';
-							  result = result+'<span class="col-xl-6 col-lg-6 col-12  mt-2" data-toggle="modal" data-target="#pop-up-modal" onclick="getServiceOffer(\''+opt.serviceOffer+'\')"style="margin: 0 0 0 1px;">Service Offer</span>';
+							  result = result+'<span class="col-xl-6 col-lg-6 col-12  mt-2" data-toggle="modal" data-target="#pop-up-modal" onclick="getTermsAndConditions(\''+opt.termsAndConditions+'\')"style="color: gold;">Terms & Conditions</span>';
+							//  result = result+'<span class="col-xl-6 col-lg-6 col-12  mt-2" data-toggle="modal" data-target="#pop-up-modal" onclick="getServiceOffer(\''+opt.serviceOffer+'\')"style="margin: 0 0 0 1px;">Service Offer</span>';
 							  result = result+'</div>';
 							  result = result+'<div class="service_wrap_user_img">';
 							  result = result+'<img src="'+opt.serviceImage+'" onerror="predefineVendorServiceImage(this);" style="height: 148px;border-radius: 73px;max-height: none;width: 100%">';
@@ -645,7 +661,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 									if(opt.serviceName == 'Cuisine'){
 									
 										result = result+'<div class="col-xl-12 col-lg-12 col-12 form-group">';
-											result = result+'<label style="color:white;">Start Date<span class="text-danger">&nbsp;*</span></label>';
+											result = result+'<label style="color:white;margin-top: -28px;">Start Date<span class="text-danger">&nbsp;*</span></label>';
 											result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control start-date-datepicker" data-position="bottom right" name="startDate" id="startDate" data-validation="required" field-name="Start Date"> ';
 											result = result+'<i class="far fa-calendar-alt"></i>';
 										result = result+'</div>';
@@ -665,10 +681,10 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 										result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control end-date-datepicker" data-position="bottom right" name="endDate" id="endDate" data-validation="required" field-name="End Date">';
 										result = result+'<i class="far fa-calendar-alt"></i>';
 										result = result+'</div>';
-										
+									}	
 									result = result+'</div>';
 									
-									}
+									
 									
 									
 
@@ -680,10 +696,9 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 								// result = result+'</div>';
 								
 								 result = result+'</div>';
-
+								 
 							
 							  	if(opt.serviceName == 'Venue'){
-									
 									result = result+'<div class="modal-footer">';
 									result = result+'<input type="submit" id="selectedFirstSlot" value="First Half" onclick="selectedFirstSlot()" class="btn btn-success" style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
 									result = result+'<input type="button"  id="selectedSecondSlot" value="Second Half" onclick="selectedSecondSlot()" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
@@ -772,19 +787,26 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							  result = result+'<div class="price">PRICE :&nbsp;<span style="color:gold">'+currencyCode+' '+servicePrice+'/-</span></div>';
 							 
 							  result = result+'<div class="service_wrap_bot">';
+						 	
+							 
 							  
- 							  if(opt.serviceName == 'Packages'){
+							  
+	 					 	if(opt.serviceName == 'Packages'){
  								 result = result+'<a data-button="customize" data-id="4" href="javascript:void(0)" id="customizeService'+opt.masterServiceUUID+'" data-toggle="modal" style="display:none" data-target="#right-slide-modal" onclick="getServiceDetails(\''+opt.masterServiceUUID+'\',\''+categoryUUID+'\',\''+isEntryRatioEnabled+'\')">Customize</a>';
  								 result = result+'<a data-button="customize" data-id="4" href="javascript:void(0)" onclick="getPackagesServiceInfo(\''+opt.masterServiceUUID+'\',\''+isEntryRatioEnabled+'\',\''+opt.allowed+'\',\''+opt.serviceName+'\')">Customize</a>';
- 							  }
- 							  if(opt.serviceName == 'Cuisine'){
- 							 	  result = result+'<a data-button="buyService" data-id="4" href="javascript:void(0)" id="buyService'+opt.masterServiceUUID+'" data-toggle="modal" data-target="#right-slide-modal" style="display:none"  onclick="getServiceDetails(\''+opt.masterServiceUUID+'\',\''+categoryUUID+'\',\''+isEntryRatioEnabled+'\')"style="color:red;">Menu Items</a>';
-								  result = result+'<a data-button="buyService" data-id="4" href="javascript:void(0)" onclick="getServiceInfo(\''+opt.masterServiceUUID+'\',\''+opt.serviceName+'\',\''+isEntryRatioEnabled+'\',\''+opt.allowed+'\',\''+opt.serviceName+'\')">Menu Items</a>';
-							  } else{
+	 					 	}
+							if(opt.serviceName == 'Cuisine'){
+							 	 result = result+'<a data-button="buyService" data-id="4" href="javascript:void(0)" id="buyService'+opt.masterServiceUUID+'" data-toggle="modal" data-target="#right-slide-modal" style="display:none"  onclick="getServiceDetails(\''+opt.masterServiceUUID+'\',\''+categoryUUID+'\',\''+isEntryRatioEnabled+'\')"style="color:red;">Menu Items</a>';
+								 result = result+'<a data-button="buyService" data-id="4" href="javascript:void(0)" onclick="getServiceInfo(\''+opt.masterServiceUUID+'\',\''+opt.serviceName+'\',\''+isEntryRatioEnabled+'\',\''+opt.allowed+'\',\''+opt.serviceName+'\')">Menu Items</a>';
+							}else{
+	 							 result = result+'<a data-button="buyService" data-id="4" href="javascript:void(0)" id="buyService'+opt.masterServiceUUID+'" data-toggle="modal" data-target="#right-slide-modal" style="display:none"  onclick="getServiceDetails(\''+opt.masterServiceUUID+'\',\''+categoryUUID+'\',\''+isEntryRatioEnabled+'\')"style="color:red;">Book Now</a>';
+								 result = result+'<a data-button="buyService" data-id="4" href="javascript:void(0)" onclick="getServiceInfo(\''+opt.masterServiceUUID+'\',\''+opt.serviceName+'\',\''+isEntryRatioEnabled+'\',\''+opt.allowed+'\',\''+opt.serviceName+'\')">Book Now</a>';
+							}
+	 					 	
+	 					 	
+	 					 
  								 
-								  result = result+'<a data-button="buyService" data-id="4" href="javascript:void(0)" id="buyService'+opt.masterServiceUUID+'" data-toggle="modal" data-target="#right-slide-modal" style="display:none"  onclick="getServiceDetails(\''+opt.masterServiceUUID+'\',\''+categoryUUID+'\',\''+isEntryRatioEnabled+'\')"style="color:red;">Book Now</a>';
-								  result = result+'<a data-button="buyService" data-id="4" href="javascript:void(0)" onclick="getServiceInfo(\''+opt.masterServiceUUID+'\',\''+opt.serviceName+'\',\''+isEntryRatioEnabled+'\',\''+opt.allowed+'\',\''+opt.serviceName+'\')">Book Now</a>';
-							  }
+								  
 							 
  							  
 							  result = result+'<div class="clear"></div>';
@@ -811,7 +833,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 						 if(serviceType == 'Book a bottle'){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_bottles_found.jpg" alt=""/></td>';
 						 }else if(serviceType == 'Venue'){
-							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/No_Venue.png" alt=""style="width: 10%;"/></td>';
+							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/No_Venue.png" alt=""style="width: 20%;"/></td>';
 							 result = result+'<a style="color:white;font-size:15px;">sorry..! No Venues Found...</a>'
 						 }else if(serviceType == 'Entry'){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_entry_found.jpg" alt=""/></td>';
@@ -822,7 +844,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 						 }else if(serviceType == 'Packages'){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_packages_found.jpg" alt=""/></td>';
 						 }else if(serviceType == 'Cuisine'){
-							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_cuisine.png" alt="" style="width: 10%;"/></td>';
+							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_cuisine.png" alt="" style="width: 20%;"/></td>';
 							 result = result+'<a style="color:white;font-size:15px;">sorry..! No Cuisine Found...</a>'
 						 }
 						
@@ -1179,13 +1201,18 @@ function getTimeSlotValidation(serviceUUID){
    }
 
    function getPackagesServiceInfo(serviceUUID,isEntryRatioEnabled,allowed,serviceName){
-
-   if(getTimeSlotValidation(serviceUUID) && isTimeSlotAlreadyBook($("#startDate").val(),$("#endDate").val())){
+    alert(serviceName)
+    alert($("#startDate").val());
+    alert($("#startDate").val());
+    alert(serviceUUID)
+   if(getTimeSlotValidation(serviceUUID) || isTimeSlotAlreadyBook($("#startDate").val(), $("#endDate").val())){
+	      alert(13)
 		   var orderDate = getSelectedDateFromCalendar($("#serviceCalendar"+serviceUUID).val());
 		   var timeslot = $("input[name='timeslot"+serviceUUID+"']:checked").val();
 		   
     	   var quantity = $("#platesRatio"+serviceUUID).val();
-		   if(serviceName !== 'Cuisine'){
+		   if(serviceName != 'Cuisine'){
+			   alert(1)
 			   $("#number"+serviceUUID).val(getDaysDiff($("#startDate").val(), $("#endDate").val()))
 		   	   quantity = $("#number"+serviceUUID).val();
 		   }
@@ -1194,37 +1221,47 @@ function getTimeSlotValidation(serviceUUID){
 		   
 		   if(orderDate != '' && orderDate != 'undefined' && timeslot !=  '' && typeof(timeslot) != 'undefined'){
 			   $("#errorMessage"+serviceUUID).css({ display: "none" });
-			   
+			   alert(2)
 			   if(isEntryRatioEnabled == 'Y'){
 				   var menRatio = $("#menRatio"+serviceUUID).val();
 				   var womenRatio = $("#womenRatio"+serviceUUID).val();
+				   alert(3)
 		   		   
 				   if(Number(womenRatio) >= 1){
 					   $("#stagsErrorMessage"+serviceUUID).css({ display: "none" });
 					   var personEntryCount = Number(menRatio) + Number(womenRatio);
+					   alert(4)
 					   if(personEntryCount == 0 || (Number(personEntryCount) > Number(totalAllowed))){
 						   $("#personsErrorMessage"+serviceUUID).css({ display: "block" });
+						   alert(5)
 					   }else{
 						   $("#personsErrorMessage"+serviceUUID).css({ display: "none" });
 						   var enabledRatio = Number(menRatio) - Number(womenRatio);
+						   alert(6)
 						   if((parseInt(womenRatio) >= parseInt(enabledRatio)) || Number(menRatio) == 1){
 							   $("#entryErrorMessage"+serviceUUID).css({ display: "none" });
 							   $("#customizeService"+serviceUUID).click();
+							   alert(7)
 						   }else{
 							   $("#entryErrorMessage"+serviceUUID).css({ display: "block" });
+							   alert(8)
 						   }
 					   }
 				   }else{
+					   alert(9)
 					   $("#stagsErrorMessage"+serviceUUID).css({ display: "block" });
 				   }
 			
 			   }else{
+				   alert(10)
 				   $("#customizeService"+serviceUUID).click();
 			   }
 		   }else{
+			   alert(11)
 			   $("#errorMessage"+serviceUUID).css({ display: "block" });
 		   }
 	   }else{
+		   alert(12)
 		   alert("Invalid time slot. Choose another time slot");
 	   }
 	   

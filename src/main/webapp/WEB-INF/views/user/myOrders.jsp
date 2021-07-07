@@ -1,7 +1,8 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
 <div id="preloader"></div>
 
  <style>
@@ -158,7 +159,7 @@
 
 
 </style>
-
+</head>
    <div id="wrapper" class="wrapper bg-ash">
     <jsp:include page="../wayupartyMasterHeader.jsp" />
         <!-- Page Area Start Here -->
@@ -239,14 +240,14 @@
 		        		 result = result +'<div class="col-sm-12 col-md-10">';
 		        		 result = result +'<div class="row">';
 		        		 result = result +'<div class="col-sm-12 col-md-4">';
-		        		 result = result +'<h4 class="orderdate" style="margin-top: 12px;"></h4>';
-		        		 result = result +'<h4 class="order_on"style="margin-top: 8px;font-size: 18px;color:white">'+opt.orderDate+'</h4>';
+		        		 result = result +'<h4 class="orderdate" style="margin-top: 12px;">Ordered Date</h4>';
+		        		 result = result +'<h4 class="order_on"style="margin-top: 8px;font-size: 18px;">'+opt.orderDate+'</h4>';
 		        		 result = result +'</div>';
 		        		 result = result +'<div class="col-sm-12 col-md-4 cart_margn_top" style="text-align: center;">';
 		        	     result = result +'<h1 class="club_name">'+opt.clubName+'</h1>';
 		        	     
 		        	     
-		        		 result = result +'<h4 style="color:white";class="small text-muted"style="margin-right: -50%;">'+opt.clubLocation+'</h4>';
+		        		 result = result +'<h4 class="small text-muted"style="margin-right: -50%;">'+opt.clubLocation+'</h4>';
 		        		 result = result +'<h4 style="color:white;margin-left: -63%;">'+opt.orderItems+'</h4>';
 		        		 result = result +'<h4 class="amount" style="margin-right: -100px; margin-top: -23px;" >'+currencyType+' '+opt.totalAmount+'</h4>';
 		        		 result = result +'</div>';

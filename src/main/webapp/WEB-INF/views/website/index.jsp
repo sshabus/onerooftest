@@ -106,7 +106,12 @@
 	background: white;
 	margin-right: 16px;
 	border-radius: 60px;
+	transition: transform ease-in-out 0.3s;
 }
+.serviceimg:hover {
+  transform: scale(1.2);
+}
+
 .services{
 	text-align: center;
 	background: #eb9b9b2b;
@@ -124,7 +129,7 @@
 	color: white;
 	font-weight: 100;
 	font-family: 'Poppins', 'Roboto';
-	font-size: 22px;
+	font-size: 20px;
 }
 .wraptext{
 	text-align: center;
@@ -200,14 +205,25 @@
 		
 			<div class = "services">
 				<div>
+					<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/clubs'" class="logina">
+						<img src="/resources/img/venue.jpg" alt="logo" class="serviceimg" style="background: white;margin-right: 16px;">
+					</a>
+					<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/login'" class="logina">
+						<img src="/resources/img/cuisine.jpg" alt="logo" class="serviceimg">
+					</a>
+					<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/login'" class="logina">		
+						<img src="/resources/img/event.jpg" alt="logo" class="serviceimg"style="margin-left:-3px;">	
+					</a>
 					
-					<img src="/resources/img/venue.jpg" alt="logo" class="serviceimg" style="background: white;margin-right: 16px;">
-					<img src="/resources/img/cuisine.jpg" alt="logo" class="serviceimg">	
-					<img src="/resources/img/event.jpg" alt="logo" class="serviceimg"style="margin-left:-3px;">	
-					
-					<p class="servicename" style="margin: 13px 0 0 -250px;">Venue</p>
-					<p class="servicename"style="margin: -32px 0 0 0px;">Cusine</p>
-					<p class="servicename"style="margin: -32px 0 0 230px;">Events</p>
+					<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/clubs'" class="logina">
+						<p class="servicename" style="margin: 13px 0 0 -250px;">Venue</p>
+					</a>
+					<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/login'" class="logina">
+						<p class="servicename"style="margin: -32px 0 0 -13px;">Cusine</p>
+					</a>
+					<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/login'" class="logina">
+						<p class="servicename"style="margin: -32px 0 0 230px;">Events</p>
+					</a>
 				
 				<div class="wraptext"></div>
 			

@@ -25,9 +25,15 @@
 		        	result = result +"<tr>";
 		        	result = result +"<th>Image</th>";
 		        	result = result +"<th>Service</th>";
+		        	
+		        	if(serviceType == 'Book a bottle' || serviceType == 'Venue'){
+		        	result = result +"<th>Capacity</th>";
+		        	}else if(serviceType == 'Cuisine'){
 		        	result = result +"<th>Category</th>";
+		        	}
+		        	
 		        	if(serviceType == 'Venue'){
-		        		result = result +"<th>Table Name</th>";
+		        		result = result +"<th>Venue Name</th>";
 		        	}else if(serviceType == 'Entry' || serviceType == 'Guest List'){
 		        		result = result +"<th>Event Name</th>";
 		        	}else if(serviceType == 'Cuisine'){
@@ -37,6 +43,7 @@
 		        	}else if(serviceType == 'Deals and Offers'){
 		        		result = result +"<th>Deal / Offer Name</th>";
 		        	}
+		        		
 		        	result = result +"<th>Start Date</th>";
 		        	result = result +"<th>End Date</th>";
 		        	result = result +"<th>Status</th>";

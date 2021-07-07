@@ -4,15 +4,31 @@
 
 <div id="preloader"></div>
 <style>
-body{background-image: url(/resources/img/Oneroof_bg_page.jpg);
-}
+.wrapper {
+    background-image: url(/resources/img/Oneroof_bg_page.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    width: 100%;
+    background-size: 100% 100%;
+    
+    }  
 .sidebar-expand-md {
    float:right;
   }
   .navbar {
 	margin: -135px 0 0 0;
 }
+.breadcrumbs-area {
+    padding: 35px 40px 35px;
+}
 </style>
+
    <div id="wrapper" class="wrapper bg-ash">
     <jsp:include page="../wayupartyMasterHeader.jsp" />
         <!-- Page Area Start Here -->
@@ -20,7 +36,7 @@ body{background-image: url(/resources/img/Oneroof_bg_page.jpg);
         <div class="dashboard-page-one">
           
             <div class="dashboard-content-one">
-                <div class="breadcrumbs-area">&nbsp&nbsp
+                <div class="breadcrumbs-area">
 	                    <h3>Orders</h3>
 	                    <ul>
 	                        <li>

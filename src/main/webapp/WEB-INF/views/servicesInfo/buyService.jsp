@@ -1,3 +1,54 @@
+<head>
+
+	<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+	
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+body {
+    font-size: 15px;
+    font-family: 'Poppins', 'Roboto';  
+}    
+
+.ui-modal-box .modal-box .right-slide-modal .modal-dialog .modal-content {
+    margin-top: 65px;
+    height: 100%;
+    border-top-left-radius: 35px;
+}
+
+.close {
+    color: #79004d;
+    opacity: 2;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #79004d;
+    font-weight: 600;
+    }
+.modal .modal-dialog .modal-content .modal-header .modal-title{
+	color: black;
+}
+.mt-3 {
+    
+    flex-direction: column;
+    font-family: 'Poppins', -webkit-body;
+    margin-right: 5px;
+}
+.mt-5 {
+    margin-top: 3rem!important;
+}
+.modal .modal-dialog .modal-content .modal-footer .footer-btn{
+	background: #79004d;
+}
+.text-light {
+    color: white !important;
+}
+
+/* .modal-footer {
+    margin-top: -55px;
+    margin-right: 40px;
+} */
+</style>
+</head>
 <div class="ui-modal-box">
   <div class="modal-box">
        <div class="modal right-slide-modal fade" id="right-slide-modal" tabindex="-1"
@@ -51,8 +102,8 @@
                                             
                                             <div class="modal-footer">
                                                <button type="button" class="footer-btn text-light gradient-orange-peel" id="addToCart"><i class="fa fa-shopping-cart mg-l-10"></i>&nbsp;Add To Cart</button>
-                                               <!-- <button type="button" class="footer-btn text-light gradient-pastel-green" id="placeOrder"><i class="fa fa-save mg-l-10"></i>&nbsp;Place Order</button> -->
-                                               <button type="button" class="footer-btn bg-gradient-gplus" data-dismiss="modal"><i class="fa fa-times mg-l-10"></i>&nbsp;Close</button>
+                                               <!-- <button type="button" class="footer-btn text-light gradient-pastel-green" id="placeOrder"><i class="fa fa-save mg-l-10"></i>&nbsp;Place Order</button> 
+                                               <button type="button" class="footer-btn bg-gradient-gplus" data-dismiss="modal"><i class="fa fa-times mg-l-10"></i>&nbsp;Close</button> -->
                                             </div>
                                         </div>
                                     </div>
@@ -250,6 +301,7 @@
 		                    	 result = result +'<input type="hidden" id="offeringCount'+menu.menuItemUUID+'" value="'+menu.itemsOffered+'">';
 		                    	 result = result +'<input type="hidden" id="selectedCount'+menu.menuItemUUID+'" value="0">';
 		                    	 result = result +'<div class="mt-3 text-success">Select any '+menu.itemsOffered+' items</div>';
+		                    	 result = result +'<div style="position: inherit;overflow-y: scroll;height: 157px;">';
 		                    	 result = result +"<ul class='row mt-3'>";
 	    			        	  for (var k=0; k<menu.menuItemsList.length; k++)
 	    			   				{ 
@@ -257,6 +309,7 @@
 	    			        		  result = result +'<li class="col-xl-6 col-lg-6 col-12 mt-2"><input  value="'+menuItems.itemUUID+'" name="menuItemsList[]" type="checkbox" onclick="selectMenuItem(\''+menuItems.itemUUID+'\',\''+menu.menuItemUUID+'\')" id="menuItem'+menuItems.itemUUID+'">&nbsp;&nbsp;<strong>'+menuItems.itemName+'</strong></input></li>';
 	    			   				}
    			        			result = result +"</ul>";
+   			        			result = result +'<div>';
                                 result = result +'</div>';
 	 	  	        	    	}
 		                     result = result +'</div>';

@@ -71,7 +71,7 @@ max-width: 150px !important;
 .dropdown:hover .dropdown-content {display: block;}
 
 .navbar {
-	margin-bottom: -80px;
+	margin-bottom: -65px;
 }
 .service_wrap_inn {
 		width: 71px;

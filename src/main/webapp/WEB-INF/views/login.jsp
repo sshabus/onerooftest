@@ -24,6 +24,7 @@
 img:hover {
     cursor: pointer;
 }
+
 .input-box{
 	margin: 10px auto;
 	width: 100%;
@@ -61,16 +62,16 @@ img:hover {
 	font-weight: 600;
 }
 .loginpage{
-	min-width: 407px;
+
 	padding: 2rem 4rem;
 	border-radius: 4px;
 	border-top-left-radius: 45px;
 	background-color: #ffffff;
-	float:right;
-	height:100%;
-	width:25%;
 	position: relative;
 	bottom: -100px;
+	width: 36%;
+    float: right;
+    height: 100%;
 }
 .mainline{
 	color: white;
@@ -101,7 +102,8 @@ img:hover {
 	text-align:center;
 	position: fixed;
 	top: 113px;
-	right: 404px;
+	float: left;
+    width: 60%;
 }
 @media (max-width: 1024px){
 
@@ -110,7 +112,7 @@ img:hover {
 		}
 		.loginpage{
 			bottom: -33%;
-		    height: 70%;
+		    
 		    min-width: 40%;
 		}
 		.login_page_wrap_1{
@@ -125,7 +127,7 @@ img:hover {
 		}
 		.loginpage{
 			bottom: -25%;
-		    height: 75%;
+		    
 		    min-width: 42%;
 		}
 		
@@ -137,7 +139,7 @@ img:hover {
 		}
 		.loginpage{
 			bottom: -30%;
-		    height: 70%;
+		    
 		    min-width: 52%;
 		}
 		.login_page_wrap_1{
@@ -154,12 +156,11 @@ img:hover {
 		}
 		.loginpage{
 			bottom: -25%;
-		    height: 75%;
+		   
 		    min-width: 52%;
 		}
 		
 }
-
 @media (max-width: 480px){
 		
 		.login_page_wrap_1{
@@ -185,7 +186,6 @@ img:hover {
 			display: none
 		}
 		
-
 }
 </style>
 
@@ -193,7 +193,7 @@ img:hover {
     <div id="preloader"></div>
     	<!-- Login Page Start Here -->
     		<div class="login-page-wrap">
-		
+				<div style="width: 100%;">
 					<div class="login_page_wrap_1">
 					
 						 <a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/clubs'" class="logina">
@@ -207,8 +207,8 @@ img:hover {
 			
 					<div class="loginpage">
 			
-							<h2>Sign <span style= "border-bottom: 1px solid black;">In</span></h2>
-							<h2>Welcome Back !</h2>
+							<h2 style="color:black">Sign <span style= "border-bottom: 1px solid black;">In</span></h2>
+							<h2 style="color:black">Welcome Back !</h2>
 					
  						<form class="loginForm" name="login-form" method="post" action="/login">
  	
@@ -254,6 +254,7 @@ img:hover {
 							</c:if>
 						</form> 	
       		</div>
+      	</div>	
 </div> 
           
    

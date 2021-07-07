@@ -94,7 +94,7 @@ h6 {
   font-weight: 400;
   font-family: 'Roboto', sans-serif;
   margin: 0 0 20px 0;
-  color: #111111;
+  color: white;
 }
 h1,
 h2 {
@@ -136,8 +136,8 @@ h6 {
 .card {
   padding-bottom: 1px;
   border: none;
-  height: 100%;
-  background-color: initial;
+  height: 95%;
+ background-color: initial; 
 }
 .card-body {
   padding: 0px 0px 0px;
@@ -890,7 +890,7 @@ h6 {
   border-top: none;
   font-size: 16px;
   font-weight: 500;
-  color: #111111;
+  color: white;
   padding: 14px 15px;
 }
 @media only screen and (max-width: 991px) {
@@ -1404,12 +1404,13 @@ h6 {
   margin-bottom: 12px;
 }
 .heading-layout1 .item-title h3 {
-  color: #111111;
+ /* color: #111111;*/
+  color: white;
   font-weight: 500;
   margin-bottom: 0;
 }
 .heading-layout1 .dropdown .dropdown-toggle {
-  color: #000000;
+  color: white;
   font-size: 36px;
   display: inline-block;
   line-height: 1;
@@ -5967,13 +5968,14 @@ select.selstyles option {
 .form-group.lglink a {
     display: block;
     text-align: center;
-    background: linear-gradient(80deg, #be9c52, #f6db4a, #be9c52) !important;
-    color: #000;
+ /*	background: linear-gradient(80deg, #be9c52, #f6db4a, #be9c52) !important;  */
+	color: #000; 
     padding: 10px 0px;
     text-decoration: none;
     border-radius: 20px;
     font-size: 15px;
     box-shadow: 0px 5px 7px rgba(0,0,0,0.1);
+    
 }
 
 
@@ -6204,7 +6206,8 @@ pre {
  }
  
  .mt-3{
- margin-top:3rem!important
+ margin-top:3rem!important;
+ 
  }
  
  

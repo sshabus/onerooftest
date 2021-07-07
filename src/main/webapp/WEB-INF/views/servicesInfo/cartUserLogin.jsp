@@ -8,6 +8,17 @@
           display: flex !important;
           padding: 5px 0px 5px 0px !important;
        }
+       .form-group {
+    margin-bottom: 2rem;
+	}
+	.login-box .modal-footer .btn-success, .login-box .modal-footer .btn-login {
+		background: #930049;
+	}
+	.form-group.lglink a{
+		background: #930049;
+	    color: white;
+	    
+	}
     </style>
  <div class="ui-modal-box">
  	 <div class="modal-box">
@@ -27,7 +38,7 @@
                                                 
                                                 <div class="login-box">
                                          <div class="item-logo">
-                                        <img src="/resources/img/logo.png" alt="logo" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/home'" style="width: 250px; height: auto">
+                                        <img src="/resources/img/One_Roof.png" alt="logo" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/home'" style="max-width: 65%; height: auto;margin-top: -60px">
                                        </div>
 		                                        <div class="alert icon-alart bg-pink2" role="alert" id="invalidloginMsgDiv" style="display: none;">
 					                                   <i class="fa fa-times bg-pink3"></i>
@@ -50,12 +61,12 @@
                   
                    <div class="modal-footer btn-login" >
                                 <input type="submit"  value="Get Started" class="btn btn-success" />
-                                <input type="button"  value="Clubs" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/clubs'" class="btn btn-danger" />
-                                <input type="button"  value="Cancel" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/home'" class="btn btn-danger" />
+                    <!--        <input type="button"  value="Clubs" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/clubs'" class="btn btn-danger" />
+                                <input type="button"  value="Cancel" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/home'" class="btn btn-danger" />		 -->
                             </div>
                      
                     <div class="form-group lglink" style="text-align: left">
-                                <a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/registerUser'" class="logina">Register New User!</a>  
+                                <a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/registerUser'" class="logina">Register</a>  
                     </div>
                     
                     <c:if test="${!empty login_password_error}">

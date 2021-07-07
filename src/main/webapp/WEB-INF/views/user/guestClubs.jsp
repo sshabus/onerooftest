@@ -1,6 +1,8 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
 <div id="preloader"></div>
 <style>
 #wrapper {
@@ -65,6 +67,7 @@
 }
 
 </style>
+</head>
   <div id="wrapper" class="wrapper bg-ash">
     <jsp:include page="../wayupartyMasterHeader.jsp" />
         <!-- Page Area Start Here -->

@@ -13,7 +13,7 @@ public class Constants {
 	public static final String QUERY_EXECUTION_STATUS_ERROR = "Error";
 	
 	public static final String WAYUPARTY_DEFAULT_PWD = "WAYUPARTY@123";
-	public static final String FROM_EMAIL_NAME = "WAYUPARTY TEAM";
+	public static final String FROM_EMAIL_NAME = "BILVIO SOLUTIONS";
 	
 	public static final Long ROLE_ADMIN = 2l;
 	public static final Long ROLE_USER = 3l;

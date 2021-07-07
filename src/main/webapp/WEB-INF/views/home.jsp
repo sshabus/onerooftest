@@ -5,6 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
     <title>ONEROOF | Venues</title>
     <meta name="description" content="">
@@ -27,9 +28,10 @@
 	<script src="/resources/website/js/bootstrap.min.js"></script>
 	<script src="/resources/website/js/bootstrap.bundle.min.js"></script>
 <style>
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 body {
     position: absolute;
+    font-family: 'Poppins', 'Roboto';
 }
 .navbar-default .navbar-nav>li>a {
     color: white !important;
@@ -457,7 +459,7 @@ body {
 	    	<input  type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Function Halls.." title="Type in a Function Halls Name" class="venuesearch" >
 	    	<img src="/resources/img/search-icon.png" alt="Search" class="search_icon" />
 	    </div>
-	      
+	 
 	     </div>
 	 </div>
 </nav>

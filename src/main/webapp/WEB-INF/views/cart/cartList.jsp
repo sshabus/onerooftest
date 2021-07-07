@@ -157,7 +157,7 @@ function getCartList(){
 							  result = result +'<div class="clearfix row cart_widget_inner" style="border-bottom: 2px solid white;">';
 							  result = result +'<div class="col-sm-12 col-md-2 text-center">';
 							  result = result +'<div class="item_img cart_margn_top">';
-							  result = result +'<img src="'+opt.serviceImage+'" class="img-responsive" />';
+							  result = result +'<img src="'+opt.serviceImage+'" class="img-responsive" style="height: 90px;" />';
 							  result = result +'</div>';
 							  result = result +'</div>';
 							  result = result +'<div class="col-sm-12 col-md-10">';

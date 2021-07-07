@@ -93,7 +93,8 @@
 	text-align:center;
 	position: fixed;
 	top: 90px;
-	right: 404px;
+	float: left;
+    width: 60%;
 }  
 .header{
 	color:white;
@@ -117,10 +118,11 @@
 	border-radius: 4px;
 	border-top-left-radius: 45px;
 	background-color: #ffffff;
-	float:right;height:89%;
-	width:19%;
 	position: relative;
-	bottom: -60px
+	bottom: -60px;
+	width: 33%;
+    float: right;
+    height: 100%;
 }
 @media (max-width: 1024px){
 		.logo{
@@ -244,7 +246,7 @@
          
     <div class="signup_page">   
                
-               <h2 style="margin: -3px 0 0px 25px;">Sign <span style= "border-bottom: 1px solid black;">Up</span></h2>
+               <h2 style="margin: -3px 0 0px 25px;color: black">Sign <span style= "border-bottom: 1px solid black;">Up</span></h2>
 				<h6 style="margin: 10px 0 0 26px;color: darkgray;">Please fill in this form to create an account!</h6>
                
                

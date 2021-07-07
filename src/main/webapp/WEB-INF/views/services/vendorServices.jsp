@@ -4,7 +4,20 @@
 <link rel="shortcut icon" type="image/x-icon" href="/resources/img/Oneroof_icon.png">
 <div id="preloader"></div>
 <style>
-
+.wrapper {
+    background-image: url(/resources/img/Oneroof_bg_page.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    width: 100%;
+    background-size: 100% 100%;
+    
+    }  
 .sidebar-expand-md {
    float:right;
   }
@@ -14,7 +27,9 @@
 .breadcrumbs-area {
     padding: 35px 40px 35px;
 }
-
+.heading-layout1 .dropdown .dropdown-toggle{
+	color: white;
+}
 </style>
    <div id="wrapper" class="wrapper bg-ash">
     <jsp:include page="../wayupartyMasterHeader.jsp" />
@@ -71,7 +86,7 @@
                                     
                                     <c:if test="${service.serviceDisplayName == 'Cuisine'}">
                          				 <a class="dropdown-item" href="${Wayuparty_appUrl}/packageSettings?vendorUUID=${vendorUUID}"><img src="/resources/img/packages.jpg"></img>&nbsp;&nbsp;Package Settings</a>
-                         				 <a class="dropdown-item" href="${Wayuparty_appUrl}/packages?vendorUUID=${vendorUUID}&serviceUUID=${service.serviceUUID}"><img src="/resources/img/packages.jpg"></img>&nbsp;&nbsp;Add Packages</a>
+                         				 <a class="dropdown-item" href="${Wayuparty_appUrl}/packages?vendorUUID=${vendorUUID}&serviceUUID=${service.serviceUUID}"><img src="/resources/img/packages.jpg"></img>&nbsp;&nbsp;Sub Packages</a>
                                     </c:if>
                                     
                                     <c:if test="${service.serviceDisplayName == 'Packages'}">

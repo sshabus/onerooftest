@@ -71,7 +71,7 @@ public class EmailTemplateHTMLUtil {
 					    	   tempHTML.append("<tr>");
 				                 tempHTML.append("<td>");
 				                   tempHTML.append("<p style='color:#214b90; text-transform: uppercase; padding:5px 0px; margin:0px 0px; font-size:13px; font-weight:600; text-align:center'>get started!</p>");
-				                   tempHTML.append("<p style='padding:0px 0px 2px 0px; margin:0px 0px; font-weight:400; font-size:11px; text-align:center'>For more information about ONEROOF, go to <a target='blank' href='https://wayuparty.net/' style='text-decoration:none; color:#0D47A1; display:inline-block; padding:0; border-radius:0; margin:0; font-size:14px'>wayuparty.net</a></p>");
+				                   tempHTML.append("<p style='padding:0px 0px 2px 0px; margin:0px 0px; font-weight:400; font-size:11px; text-align:center'>For more information about ONEROOF, go to <a target='blank' href='http://oneroof.asia/' style='text-decoration:none; color:#0D47A1; display:inline-block; padding:0; border-radius:0; margin:0; font-size:14px'>oneroof.asia</a></p>");
 				                 tempHTML.append("</td>");
 				            tempHTML.append("</tr>");
 				         
@@ -152,7 +152,7 @@ tempHTML.append("</table>");
 					    	   tempHTML.append("<tr>");
 				                 tempHTML.append("<td>");
 				                   tempHTML.append("<p style='color:#214b90; text-transform: uppercase; padding:5px 0px; margin:0px 0px; font-size:13px; font-weight:600; text-align:center'>get started!</p>");
-				                   tempHTML.append("<p style='padding:0px 0px 2px 0px; margin:0px 0px; font-weight:400; font-size:11px; text-align:center'>For more information about ONEROOF, go to <a target='blank' href='https://wayuparty.net/' style='text-decoration:none; color:#0D47A1; display:inline-block; padding:0; border-radius:0; margin:0; font-size:14px'>wayuparty.net</a></p>");
+				                   tempHTML.append("<p style='padding:0px 0px 2px 0px; margin:0px 0px; font-weight:400; font-size:11px; text-align:center'>For more information about ONEROOF, go to <a target='blank' href='http://oneroof.asia/' style='text-decoration:none; color:#0D47A1; display:inline-block; padding:0; border-radius:0; margin:0; font-size:14px'>oneroof.asia</a></p>");
 				                 tempHTML.append("</td>");
 				            tempHTML.append("</tr>");
 				         
