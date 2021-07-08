@@ -148,18 +148,19 @@ body {
     	   var orderDate = getSelectedDateFromCalendar($("#serviceCalendar"+serviceUUID).val());
     	   //var timeslot = $("input[name='timeslot"+serviceUUID+"']:checked").val();
 		   
-		   if($("#selectedFirstSlot").hasClass('selectedSlot') && $("#selectedSecondSlot").hasClass('selectedSlot')){
-				var timeslot = $("#selectedFirstSlot").val() + ' and ' + $("#selectedSecondSlot").val();
-			}else if($("#selectedFirstSlot").hasClass('selectedSlot')) {
-				var timeslot = $("#selectedFirstSlot").val();
-			}else if($("#selectedSecondSlot").hasClass('selectedSlot')) {
-				var timeslot = $("#selectedSecondSlot").val();
-			}
+		   if($("#selectedFullDaySlot").hasClass('selectedSlot')){
+		   		var timeslot = $("#selectedFullDaySlot").val();
+		   
+		   }else{
+		   		var timeslot = $("#selectedHalfDaySlot").val();
+		   }
            
            var fromDate = $("#startDate").val();
 		   var toDate = '';
     	
-    	   if($("#serviceName").val() !== "Cuisine"){
+    	   if(($("#selectedHalfDaySlot").hasClass('selectedSlot'))){
+    	   		toDate = $("#startDate").val();
+    	   }else if($("#serviceName").val() !== "Cuisine"){
     	   		toDate = $("#endDate").val();
     	   }
 		   
@@ -245,10 +246,18 @@ body {
     			    	 }
     			    	 
     			    	 $("#description").html(response.object.description);
-						var quantity = $("#platesRatio"+serviceUUID).val();;
-						if(response.object.service != "Cuisine"){
+						var quantity = $("#platesRatio"+serviceUUID).val();
+						
+						if(response.object.service != "Cuisine" && ($("#selectedFullDaySlot").hasClass('selectedSlot'))){
+								
 								quantity = getDaysDiff($("#startDate").val(), $("#endDate").val());
+								quantity = quantity * 2;
+								
+						}else if(($("#selectedHalfDaySlot").hasClass('selectedSlot'))){
+						
+								quantity = 1;
 						}
+						
     			    	 $("#quantity").html(quantity);
     			    	 $("#allowed").html(response.object.allowed*quantity);
     			    	 var totalAmount = '';
@@ -370,16 +379,14 @@ body {
        function getTimeSlots(serviceUUID){
     	   //var timeslot = $("input[name='timeslot"+serviceUUID+"']:checked").val();
 
-		if($("#selectedFirstSlot").hasClass('selectedSlot') && $("#selectedSecondSlot").hasClass('selectedSlot')){
-			var timeslot = $("#selectedFirstSlot").val() + ' and ' + $("#selectedSecondSlot").val();
-
-		}else if($("#selectedFirstSlot").hasClass('selectedSlot')) {
-			var timeslot = $("#selectedFirstSlot").val();
-		}else if($("#selectedSecondSlot").hasClass('selectedSlot')) {
-			var timeslot = $("#selectedSecondSlot").val();
-		}
-    	
-		$("#bookedTimeSlot"+serviceUUID).val(timeslot)
+		if($("#selectedFullDaySlot").hasClass('selectedSlot')){
+		   		var timeslot = $("#selectedFullDaySlot").val();
+		   
+		   }else{
+		   		var timeslot = $("#selectedHalfDaySlot").val();
+		   }
+		
+		$("#bookedTimeSlot"+serviceUUID).val(timeslot);
     	   
        }
        
@@ -423,7 +430,9 @@ body {
 		   var fromDate = $("#startDate").val();
     	   var toDate = '';
     	   
-    	   if($("#serviceName").val() !== "Cuisine"){
+    	   if(($("#selectedHalfDaySlot").hasClass('selectedSlot'))){
+    	   		toDate = $("#startDate").val();
+    	   }else if($("#serviceName").val() !== "Cuisine"){
     	   		toDate = $("#endDate").val();
     	   }
     	   
