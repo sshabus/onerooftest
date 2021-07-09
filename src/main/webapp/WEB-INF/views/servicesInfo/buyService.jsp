@@ -1,3 +1,4 @@
+
 <head>
 
 	<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
@@ -29,7 +30,7 @@ body {
 }
 .mt-3 {
     
-    flex-direction: column;
+  /*  flex-direction: column;  */
     font-family: 'Poppins', -webkit-body;
     margin-right: 5px;
 }
@@ -42,13 +43,20 @@ body {
 .text-light {
     color: white !important;
 }
-
+.tab-content{
+	position: inherit;
+    overflow-y: overlay;
+    height: 205px;
+}
 /* .modal-footer {
     margin-top: -55px;
     margin-right: 40px;
 } */
 </style>
 </head>
+
+
+
 <div class="ui-modal-box">
   <div class="modal-box">
        <div class="modal right-slide-modal fade" id="right-slide-modal" tabindex="-1"
@@ -58,10 +66,10 @@ body {
                                         <div id="serviceDetailsLoaderDiv"></div>
                                             <div class="modal-header">
                                                 <h5 class="modal-title">Service Details</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
+                                                 <button type="button" class="close" data-dismiss="modal"
                                                     aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
-                                                </button>
+                                                </button> 
                                             </div>
                                            
                                            <div class="modal-body service-info">
@@ -103,7 +111,7 @@ body {
                                             <div class="modal-footer">
                                                <button type="button" class="footer-btn text-light gradient-orange-peel" id="addToCart"><i class="fa fa-shopping-cart mg-l-10"></i>&nbsp;Add To Cart</button>
                                                <!-- <button type="button" class="footer-btn text-light gradient-pastel-green" id="placeOrder"><i class="fa fa-save mg-l-10"></i>&nbsp;Place Order</button> 
-                                               <button type="button" class="footer-btn bg-gradient-gplus" data-dismiss="modal"><i class="fa fa-times mg-l-10"></i>&nbsp;Close</button> -->
+                                               <button type="button" class="footer-btn bg-gradient-gplus" data-dismiss="modal"><i class="fa fa-times mg-l-10"></i>&nbsp;Close</button>    -->
                                             </div>
                                         </div>
                                     </div>
@@ -112,7 +120,7 @@ body {
        </div>
        <button type="button" style="display:none" class="modal-trigger" id="signup" data-toggle="modal" data-target="#sign-up"></button>
        <button type="button" style="display:none" class="modal-trigger" id="user-register" data-toggle="modal" data-target="#register-modal"></button>
-       <jsp:include page="cartUserLogin.jsp" />
+       <jsp:include page="cartUserLogin.jsp" /> 
    <script>
    
    function getSelectedDateFromCalendar(selectedDate) {
@@ -310,15 +318,13 @@ body {
 		                    	 result = result +'<input type="hidden" id="offeringCount'+menu.menuItemUUID+'" value="'+menu.itemsOffered+'">';
 		                    	 result = result +'<input type="hidden" id="selectedCount'+menu.menuItemUUID+'" value="0">';
 		                    	 result = result +'<div class="mt-3 text-success">Select any '+menu.itemsOffered+' items</div>';
-		                    	 result = result +'<div style="position: inherit;overflow-y: scroll;height: 157px;">';
-		                    	 result = result +"<ul class='row mt-3'>";
+		                    	 result = result +"<ul class='row mt-3' >";
 	    			        	  for (var k=0; k<menu.menuItemsList.length; k++)
 	    			   				{ 
 	    			        		  var menuItems = menu.menuItemsList[k];
 	    			        		  result = result +'<li class="col-xl-6 col-lg-6 col-12 mt-2"><input  value="'+menuItems.itemUUID+'" name="menuItemsList[]" type="checkbox" onclick="selectMenuItem(\''+menuItems.itemUUID+'\',\''+menu.menuItemUUID+'\')" id="menuItem'+menuItems.itemUUID+'">&nbsp;&nbsp;<strong>'+menuItems.itemName+'</strong></input></li>';
 	    			   				}
    			        			result = result +"</ul>";
-   			        			result = result +'<div>';
                                 result = result +'</div>';
 	 	  	        	    	}
 		                     result = result +'</div>';

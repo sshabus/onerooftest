@@ -10,10 +10,10 @@
                                         <div id="guestDetailsLoaderDiv"></div>
                                             <div class="modal-header">
                                                 <h5 class="modal-title">Guest Details</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
+                                             <!--   <button type="button" class="close" data-dismiss="modal"
                                                     aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
-                                                </button>
+                                                </button> -->
                                             </div>
                                                
                                            <div class="modal-body service-info">

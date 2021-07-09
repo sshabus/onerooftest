@@ -55,6 +55,17 @@
 	height: 180px;
     width: 180px;
 }
+.navbar-nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 0;
+    list-style: none;
+}
+.item-title .h3{
+	margin: 0 0 10px 0;
+}
 </style>
 
 <body>
@@ -92,25 +103,30 @@
                 <ul class="navbar-nav">
                    <li>
                     <sec:authorize access="hasRole('ROLE_ADMIN')"> 
-                    <span><h3>${Wayuparty_vendorName}</h3></span> 
+                    <span><h3 style="margin: 0 0 34px 20px;font-size: 30px;">${Wayuparty_vendorName}</h3></span> 
                     </sec:authorize>
                      
                    </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="navbar-item dropdown header-admin">
+                   
                         <a class="navbar-nav-link" href="#" role="button" data-toggle="dropdown"
                             aria-expanded="false">
+                          <a href="${Wayuparty_appUrl}/profile">
                             <span class="admin-title">
-                              <h5 class="item-title">${Wayuparty_loginUserName}</h5>
+                            
+                              	<h5 class="item-title" style="margin: 0 0 10px 0;">${Wayuparty_loginUserName}</h5>
                                 <span>${Wayuparty_loginUserRoleDisplayName}</span> 
+                            
                             </span>
+                          </a>  
                             
                             <span class="headProfileIcon">
                           		 <img src="${Wayuparty_loginUserImgUrl}" class="img-circle" onerror="predefineHeaderProfileImage(this)">
                             </span>
                         </a>
-                        
+                      
                     </li>
            
            <sec:authorize access="hasRole('ROLE_USER')">          

@@ -2850,7 +2850,7 @@ ul {
   margin-right: 50px;
   padding-bottom: 8px;
   border: none;
-  color: red;
+  color: white;
   position: relative;
 }
 .ui-tab-card .card-body .custom-tab .nav-tabs .nav-item .nav-link:after {
@@ -5461,7 +5461,7 @@ margin-left: -0.25rem;
 
 .messageViewAll { width: 100% !important; padding: 1px 115px !important; font-size: 13px; font-weight: bold;}
 
-.text-black { color: black;right: 10px;}
+.text-black { color: white;right: 10px;}
 
 .text-black-dp { color: #000; font-weight: 600; font-size: 12px;}
 

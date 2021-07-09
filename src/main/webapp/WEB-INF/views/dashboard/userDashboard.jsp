@@ -258,7 +258,7 @@
                     <ul class="nav nav-sidebar-menu sidebar-toggle-view">
                         
                             <li class="nav-item">
-                            <a href="${Wayuparty_appUrl}/dashboard" class="${sessionData.nav == 'Dashboard' ? 'nav-link menu-active' : 'nav-link'}"><i
+                            <a href="${Wayuparty_appUrl}/dashboard" class="${sessionData.nav == 'Dashboard' ? 'nav-link menu-active' : 'nav-link' }"><i
                                     class="flaticon-dashboard"></i><span>HOME</span></a>
                             </li>
                             

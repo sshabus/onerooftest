@@ -35,6 +35,17 @@ max-width: 120px !important;
 .vendor_images_img{
 	width: 200px;
 }
+.btn-toolbar .btn-group a {
+    
+    width: 176px;
+    font-size: 11px;
+    color: #c01a6c
+}
+.btn-group, .btn-group-vertical {
+    
+    width: 135px;
+   
+}
 
 </style>
 

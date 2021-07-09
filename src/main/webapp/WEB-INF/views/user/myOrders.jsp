@@ -240,14 +240,14 @@
 		        		 result = result +'<div class="col-sm-12 col-md-10">';
 		        		 result = result +'<div class="row">';
 		        		 result = result +'<div class="col-sm-12 col-md-4">';
-		        		 result = result +'<h4 class="orderdate" style="margin-top: 12px;">Ordered Date</h4>';
+		        		 result = result +'<h4 class="orderdate" style="margin-top: 12px;"></h4>';
 		        		 result = result +'<h4 class="order_on"style="margin-top: 8px;font-size: 18px;">'+opt.orderDate+'</h4>';
 		        		 result = result +'</div>';
 		        		 result = result +'<div class="col-sm-12 col-md-4 cart_margn_top" style="text-align: center;">';
 		        	     result = result +'<h1 class="club_name">'+opt.clubName+'</h1>';
 		        	     
 		        	     
-		        		 result = result +'<h4 class="small text-muted"style="margin-right: -50%;">'+opt.clubLocation+'</h4>';
+		        		 result = result +'<h4 style="color:white;class="small text-muted"style="margin-right: -50%;">'+opt.clubLocation+'</h4>';
 		        		 result = result +'<h4 style="color:white;margin-left: -63%;">'+opt.orderItems+'</h4>';
 		        		 result = result +'<h4 class="amount" style="margin-right: -100px; margin-top: -23px;" >'+currencyType+' '+opt.totalAmount+'</h4>';
 		        		 result = result +'</div>';

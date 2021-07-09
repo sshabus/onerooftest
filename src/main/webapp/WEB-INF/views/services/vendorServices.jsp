@@ -30,6 +30,9 @@
 .heading-layout1 .dropdown .dropdown-toggle{
 	color: white;
 }
+.table{
+	color: white;
+}
 </style>
    <div id="wrapper" class="wrapper bg-ash">
     <jsp:include page="../wayupartyMasterHeader.jsp" />
@@ -86,7 +89,7 @@
                                     
                                     <c:if test="${service.serviceDisplayName == 'Cuisine'}">
                          				 <a class="dropdown-item" href="${Wayuparty_appUrl}/packageSettings?vendorUUID=${vendorUUID}"><img src="/resources/img/packages.jpg"></img>&nbsp;&nbsp;Package Settings</a>
-                         				 <a class="dropdown-item" href="${Wayuparty_appUrl}/packages?vendorUUID=${vendorUUID}&serviceUUID=${service.serviceUUID}"><img src="/resources/img/packages.jpg"></img>&nbsp;&nbsp;Sub Packages</a>
+                         				 <a class="dropdown-item" href="${Wayuparty_appUrl}/packages?vendorUUID=${vendorUUID}&serviceUUID=${service.serviceUUID}"><img src="/resources/img/packages.jpg"></img>&nbsp;&nbsp;Add Sub Packages</a>
                                     </c:if>
                                     
                                     <c:if test="${service.serviceDisplayName == 'Packages'}">

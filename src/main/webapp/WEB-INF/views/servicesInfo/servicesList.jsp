@@ -319,10 +319,10 @@ img{
                                         <div id="vendorDetailsLoaderDiv"></div>
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="dataTitle"></h5>
-                                                <button type="button" class="close" data-dismiss="modal"
+                                                 <button type="button" class="close" data-dismiss="modal"
                                                     aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
-                                                </button>
+                                                </button> 
                                             </div>
                                                
                                            <div class="modal-body">
@@ -331,7 +331,7 @@ img{
                                                </ul>
                                             </div>
                                             <div class="modal-footer">
-                                               <button type="button" class="footer-btn bg-gradient-gplus" data-dismiss="modal"><i class="fa fa-times mg-l-10"></i>&nbsp;Close</button>
+                                            <!--     <button type="button" class="footer-btn bg-gradient-gplus" data-dismiss="modal"><i class="fa fa-times mg-l-10"></i>&nbsp;Close</button>-->
                                             </div>
                                         </div>
                                     </div>
@@ -647,7 +647,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 
 								// result = result+'<div class="form-group">';
 								// result = result+'<label>From Date</label>';
-								// result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control start-date-datepicker" data-position="bottom right" name="startDate" id="startDate" data-validation="required" field-name="Start Date">';
+								//result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control start-date-datepicker" data-position="bottom right" name="startDate" id="startDate" data-validation="required" field-name="Start Date">';
 								// result = result+'<i class="far fa-calendar-alt"></i>';
 								// result = result+'</div>';
 
@@ -661,7 +661,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 									if(opt.serviceName == 'Cuisine'){
 									
 										result = result+'<div class="col-xl-12 col-lg-12 col-12 form-group">';
-											result = result+'<label style="color:white;margin-top: -28px;">Start Date<span class="text-danger">&nbsp;*</span></label>';
+											result = result+'<label style="color:white;margin-top: -28px;">Booking Date<span class="text-danger">&nbsp;*</span></label>';
 											result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control start-date-datepicker" data-position="bottom right" name="startDate" id="startDate" data-validation="required" field-name="Start Date"> ';
 											result = result+'<i class="far fa-calendar-alt"></i>';
 										result = result+'</div>';

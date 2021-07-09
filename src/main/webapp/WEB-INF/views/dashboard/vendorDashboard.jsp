@@ -25,9 +25,11 @@
 }
 .breadcrumbs-area {
     padding: 35px 40px 35px;
+    }
+    
+ .sidebar-menu-one{	
+		padding-bottom: 246px;	
 }
-
-
 
 
 </style>
