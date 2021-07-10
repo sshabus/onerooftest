@@ -662,7 +662,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 									
 										result = result+'<div class="col-xl-12 col-lg-12 col-12 form-group">';
 											result = result+'<label style="color:white;margin-top: -28px;">Booking Date<span class="text-danger">&nbsp;*</span></label>';
-											result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control start-date-datepicker" data-position="bottom right" name="startDate" id="startDate" data-validation="required" field-name="Start Date"> ';
+											result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control start-date-datepicker" data-position="bottom right" name="startDate" id="startDate" data-validation="required" field-name="Start Date" readonly="true"/> ';
 											result = result+'<i class="far fa-calendar-alt"></i>';
 										result = result+'</div>';
 	
@@ -670,7 +670,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							  		
 							  		result = result+'<div class="col-xl-4 col-lg-6 col-12 form-group">';
 										result = result+'<label style="color:white;">Start Date<span class="text-danger">&nbsp;*</span></label>';
-										result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control start-date-datepicker" data-position="bottom right" name="startDate" id="startDate" data-validation="required" field-name="Start Date"> ';
+										result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control start-date-datepicker" data-position="bottom right" name="startDate" id="startDate" data-validation="required" field-name="Start Date" readonly="true"> ';
 										result = result+'<i class="far fa-calendar-alt"></i>';
 									result = result+'</div>';
 							  	
@@ -678,7 +678,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 									result = result+'<div class="col-xl-4 col-lg-6 col-12 form-group"  id="endDateVenue'+opt.masterServiceUUID+'">';
 									
 										result = result+'<label style="color:white;">End Date<span class="text-danger">&nbsp;*</span></label>';
-										result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control end-date-datepicker" data-position="bottom right" name="endDate" id="endDate" data-validation="required" field-name="End Date">';
+										result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control end-date-datepicker" data-position="bottom right" name="endDate" id="endDate" data-validation="required" field-name="End Date" readonly="true">';
 										result = result+'<i class="far fa-calendar-alt"></i>';
 										result = result+'</div>';
 									}	

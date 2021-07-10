@@ -483,7 +483,7 @@ body {
  		</div>
  </div>
  <footer class="footer" style="background-color: #890059;">
-      <div align="center">ONEROOF 2021. copyrights all rights reserved. Developed by Acculytixs Pvt Ltd. &nbsp&nbsp&nbsp
+      <div align="center">ONEROOF 2021. copyrights all rights reserved. Developed by  BILVIO SOLUTIONS. &nbsp&nbsp&nbsp
          	<a href="/privacyPolicy" target="_blank" style="color:rgb(212,175,55);">PRIVACY POLICY</a>&nbsp&nbsp&nbsp
       		<a href="/termsAndConditions" target="_blank" style="color:rgb(212,175,55);">TERMS AND CONDITIONS</a>
       </div>            

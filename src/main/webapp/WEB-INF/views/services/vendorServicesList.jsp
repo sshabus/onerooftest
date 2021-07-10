@@ -7,6 +7,7 @@
      <jsp:include page="vendorServiceDetails.jsp" />
 </div>
 
+
 <script>
    function getVendorServicesList(serviceUUID, serviceType){
 	   

@@ -14,6 +14,7 @@
                                                
                                            <div class="modal-body">
                                             <div class="profile_images_img item-img" id="serviceImage"></div>
+                                           
                                             <ul>    
                                                <li><strong>Service  : </strong><span id="serviceName"></span></li>
                                                <li><strong>Category  : </strong><span id="serviceCategory"></span></li>

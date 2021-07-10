@@ -2,6 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <link rel="shortcut icon" type="image/x-icon" href="/resources/img/Oneroof_icon.png">
+ <link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
 <div id="preloader"></div>
 <style>
 .wrapper {
@@ -30,9 +31,7 @@
 .heading-layout1 .dropdown .dropdown-toggle{
 	color: white;
 }
-.table{
-	color: white;
-}
+
 </style>
    <div id="wrapper" class="wrapper bg-ash">
     <jsp:include page="../wayupartyMasterHeader.jsp" />

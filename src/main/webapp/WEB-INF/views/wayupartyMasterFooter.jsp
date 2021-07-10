@@ -2,7 +2,7 @@
                
   <footer class="footer" style="background-color: white;">
             <div class="container" style="color: black;">
-               ONEROOF 2021. Copyrights all rights reserved. Developed by Acculytixs Pvt Ltd.
+               ONEROOF 2021. Copyrights all rights reserved. Developed by BILVIO SOLUTIONS.
             </div>
  </footer>
   
