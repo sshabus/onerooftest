@@ -262,7 +262,10 @@ img{
 	.price {
     	margin: 9px 0px 20px 10px;
 	}
+	
 }
+
+
 </style>
 
 <div class="card height-auto" style="align-items: center;top: -30px">
@@ -391,7 +394,7 @@ img{
 	    			        		  
 	    			        		  if(service.serviceName != 'Events'){
 	    			        			  result = result +'<li class="nav-item">';
-		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\')" role="tab" aria-selected="true" ><img style="max-width: 80px;margin-left: -8px;background-color: white;transition: transform ease-in-out 0.3s;" src="'+service.serviceImage+'"></img></a><span><strong> <div <!--align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;margin-top: 10px;">'+service.serviceName+'</strong></span>';
+		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\')" role="tab" aria-selected="true" ><img style="max-width: 80px;margin-left: -8px;background-color: white;transition: transform ease-in-out 0.3s;" src="'+service.serviceImage+'"></img></a><span><strong> <div align="center" style="text-align: -webkit-match-parent;margin-top: 10px;">'+service.serviceName+'</strong></span>';
 		    			        		  result = result +'</li>';
 	    			        		  }
 	    			        		  
@@ -540,7 +543,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							  
 							  var servicePrice = '';
 							  var quantityButtons = '';
-							  if(opt.serviceName == 'Venue' || opt.serviceName == 'Cuisine' || opt.serviceName == 'Events'){
+							  if(opt.serviceName == 'Venue' || opt.serviceName == 'Cataring' || opt.serviceName == 'Events'){
 								  quantityButtons = 'disabled';
 							  }
 							  if(opt.minimumOrder != 0){
@@ -557,7 +560,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							  result = result+'<div class="service_wrap_name">';
 							  result = result+opt.subCategory;
 							  
-							  if(opt.serviceName == 'Cuisine'){
+							  if(opt.serviceName == 'Cataring'){
 							  
 								  result = result+'<div class="row" >';
 								  result = result+'<span class="col-xl-6 col-lg-6 col-12">Plates : <button type="button"  onclick="platesQuantityDec(\''+opt.masterServiceUUID+'\')">-</button><input type="number" step="1" min="0" value="0" id="platesRatio'+opt.masterServiceUUID+'" style="max-width: 60px;"><button type="button" onclick="platesQuantityInc(\''+opt.masterServiceUUID+'\')">+</button></span><br/>';
@@ -580,7 +583,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 								  }
 								 
 							  }else{
-							  	  if(opt.serviceName == 'Cuisine'){
+							  	  if(opt.serviceName == 'Cataring'){
 								  	 
 								  	  result = result+'<span class="col-xl-6 col-lg-6 col-12" >Per Plate :&nbsp;'+currencyCode+' '+opt.actualPrice+' </span>';
 									  result = result+'<span class="col-xl-6 col-lg-6 col-12" style="color: gold;margin: 0 0 0 1px;">Offer Price :&nbsp;'+currencyCode+' '+opt.offerPrice+' </span>';
@@ -658,7 +661,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 
 
 								result = result+'<div class="row1" >';
-									if(opt.serviceName == 'Cuisine'){
+									if(opt.serviceName == 'Cataring'){
 									
 										result = result+'<div class="col-xl-12 col-lg-12 col-12 form-group">';
 											result = result+'<label style="color:white;margin-top: -28px;">Booking Date<span class="text-danger">&nbsp;*</span></label>';
@@ -795,7 +798,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
  								 result = result+'<a data-button="customize" data-id="4" href="javascript:void(0)" id="customizeService'+opt.masterServiceUUID+'" data-toggle="modal" style="display:none" data-target="#right-slide-modal" onclick="getServiceDetails(\''+opt.masterServiceUUID+'\',\''+categoryUUID+'\',\''+isEntryRatioEnabled+'\')">Customize</a>';
  								 result = result+'<a data-button="customize" data-id="4" href="javascript:void(0)" onclick="getPackagesServiceInfo(\''+opt.masterServiceUUID+'\',\''+isEntryRatioEnabled+'\',\''+opt.allowed+'\',\''+opt.serviceName+'\')">Customize</a>';
 	 					 	}
-							if(opt.serviceName == 'Cuisine'){
+							if(opt.serviceName == 'Cataring'){
 							 	 result = result+'<a data-button="buyService" data-id="4" href="javascript:void(0)" id="buyService'+opt.masterServiceUUID+'" data-toggle="modal" data-target="#right-slide-modal" style="display:none"  onclick="getServiceDetails(\''+opt.masterServiceUUID+'\',\''+categoryUUID+'\',\''+isEntryRatioEnabled+'\')"style="color:red;">Menu Items</a>';
 								 result = result+'<a data-button="buyService" data-id="4" href="javascript:void(0)" onclick="getServiceInfo(\''+opt.masterServiceUUID+'\',\''+opt.serviceName+'\',\''+isEntryRatioEnabled+'\',\''+opt.allowed+'\',\''+opt.serviceName+'\')">Menu Items</a>';
 							}else{
@@ -843,9 +846,9 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_deals_found.jpg" alt=""/></td>';
 						 }else if(serviceType == 'Packages'){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_packages_found.jpg" alt=""/></td>';
-						 }else if(serviceType == 'Cuisine'){
+						 }else if(serviceType == 'Cataring'){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_cuisine.png" alt="" style="width: 20%;"/></td>';
-							 result = result+'<a style="color:white;font-size:15px;">sorry..! No Cuisine Found...</a>'
+							 result = result+'<a style="color:white;font-size:15px;">sorry..! No Cataring Found...</a>'
 						 }
 						
 						 $("#categoryServicesListDiv").empty(); 
@@ -1056,7 +1059,7 @@ function getTimeSlotValidation(serviceUUID){
 		formData.append("vendorUUID", vendorUUID);
 		formData.append("startDate", $("#startDate").val());
 					
-		if(serviceName !== "Cuisine" && ($("#selectedFullDaySlot").hasClass('selectedSlot'))){
+		if(serviceName !== "Cataring" && ($("#selectedFullDaySlot").hasClass('selectedSlot'))){
 			formData.append("endDate", $("#endDate").val());
 		}else{
 			formData.append("endDate",'');
@@ -1079,7 +1082,7 @@ function getTimeSlotValidation(serviceUUID){
 					var timeslot = $("input[name='timeslot" + serviceUUID + "']:checked").val();
 					
 					var quantity = $("#platesRatio"+serviceUUID).val();
-					if(serviceName !== "Cuisine"  && ($("#selectedFullDaySlot").hasClass('selectedSlot'))){
+					if(serviceName !== "Cataring"  && ($("#selectedFullDaySlot").hasClass('selectedSlot'))){
 						$("#number" + serviceUUID).val(getDaysDiff($("#startDate").val(), $("#endDate").val()));
 						quantity = $("#number"+serviceUUID).val();
 					}else if(($("#selectedHalfDaySlot").hasClass('selectedSlot'))){
@@ -1130,14 +1133,14 @@ function getTimeSlotValidation(serviceUUID){
 						var fromDate = $("#startDate").val();
 						var toDate = '';
     	       			
-				    	if(serviceName !== "Cuisine"  && ($("#selectedFullDaySlot").hasClass('selectedSlot'))){
+				    	if(serviceName !== "Cataring"  && ($("#selectedFullDaySlot").hasClass('selectedSlot'))){
 				    		toDate = $("#endDate").val();
 				    	}
 
 						var orderDate = $("#startDate").val();
 						$("#serviceCalendar" + serviceUUID).val(fromDate);
 
-						if (fromDate != '' && fromDate != 'undefined' && ((toDate != '' && toDate != 'undefined') || (serviceName == "Cuisine") || ($("#selectedHalfDaySlot").hasClass('selectedSlot')))) {
+						if (fromDate != '' && fromDate != 'undefined' && ((toDate != '' && toDate != 'undefined') || (serviceName == "Cataring") || ($("#selectedHalfDaySlot").hasClass('selectedSlot')))) {
 							$("#errorMessage" + serviceUUID).css({ display: "none" });
 
 							if (isEntryRatioEnabled == 'Y') {
@@ -1210,7 +1213,7 @@ function getTimeSlotValidation(serviceUUID){
 		   var timeslot = $("input[name='timeslot"+serviceUUID+"']:checked").val();
 		   
     	   var quantity = $("#platesRatio"+serviceUUID).val();
-		   if(serviceName != 'Cuisine' && ($("#selectedFullDaySlot").hasClass('selectedSlot'))){
+		   if(serviceName != 'Cataring' && ($("#selectedFullDaySlot").hasClass('selectedSlot'))){
 			   $("#number"+serviceUUID).val(getDaysDiff($("#startDate").val(), $("#endDate").val()))
 		   	   quantity = $("#number"+serviceUUID).val();
 		   }else if(($("#selectedHalfDaySlot").hasClass('selectedSlot'))){

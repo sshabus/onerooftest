@@ -30,6 +30,9 @@
 	line-height: 2;
 
 }
+.leftTabSection.active.show{
+	margin-top: 10px
+}
 </style>
 
 <div id="wrapper" class="wrapper bg-ash">
@@ -161,7 +164,7 @@ function validate_doc_fileupload(fileName)
  <style>
  .leftTabSection.active.show{
  	color: #fea801;
-    margin-top: -22px;
+    margin-top: 2px;
  }
  .row {
     margin-right: -30px !important;

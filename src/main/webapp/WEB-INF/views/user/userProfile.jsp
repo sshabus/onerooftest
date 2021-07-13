@@ -1,179 +1,31 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+
 <style>
-.new-added-form .form-group .form-control{
-			background-color: transparent;
-    		height: -1px;
-    		color: white;
-    		border-radius: 10px;
-    		text-align: left;
-    	    margin-top: -40px;   
-}
-.col-xl-4 {
-    -ms-flex: 0 0 33.333333%;
-    flex: 0 0 33.333333%;
-    max-width: 65.333333%;
-    
-}    
-.form-group{
-  padding:10px;
-  border:1px solid;
-  margin:10px;
-  border-radius: 15px;
-  height: 50px;
-}
-.form-group>label{
-  padding-left: 5px;
-  padding-right: 5px;
-  position:relative;
-  top:-20px;
-  left:20px;
-  margin-bottom: 12px;
-}
 
-.form-group>input{
-  border:none;
-}
-.list-group{
-		flex-direction: unset;
-}
-.form-group1{
-  padding:10px;
-  border:1px solid;
-  margin:10px;
-  border-radius: 15px;
-  height: 50px;
-}
-.form-group1>label{
-  padding-left: 5px;
-  padding-right: 5px;
-  position:relative;
-  top:-20px;
-  left:20px;
-  margin-bottom: -12px;
-}
-.col-12 ui-btn-wrap mt-5{
-	margin-left: -92px;
-}
-.form-group1>input{
-  border:none;
-}
-.list-group{
-		flex-direction: unset;
-}
-.card{
-	padding-bottom: 0px;
-}
-.breadcrumbs-area{
-		margin-left: 40px;
-}
-.userprofileform{
+.MpanNav{
+    	left: 4px;
+    	top: -14px;
+    }
+.new-added-form .form-group label{
 	color: white;
-	margin: 80px 0 0 300px;
 }
-.userprofilepic{
-	margin-left: 425px;
-	margin-bottom: -31px;
-	margin: -76px 0px -31px 415px;
-	max-width: 150px;
-	border: 1px solid black;
-	border-radius: 15%;"
+.Mpan.MpanSection .MpanBody {
+    width: 80%;
+ }
+ .sidebar-menu-one{	
+		padding-bottom: 317px;	
 }
-@media (max-width: 980px){
-
-	.sidebar-menu-one .mobile-sidebar-header{
-		display: none;
-	}
-	.sidebar-color {
-	    margin-top: 51px;
-	    padding-bottom: 42%;  
-    }
-    .sidebar-collapsed-mobile .sidebar-main{
-		margin-left: 74%;
-	    width: 20rem;
-	    margin-top: 26%;
-	}
-	.sidebar-menu-one .sidebar-menu-content{
-		margin-top: 18%;
-	}
-	.dashboard-content-one {
-    	margin-top: 47px;
-    	align-item: center;
-    }
-    .breadcrumbs-area{
-    	margin-left: -35px;
-    }
-    .MpanNav{
-    	left: 15px;
-    }
-    .userprofileform{
-		margin: 80px 0 0 75px;
-	}
-	.userprofilepic{
-		margin: -57px 0px 0px 227px;
-	}
+.leftTabSection.active.show{
+	margin-top: 7px;
 }
-@media (max-width: 480px){
-		
-	.sidebar-menu-one .mobile-sidebar-header{
-		display: none;
-	}
-	.sidebar-color {
-	    margin-top: 51px;
-	    padding-bottom: 42%;  
-    }
-    .sidebar-collapsed-mobile .sidebar-main{
-		margin-left: 60%;
-	    width: 20rem;
-	    margin-top: 30%;
-	}
-	.sidebar-menu-one .sidebar-menu-content{
-		margin-top: 18%;
-	}
-	.dashboard-content-one {
-    	margin-top: 47px;
-    	align-item: center;
-    }
-    .breadcrumbs-area{
-    	margin-left: -35px;
-    }
-    .MpanNav{
-    	left: -15px;
-    }
-    .userprofileform{
-		margin: 82px -190px 0px 40px;
-	}
-	.userprofilepic{
-		margin: -57px 0px 0px 227px;
-	}
-	.mg-l-10 {
-    margin-left: -5px;
-	}
-	.mt-5{
-		margin-left: -120px;"
-	}
-
-}
-@media (max-width: 380px){
-		
-    .sidebar-collapsed-mobile .sidebar-main{
-		margin-left: 50%;
-	    width: 20rem;
-	    margin-top: 35%;
-	}
-	.userprofilepic{
-		margin: -57px 0px 0px 140px; 	
-	}
-    .userprofileform{
-	/*	margin: 81px -143px 0px 24px; */
-		width: 140%;
-	}
+.MpanNav ul.topSection li a{
 	
 }
 </style>
-<div class="tab-pane fade show active" id="userProfile" role="tabpanel">
-	<form class="new-added-form" id="user_profile_form" name="user_profile_form" >
- 	 	<div class="breadcrumbs-area">
+
+
+<div class="breadcrumbs-area">
 	                    <h3>Profile</h3>
 	                    <ul>
 	                        <li>
@@ -182,49 +34,43 @@
                         
 	                        <li>Profile</li>
 	                    </ul>
-	             </div>
- 	 			<div style="color: white;">
-  					<img src="" alt="Userprofilepic" class="userprofilepic"/>
-				</div>
- 	 	<div class="userprofileform">  
-	   		<div class="col-xl-4 col-lg-6 col-12 form-group">
-                   		<label style="background-color: #9d0f71; width: 84px;">First Name</label>
-                        <input type="text" class="form-control"  name="firstName" id="firstName" data-validation="required validate_Space validate_AlphaNumber validate_length length1-100"  field-name="First Name">
-              
+	             </div><br>
+<div class="tab-pane fade show active" id="userProfile" role="tabpanel">
+	<form class="new-added-form" id="user_profile_form" name="user_profile_form" >
+ 	 	<div class="row">
+	 	 	<div class="col-xl-4 col-lg-6 col-12 form-group">
+                       <label>First Name<span class="text-danger">&nbsp;*</span></label>
+                       <input type="text" class="form-control"  name="firstName" id="firstName" data-validation="required validate_Space validate_AlphaNumber validate_length length1-100"  field-name="First Name">
 	        </div>
-	    
-	     
+	        
 	        <div class="col-xl-4 col-lg-6 col-12 form-group">
-                       <label style="background-color: #880167; width: 85px;">Last Name</label>
+                       <label>Last Name<span class="text-danger"></span></label>
                        <input type="text" class="form-control"  name="lastName" id="lastName" data-validation-optional="true" data-validation="validate_Space validate_AlphaNumber validate_length length1-100"  field-name="Last Name">
-                       
 	        </div>
 	        
        		<div class="col-xl-4 col-lg-6 col-12 form-group" id="emailDiv">
-                      <label style="background-color: #830068; width: 50px;">Email</label>
+                      <label>Email<span class="text-danger">&nbsp;*</span></label>
                       <input type="text" class="form-control"  readonly="readonly" name="email" id="email" field-name="Email" data-validation="required validate_Space validate_email validate_length length1-100">
-                      
             </div>
                   
-            <div class="col-xl-4 col-lg-6 col-12 form-group" id="mobileDiv">	
-                		<label style="background-color: #570051; width: 57px;">Mobile</label>
-                		<input type="text" class="form-control" onblur="validateUserMobile();" name="mobile" id="mobile"  field-name="Mobile" data-validation="required validate_Space validate_int">
-                
+            <div class="col-xl-4 col-lg-6 col-12 form-group" id="mobileDiv">
+                <label>Mobile<span class="text-danger">&nbsp;*</span></label>
+                <input type="text" class="form-control" onblur="validateUserMobile();" name="mobile" id="mobile"  field-name="Mobile" data-validation="required validate_Space validate_int">
             </div>
-       
-  <!--   <div class="col-xl-4 col-lg-6 col-12 form-group" id="mobileDiv">
-                <label>DOB</label>
+            
+            <div class="col-xl-4 col-lg-6 col-12 form-group" id="mobileDiv">
+                <label>DOB<span class="text-danger">&nbsp;*</span></label>
                 <input type="text" placeholder="dd/mm/yyyy" class="form-control dob-datepicker"
                                              data-position='bottom right' name="dob" id="dob" readonly="readonly" data-validation="required" field-name="Date Of Birth">
                                          <i class="far fa-calendar-alt"></i>
-         </div>
-    --> 
-           <div class="col-xl-4 col-lg-6 col-12 form-group1" id="genderDiv">
-             <label style="background-color: #570051;">Gender</label>
+            </div>
+            
+            <div class="col-xl-4 col-lg-6 col-12 form-group" id="genderDiv">
+             <label>Gender<span class="text-danger">&nbsp;*</span></label>
 	             <ul class="list-group list-group-horizontal">
 	                            <li class="radiobtnstyles">
 	                                <label>Male
-	                                       <input type="radio"  name="genderTypeFilter" id="genderMale" value="Male" onclick="changeGenderType();">
+	                                    <input type="radio"  name="genderTypeFilter" id="genderMale" value="Male" onclick="changeGenderType();">
 	                                    <span class="checkmark"></span>
 	                                  </label>
 	                            </li>
@@ -235,16 +81,15 @@
 	                                  </label>
 	                            </li>
 	              </ul>
-	              <input type="hidden" id="gender" name="gender" data-validation-optional="true"  field-name="Gender">
-            </div>
-        <!--   
-     
+	              <input type="hidden" id="gender" name="gender" data-validation="required" field-name="Gender">
+             </div> 
+    <!--           
            	  <div class="col-xl-4 col-lg-6 col-12 form-group" id="uploadProfile">
                      <label>Upload Photo</label>
                      <input type="file" class="form-control-file" id="uploadImageBtn" field-name="Upload Image" data-validation-optional="true" data-validation="validateImg">
                      <input type="text" class="form-control" readonly id="uploadImageFile" style="display: none;" name="docFile" >
               </div>
-                 
+               
                <div class="col-xl-4 col-lg-6 col-12 form-group" id="savedProfile">
                     <label>Uploaded Photo</label>
                     <div class="profilePic-image" id="uploadImageBtn">
@@ -252,9 +97,8 @@
 			  </div>
 			     <div class="clearUpload clearUpload-profile-position" title="Delete Uploaded Photo" onclick="deleteProfileImage();"></div>
               </div>
-     -->           
-    <!--         
-              <div class="col-xl-4 col-lg-6 col-12 form-group">
+              
+            <div class="col-xl-4 col-lg-6 col-12 form-group">
                  <label>Preferred Drinks</label>
                  <select class="select2" class="form-control" multiple name="preferredDrinks" id="preferredDrinks"  data-validation-optional="true" field-name="Preferred Drinks">
                     <c:forEach var="drinks" items="${preferredDrinksList}">
@@ -262,7 +106,7 @@
                     </c:forEach>
                  </select>
 	         </div>
-	   
+	         
 	         <div class="col-xl-4 col-lg-6 col-12 form-group">
                  <label>Preferred Music</label>
                  <select class="select2" class="form-control" multiple name="preferredMusic" id="preferredMusic"  data-validation-optional="true" field-name="Preferred Music">
@@ -270,16 +114,16 @@
                     <option value="${music.categoryName}" ${fn:contains(musicList, music.categoryName) ? 'selected' : ''}>${music.categoryName}</option>
                     </c:forEach>
                  </select>
-	          </div>
-        -->        
-              <div class="col-12 ui-btn-wrap mt-5" style="margin-left: -90px;" >
+	         </div>
+     -->         
+              <div class="col-12 ui-btn-wrap mt-5">
 				               <ul>
 				               <li><button type="button" class="btn-fill-lg font-normal text-light gradient-pastel-green" id="save_button" onclick="saveUserProfileDetails()"><i class="fas fa-save mg-l-10"></i>&nbsp;Save</button></li>
 				               <li><button type="button" class="btn-fill-lg font-normal text-light btn-gradient-yellow" onclick="javascript:window.location.href = '${Wayuparty_appUrl}/profile'"><i class="fas fa-undo mg-l-10"></i>&nbsp;Reset</button></li>
 				               <li><button type="button" class="btn-fill-lg font-normal text-light bg-gradient-gplus" onclick="javascript:window.location.href = '${Wayuparty_appUrl}/dashboard'"><i class="fas fa-times mg-l-10"></i>&nbsp;Cancel</button></li>
 				               </ul>
 				   </div>
-               
+                  
  	 	</div>
  	</form>
 </div>
@@ -320,11 +164,11 @@
 		    			    	 if(response.object.gender != ''){
 		    			    		 if(response.object.gender == 'Male'){
 		    			    			 $("#genderMale").attr("checked",true);
-		    			     		 }else{
-		    			    		 $("#genderFemale").attr("checked",true);
+		    			    		 }else{
+		    			    			 $("#genderFemale").attr("checked",true);
 		    			    		 }
-		    			    	 	 $('#gender').val(response.object.gender);
-		    			    		}
+		    			    		 $('#gender').val(response.object.gender);
+		    			    	 }
 		    			    	 
 		    			    	 if(response.object.userImage != ''){
 		    			    		 document.getElementById("uploadProfile").style.display="none";
@@ -498,4 +342,3 @@
  }
  
  </script>  
-    

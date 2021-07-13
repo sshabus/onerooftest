@@ -31,6 +31,12 @@
 .heading-layout1 .dropdown .dropdown-toggle{
 	color: white;
 }
+.sidebar-menu-one{	
+		padding-bottom: 2px;	
+}
+.table{
+	color: white;
+}
 
 </style>
    <div id="wrapper" class="wrapper bg-ash">

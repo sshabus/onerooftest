@@ -397,6 +397,14 @@ body {
 			.bottom_left{
 				right: 100px;
 			}
+			.vendors_txtSearch {
+     border-bottom-left-radius: 13px;
+    border-top-left-radius: 13px;
+}
+			.vendors_txtSearch {
+     border-bottom-left-radius: 13px;
+    border-top-left-radius: 13px;
+}
 }
 </style>
 
@@ -455,12 +463,12 @@ body {
 	       </div>
 	    </div>
 	    
-	    <div>
+	   <!-- <div>
 	    	<input  type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Function Halls.." title="Type in a Function Halls Name" class="venuesearch" >
 	    	<img src="/resources/img/search-icon.png" alt="Search" class="search_icon" />
 	    </div>
 	 
-	     </div>
+	     </div>  --> 
 	 </div>
 </nav>
 
