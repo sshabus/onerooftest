@@ -275,7 +275,12 @@ body {
     			    		 }
     			    		 
     			    	 }else{
-    			    		 totalAmount =  Number(response.object.offerPrice) * Number(quantity);
+	    			     	if(response.object.service != "Cuisine" && ($("#selectedFullDaySlot").hasClass('selectedSlot'))){
+								totalAmount =  Number(response.object.offerPrice) * Number(quantity);
+								totalAmount =  getFullDayDiscount(totalAmount);
+							}else {
+							    totalAmount =  Number(response.object.offerPrice) * Number(quantity);
+							}
         			    	 $("#totalAmount").html(totalAmount);
     			    	 }
     			    	
@@ -586,6 +591,11 @@ body {
   
 		  return slotsCount;
   
+	  }
+	  
+	  function getFullDayDiscount(totalAmount){
+	  		totalAmount = (70 * totalAmount)/100;
+	  		return totalAmount;
 	  }
        </script>
    

@@ -124,8 +124,9 @@ img{
     flex-wrap: wrap;
     margin-right: -20%;
     margin-left: 50%;
-    margin: -160px -78px 33px 300px;
-}
+/*     margin: -160px -78px 33px 300px;
+ */
+ }
 .modal-footer{
 	margin-top: -55px;
 	margin-right: 110px;
@@ -586,12 +587,21 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 									  result = result+'<span class="col-xl-6 col-lg-6 col-12" style="color: gold;margin: 0 0 0 1px;">Offer Price :&nbsp;'+currencyCode+' '+opt.offerPrice+' </span>';
 							  
 							  	  }else{
-
-									  result = result+'<span class="col-xl-6 col-lg-6 col-12" >Actual Price :&nbsp;'+currencyCode+' '+opt.actualPrice+' per slot</span>';
-									  result = result+'<span class="col-xl-6 col-lg-6 col-12" style="color: gold;margin: 0 0 0 1px;">Offer Price :&nbsp;'+currencyCode+' '+opt.offerPrice+' per slot </span>';
+							  		  result = result+'<div class="col-xl-6 col-lg-6 col-12">';
+									  result = result+'<span >Actual Price :&nbsp;'+currencyCode+' '+opt.actualPrice+' per slot</span>';
+									  result = result+'<span style="color: gold;margin: 0 0 0 1px;">Offer Price :&nbsp;'+currencyCode+' '+opt.offerPrice+' per slot </span>';
+									  result = result+' </div>';
+									 
+									  if(opt.serviceName == 'Venue'){
+								  		result = result+'<div class="col-xl-6 col-lg-6 col-12" style="padding: 0px 0px 0px 0px;">';
+										result = result+'<input type="submit" id="selectedFullDaySlot" value="Full Day" onclick="selectedFullDaySlot(\''+opt.masterServiceUUID+'\')" class="btn btn-success" style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;margin-right:10px;">';
+										result = result+'<input type="button"  id="selectedHalfDaySlot" value="Half Day" onclick="selectedHalfDaySlot(\''+opt.masterServiceUUID+'\')" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;margin-right:10px;">';
+											result = result+' </div>';
+									  }
+							
 							  	  }
 							  }
-							 
+							   
 							//   result = result+'<span class="col-xl-6 col-lg-6 col-12">Start Date : '+opt.startDate+'</span>';
 							//   result = result+'<span class="col-xl-6 col-lg-6 col-12">End Date : '+opt.endDate+'</span>';
 							//   result = result+'<span class="col-xl-6 col-lg-6 col-12">Qty : <button type="button" '+quantityButtons+'  onclick="quantityDec(\''+opt.masterServiceUUID+'\')">-</button><input type="number" readonly step="1" min="1" value="1" id="number'+opt.masterServiceUUID+'" style="max-width: 40px;"><button type="button"  '+quantityButtons+' onclick="quantityInc(\''+opt.masterServiceUUID+'\')">+</button></span>';
@@ -641,9 +651,11 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							  
 							  result = result+'</div>';
 							  
+							
+							  
 							  result = result+'<div class="service_wrap_content">';
 
-								result = result+'<div class="row" style="padding: 10px 15px 15px 50px;">';
+								result = result+'<div>';
 
 								// result = result+'<div class="form-group">';
 								// result = result+'<label>From Date</label>';
@@ -668,14 +680,14 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 	
 									} else {
 							  		
-							  		result = result+'<div class="col-xl-4 col-lg-6 col-12 form-group">';
+							  		result = result+'<div class="col-xl-4 col-lg-6 col-12 form-group" style="display:none"  id="startDateVenue'+opt.masterServiceUUID+'">';
 										result = result+'<label style="color:white;">Start Date<span class="text-danger">&nbsp;*</span></label>';
 										result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control start-date-datepicker" data-position="bottom right" name="startDate" id="startDate" data-validation="required" field-name="Start Date"> ';
 										result = result+'<i class="far fa-calendar-alt"></i>';
 									result = result+'</div>';
 							  	
 
-									result = result+'<div class="col-xl-4 col-lg-6 col-12 form-group"  id="endDateVenue'+opt.masterServiceUUID+'">';
+									result = result+'<div class="col-xl-4 col-lg-6 col-12 form-group" style="display:none"  id="endDateVenue'+opt.masterServiceUUID+'">';
 									
 										result = result+'<label style="color:white;">End Date<span class="text-danger">&nbsp;*</span></label>';
 										result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control end-date-datepicker" data-position="bottom right" name="endDate" id="endDate" data-validation="required" field-name="End Date">';
@@ -697,15 +709,6 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 								
 								 result = result+'</div>';
 								 
-							
-							  	if(opt.serviceName == 'Venue'){
-									result = result+'<div class="modal-footer">';
-									result = result+'<input type="submit" id="selectedFullDaySlot" value="Full Day" onclick="selectedFullDaySlot(\''+opt.masterServiceUUID+'\')" class="btn btn-success" style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
-									result = result+'<input type="button"  id="selectedHalfDaySlot" value="Half Day" onclick="selectedHalfDaySlot(\''+opt.masterServiceUUID+'\')" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
-									result = result+' </div>';
-								}
-
-
 							  result = result+'<div class="row">';
 							//   result = result+'<div class="col-lg-8 col-sm-6 col-12">';
 							//   result = result+'<div class="event-calendar-box mb-5">';
@@ -1433,8 +1436,11 @@ function quantityDec(maserServiceUUID){
 	
 		if($("#selectedFullDaySlot").hasClass('selectedSlot')){
 			$("#selectedFullDaySlot").removeClass('selectedSlot');
+			$("#startDateVenue"+serviceUUID).css({ display: "none" });		
+			$("#endDateVenue"+serviceUUID).css({ display: "none" });
 		}else{
 			$("#selectedFullDaySlot").addClass( 'selectedSlot' );
+			$("#startDateVenue"+serviceUUID).css({ display: "block" });		
 			$("#endDateVenue"+serviceUUID).css({ display: "block" });
 		}
 	
@@ -1448,8 +1454,11 @@ function quantityDec(maserServiceUUID){
 
 		if($("#selectedHalfDaySlot").hasClass('selectedSlot')){
 			$("#selectedHalfDaySlot").removeClass('selectedSlot');
+			$("#startDateVenue"+serviceUUID).css({ display: "none" });		
+			$("#endDateVenue"+serviceUUID).css({ display: "none" });
 		}else{
 			$("#selectedHalfDaySlot").addClass( 'selectedSlot' );
+			$("#startDateVenue"+serviceUUID).css({ display: "block" });
 			$("#endDateVenue"+serviceUUID).css({ display: "none" });
 		}
 	
