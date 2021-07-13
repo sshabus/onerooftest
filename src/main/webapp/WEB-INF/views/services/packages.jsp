@@ -122,7 +122,7 @@ label {
 					                               </div> 
 					                               
 					                               	<div class="col-xl-12 col-lg-6 col-12 form-group">
-											 		   <label   class= style="color:white";"text-muted">Start Time / End Time<span class="text-danger">&nbsp;*</span></label>
+											 		   <label   class= "text-white">Start Time / End Time<span class="text-danger">&nbsp;*</span></label>
 											 		   <div id="timeScheduleList"></div>
 										 		    </div>
 					                                
