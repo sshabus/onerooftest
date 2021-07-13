@@ -37,6 +37,12 @@
 .h3{
 	color: white;
 }
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    color: white;
+}
+
 </style>
 <div id="wrapper" class="wrapper bg-ash">
   <jsp:include page="../wayupartyMasterHeader.jsp" />
@@ -116,7 +122,7 @@
 					                               </div> 
 					                               
 					                               	<div class="col-xl-12 col-lg-6 col-12 form-group">
-											 		   <label class="text-muted">Start Time / End Time<span class="text-danger">&nbsp;*</span></label>
+											 		   <label   class= "text-white">Start Time / End Time<span class="text-danger">&nbsp;*</span></label>
 											 		   <div id="timeScheduleList"></div>
 										 		    </div>
 					                                
@@ -134,7 +140,9 @@
 					                                
 					                                <div class="col-xl-6 col-lg-6 col-12 form-group" id="serviceImg">
 					                                    <label>Service Image<span class="text-danger">&nbsp;*</span></label>
-					                                    <input type="file" class="form-control-file" id="uploadImageBtn" field-name="Upload Image"  data-validation="required validateImg">
+					                                    <input type="file" class="form-control-file" id="uploadImageBtn" field-name="Upload Image"  data-validation="required validateImg"style="color:white">
+  
+
 					                                    <input type="text" class="form-control" readonly
 															id="uploadImageFile" style="display: none;" name="docFile" >
 					                                 </div>

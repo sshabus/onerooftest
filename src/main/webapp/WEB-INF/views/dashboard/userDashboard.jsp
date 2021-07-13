@@ -1,4 +1,4 @@
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+ <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
@@ -224,8 +224,11 @@
 			margin-left: 30px;
    			margin-top: -18px;
 		}
+		.vendors_txtSearch {
+     border-bottom-left-radius: 13px;
+    border-top-left-radius: 13px;
 }
-
+}
 </style>
 <div id="preloader"></div>
 
@@ -234,8 +237,8 @@
     
     			<div class="card mb-3 search_blo">
 					            <div class="input-group search-blo">
-					                <input name="vendors_txtSearch" type="text"  id="vendors_txtSearch" class="form-control"  placeholder="Search">
-					                <div class="input-group-btn">
+					                <input name="vendors_txtSearch" type="text"  id="vendors_txtSearch" class="form-control"  placeholder="Search" >
+					                <div class="input-group-btn" style="margin-top:-1px;">
 					                    <a class="btn btn-vendor-search" style="margin-right: -10px;border-bottom-right-radius: 0px !important;border-top-right-radius: 0px !important;"><span class="fa fa-sync-alt" onclick="clearClubSearch();"></span></a>
 					                     <a href="#" class="btn btn-vendor-search" data-toggle="modal" data-target="#large-modal" onclick="getPopularCities()">
 							            <img src="/resources/img/cities/Locate_icon_1.png" alt="locate" style="width: 22%;margin-left: -42px;"/> Cities
@@ -258,7 +261,7 @@
                     <ul class="nav nav-sidebar-menu sidebar-toggle-view">
                         
                             <li class="nav-item">
-                            <a href="${Wayuparty_appUrl}/dashboard" class="${sessionData.nav == 'Dashboard' ? 'nav-link menu-active' : 'nav-link'}"><i
+                            <a href="${Wayuparty_appUrl}/dashboard" class="${sessionData.nav == 'Dashboard' ? 'nav-link menu-active' : 'nav-link' }"><i
                                     class="flaticon-dashboard"></i><span>HOME</span></a>
                             </li>
                             
@@ -362,7 +365,7 @@
        <jsp:include page="../wayupartyMasterFooter.jsp" />
    <!--
  <footer class="footer" style="background-color: #890059;">
-      <div align="center">ONEROOF 2021. copyrights all rights reserved. Developed by Acculytixs Pvt Ltd.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      <div align="center">ONEROOF 2021. copyrights all rights reserved. Developed by  BILVIO SOLUTIONS.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
          	<a href="/privacyPolicy" target="_blank" style="color:rgb(212,175,55);">PRIVACY POLICY</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
       		<a href="/termsAndConditions" target="_blank" style="color:rgb(212,175,55);">TERMS AND CONDITIONS</a>
       </div>            

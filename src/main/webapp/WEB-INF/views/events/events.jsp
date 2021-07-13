@@ -27,6 +27,9 @@
 .breadcrumbs-area {
     padding: 35px 40px 35px;
 }
+.table{
+	color: white;
+}
 
 </style>
    <div id="wrapper" class="wrapper bg-ash">

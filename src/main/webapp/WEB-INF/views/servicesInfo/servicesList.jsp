@@ -32,7 +32,7 @@ img{
 	margin: 87px 0 0px -40px;
 }
 .span.view-subtitle{
-	ont-size: 15px !important;
+	font-size: 15px !important;
     color: white;
     line-height: 40px;
     font-weight: 100;
@@ -650,8 +650,6 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							//   }
 							  
 							  result = result+'</div>';
-							  
-							
 							  
 							  result = result+'<div class="service_wrap_content">';
 

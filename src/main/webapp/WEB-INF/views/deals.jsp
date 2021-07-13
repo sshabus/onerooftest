@@ -105,7 +105,7 @@ body {
  	</div>
  
  <footer class="footer" style="background-color: white;">
-      <div align="center" style="color: black;">ONEROOF 2021. copyrights all rights reserved. Developed by Acculytixs Pvt Ltd.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      <div align="center" style="color: black;">ONEROOF 2021. copyrights all rights reserved. Developed by BILVIO SOLUTIONS.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
          	<a href="/privacyPolicy" target="_blank" style="color:rgb(212,175,55);">PRIVACY POLICY</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
       		<a href="/termsAndConditions" target="_blank" style="color:rgb(212,175,55);">TERMS AND CONDITIONS</a>
       </div>            

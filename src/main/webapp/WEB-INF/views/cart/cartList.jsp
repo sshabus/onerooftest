@@ -233,7 +233,7 @@ function placeOrder(){
 		    			   
 		    			   var options = {
 		    					    "key": '${razorpayKeyId}', 
-		    					    "name": "Wayuparty",
+		    					    "name": "Oneroof",
 		    					   // "image": "/resources/img/logo.png",
 		    					    "order_id": result.object.orderId, 
 		    					    "handler": function (response){

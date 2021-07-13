@@ -1,7 +1,7 @@
 
 <div class="tab-pane fade show" id="resetPassword" role="tabpanel">
 	<form class="new-added-form" id="reset_password_form" name="reset_password_form" >
- 	 	<div style="color: white;margin: 90px 0 160px 299px;" id="profilePasswordDiv">
+ 	 	<div style="color: white;margin: 0 -145px 0 285px;" id="profilePasswordDiv">
               <div class="col-xl-4 col-lg-6 col-12 form-group" style="margin-bottom: 5.2rem;">
                   <label style="background: #9b0b6a; width: 146px;">Current Password<span class="text-danger">&nbsp;*</span></label>
                   <input type="password" class="form-control" name="profileCurrentPassword" id="profileCurrentPassword"  field-name="Current Password"  onblur="validateCurrentPassword();" data-validation="required" >

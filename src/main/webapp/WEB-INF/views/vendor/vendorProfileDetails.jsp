@@ -39,6 +39,9 @@
 .h3{
 	color: white;
 }
+.ui-tab-card .card-body .custom-tab .nav-tabs .nav-item .nav-link{
+	color:white;
+}
 
 </style>
    <div id="wrapper" class="wrapper bg-ash">
@@ -66,12 +69,12 @@
                         <div class="heading-layout1 mg-b-25">
                            <div class="custom-tab">
                             <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item">
+                                <li class="nav-item" >
                                     <a class="nav-link active" data-toggle="tab" href="#basic" role="tab" onclick="loadVendorBasicDetails();" aria-selected="true">Basic</a>
                                 </li>
                                 
                                 <sec:authorize access="hasRole('ROLE_SUPER_ADMIN')"> 
-                                <li class="nav-item">
+                                <li class="nav-item" >
                                     <a class="nav-link" data-toggle="tab" href="#bank" role="tab" onclick="loadVendorBankDetails();" aria-selected="false">Bank</a>
                                 </li>
                                 </sec:authorize>

@@ -1619,6 +1619,7 @@ ul {
 }
 .header-main-menu .navbar-nav .navbar-item {
   margin-right: 20px;
+  line-height: 0;
 }
 @media only screen and (max-width: 767px) {
   .header-main-menu .navbar-nav .navbar-item {
@@ -2850,7 +2851,7 @@ ul {
   margin-right: 50px;
   padding-bottom: 8px;
   border: none;
-  color: red;
+  color: white;
   position: relative;
 }
 .ui-tab-card .card-body .custom-tab .nav-tabs .nav-item .nav-link:after {
@@ -3652,13 +3653,13 @@ ul {
   text-align: right;
 }
 .dashboard-summery-one .item-content .item-title {
-  color: #000;
+  color: purple;
   margin-bottom: 2px;
 }
 .dashboard-summery-one .item-content .item-number {
   font-size: 20px;
   font-weight: 500;
-  color: #111111;
+  color: purple;;
 }
 @media only screen and (max-width: 991px) {
   .dashboard-summery-one .item-content .item-number {
@@ -5461,7 +5462,7 @@ margin-left: -0.25rem;
 
 .messageViewAll { width: 100% !important; padding: 1px 115px !important; font-size: 13px; font-weight: bold;}
 
-.text-black { color: black;right: 10px;}
+.text-black { color: white;right: 10px;}
 
 .text-black-dp { color: #000; font-weight: 600; font-size: 12px;}
 
@@ -6217,7 +6218,7 @@ pre {
  
  .btn-toolbar .btn-group a {
     border: 0px !important;
-    color: #be9c52;
+    color: #c01a6c;
     background: #000;
     font-weight: bold;
     padding: 10px 20px;

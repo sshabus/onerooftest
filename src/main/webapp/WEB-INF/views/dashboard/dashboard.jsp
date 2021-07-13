@@ -4,12 +4,31 @@
 
 <div id="preloader"></div>
 <style>
+#wrapper {
+  background-image: url('/resources/img/Oneroof_bg_page.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: 100% 100%;
+  width: 100%;
+} 
+
+.breadcrumbs-area {
+    padding: 35px 40px 35px;
+}
 
 .sidebar-expand-md {
    float:right;
   }
   .navbar {
 	margin: -135px 0 0 0;
+}
+.dataTables_wrapper {
+    color: white;
+    }
 }
 </style>
    <div id="wrapper" class="wrapper bg-ash">
@@ -19,7 +38,7 @@
         <div class="dashboard-page-one">
          
             <div class="dashboard-content-one">
-                <div class="breadcrumbs-area">
+                <div class="breadcrumbs-area">&nbsp&nbsp
                     <h3>${Wayuparty_loginUserRoleDisplayName} Dashboard</h3>
                 </div>
                 
