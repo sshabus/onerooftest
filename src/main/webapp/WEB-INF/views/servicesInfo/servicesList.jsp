@@ -596,7 +596,11 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 								  		result = result+'<div class="col-xl-6 col-lg-6 col-12" style="padding: 0px 0px 0px 0px;">';
 										result = result+'<input type="submit" id="selectedFullDaySlot" value="Full Day" onclick="selectedFullDaySlot(\''+opt.masterServiceUUID+'\')" class="btn btn-success" style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;margin-right:10px;">';
 										result = result+'<input type="button"  id="selectedHalfDaySlot" value="Half Day" onclick="selectedHalfDaySlot(\''+opt.masterServiceUUID+'\')" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;margin-right:10px;">';
-											result = result+' </div>';
+										
+										result = result+'<br/><input type="submit" id="selectedFirstSlot'+opt.masterServiceUUID+'" value="First Half" onclick="selectedFirstSlot(\''+opt.masterServiceUUID+'\')" class="btn btn-success" style="margin: 5px 5px 5px 0px;display:none;background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
+										result = result+'<input type="button"  id="selectedSecondSlot'+opt.masterServiceUUID+'" value="Second Half" onclick="selectedSecondSlot(\''+opt.masterServiceUUID+'\')" class="btn btn-danger"style="margin: 5px 5px 5px 0px;display:none;background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
+										
+										result = result+' </div>';
 									  }
 							
 							  	  }
@@ -1405,22 +1409,25 @@ function quantityDec(maserServiceUUID){
 
 <script>
 
-	function selectedFirstSlot(){
+	function selectedFirstSlot(serviceUUID){
 
-		if($("#selectedFirstSlot").hasClass('selectedSlot')){
-			$("#selectedFirstSlot").removeClass('selectedSlot');
+		if($("#selectedFirstSlot"+serviceUUID).hasClass('selectedSlot')){
+			$("#selectedFirstSlot"+serviceUUID).removeClass('selectedSlot');
 		}else{
-			$("#selectedFirstSlot").addClass( 'selectedSlot' );
+			$("#selectedFirstSlot"+serviceUUID).addClass( 'selectedSlot' );
+			$("#selectedSecondSlot"+serviceUUID).removeClass('selectedSlot');
+			
 		}
 
 	}
 
-	function selectedSecondSlot(){
+	function selectedSecondSlot(serviceUUID){
 
-		if($("#selectedSecondSlot").hasClass('selectedSlot')){
-			$("#selectedSecondSlot").removeClass('selectedSlot');
+		if($("#selectedSecondSlot"+serviceUUID).hasClass('selectedSlot')){
+			$("#selectedSecondSlot"+serviceUUID).removeClass('selectedSlot');
 		}else{
-			$("#selectedSecondSlot").addClass( 'selectedSlot' );
+			$("#selectedSecondSlot"+serviceUUID).addClass( 'selectedSlot' );
+			$("#selectedFirstSlot"+serviceUUID).removeClass('selectedSlot');
 		}
 
 	}
@@ -1440,6 +1447,9 @@ function quantityDec(maserServiceUUID){
 			$("#selectedFullDaySlot").addClass( 'selectedSlot' );
 			$("#startDateVenue"+serviceUUID).css({ display: "block" });		
 			$("#endDateVenue"+serviceUUID).css({ display: "block" });
+
+			$("#selectedFirstSlot"+serviceUUID).css({ display: "none" });
+			$("#selectedSecondSlot"+serviceUUID).css({ display: "none" });
 		}
 	
 	}
@@ -1454,10 +1464,20 @@ function quantityDec(maserServiceUUID){
 			$("#selectedHalfDaySlot").removeClass('selectedSlot');
 			$("#startDateVenue"+serviceUUID).css({ display: "none" });		
 			$("#endDateVenue"+serviceUUID).css({ display: "none" });
+
+			$("#selectedFirstSlot"+serviceUUID).css({ display: "none" });
+			$("#selectedSecondSlot"+serviceUUID).css({ display: "none" });
 		}else{
 			$("#selectedHalfDaySlot").addClass( 'selectedSlot' );
 			$("#startDateVenue"+serviceUUID).css({ display: "block" });
 			$("#endDateVenue"+serviceUUID).css({ display: "none" });
+
+			$("#selectedFirstSlot"+serviceUUID).removeClass('selectedSlot');
+			$("#selectedSecondSlot"+serviceUUID).removeClass('selectedSlot');
+			
+			$("#selectedFirstSlot"+serviceUUID).css({ display: "inline-block" });
+			$("#selectedSecondSlot"+serviceUUID).css({ display: "inline-block" });
+			
 		}
 	
 	}
