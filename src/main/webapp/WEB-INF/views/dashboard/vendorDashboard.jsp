@@ -91,7 +91,7 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="item-content">
-                                        <div class="item-title">Cataring</div>
+                                        <div class="item-title">Cuisine</div>
                                         <div class="item-number"><span  id="packageCount">0</span></div>
                                     </div>
                                 </div>
@@ -316,7 +316,7 @@
 	        "balloonText": "Cuisine: [[value]]",
 	        "bullet": "round",
 	        "columnWidth": 0.3,
-	        "title": "Cataring",
+	        "title": "Cuisine",
 	        "valueField": "packages",
 			"fillAlphas": 0
 	    },{

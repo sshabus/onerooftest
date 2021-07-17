@@ -3659,7 +3659,7 @@ ul {
 .dashboard-summery-one .item-content .item-number {
   font-size: 20px;
   font-weight: 500;
-  color: purple;;
+  color: purple;
 }
 @media only screen and (max-width: 991px) {
   .dashboard-summery-one .item-content .item-number {
@@ -6618,7 +6618,7 @@ font-size: 14px;
 .service_tabs_inn_table.service_tabs_inn_table_a {width: auto;}
 .service_tabs_inn_table table { width:100%; font-size:14px; font-weight:400; border:none;}
 .service_tabs_inn_table table tr:nth-child(even) {background: #fff;}
-.service_tabs_inn_table table tr:nth-child(odd) {background: #2b9b9b2b;}
+/* .service_tabs_inn_table table tr:nth-child(odd) {background: transparent;} */
 .service_tabs_inn_table table tr th {
     background-color:whitesmoke !important; font-weight:500; color:black; padding:0px 10px; height:40px;
     border-right:1px solid #989898; font-size:13px; text-align:center; vertical-align: middle;}

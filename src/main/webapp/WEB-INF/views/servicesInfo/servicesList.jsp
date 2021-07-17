@@ -122,11 +122,12 @@ img{
 .row1{
 	display: flex;
     flex-wrap: wrap;
-    margin-right: -20%;
-    margin-left: 50%;
-/*     margin: -160px -78px 33px 300px;
- */
- }
+    margin-right: -30%;
+    margin-left: -3%;
+ /*	margin: -155px 0px -70px 335px;	*/
+ 	 margin: -167px -35px 60px 330px; 
+    width: 60%;
+}
 .modal-footer{
 	margin-top: -55px;
 	margin-right: 110px;
@@ -332,8 +333,8 @@ img{
                                                </ul>
                                             </div>
                                             <div class="modal-footer">
-                                               <button type="button" class="footer-btn bg-gradient-gplus" data-dismiss="modal"><i class="fa fa-times mg-l-10"></i>&nbsp;Close</button>
-                                            </div>
+                                             <!--  <button type="button" class="footer-btn bg-gradient-gplus" data-dismiss="modal"><i class="fa fa-times mg-l-10"></i>&nbsp;Close</button>-->
+                                            </div>  
                                         </div>
                                     </div>
        </div>
@@ -638,9 +639,9 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							// 	  result = result+'</div>';
                               
 							//   }
-							 
-							  result = result+'<span class="col-xl-6 col-lg-6 col-12  mt-2" data-toggle="modal" data-target="#pop-up-modal" onclick="getTermsAndConditions(\''+opt.termsAndConditions+'\')"style="color: gold;">Terms & Conditions</span>';
-							//  result = result+'<span class="col-xl-6 col-lg-6 col-12  mt-2" data-toggle="modal" data-target="#pop-up-modal" onclick="getServiceOffer(\''+opt.serviceOffer+'\')"style="margin: 0 0 0 1px;">Service Offer</span>';
+
+							  result = result+'<div class="col-xl-6 col-lg-6 col-12 "><span class=" mt-2" data-toggle="modal" data-target="#pop-up-modal" onclick="getTermsAndConditions(\''+opt.termsAndConditions+'\')"style="color: gold;display: inline-block;">Terms & Conditions</span></div>';
+//  result = result+'<span class="col-xl-6 col-lg-6 col-12  mt-2" data-toggle="modal" data-target="#pop-up-modal" onclick="getServiceOffer(\''+opt.serviceOffer+'\')"style="margin: 0 0 0 1px;">Service Offer</span>';
 							  result = result+'</div>';
 							  result = result+'<div class="service_wrap_user_img">';
 							  result = result+'<img src="'+opt.serviceImage+'" onerror="predefineVendorServiceImage(this);" style="height: 148px;border-radius: 73px;max-height: none;width: 100%">';

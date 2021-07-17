@@ -120,7 +120,7 @@
  
   <footer class="footer" >
             <div class="container" style="color: black;">
-                ONEROOF 2021. copyrights all rights reserved. Developed by  BILVIO SOLUTIONS.
+                ONEROOF 2021. copyrights all rights reserved. Developed by  Bivio Solutions Pvt Ltd.
             </div>
  </footer>
 </body>

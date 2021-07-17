@@ -60,7 +60,7 @@
 </div>
 <footer class="footer" style="background-color: #343a40;">
             <div class="container">
-                ONEROOF � 2019. copyrights all rights reserved. Developed by Acculytixs Pvt Ltd.
+                ONEROOF 2021. copyrights all rights reserved. Developed by  Bivio Solutions Pvt Ltd.
             </div>
  </footer>
  

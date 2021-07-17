@@ -1,3 +1,4 @@
+
 <div class="tab-pane fade" id="music" role="tabpanel">
 <div id="vendorMusicDetailsLoaderDiv"></div>
 		<section class="clearfix">
