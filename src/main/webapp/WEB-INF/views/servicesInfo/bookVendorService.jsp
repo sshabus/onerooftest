@@ -144,7 +144,7 @@ max-width: 150px !important;
  </div>
   <footer class="footer" style="background-color: white;">
             <div class="container" style="color:black">
-               ONEROOF 2021. copyrights all rights reserved. Developed by  BILVIO SOLUTIONS.
+               ONEROOF 2021. copyrights all rights reserved. Developed by   Bivio Solutions Pvt Ltd.
             </div>
  </footer>
   <script src="/resources/js/datepicker.min.js"></script>
