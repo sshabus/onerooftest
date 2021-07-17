@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.List;
 
+import com.acculytixs.wayuparty.annotations.Required;
+
 public class VendorServicesDTO implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -21,6 +23,14 @@ public class VendorServicesDTO implements Serializable{
 	private Double actualPrice;
 	
 	private Double offerPrice;
+	
+	private Double firstHalfActualPrice;
+	
+	private Double firstHalfOfferPrice;
+	
+	private Double secondHalfActualPrice;
+	
+	private Double secondHalfOfferPrice;
 	
 	private Double minimumOrder;
 	
@@ -368,6 +378,40 @@ public class VendorServicesDTO implements Serializable{
 		this.serviceName = serviceName;
 	}
 
-	
+	public Double getFirstHalfActualPrice() {
+		return firstHalfActualPrice;
+	}
+
+	public void setFirstHalfActualPrice(Double firstHalfActualPrice) {
+		this.firstHalfActualPrice = firstHalfActualPrice;
+	}
+
+	public Double getFirstHalfOfferPrice() {
+		return firstHalfOfferPrice;
+	}
+
+	public void setFirstHalfOfferPrice(Double firstHalfOfferPrice) {
+		this.firstHalfOfferPrice = firstHalfOfferPrice;
+	}
+
+	public Double getSecondHalfActualPrice() {
+		return secondHalfActualPrice;
+	}
+
+	public void setSecondHalfActualPrice(Double secondHalfActualPrice) {
+		this.secondHalfActualPrice = secondHalfActualPrice;
+	}
+
+	public Double getSecondHalfOfferPrice() {
+		return secondHalfOfferPrice;
+	}
+
+	public void setSecondHalfOfferPrice(Double secondHalfOfferPrice) {
+		this.secondHalfOfferPrice = secondHalfOfferPrice;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 
 }

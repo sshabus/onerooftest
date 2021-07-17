@@ -140,7 +140,7 @@ public class VendorServicesServiceImpl implements VendorServicesService{
 
 	@Override
 	public String saveBottleService(VendorBottleServiceDTO vendorBottleServiceDTO, Long loginUserId) throws Exception {
-		
+  
 		String queryExecutionStatus = null;
 		try {
 			
@@ -340,7 +340,7 @@ public class VendorServicesServiceImpl implements VendorServicesService{
 	public List<VendorServicesDTO> getVendorCategoryServicesList(Long categoryId, Long vendorId)
 			throws Exception {
 		List<VendorServicesDTO> vendorServicesDTOList = vendorServicesDao.getVendorCategoryServicesList(categoryId, vendorId);
-		
+  
 		if(vendorServicesDTOList != null && !vendorServicesDTOList.isEmpty()) {
 			for(VendorServicesDTO vendorServicesDTO : vendorServicesDTOList) {
 				List<TimeSlotSchedulerInfo> timeslotsList = Collections.<TimeSlotSchedulerInfo>emptyList();
@@ -492,6 +492,12 @@ public class VendorServicesServiceImpl implements VendorServicesService{
 			
 			vendorMasterService.setActualPrice(vendorTableServiceDTO.getActualPrice());
 			vendorMasterService.setOfferPrice(vendorTableServiceDTO.getOfferPrice());
+			
+			vendorMasterService.setFirstHalfActualPrice(vendorTableServiceDTO.getFirstHalfActualPrice());
+			vendorMasterService.setFirstHalfOfferPrice(vendorTableServiceDTO.getFirstHalfOfferPrice());
+			vendorMasterService.setSecondHalfActualPrice(vendorTableServiceDTO.getSecondHalfActualPrice());
+			vendorMasterService.setSecondHalfOfferPrice(vendorTableServiceDTO.getSecondHalfOfferPrice());
+			
 			String categoryName = vendorDao.getCategoryNameByCategoryId(Long.valueOf(vendorTableServiceDTO.getTableType()));
 			vendorMasterService.setAllowed(Integer.valueOf(categoryName));
 			

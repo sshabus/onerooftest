@@ -155,13 +155,6 @@ body {
 		   
     	   var orderDate = getSelectedDateFromCalendar($("#serviceCalendar"+serviceUUID).val());
     	   //var timeslot = $("input[name='timeslot"+serviceUUID+"']:checked").val();
-		   
-		   if($("#selectedFullDaySlot").hasClass('selectedSlot')){
-		   		var timeslot = $("#selectedFullDaySlot").val();
-		   
-		   }else{
-		   		var timeslot = $("#selectedHalfDaySlot").val();
-		   }
            
            var fromDate = $("#startDate").val();
 		   var toDate = '';
@@ -183,13 +176,34 @@ body {
     			    	 $("#serviceImage").html('<img src="'+response.object.serviceImage+'" onerror="predefineVendorServiceImage(this);" data-id= "vendorProfileImage" >');
     			    	 $("#serviceCategory").html(response.object.category);
     			    	 $("#serviceName").html(response.object.subCategory);
-    			    	 $("#actualPrice").html(response.object.actualPrice);
-    			    	 $("#offerPrice").html(response.object.offerPrice);
     			    	 $("#orderDate").html(orderDate);
     			    	 $("#fromDate").html(fromDate);
     			    	 $("#toDate").html(toDate);
-    			    	 $("#timeslot").html(timeslot);
     			    	 
+    			    	 if($("#selectedFullDaySlot").hasClass('selectedSlot')){
+	    			   		 $("#actualPrice").html(response.object.actualPrice);
+		    			     $("#offerPrice").html(response.object.offerPrice);
+		    			     
+		    			     $("#timeslot").html($("#selectedFullDaySlot").val());
+		    			     
+    			    	 }else{
+    			    	    if($("#selectedFirstSlot"+response.object.masterServiceUUID).hasClass('selectedSlot')){
+	    			    	 	$("#actualPrice").html(response.object.firstHalfActualPrice);
+		    			    	$("#offerPrice").html(response.object.firstHalfOfferPrice);
+		    			    	
+		    			    	$("#timeslot").html($("#selectedFirstSlot"+response.object.masterServiceUUID).val());
+		    			    	
+    			    	 	}else{
+    			    	 		$("#actualPrice").html(response.object.secondHalfActualPrice);
+		    			    	$("#offerPrice").html(response.object.secondHalfOfferPrice);
+		    			    	
+		    			    	$("#timeslot").html($("#selectedSecondSlot"+response.object.masterServiceUUID).val());
+		    			    	
+    			    	 	}
+    			    	 	
+    			    	 }
+    			    	 
+
     			    	 if(response.object.minimumOrder != 0){
 			    			     document.getElementById('minimumOrderDiv').style.display='block'
       			    	    	 
@@ -217,8 +231,8 @@ body {
     			    	     $("#actualPriceCurrency").html(currencyCode);
     			      	     $("#offerPriceCurrency").html(currencyCode);
     			    	     
-    			    	     $("#actualPrice").html(response.object.actualPrice);
-        			    	 $("#offerPrice").html(response.object.offerPrice);
+    			    	     //$("#actualPrice").html(response.object.actualPrice);
+        			    	 //$("#offerPrice").html(response.object.offerPrice);
     			    		 
     			    	     document.getElementById('minimumOrderDiv').style.display='none'
     			    		 document.getElementById('discountValueDiv').style.display='none'
@@ -259,7 +273,6 @@ body {
 						if(response.object.service != "Cuisine" && ($("#selectedFullDaySlot").hasClass('selectedSlot'))){
 								
 								quantity = getDaysDiff($("#startDate").val(), $("#endDate").val());
-								quantity = quantity * 2;
 								
 						}else if(($("#selectedHalfDaySlot").hasClass('selectedSlot'))){
 						
@@ -285,9 +298,18 @@ body {
     			    	 }else{
 	    			     	if(response.object.service != "Cuisine" && ($("#selectedFullDaySlot").hasClass('selectedSlot'))){
 								totalAmount =  Number(response.object.offerPrice) * Number(quantity);
-								totalAmount =  getFullDayDiscount(totalAmount);
+								//totalAmount =  getFullDayDiscount(totalAmount);
 							}else {
-							    totalAmount =  Number(response.object.offerPrice) * Number(quantity);
+							
+								if($("#selectedFullDaySlot").hasClass('selectedSlot')){
+				    		     	totalAmount =  Number(response.object.offerPrice) * Number(quantity);
+		    			    	 }else{
+			    			    	 if($("#selectedFirstSlot"+response.object.masterServiceUUID).hasClass('selectedSlot')){
+			    			    		totalAmount =  Number(response.object.firstHalfOfferPrice) * Number(quantity);
+	    			    	 		 }else{
+			    			    		totalAmount =  Number(response.object.secondHalfOfferPrice) * Number(quantity);
+	    			    	 		 }
+		    			    	 }
 							}
         			    	 $("#totalAmount").html(totalAmount);
     			    	 }

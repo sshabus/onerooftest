@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.acculytixs.wayuparty.annotations.Required;
 import com.acculytixs.wayuparty.entity.user.User;
 import com.acculytixs.wayuparty.entity.vendor.Vendors;
 
@@ -48,6 +49,18 @@ public class VendorMasterService implements Serializable{
 	
 	@Column(name = "offer_price")
 	private Double offerPrice;
+	
+	@Column(name="first_half_actual_price")
+	private Double firstHalfActualPrice;
+	
+	@Column(name="first_half_offer_price")
+	private Double firstHalfOfferPrice;
+	
+	@Column(name="second_half_actual_price")
+	private Double secondHalfActualPrice;
+	
+	@Column(name="second_half_offer_price")
+	private Double secondHalfOfferPrice;
 	
 	@Column(name = "minimum_order")
 	private Double minimumOrder;
@@ -352,4 +365,40 @@ public class VendorMasterService implements Serializable{
 		this.guestEntryTime = guestEntryTime;
 	}
 
+	public Double getFirstHalfActualPrice() {
+		return firstHalfActualPrice;
+	}
+
+	public void setFirstHalfActualPrice(Double firstHalfActualPrice) {
+		this.firstHalfActualPrice = firstHalfActualPrice;
+	}
+
+	public Double getFirstHalfOfferPrice() {
+		return firstHalfOfferPrice;
+	}
+
+	public void setFirstHalfOfferPrice(Double firstHalfOfferPrice) {
+		this.firstHalfOfferPrice = firstHalfOfferPrice;
+	}
+
+	public Double getSecondHalfActualPrice() {
+		return secondHalfActualPrice;
+	}
+
+	public void setSecondHalfActualPrice(Double secondHalfActualPrice) {
+		this.secondHalfActualPrice = secondHalfActualPrice;
+	}
+
+	public Double getSecondHalfOfferPrice() {
+		return secondHalfOfferPrice;
+	}
+
+	public void setSecondHalfOfferPrice(Double secondHalfOfferPrice) {
+		this.secondHalfOfferPrice = secondHalfOfferPrice;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 }

@@ -22,6 +22,18 @@ public class VendorTableServiceDTO implements Serializable{
 	@Required(desc="offerPrice")
 	private Double offerPrice;
 	
+	@Required(desc="firstHalfActualPrice")
+	private Double firstHalfActualPrice;
+	
+	@Required(desc="firstHalfOfferPrice")
+	private Double firstHalfOfferPrice;
+	
+	@Required(desc="secondHalfActualPrice")
+	private Double secondHalfActualPrice;
+	
+	@Required(desc="secondHalfOfferPrice")
+	private Double secondHalfOfferPrice;
+	
 	@Required(desc="startDate")
 	private String startDate;
 	
@@ -160,6 +172,41 @@ public class VendorTableServiceDTO implements Serializable{
 	public void setTableUUID(String tableUUID) {
 		this.tableUUID = tableUUID;
 	}
-	
+
+	public Double getFirstHalfActualPrice() {
+		return firstHalfActualPrice;
+	}
+
+	public void setFirstHalfActualPrice(Double firstHalfActualPrice) {
+		this.firstHalfActualPrice = firstHalfActualPrice;
+	}
+
+	public Double getFirstHalfOfferPrice() {
+		return firstHalfOfferPrice;
+	}
+
+	public void setFirstHalfOfferPrice(Double firstHalfOfferPrice) {
+		this.firstHalfOfferPrice = firstHalfOfferPrice;
+	}
+
+	public Double getSecondHalfActualPrice() {
+		return secondHalfActualPrice;
+	}
+
+	public void setSecondHalfActualPrice(Double secondHalfActualPrice) {
+		this.secondHalfActualPrice = secondHalfActualPrice;
+	}
+
+	public Double getSecondHalfOfferPrice() {
+		return secondHalfOfferPrice;
+	}
+
+	public void setSecondHalfOfferPrice(Double secondHalfOfferPrice) {
+		this.secondHalfOfferPrice = secondHalfOfferPrice;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 
 }

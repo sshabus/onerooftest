@@ -553,7 +553,11 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							  result = result+'<div class="service_wrap_inn" data-id="4">';
 							  result = result+'<div class="service_wrap_top">';
 							  //result = result+'<img src="/resources/img/logo.png" width="180" height="130">';
-							  result = result+'<div class="service_wrap_top_text">Price :&nbsp;<span>'+currencyCode+' '+servicePrice+'</span></div>';
+							  
+							  result = result+'<div id="fullDayPrice'+opt.masterServiceUUID+'" style="display:none;" class="service_wrap_top_text">Price :&nbsp;<span>'+currencyCode+' '+opt.actualPrice+'</span></div>';
+							  result = result+'<div id="firstHalfPrice'+opt.masterServiceUUID+'" style="display:none;" class="service_wrap_top_text">Price :&nbsp;<span>'+currencyCode+' '+opt.firstHalfActualPrice+'</span></div>';
+							  result = result+'<div id="secondHalfPrice'+opt.masterServiceUUID+'" style="display:none;" class="service_wrap_top_text">Price :&nbsp;<span>'+currencyCode+' '+opt.secondHalfActualPrice+'</span></div>';
+							  
 							  result = result+'</div>';
 							  result = result+'<div class="service_wrap_name">';
 							  result = result+opt.subCategory;
@@ -587,12 +591,21 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 									  result = result+'<span class="col-xl-6 col-lg-6 col-12" style="color: gold;margin: 0 0 0 1px;">Offer Price :&nbsp;'+currencyCode+' '+opt.offerPrice+' </span>';
 							  
 							  	  }else{
-							  		  result = result+'<div class="col-xl-6 col-lg-6 col-12">';
-									  result = result+'<span >Actual Price :&nbsp;'+currencyCode+' '+opt.actualPrice+' per slot</span>';
-									  result = result+'<span style="color: gold;margin: 0 0 0 1px;">Offer Price :&nbsp;'+currencyCode+' '+opt.offerPrice+' per slot </span>';
-									  result = result+' </div>';
 									 
 									  if(opt.serviceName == 'Venue'){
+										  result = result+'<div class="col-xl-6 col-lg-6 col-12">';
+										  
+										  result = result+'<span id="fullDayActualPrice'+opt.masterServiceUUID+'" style="display:none;">Full Day Actual Price :&nbsp;'+currencyCode+' '+opt.actualPrice+' per slot</span>';
+										  result = result+'<span id="fullDayOfferPrice'+opt.masterServiceUUID+'"  style="color: gold;margin: 0 0 0 1px;display:none;">Full Day Offer Price :&nbsp;'+currencyCode+' '+opt.offerPrice+' per slot </span>';
+										  
+										  result = result+'<span id="firstHalfActualPrice'+opt.masterServiceUUID+'" style="display:none;">First Half Actual Price :&nbsp;'+currencyCode+' '+opt.firstHalfActualPrice+' per slot</span>';
+										  result = result+'<span id="firstHalfOfferPrice'+opt.masterServiceUUID+'"  style="color: gold;margin: 0 0 0 1px;display:none;">First Half Offer Price :&nbsp;'+currencyCode+' '+opt.firstHalfOfferPrice+' per slot </span>';
+										  
+										  result = result+'<span id="secondHalfActualPrice'+opt.masterServiceUUID+'" style="display:none;">Second Half Actual Price :&nbsp;'+currencyCode+' '+opt.secondHalfActualPrice+' per slot</span>';
+										  result = result+'<span id="secondHalfOfferPrice'+opt.masterServiceUUID+'"  style="color: gold;margin: 0 0 0 1px;display:none;">Second Half Offer Price :&nbsp;'+currencyCode+' '+opt.secondHalfOfferPrice+' per slot </span>';
+										  
+										  result = result+' </div>';
+									  
 								  		result = result+'<div class="col-xl-6 col-lg-6 col-12" style="padding: 0px 0px 0px 0px;">';
 										result = result+'<input type="submit" id="selectedFullDaySlot" value="Full Day" onclick="selectedFullDaySlot(\''+opt.masterServiceUUID+'\')" class="btn btn-success" style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;margin-right:10px;">';
 										result = result+'<input type="button"  id="selectedHalfDaySlot" value="Half Day" onclick="selectedHalfDaySlot(\''+opt.masterServiceUUID+'\')" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;margin-right:10px;">';
@@ -666,11 +679,6 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 								// result = result+'</div>';
 
 
-
-
-
-
-
 								result = result+'<div class="row1" >';
 									if(opt.serviceName == 'Cuisine'){
 									
@@ -698,11 +706,6 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 									}	
 									result = result+'</div>';
 									
-									
-									
-									
-
-								
 								// result = result+'<div class="form-group" style="padding-left: 15px;">';
 								// result = result+'<label>To Date</label>';
 								// result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control end-date-datepicker" data-position="bottom right" name="endDate" id="endDate" data-validation="required" field-name="End Date">';
@@ -729,8 +732,6 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							//   result = result+'</div>';
 
 							  
-
-							 
 							  result = result+'<div class="col-lg-8 col-sm-8 col-12">';
 							  result = result+'<div class="heading-layout1 mg-b-17">';
 							  result = result+'<div class="item-title">';
@@ -789,12 +790,12 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							  
 							  result = result+'<div class="clear"></div>';
 							  result = result+'</div>';
-							  result = result+'<div class="price">PRICE :&nbsp;<span style="color:gold">'+currencyCode+' '+servicePrice+'/-</span></div>';
+							  result = result+'<div id="fullDayPrice1'+opt.masterServiceUUID+'" style="display:none;" class="price">PRICE :&nbsp;<span style="color:gold">'+currencyCode+' '+opt.offerPrice+'/-</span></div>';
+							  result = result+'<div id="firstHalfPrice1'+opt.masterServiceUUID+'" style="display:none;" class="price">PRICE :&nbsp;<span style="color:gold">'+currencyCode+' '+opt.firstHalfOfferPrice+'/-</span></div>';
+							  result = result+'<div id="secondHalfPrice1'+opt.masterServiceUUID+'" style="display:none;" class="price">PRICE :&nbsp;<span style="color:gold">'+currencyCode+' '+opt.secondHalfOfferPrice+'/-</span></div>';
 							 
 							  result = result+'<div class="service_wrap_bot">';
 						 	
-							 
-							  
 							  
 	 					 	if(opt.serviceName == 'Packages'){
  								 result = result+'<a data-button="customize" data-id="4" href="javascript:void(0)" id="customizeService'+opt.masterServiceUUID+'" data-toggle="modal" style="display:none" data-target="#right-slide-modal" onclick="getServiceDetails(\''+opt.masterServiceUUID+'\',\''+categoryUUID+'\',\''+isEntryRatioEnabled+'\')">Customize</a>';
@@ -809,11 +810,6 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							}
 	 					 	
 	 					 	
-	 					 
- 								 
-								  
-							 
- 							  
 							  result = result+'<div class="clear"></div>';
 							  result = result+'</div>';
 							  result = result+'</div>';
@@ -1417,17 +1413,51 @@ function quantityDec(maserServiceUUID){
 			$("#selectedFirstSlot"+serviceUUID).addClass( 'selectedSlot' );
 			$("#selectedSecondSlot"+serviceUUID).removeClass('selectedSlot');
 			
+			$("#fullDayActualPrice"+serviceUUID).css({ display: "none" });
+			$("#fullDayOfferPrice"+serviceUUID).css({ display: "none" });
+			
+			$("#firstHalfActualPrice"+serviceUUID).css({ display: "block" });
+			$("#firstHalfOfferPrice"+serviceUUID).css({ display: "block" });
+			
+			$("#secondHalfActualPrice"+serviceUUID).css({ display: "none" });
+			$("#secondHalfOfferPrice"+serviceUUID).css({ display: "none" });
+			
+			$("#fullDayPrice"+serviceUUID).css({ display: "none" });
+			$("#firstHalfPrice"+serviceUUID).css({ display: "block" });
+			$("#secondHalfPrice"+serviceUUID).css({ display: "none" });
+			
+			$("#fullDayPrice1"+serviceUUID).css({ display: "none" });
+			$("#firstHalfPrice1"+serviceUUID).css({ display: "block" });
+			$("#secondHalfPrice1"+serviceUUID).css({ display: "none" });
+			
 		}
 
 	}
 
 	function selectedSecondSlot(serviceUUID){
-
+	
 		if($("#selectedSecondSlot"+serviceUUID).hasClass('selectedSlot')){
 			$("#selectedSecondSlot"+serviceUUID).removeClass('selectedSlot');
 		}else{
 			$("#selectedSecondSlot"+serviceUUID).addClass( 'selectedSlot' );
 			$("#selectedFirstSlot"+serviceUUID).removeClass('selectedSlot');
+			
+			$("#fullDayActualPrice"+serviceUUID).css({ display: "none" });
+			$("#fullDayOfferPrice"+serviceUUID).css({ display: "none" });
+			
+			$("#firstHalfActualPrice"+serviceUUID).css({ display: "none" });
+			$("#firstHalfOfferPrice"+serviceUUID).css({ display: "none" });
+			
+			$("#secondHalfActualPrice"+serviceUUID).css({ display: "block" });
+			$("#secondHalfOfferPrice"+serviceUUID).css({ display: "block" });
+			
+			$("#fullDayPrice"+serviceUUID).css({ display: "none" });
+			$("#firstHalfPrice"+serviceUUID).css({ display: "none" });
+			$("#secondHalfPrice"+serviceUUID).css({ display: "block" });
+			
+			$("#fullDayPrice1"+serviceUUID).css({ display: "none" });
+			$("#firstHalfPrice1"+serviceUUID).css({ display: "none" });
+			$("#secondHalfPrice1"+serviceUUID).css({ display: "block" });
 		}
 
 	}
@@ -1450,6 +1480,24 @@ function quantityDec(maserServiceUUID){
 
 			$("#selectedFirstSlot"+serviceUUID).css({ display: "none" });
 			$("#selectedSecondSlot"+serviceUUID).css({ display: "none" });
+			
+			$("#fullDayActualPrice"+serviceUUID).css({ display: "block" });
+			$("#fullDayOfferPrice"+serviceUUID).css({ display: "block" });
+			
+			$("#firstHalfActualPrice"+serviceUUID).css({ display: "none" });
+			$("#firstHalfOfferPrice"+serviceUUID).css({ display: "none" });
+			
+			$("#secondHalfActualPrice"+serviceUUID).css({ display: "none" });
+			$("#secondHalfOfferPrice"+serviceUUID).css({ display: "none" });
+			
+			$("#fullDayPrice"+serviceUUID).css({ display: "block" });
+			$("#firstHalfPrice"+serviceUUID).css({ display: "none" });
+			$("#secondHalfPrice"+serviceUUID).css({ display: "none" });
+			
+			$("#fullDayPrice1"+serviceUUID).css({ display: "block" });
+			$("#firstHalfPrice1"+serviceUUID).css({ display: "none" });
+			$("#secondHalfPrice1"+serviceUUID).css({ display: "none" });
+			
 		}
 	
 	}
@@ -1477,6 +1525,23 @@ function quantityDec(maserServiceUUID){
 			
 			$("#selectedFirstSlot"+serviceUUID).css({ display: "inline-block" });
 			$("#selectedSecondSlot"+serviceUUID).css({ display: "inline-block" });
+			
+			$("#fullDayActualPrice"+serviceUUID).css({ display: "none" });
+			$("#fullDayOfferPrice"+serviceUUID).css({ display: "none" });
+			
+			$("#firstHalfActualPrice"+serviceUUID).css({ display: "none" });
+			$("#firstHalfOfferPrice"+serviceUUID).css({ display: "none" });
+			
+			$("#secondHalfActualPrice"+serviceUUID).css({ display: "none" });
+			$("#secondHalfOfferPrice"+serviceUUID).css({ display: "none" });
+			
+			$("#fullDayPrice"+serviceUUID).css({ display: "none" });
+			$("#firstHalfPrice"+serviceUUID).css({ display: "none" });
+			$("#secondHalfPrice"+serviceUUID).css({ display: "none" });
+			
+			$("#fullDayPrice1"+serviceUUID).css({ display: "none" });
+			$("#firstHalfPrice1"+serviceUUID).css({ display: "none" });
+			$("#secondHalfPrice1"+serviceUUID).css({ display: "none" });
 			
 		}
 	

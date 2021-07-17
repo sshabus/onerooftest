@@ -78,7 +78,7 @@
                    <div class="card-body">
                         <div class="heading-layout1">
                             <div class="item-title">
-                                <h3>Bottle Details</h3>
+                                <h3>Service Details</h3>
                             </div>
                     	</div>
                     	
@@ -93,20 +93,41 @@
                                  
                                  <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Bottle Name<span class="text-danger">&nbsp;*</span></label>
-                                    <select class="select2" name="bottleName" id="bottleName" data-validation="required" onchange="validateVendorBottleService();" field-name="Bottle Name">
+                                    <select class="select2" name="bottleName" id="bottleName" onchange="validateVendorBottleService();" field-name="Bottle Name">
                                     <option value=''>Select Bottle Name</option>
                                     </select>
                                  </div>
                                  
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>Actual Price<span class="text-danger">&nbsp;*</span></label>
+                                    <label>Full Day Actual Price<span class="text-danger">&nbsp;*</span></label>
                                     <input type="text" class="form-control"  name="actualPrice" id="actualPrice"  onblur="comparePrices();" data-validation="required validate_Space validate_float validate_length length1-10"  field-name="Actual Price">
                                 </div>
                                 
                                  <div class="col-xl-3 col-lg-6 col-12 form-group" id="priceDiv">
-                                    <label>Offer Price<span class="text-danger">&nbsp;*</span></label>
+                                    <label>Full Day Offer Price<span class="text-danger">&nbsp;*</span></label>
                                     <input type="text" class="form-control"  name="offerPrice" id="offerPrice" onblur="comparePrices();" data-validation="required validate_Space validate_float validate_length length1-10"  field-name="Offer Price">
                                 </div>
+                                
+                                  <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>First Half Actual Price</label>
+                                    <input type="text" class="form-control"  name="firstHalfActualPrice" id="firstHalfActualPrice"  onblur="comparePrices();" data-validation=" validate_Space validate_float validate_length length1-10"  field-name="Actual Price">
+                                </div>
+                                
+                                 <div class="col-xl-3 col-lg-6 col-12 form-group" id="priceDiv">
+                                    <label>First Half Offer Price</label>
+                                    <input type="text" class="form-control"  name="firstHalfOfferPrice" id="firstHalfOfferPrice" onblur="comparePrices();" data-validation=" validate_Space validate_float validate_length length1-10"  field-name="Offer Price">
+                                </div>
+                                
+                                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Second Half Actual Price</label>
+                                    <input type="text" class="form-control"  name="secondHalfActualPrice" id="secondHalfActualPrice"  onblur="comparePrices();" data-validation=" validate_Space validate_float validate_length length1-10"  field-name="Actual Price">
+                                </div>
+                                
+                                 <div class="col-xl-3 col-lg-6 col-12 form-group" id="priceDiv">
+                                    <label>Second Half Offer Price</label>
+                                    <input type="text" class="form-control"  name="secondHalfOfferPrice" id="secondHalfOfferPrice" onblur="comparePrices();" data-validation=" validate_Space validate_float validate_length length1-10"  field-name="Offer Price">
+                                </div>
+                                
                                 
                                 <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     <label>Allowed<span class="text-danger">&nbsp;*</span></label>
@@ -252,6 +273,13 @@
 	    			    	 
 	    			    	 $("#actualPrice").val(response.object.actualPrice);
 	    			    	 $("#offerPrice").val(response.object.offerPrice);
+	    			    	 
+	    			    	 $("#firstHalfActualPrice").val(response.object.firstHalfActualPrice);
+	    			    	 $("#firstHalfOfferPrice").val(response.object.firstHalfOfferPrice);
+	    			    	 $("#secondHalfActualPrice").val(response.object.secondHalfActualPrice);
+	    			    	 $("#secondHalfOfferPrice").val(response.object.secondHalfOfferPrice);
+	    			    	 
+	    			    	 
 	    			    	 $("#allowed").val(response.object.allowed);
 	    			    	 $("#startDate").val(response.object.serviceStartDate);
 	    			    	 $("#endDate").val(response.object.serviceEndDate);
