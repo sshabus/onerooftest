@@ -176,10 +176,13 @@ body {
     			    	 $("#serviceImage").html('<img src="'+response.object.serviceImage+'" onerror="predefineVendorServiceImage(this);" data-id= "vendorProfileImage" >');
     			    	 $("#serviceCategory").html(response.object.category);
     			    	 $("#serviceName").html(response.object.subCategory);
+    			    	 $("#actualPrice").html(response.object.actualPrice);
+		    			 $("#offerPrice").html(response.object.offerPrice);
     			    	 $("#orderDate").html(orderDate);
     			    	 $("#fromDate").html(fromDate);
     			    	 $("#toDate").html(toDate);
-    			    	 
+		    			 $("#timeslot").html(timeslot);
+		    			 
     			    	 if($("#selectedFullDaySlot").hasClass('selectedSlot')){
 	    			   		 $("#actualPrice").html(response.object.actualPrice);
 		    			     $("#offerPrice").html(response.object.offerPrice);
@@ -300,6 +303,7 @@ body {
 								totalAmount =  Number(response.object.offerPrice) * Number(quantity);
 								//totalAmount =  getFullDayDiscount(totalAmount);
 							}else {
+								totalAmount =  Number(response.object.offerPrice) * Number(quantity);
 							
 								if($("#selectedFullDaySlot").hasClass('selectedSlot')){
 				    		     	totalAmount =  Number(response.object.offerPrice) * Number(quantity);
