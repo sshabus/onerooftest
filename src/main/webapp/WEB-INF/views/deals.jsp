@@ -63,7 +63,7 @@ body {
 </style>
 
 <body>
-<nav ">
+<nav>
 	  <div class="clearfix">
 	    <div class="navbar-header">
 	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">

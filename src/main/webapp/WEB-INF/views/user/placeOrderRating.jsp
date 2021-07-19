@@ -14,7 +14,7 @@
                                                 </button>
                                             </div>
                                                
-											   <div class="ratingsContainer">
+											   <div class="ratingsContainer" style="background-color:#e83e8c">
 											      <div class="star-widget">
 											        <input type="radio" name="rate" id="rate-5">
 											        <label for="rate-5" class="fas fa-star" onclick="getStarRating('5');"></label>
@@ -41,7 +41,7 @@
 											    </div>
    
                                             <div class="modal-footer">
-                                               <button type="button" class="footer-btn bg-gradient-gplus" data-dismiss="modal"><i class="fas fa-times mg-l-10"></i>&nbsp;Close</button>
+                                               
                                             </div>
                                         </div>
                                     </div>

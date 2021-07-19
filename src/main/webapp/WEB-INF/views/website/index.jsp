@@ -206,7 +206,7 @@
 			<div class = "services">
 				<div>
 					<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/clubs'" class="logina">
-						<img src="/resources/img/venue.jpg" alt="logo" class="serviceimg" style="background: white;margin-right: 16px;">
+						<img src="/resources/img/venue.png" alt="logo" class="serviceimg" style="background: white;margin-right: 16px;">
 					</a>
 					<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/login'" class="logina">
 						<img src="/resources/img/cuisine.jpg" alt="logo" class="serviceimg">

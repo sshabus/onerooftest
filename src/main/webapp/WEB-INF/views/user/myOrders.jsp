@@ -153,11 +153,8 @@
 		
 		margin-right: 34%;
 	}
+
 }
-
-
-
-
 </style>
 </head>
    <div id="wrapper" class="wrapper bg-ash">
@@ -247,7 +244,7 @@
 		        	     result = result +'<h1 class="club_name">'+opt.clubName+'</h1>';
 		        	     
 		        	     
-		        		 result = result +'<h4 style="color:white;class="small text-muted"style="margin-right: -50%;">'+opt.clubLocation+'</h4>';
+		        		 result = result +'<h4 style="color:white;margin-right: -50%;"class="small text-white">'+opt.clubLocation+'</h4>';
 		        		 result = result +'<h4 style="color:white;margin-left: -63%;">'+opt.orderItems+'</h4>';
 		        		 result = result +'<h4 class="amount" style="margin-right: -100px; margin-top: -23px;" >'+currencyType+' '+opt.totalAmount+'</h4>';
 		        		 result = result +'</div>';
@@ -360,12 +357,4 @@ function getCurrency(currency){
 	return currencyType
 }
 </script>
- <script>
-  function initFreshChat() {
-    window.fcWidget.init({
-      token: "345d79af-1ff9-40f8-9a36-79882a2edfc6",
-      host: "https://wchat.in.freshchat.com"
-    });
-  }
-  function initialize(i,t){var e;i.getElementById(t)?initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://wchat.in.freshchat.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))}function initiateCall(){initialize(document,"Freshchat-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
-</script>
+  

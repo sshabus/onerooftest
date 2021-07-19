@@ -39,6 +39,9 @@
     border-radius: 100px;
     margin-top: -20px;
 }
+.ui-tab-card .card-body .custom-tab .nav-tabs .nav-item .nav-link{
+	color:red;
+}
 @media (max-width: 1199px){
 
 		.card{

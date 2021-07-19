@@ -33,6 +33,9 @@
 .leftTabSection.active.show{
 	margin-top: 10px
 }
+.sidebar-color{
+	padding-bottom: 269px;
+}
 </style>
 
 <div id="wrapper" class="wrapper bg-ash">

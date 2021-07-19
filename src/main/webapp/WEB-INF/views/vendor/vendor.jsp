@@ -4,7 +4,17 @@
  <link rel="shortcut icon" type="image/x-icon" href="/resources/img/Oneroof_icon.png">
 <div id="preloader"></div>
 <style>
-
+#wrapper {
+  background-image: url('/resources/img/Oneroof_bg_page.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: 100% 100%;
+  width: 100%;
+}
 .sidebar-expand-md {
    float:right;
   }
@@ -13,6 +23,12 @@
 }
 .breadcrumbs-area {
     padding: 35px 40px 35px;
+}
+label {
+	color:white;
+}
+.sidebar-color{
+	padding-bottom: 96%;
 }
 </style>
 <div id="wrapper" class="wrapper bg-ash">
@@ -132,7 +148,7 @@
                                 
                                 <div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Upload Photo</label>
-                                    <input type="file" class="form-control-file" id="uploadImageBtn" field-name="Upload Image" data-validation-optional="true" data-validation="validateImg">
+                                    <input type="file" class="form-control-file" id="uploadImageBtn" field-name="Upload Image" data-validation-optional="true" data-validation="validateImg" style="color:white;">
                                     <input type="text" class="form-control" readonly
 										id="uploadImageFile" style="display: none;" name="docFile" >
                                  </div>

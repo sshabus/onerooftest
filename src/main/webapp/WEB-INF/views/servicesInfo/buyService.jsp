@@ -9,8 +9,8 @@ body {
     font-family: 'Poppins', 'Roboto';  
 }    
 .ui-modal-box .modal-box .right-slide-modal .modal-dialog .modal-content {
-    margin-top: 65px;
-    height: 100%;
+   margin-top: 65px;
+    height: 90%;
     border-top-left-radius: 35px;
 }
 .close {
@@ -44,10 +44,11 @@ body {
     overflow-y: overlay;
     height: 205px;
 }
-/* .modal-footer {
+.modal-footer {
     margin-top: -55px;
-    margin-right: 40px;
-} */
+    float: left;
+    margin-right: 175px;
+} 
 </style>
 </head>
 
@@ -106,6 +107,9 @@ body {
                                             
                                             <div class="modal-footer">
                                                <button type="button" class="footer-btn text-light gradient-orange-peel" id="addToCart"><i class="fa fa-shopping-cart mg-l-10"></i>&nbsp;Add To Cart</button>
+                                               <a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/cart'" class="logina">
+                                               <button type="submit" class="footer-btn text-light gradient-orange-peel"> Check Out </button>
+                                              </a> 
                                                <!-- <button type="button" class="footer-btn text-light gradient-pastel-green" id="placeOrder"><i class="fa fa-save mg-l-10"></i>&nbsp;Place Order</button> 
                                                <button type="button" class="footer-btn bg-gradient-gplus" data-dismiss="modal"><i class="fa fa-times mg-l-10"></i>&nbsp;Close</button>    -->
                                             </div>
