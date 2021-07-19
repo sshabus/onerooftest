@@ -157,11 +157,13 @@ body {
     	   //var timeslot = $("input[name='timeslot"+serviceUUID+"']:checked").val();
            
            var fromDate = $("#startDate").val();
-		   var toDate = '';
+		   var toDate = $("#startDate").val();
     	
-    	   if(($("#selectedHalfDaySlot").hasClass('selectedSlot'))){
-    	   		toDate = $("#startDate").val();
-    	   }else if($("#serviceName").val() !== "Cuisine"){
+    	   // if(($("#selectedHalfDaySlot").hasClass('selectedSlot'))){
+    	   //		toDate = $("#startDate").val();
+    	   // }else 
+    	   
+    	   if($("#serviceName").val() !== "Cuisine"){
     	   		toDate = $("#endDate").val();
     	   }
 		   
@@ -196,7 +198,7 @@ body {
 		    			    	
 		    			    	$("#timeslot").html($("#selectedFirstSlot"+response.object.masterServiceUUID).val());
 		    			    	
-    			    	 	}else{
+    			    	    }else if($("#selectedSecondSlot"+response.object.masterServiceUUID).hasClass('selectedSlot')){
     			    	 		$("#actualPrice").html(response.object.secondHalfActualPrice);
 		    			    	$("#offerPrice").html(response.object.secondHalfOfferPrice);
 		    			    	
@@ -310,7 +312,7 @@ body {
 		    			    	 }else{
 			    			    	 if($("#selectedFirstSlot"+response.object.masterServiceUUID).hasClass('selectedSlot')){
 			    			    		totalAmount =  Number(response.object.firstHalfOfferPrice) * Number(quantity);
-	    			    	 		 }else{
+    			    	    		 }else if($("#selectedSecondSlot"+response.object.masterServiceUUID).hasClass('selectedSlot')){
 			    			    		totalAmount =  Number(response.object.secondHalfOfferPrice) * Number(quantity);
 	    			    	 		 }
 		    			    	 }
