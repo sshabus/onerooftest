@@ -808,5 +808,108 @@ public class VendorDaoImpl implements VendorDao{
 		}
 	}
 	
+	@Override
+	public List<VendorDTO> getRegisteredRestaurantsListByRating(Integer offset, Integer limit, String deals) throws Exception {
 
+		Session currentSession = entityManager.unwrap(Session.class);
+		List<VendorDTO> vendorDTOList = null;
+		String query = null;
+		Query queryObj = null;
+
+		String dealsQuery = "";
+		if(StringUtils.isNotBlank(deals) && (deals.equalsIgnoreCase(Constants.YES.toLowerCase()) || 
+				deals.equalsIgnoreCase(Constants.STRING_Y.toLowerCase()))) {
+			dealsQuery = " and vendors.id IN(select master.vendor_id from vendor_master_service master where master.service_id IN "
+		             +"(select services.id from wayuparty_services services where services.service_display_name = 'Deals and Offers' ) "
+		             + "and DATEDIFF(master.service_end_date,CURDATE()) >= 0) ";
+		}
+
+		query = "SELECT " 
+				+" vendors.vendor_name AS vendorName, "
+				+" vendors.vendor_code AS vendorCode, "
+				+" vendors.vendor_email AS vendorEmail, "
+				+" vendors.vendor_mobile AS vendorMobile, "
+				+" IFNULL(vendors.profile_image,'/resources/img/vendor_default_img.jpg') AS vendorProfileImg, "
+				+" vendors.established_year AS establishedYear, "
+				+" vendors.vendor_capacity AS vendorCapacity, "
+				+" vendors.cost_for_two_people AS costForTwoPeople, "
+				+" vendors.currency AS currency, "
+				+" IFNULL(vendors.location,'') AS location, "
+				+" IFNULL(vendors.best_selling_items,'') AS bestSellingItems, "
+				+" vendors.uuid AS vendorUUID, "
+				+" vendors.rating AS rating "
+
+			+" FROM "
+			     + "vendors vendors where vendors.status = '1' "+dealsQuery+" ORDER BY vendors.rating DESC";
+
+
+		queryObj = currentSession.createSQLQuery(query);
+		queryObj.setResultTransformer(Transformers.aliasToBean(VendorDTO.class));
+		if(offset != null & limit != null) {
+			queryObj.setFirstResult(offset);
+			queryObj.setMaxResults(limit);
+		}
+		vendorDTOList = queryObj.list();
+
+		return vendorDTOList;
+	}
+
+	@Override
+	public List<VendorDTO> getRegisteredRadiusRestaurantsListByRating(Integer offset, Integer limit, Double latitude,
+			Double longitude, String deals) throws Exception {
+
+		Session currentSession = entityManager.unwrap(Session.class);
+		List<VendorDTO> vendorDTOList = null;
+		String query = null;
+		Query queryObj = null;
+		String dealsQuery = "";
+
+		if(StringUtils.isNotBlank(deals) && (deals.equalsIgnoreCase(Constants.YES.toLowerCase()) || 
+				deals.equalsIgnoreCase(Constants.STRING_Y.toLowerCase()))) {
+			dealsQuery = " and vendors.id IN(select master.vendor_id from vendor_master_service master where master.service_id IN "
+		             +"(select services.id from wayuparty_services services where services.service_display_name = 'Deals and Offers' ) "
+		             + "and DATEDIFF(master.service_end_date,CURDATE()) >= 0) ";
+		}
+
+		query = "SELECT " 
+				+" vendors.vendor_name AS vendorName, "
+				+" vendors.vendor_code AS vendorCode, "
+				+" vendors.vendor_email AS vendorEmail, "
+				+" vendors.vendor_mobile AS vendorMobile, "
+				+" IFNULL(vendors.profile_image,'/resources/img/vendor_default_img.jpg') AS vendorProfileImg, "
+				+" vendors.established_year AS establishedYear, "
+				+" vendors.vendor_capacity AS vendorCapacity, "
+				+" vendors.cost_for_two_people AS costForTwoPeople, "
+				+" vendors.currency AS currency, "
+				+" IFNULL(vendors.location,'') AS location, "
+				+" IFNULL(vendors.best_selling_items,'') AS bestSellingItems, "
+				+" vendors.uuid AS vendorUUID, "
+				+" vendors.rating AS rating, "
+				+" ROUND(p.distanceUnit "
+				+" * DEGREES(ACOS(COS(RADIANS(p.latpoint)) "
+		             +" * COS(RADIANS(vendors.latitude)) "
+		             +" * COS(RADIANS(p.longpoint) - RADIANS(vendors.longitude)) "
+		             +" + SIN(RADIANS(p.latpoint)) "
+		             +" * SIN(RADIANS(vendors.latitude)))),3) AS kilometers "
+
+			+" FROM "
+			     +" vendors vendors JOIN ( SELECT "+latitude+" AS latpoint, "+longitude+" AS longpoint, 50.0 AS radius, 111.045 AS distanceUnit ) AS p ON 1=1 "
+			     +" WHERE vendors.status = '1' and p.distanceUnit "
+					+" * DEGREES(ACOS(COS(RADIANS(p.latpoint)) "
+			             +" * COS(RADIANS(vendors.latitude)) "
+			             +" * COS(RADIANS(p.longpoint) - RADIANS(vendors.longitude)) "
+			             +" + SIN(RADIANS(p.latpoint)) "
+			             +" * SIN(RADIANS(vendors.latitude)))) <= 100 "+dealsQuery+" ORDER BY vendors.rating DESC";
+
+
+		queryObj = currentSession.createSQLQuery(query);
+		queryObj.setResultTransformer(Transformers.aliasToBean(VendorDTO.class));
+		if(offset != null & limit != null) {
+			queryObj.setFirstResult(offset);
+			queryObj.setMaxResults(limit);
+		}
+		vendorDTOList = queryObj.list();
+
+		return vendorDTOList;
+	}
 }

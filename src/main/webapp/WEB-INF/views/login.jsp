@@ -10,6 +10,7 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
       <link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <title>ONEROOF | Login</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -217,7 +218,8 @@ img:hover {
 							</div>
 							
 							<div class="input-box"> <img src="/resources/img/password_icon.png" style="width: 8%;"/>
-								 <input type="password" placeholder="Enter password" name="password"  required>
+								 <input type="password" placeholder="Enter password" name="password"  required id="id_password">
+								<i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
 							</div>
 						
 							<div class="form-group align-items-center justify-content-between" style="float: right;">
@@ -265,3 +267,29 @@ img:hover {
     <script src="/resources/js/bootstrap.min.js"></script>
     <script src="/resources/js/jquery.scrollUp.min.js"></script>
     <script src="/resources/js/main.js"></script>
+    
+    
+    
+<script type="text/javascript">
+
+const togglePassword = document.querySelector('#togglePassword');
+const password = document.querySelector('#id_password');
+
+togglePassword.addEventListener('click', function (e) {
+  // toggle the type attribute
+  const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+  password.setAttribute('type', type);
+  // toggle the eye slash icon
+  this.classList.toggle('fa-eye-slash');
+});
+</script>
+
+<script>
+  function initFreshChat() {
+    window.fcWidget.init({
+      token: "345d79af-1ff9-40f8-9a36-79882a2edfc6",
+      host: "https://wchat.in.freshchat.com"
+    });
+  }
+  function initialize(i,t){var e;i.getElementById(t)?initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://wchat.in.freshchat.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))}function initiateCall(){initialize(document,"Freshchat-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
+</script>    

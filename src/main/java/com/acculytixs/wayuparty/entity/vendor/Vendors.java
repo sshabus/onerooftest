@@ -141,6 +141,9 @@ public class Vendors implements Serializable{
 	@Column(name = "status")
 	private Integer status;
 	
+	@Column(name = "rating")
+	private Integer rating;
+	
 	@NotFound(action = NotFoundAction.IGNORE)
 	@OneToMany(mappedBy = "vendorId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@Fetch(FetchMode.SELECT)
@@ -465,6 +468,12 @@ public class Vendors implements Serializable{
 		this.orderApproval = orderApproval;
 	}
 	
-	
+	public Integer getRating() {
+		return rating;
+	}
+
+	public void setRating(Integer rating) {
+		this.rating = rating;
+	}
 
 }

@@ -104,5 +104,8 @@ public interface VendorService {
 	
 	String saveCoupon(CouponDTO couponDTO) throws Exception;
 
-	
+	List<VendorDTO> getRegisteredRestaurantsListByRating(Integer offset, Integer limit, String deals) throws Exception;
+
+	List<VendorDTO> getRegisteredRadiusRestaurantsListByRating(Integer offset, Integer limit, Double latitude,
+			Double longitude, String deals) throws Exception;
 }

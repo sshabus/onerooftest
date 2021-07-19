@@ -1,22 +1,18 @@
-
 <head>
 
 	<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 	
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
-
 body {
     font-size: 15px;
     font-family: 'Poppins', 'Roboto';  
 }    
-
 .ui-modal-box .modal-box .right-slide-modal .modal-dialog .modal-content {
     margin-top: 65px;
     height: 100%;
     border-top-left-radius: 35px;
 }
-
 .close {
     color: #79004d;
     opacity: 2;
@@ -125,12 +121,10 @@ body {
    
    function getSelectedDateFromCalendar(selectedDate) {
 		var date = selectedDate;
-
 		var today = new Date(); 
 	    
 	     var dd = today.getDate(); 
 	     var mm = today.getMonth() + 1; 
-
 	     var yyyy = today.getFullYear(); 
 	     if (dd < 10) { 
 	         dd = '0' + dd; 
@@ -139,7 +133,6 @@ body {
 	         mm = '0' + mm; 
 	     } 
 	     var currentDate = dd + '/' + mm + '/' + yyyy; 
-
 		return currentDate;
 	}
    
@@ -208,7 +201,6 @@ body {
     			    	 	
     			    	 }
     			    	 
-
     			    	 if(response.object.minimumOrder != 0){
 			    			     document.getElementById('minimumOrderDiv').style.display='block'
       			    	    	 
@@ -417,7 +409,6 @@ body {
        
        function getTimeSlots(serviceUUID){
     	   //var timeslot = $("input[name='timeslot"+serviceUUID+"']:checked").val();
-
 		if($("#selectedFullDaySlot").hasClass('selectedSlot')){
 		   		var timeslot = $("#selectedFullDaySlot").val();
 		   
@@ -432,7 +423,6 @@ body {
        function placeOrder(serviceUUID){
     	   var orderDate = getSelectedDateFromCalendar($("#serviceCalendar"+serviceUUID).val());
     	   //var timeslot = $("#bookedTimeSlot"+serviceUUID).val();
-
 		   if($("#selectedFirstSlot").hasClass('selectedSlot') && $("#selectedSecondSlot").hasClass('selectedSlot')){
 				var timeslot = $("#selectedFirstSlot").val() + ' and ' + $("#selectedSecondSlot").val();
 			}else if($("#selectedFirstSlot").hasClass('selectedSlot')) {
@@ -456,7 +446,6 @@ body {
     	   
     	   var orderDate = getSelectedDateFromCalendar($("#serviceCalendar"+serviceUUID).val());
     	   //var timeslot = $("#bookedTimeSlot"+serviceUUID).val();
-
 		   if($("#selectedFirstSlot").hasClass('selectedSlot') && $("#selectedSecondSlot").hasClass('selectedSlot')){
 				var timeslot = $("#selectedFirstSlot").val() + ' and ' + $("#selectedSecondSlot").val();
 			}else if($("#selectedFirstSlot").hasClass('selectedSlot')) {
@@ -464,8 +453,6 @@ body {
 			}else if($("#selectedSecondSlot").hasClass('selectedSlot')) {
 				var timeslot = $("#selectedSecondSlot").val();
 			}
-
-
 		   var fromDate = $("#startDate").val();
     	   var toDate = '';
     	   
@@ -632,5 +619,3 @@ body {
 	  		return totalAmount;
 	  }
        </script>
-   
-   
