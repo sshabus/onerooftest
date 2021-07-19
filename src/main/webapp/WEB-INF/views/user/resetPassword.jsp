@@ -9,7 +9,7 @@
                <div class="col-xl-4 col-lg-6 col-12 passwordConditions form-group" style="margin-bottom: 5.2rem;">
                    <label style="background: #850167;width: 122px;">New Password<span class="text-danger">&nbsp;*</span></label>
                    <input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d.*)(?=.*\W.*)[a-zA-Z0-9\S]{8,}$" field-name="Password" onblur="checkPasswords();" data-validation="required validate_length length8-15" placeholder="Enter password" class="form-control" name="password" value="${password}" id="password"  onkeydown="$(this).clear();" onkeyup="passwordValidation('password','fp_letter','fp_capital','fp_number','fp_special','fp_length');">
-					<i class="fa fa-eye" onclick="showPassword();" onmouseover="" style="cursor: pointer;top: 17px;"></i>
+					<i class="fa fa-eye" onclick="showPassword();" onmouseover="" style="cursor: pointer;top: 17px;color:white"></i>
 					<div id="fp_message" class="passHint" style="left:-260px; margin-top: -5px 0px; box-shadow: 1px 1px 1px 2px #ddd; top:-10px;">
 				  			<p  id="fp_letter" class="invalid">At least one lowercase letter</p>
 				  			<p  id="fp_capital" class="invalid">At least one uppercase letter</p>
@@ -22,7 +22,7 @@
                 <div class="col-xl-4 col-lg-6 col-12 form-group" style="margin-bottom: 5.2rem;">
                     <label style="background: #7b0068;width: 146px;">Confirm Password<span class="text-danger">&nbsp;*</span></label>
                     <input type="password" class="form-control" name="confirmPassword" id="confirmPassword"  field-name="Confirm Password" onblur="checkPasswords();" data-validation="required validate_Space" >
-                    <i class="fa fa-eye" onclick="showConfirmPassword();" onmouseover="" style="cursor: pointer;top: 17px;"></i>
+                    <i class="fa fa-eye" onclick="showConfirmPassword();" onmouseover="" style="cursor: pointer;top: 17px;color:white"></i>
                 </div>
                            
 	           <div class="col-12 ui-btn-wrap" style="margin-left: -92px;">

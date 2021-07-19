@@ -82,7 +82,7 @@
 	margin-top: 27px;
 	background: white;
 	border-top-left-radius: 90px;
-	margin-right: 210px;
+	/*margin-right: 210px;*/
 }
 .mb-5{
 	margin-left: 60px;
@@ -365,7 +365,7 @@
        <jsp:include page="../wayupartyMasterFooter.jsp" />
    <!--
  <footer class="footer" style="background-color: #890059;">
-      <div align="center">ONEROOF 2021. copyrights all rights reserved. Developed by   Bivio Solutions Pvt Ltd.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      <div align="center">ONEROOF 2021. copyrights all rights reserved. Developed by  BILVIO SOLUTIONS.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
          	<a href="/privacyPolicy" target="_blank" style="color:rgb(212,175,55);">PRIVACY POLICY</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
       		<a href="/termsAndConditions" target="_blank" style="color:rgb(212,175,55);">TERMS AND CONDITIONS</a>
       </div>            
@@ -374,8 +374,8 @@
   --> 
  </div>
  
-   
- 
+
+
  <script>
  getSpecialPackageBannersList();
  
@@ -473,7 +473,7 @@ function clearClubSearch(){
 			        		
 			        		result = result+'<div class="row">';
 			        		
-			        		result = result +'<div class="clearfix vendors-title col-xl-12 col-lg-6 col-12">';
+			        		result = result +'<div class="clearfix vendors-title col-xl-12 col-lg-6 col-12" style="margin-top:-17px;">';
 			        		result = result +'<h5>';
 			        		result = result +opt.vendorName;
 			        		result = result +'</h5>';
@@ -484,10 +484,10 @@ function clearClubSearch(){
 			        		result = result +'<div class="divpadding">';
 			        		result = result +'<div class="clearfix row">';
 			        		result = result +'<div class="col-sm-1 col-xs-2">';
-			        		result = result +'<i class="fas fa-map-marker mt-1 text-black" aria-hidden="true"></i>';
+			        		result = result +'<i  style="color:black;" class="fas fa-map-marker mt-1 text-black" aria-hidden="true"></i>';
 			        		result = result +'</div>';
-			        		result = result +'<div class="col-sm-10 col-xs-10 text-black">'+location+'</div>';
-			        		result = result +'<div class="col-sm-1 col-xs-2">';
+			        		result = result +'<div style="color:black;" class="col-sm-10 col-xs-10 text-black">'+location+'</div>';
+			        		result = result +'<div  class="col-sm-1 col-xs-2">';
 			        //		result = result +'<i class="fas fa-th-list mt-1 text-black" aria-hidden="true"></i>';
 			        		result = result +'</div>';
 			        //		result = result +'<div class="col-sm-10 col-xs-10 text-black">'+opt.bestSellingItems+'</div>';
@@ -501,10 +501,10 @@ function clearClubSearch(){
 			        		//result = result +'<div class="col-sm-10 col-xs-10 text-black">'+opt.kilometers+' KM</div>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
-			        		result = result +'<div class="card-footer text-muted">';
+			        		result = result +'<div class="card-footer text-muted" style="margin: -14px 10px 0px -17px;">';
 			        		result = result +'<div class="container-fluid" style="position: relative; text-align: center; color: white;">';
 			        		result = result +'<div class="bottom_left" style="position: absolute; bottom: -5px; left: 5px;">';
-			        		result = result +'<a href="'+appUrl+'/vendorInfo?vendorUUID='+opt.vendorUUID+'" class="card-link"><span class="fa fa-search-plus">&nbsp;</span>Explore</a>';
+			        		result = result +'<a href="'+appUrl+'/ws/vendorInfo?vendorUUID='+opt.vendorUUID+'" class="card-link"><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;Explore</a>';
 			        		result = result +'</div>';
 			        		result = result +'<div class="bottom_left" style="position: relative; text-align: center;bottom: -5px;right: 5px;">';
 			        		result = result +'<a href="'+appUrl+'/clubEvents?vendorUUID='+opt.vendorUUID+'" class="card-link"><i class="fas fa-music" aria-hidden="true"></i>&nbsp;Events</a>';
@@ -605,8 +605,6 @@ function getCurrency(currency){
 </script>
    
  
-   
-   
    <script>
 function vendorPagination(){ 
 	$('#vendorPagination').DataTable( { 

@@ -37,6 +37,9 @@ img{
     line-height: 40px;
     font-weight: 100;
 }
+p{
+	color:#fff;
+}
 .p1{
 	color: white;
 	margin: -7px 0px 0px -38px !important;
@@ -54,7 +57,7 @@ img{
   /*  float: inherit; */
 }
 .service_wrap_name {
-    padding: 110px 15px 7px 50px;
+    padding: 130px 15px 7px 89px;
     position: relative;
     font-weight: 600;
     color: white;
@@ -67,6 +70,17 @@ img{
     background: none;
     border-radius: 100px;
     height: 151px;
+}
+.datecalendar{
+float: right;
+    margin-top: -28px;
+    width: 18%;
+}
+.cuisinedate{
+	margin-top: -110px;
+}
+#fc_frame, #fc_frame.fc-widget-normal{
+	right: 65px;
 }
 .service_wrap_name span{
 	font-size: 15px;
@@ -122,11 +136,11 @@ img{
 .row1{
 	display: flex;
     flex-wrap: wrap;
-    margin-right: -30%;
-    margin-left: -3%;
- /*	margin: -155px 0px -70px 335px;	*/
+    margin-right: -20%;
+    margin-left: 53%;
+ /*	margin: -155px 0px -70px 335px;	
  	 margin: -167px -35px 60px 330px; 
-    width: 60%;
+    width: 60%; */
 }
 .modal-footer{
 	margin-top: -55px;
@@ -241,7 +255,12 @@ img{
 	
 }
 @media (max-width: 480px){
+
+	.service_wrap_inn{
 	
+		width: 168%;
+    	margin-left: -65px;
+	}
 	.row1{
 		margin-left: 60%;
    		width: 45%;
@@ -393,7 +412,7 @@ img{
 	    			        		  
 	    			        		  if(service.serviceName != 'Events'){
 	    			        			  result = result +'<li class="nav-item">';
-		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\')" role="tab" aria-selected="true" ><img style="max-width: 80px;margin-left: -8px;background-color: white;transition: transform ease-in-out 0.3s;" src="'+service.serviceImage+'"></img></a><span><strong> <div <!--align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;margin-top: 10px;">'+service.serviceName+'</strong></span>';
+		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\')" role="tab" aria-selected="true" ><img style="max-width: 80px;margin-left: -8px;background-color: white;transition: transform ease-in-out 0.3s;" src="'+service.serviceImage+'"></img></a><span><strong> <div <!--align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;margin-top: 10px;color: #c01a6c;">'+service.serviceName+'</strong></span>';
 		    			        		  result = result +'</li>';
 	    			        		  }
 	    			        		  
@@ -514,8 +533,8 @@ width: 250px !important;
 } */
 
 .service_wrap_name span{
-cursor: pointer;
-}
+/*cursor: pointer;
+}*/
 </style>
 
 <script>
@@ -558,6 +577,10 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							  result = result+'<div id="fullDayPrice'+opt.masterServiceUUID+'" style="display:none;" class="service_wrap_top_text">Price :&nbsp;<span>'+currencyCode+' '+opt.actualPrice+'</span></div>';
 							  result = result+'<div id="firstHalfPrice'+opt.masterServiceUUID+'" style="display:none;" class="service_wrap_top_text">Price :&nbsp;<span>'+currencyCode+' '+opt.firstHalfActualPrice+'</span></div>';
 							  result = result+'<div id="secondHalfPrice'+opt.masterServiceUUID+'" style="display:none;" class="service_wrap_top_text">Price :&nbsp;<span>'+currencyCode+' '+opt.secondHalfActualPrice+'</span></div>';
+							  
+							  if(opt.serviceName == 'Cuisine'){
+								  result = result+'<div class="service_wrap_top_text">Price :&nbsp;<span>'+currencyCode+' '+servicePrice+'</span></div>';
+							  }
 							  
 							  result = result+'</div>';
 							  result = result+'<div class="service_wrap_name">';
@@ -606,6 +629,8 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 										  result = result+'<span id="secondHalfOfferPrice'+opt.masterServiceUUID+'"  style="color: gold;margin: 0 0 0 1px;display:none;">Second Half Offer Price :&nbsp;'+currencyCode+' '+opt.secondHalfOfferPrice+' per slot </span>';
 										  
 										  result = result+' </div>';
+										  
+										  
 									  
 								  		result = result+'<div class="col-xl-6 col-lg-6 col-12" style="padding: 0px 0px 0px 0px;">';
 										result = result+'<input type="submit" id="selectedFullDaySlot" value="Full Day" onclick="selectedFullDaySlot(\''+opt.masterServiceUUID+'\')" class="btn btn-success" style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;margin-right:10px;">';
@@ -615,6 +640,9 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 										result = result+'<input type="button"  id="selectedSecondSlot'+opt.masterServiceUUID+'" value="Second Half" onclick="selectedSecondSlot(\''+opt.masterServiceUUID+'\')" class="btn btn-danger"style="margin: 5px 5px 5px 0px;display:none;background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
 										
 										result = result+' </div>';
+										
+										
+										
 									  }
 							
 							  	  }
@@ -683,29 +711,33 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 								result = result+'<div class="row1" >';
 									if(opt.serviceName == 'Cuisine'){
 									
-										result = result+'<div class="col-xl-12 col-lg-12 col-12 form-group">';
-											result = result+'<label style="color:white;margin-top: -28px;">Start Date<span class="text-danger">&nbsp;*</span></label>';
-											result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control start-date-datepicker" data-position="bottom right" name="startDate" id="startDate" data-validation="required" field-name="Start Date"> ';
-											result = result+'<i class="far fa-calendar-alt"></i>';
+										result = result+'<div class="col-xl-12 col-lg-12 col-12 form-group "style="margin-top:-120px">';
+											result = result+'<label style="color:white;margin-top: -28px;">Booking Date<span class="text-danger">&nbsp;*</span></label>';
+											result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control start-date-datepicker" data-position="bottom right" name="startDate" id="startDate" data-validation="required" field-name="Start Date" readonly="readonly" style="width:30%;"> ';
+											result = result+'<i class="far fa-calendar-alt datecalendar" style="width:75%;"></i>';
 										result = result+'</div>';
 	
 									} else {
 							  		
-							  		result = result+'<div class="col-xl-4 col-lg-6 col-12 form-group" style="display:none"  id="startDateVenue'+opt.masterServiceUUID+'">';
+							  		result = result+'<div class="col-xl-4 col-lg-6 col-12 form-group" style="display:none; margin-top: -25px;"  id="startDateVenue'+opt.masterServiceUUID+'">';
 										result = result+'<label style="color:white;">Start Date<span class="text-danger">&nbsp;*</span></label>';
-										result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control start-date-datepicker" data-position="bottom right" name="startDate" id="startDate" data-validation="required" field-name="Start Date"> ';
-										result = result+'<i class="far fa-calendar-alt"></i>';
+										result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control start-date-datepicker" data-position="bottom right" name="startDate" id="startDate" data-validation="required" field-name="Start Date" readonly="readonly">';
+										result = result+'<i class="far fa-calendar-alt datecalendar"></i>';
 									result = result+'</div>';
-							  	
+									  
+									
+									
 
-									result = result+'<div class="col-xl-4 col-lg-6 col-12 form-group" style="display:none"  id="endDateVenue'+opt.masterServiceUUID+'">';
+									result = result+'<div class="col-xl-4 col-lg-6 col-12 form-group" style="display:none; margin-top: -25px;"  id="endDateVenue'+opt.masterServiceUUID+'">';
 									
 										result = result+'<label style="color:white;">End Date<span class="text-danger">&nbsp;*</span></label>';
-										result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control end-date-datepicker" data-position="bottom right" name="endDate" id="endDate" data-validation="required" field-name="End Date">';
-										result = result+'<i class="far fa-calendar-alt"></i>';
+										result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control end-date-datepicker" data-position="bottom right" name="endDate" id="endDate" data-validation="required" field-name="End Date" readonly="readonly">';
+										result = result+'<i class="far fa-calendar-alt datecalendar"></i>';
 										result = result+'</div>';
 									}	
 									result = result+'</div>';
+									
+									 
 									
 								// result = result+'<div class="form-group" style="padding-left: 15px;">';
 								// result = result+'<label>To Date</label>';
@@ -795,7 +827,11 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							  result = result+'<div id="firstHalfPrice1'+opt.masterServiceUUID+'" style="display:none;" class="price">PRICE :&nbsp;<span style="color:gold">'+currencyCode+' '+opt.firstHalfOfferPrice+'/-</span></div>';
 							  result = result+'<div id="secondHalfPrice1'+opt.masterServiceUUID+'" style="display:none;" class="price">PRICE :&nbsp;<span style="color:gold">'+currencyCode+' '+opt.secondHalfOfferPrice+'/-</span></div>';
 							 
-							  result = result+'<div class="service_wrap_bot">';
+							  if(opt.serviceName == 'Cuisine'){
+								  result = result+'<div style="margin: 60px 0px -43px 367px;color: white;">PRICE :&nbsp;<span style="color:gold">'+currencyCode+' '+servicePrice+'/-</span></div>';
+							  }
+							  
+							  result = result+'<div class="service_wrap_bot" style="margin-top: 0px;">';
 						 	
 							  
 	 					 	if(opt.serviceName == 'Packages'){
@@ -1570,3 +1606,4 @@ function quantityDec(maserServiceUUID){
 
 	}
 </script>
+
