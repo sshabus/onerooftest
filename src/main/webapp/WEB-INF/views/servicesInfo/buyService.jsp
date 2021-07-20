@@ -71,6 +71,7 @@ body {
                                            
                                            <div class="modal-body service-info">
                                            <!-- <div class="service_details_images_img item-img" id="serviceImage"></div>  -->
+                                            <div id="servicedetails">
                                             <ul class="row">    
                                                <li class="col-xl-6 col-lg-6 col-12"><strong>Service  : </strong><span id="serviceName"></span></li>
                                                <li class="col-xl-6 col-lg-6 col-12" id="actualPriceDiv" style="display: none"><strong>Actual Price	: </strong><span id="actualPriceCurrency"></span>&nbsp;<span id="actualPrice"></span></li>
@@ -90,7 +91,7 @@ body {
                                                <li class="col-xl-6 col-lg-6 col-12" style="display: none;" id="artistDiv"><strong>Artist  : </strong><span id="artist"></span></li>
                                                <li class="col-xl-12 col-lg-6 col-12"><strong>Description  : </strong><span id="description"></span></li>
                                              </ul>
-                                 
+                                 			</div>
                                             <div id="packagesMenuList"></div>          
                                              
                                             </div>
@@ -359,10 +360,12 @@ body {
 		                     result = result +'</div>';
 	    			    	 result = result +'</div>';
 	    			    	 
+	    			    	 $("#servicedetails").css("display","none");
 	    			    	 $("#packagesMenuList").empty();
 	    			    	 $("#packagesMenuList").append(result);
     			    		 
     			    	 }else{
+    			    		 $("#servicedetails").css("display","block");
     			    		 $("#packagesMenuList").empty();
     			    	 }
     			    	 

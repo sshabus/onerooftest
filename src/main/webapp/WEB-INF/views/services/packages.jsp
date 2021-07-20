@@ -567,7 +567,7 @@ function getSavedEndDateDatePicker(){
      });
  }
 </script>
-
+<!--  
 <script>
     function validateVendorService(){
     	 var startDate = $('#startDate').val();
@@ -623,7 +623,7 @@ function getSavedEndDateDatePicker(){
     	 
     }
     </script>
-
+-->
 <script>
 function comparePrices(){
 	var actualPrice = $('#actualPrice').val();
