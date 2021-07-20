@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/resources/css/datepicker.min.css">
     <link rel="stylesheet" href="/resources/css/style.css">
     <link href="/resources/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   
   <style>
 .login-page-wrap {
@@ -299,7 +300,8 @@
             <!--            <label>Password<span class="text-danger">&nbsp;*</span></label>  -->
             				<img src="/resources/img/password_icon.png" style="width: 6%;"/>
                         <input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d.*)(?=.*\W.*)[a-zA-Z0-9\S]{8,}$" field-name="Password"  data-validation="required validate_length length8-15" onblur="checkPasswords();" placeholder="Enter password"  name="password" value="${password}" id="password"  onkeydown="$(this).clear();" onkeyup="passwordValidation('password','fp_letter','fp_capital','fp_number','fp_special','fp_length');">
-                    
+                    	<i class="far fa-eye" id="togglePassword" style="float:right;margin-top: -19px;width: 25px; cursor: pointer;"></i>
+                    	
                       <div id="fp_message" class="passHint" style="left:-300px; box-shadow: 1px 1px 1px 2px #ddd; top:-10px;">
 				  			<p  id="fp_letter" class="invalid">At least one lowercase letter</p>
 				  			<p  id="fp_capital" class="invalid">At least one uppercase letter</p>
@@ -313,11 +315,12 @@
               <!--           <label>Confirm Password<span class="text-danger">&nbsp;*</span></label>	-->
               				<img src="/resources/img/password_icon.png" style="width: 6%;"/>
                         <input type="password" placeholder="Enter confirm password" class="form-control" name="confirmPassword" id="confirmPassword"  data-validation="required" field-name="Confirm Password" onblur="checkPasswords();">
+                        
                     </div>
                     
                     <div style="margin-left: 8px; font-size:11px;" class="input-button" >
                     	<div onload="disableSubmit()">
- 							<input type="checkbox" name="terms" id="terms" onchange="activateButton(this)"> <a style=" margin-left:10px;" > I Accept the Terms of Use & Privacy Policy </a>
+ 							<input type="checkbox" name="terms" id="terms" onchange="activateButton(this)"> <a style=" margin-left:10px;font-weight: bold;" > I Accept the <span><a style="font-weight: bold;" href="/termsAndConditions">Terms of Use & Privacy Policy</a></span> </a>
 										<div class="modal-footer">
   											<input type="button"  value="Submit" id="submit_button" class="btn btn-success" onclick="saveUser();"/>
   									    </div>		
@@ -380,6 +383,23 @@ $('body').on('blur', '#register_user_form', function() {
    }
 </script>
 
+<script type="text/javascript">
+
+const togglePassword = document.querySelector('#togglePassword');
+const password = document.querySelector('#password');
+
+togglePassword.addEventListener('click', function (e) {
+  // toggle the type attribute
+  const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+  password.setAttribute('type', type);
+  // toggle the eye slash icon
+  this.classList.toggle('fa-eye-slash');
+});
+
+
+
+
+</script>  
 
  <script type="text/javascript">
         var validationSettings = {
@@ -595,3 +615,12 @@ function passwordValidation(idValue,fp_letter,fp_capital,fp_number,fp_special,fp
  }
  
  </script>  
+<script>
+  function initFreshChat() {
+    window.fcWidget.init({
+      token: "345d79af-1ff9-40f8-9a36-79882a2edfc6",
+      host: "https://wchat.in.freshchat.com"
+    });
+  }
+  function initialize(i,t){var e;i.getElementById(t)?initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://wchat.in.freshchat.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))}function initiateCall(){initialize(document,"Freshchat-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
+</script>

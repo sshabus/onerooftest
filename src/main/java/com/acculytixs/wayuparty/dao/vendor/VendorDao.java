@@ -85,5 +85,11 @@ public interface VendorDao {
 	List<CouponDTO> getCouponList() throws Exception;
 
 	void saveCoupon(Coupon coupon) throws Exception;
+	
+	List<VendorDTO> getRegisteredRadiusRestaurantsListByRating(Integer offset, Integer limit, Double latitude,
+			Double longitude, String deals) throws Exception;
+
+	List<VendorDTO> getRegisteredRestaurantsListByRating(Integer offset, Integer limit, String deals) throws Exception;
+
 
 }

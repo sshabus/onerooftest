@@ -5,6 +5,23 @@
 
 <div id="preloader"></div>
 <style>
+#wrapper {
+  background-image: url('/resources/img/Oneroof_bg_page.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: 100% 100%;
+  width: 100%;
+} 
+.breadcrumbs-area {
+    padding: 35px 40px 35px;
+}
+label {
+	color:white;
+}
 .sidebar-expand-md {
    float:right;
   }

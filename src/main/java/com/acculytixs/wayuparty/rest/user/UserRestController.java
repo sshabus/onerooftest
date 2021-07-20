@@ -289,6 +289,43 @@ public class UserRestController {
 	}
 	
 	/***
+	 * This service to get all registered vendors for user
+	 * @param request
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value = { "/getAllregisteredRestaurantsListByRating", "/rest/getAllregisteredRestaurantsListByRating" , "/ws/getAllregisteredRestaurantsListByRating" }, method = RequestMethod.GET)
+	public ResponseList<VendorDTO> getAllregisteredRestaurantsListByRating(
+			@RequestParam(value = "latitude", required = false) String latitude,
+			@RequestParam(value = "longitude", required = false) String longitude,
+			@RequestParam(value = "offset", required = false) Integer offset,
+			@RequestParam(value = "limit", required = false) Integer limit,
+			@RequestParam(value = "deals", required = false) String deals,
+			HttpServletRequest request) throws Exception {
+
+		ResponseList<VendorDTO> vendorsList = new ResponseList<VendorDTO>();
+		try {
+			List<VendorDTO> vendorsDTOList = null;
+
+			  if(StringUtils.isNotBlank(latitude) && StringUtils.isNotBlank(longitude)) {
+				  vendorsDTOList = vendorService.getRegisteredRadiusRestaurantsListByRating(offset, limit, Double.valueOf(latitude), Double.valueOf(longitude), deals); 
+			  }else {
+				  vendorsDTOList = vendorService.getRegisteredRestaurantsListByRating(offset, limit, deals); 
+			 }
+
+			vendorsList.setData(vendorsDTOList);
+			vendorsList.setResponse(Result.SUCCESS.name());
+		} catch (Exception e) {
+			vendorsList.setResponse(Result.AWKWARD.name());
+			vendorsList.setResponseMessage(Result.AWKWARD.getValue());
+			e.printStackTrace();
+		}
+		return vendorsList;
+	}
+	
+	
+	
+	/***
 	 * This service to get vendor details
 	 * @param vendorUUID
 	 * @param request

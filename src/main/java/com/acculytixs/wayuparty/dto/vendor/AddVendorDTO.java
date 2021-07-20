@@ -104,6 +104,8 @@ public class AddVendorDTO implements Serializable {
 	
 	private String vendorActive;
 	
+	private Integer rating;
+	
 	
 
 	public String getVendorName() {
@@ -368,6 +370,14 @@ public class AddVendorDTO implements Serializable {
 
 	public void setVendorActive(String vendorActive) {
 		this.vendorActive = vendorActive;
+	}
+	
+	public Integer getRating() {
+		return rating;
+	}
+
+	public void setRating(Integer rating) {
+		this.rating = rating;
 	}
 	
 

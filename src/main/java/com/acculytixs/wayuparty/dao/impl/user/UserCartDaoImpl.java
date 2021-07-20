@@ -404,7 +404,7 @@ public class UserCartDaoImpl implements UserCartDao{
 				+" placeOrder.vendor_uuid AS vendorUUID "
 				
 			+" FROM "
-			     + "place_order placeOrder where placeOrder.user_uuid = :userUUID  ";
+				+ "place_order placeOrder where placeOrder.user_uuid = :userUUID ORDER BY DATE_FORMAT(placeOrder.service_ordered_date, '%d') DESC";
 	
 		
 		queryObj = currentSession.createSQLQuery(query);

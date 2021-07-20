@@ -153,11 +153,8 @@
 		
 		margin-right: 34%;
 	}
+
 }
-
-
-
-
 </style>
 </head>
    <div id="wrapper" class="wrapper bg-ash">
@@ -247,7 +244,7 @@
 		        	     result = result +'<h1 class="club_name">'+opt.clubName+'</h1>';
 		        	     
 		        	     
-		        		 result = result +'<h4 style="color:white;class="small text-muted"style="margin-right: -50%;">'+opt.clubLocation+'</h4>';
+		        		 result = result +'<h4 style="color:white;margin-right: -50%;"class="small text-white">'+opt.clubLocation+'</h4>';
 		        		 result = result +'<h4 style="color:white;margin-left: -63%;">'+opt.orderItems+'</h4>';
 		        		 result = result +'<h4 class="amount" style="margin-right: -100px; margin-top: -23px;" >'+currencyType+' '+opt.totalAmount+'</h4>';
 		        		 result = result +'</div>';
@@ -360,4 +357,4 @@ function getCurrency(currency){
 	return currencyType
 }
 </script>
- 
+  

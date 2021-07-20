@@ -1,22 +1,18 @@
-
 <head>
 
 	<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 	
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
-
 body {
     font-size: 15px;
     font-family: 'Poppins', 'Roboto';  
 }    
-
 .ui-modal-box .modal-box .right-slide-modal .modal-dialog .modal-content {
-    margin-top: 65px;
-    height: 100%;
+   margin-top: 65px;
+    height: 90%;
     border-top-left-radius: 35px;
 }
-
 .close {
     color: #79004d;
     opacity: 2;
@@ -48,10 +44,11 @@ body {
     overflow-y: overlay;
     height: 205px;
 }
-/* .modal-footer {
+.modal-footer {
     margin-top: -55px;
-    margin-right: 40px;
-} */
+    float: left;
+    margin-right: 175px;
+} 
 </style>
 </head>
 
@@ -74,6 +71,7 @@ body {
                                            
                                            <div class="modal-body service-info">
                                            <!-- <div class="service_details_images_img item-img" id="serviceImage"></div>  -->
+                                            <div id="servicedetails">
                                             <ul class="row">    
                                                <li class="col-xl-6 col-lg-6 col-12"><strong>Service  : </strong><span id="serviceName"></span></li>
                                                <li class="col-xl-6 col-lg-6 col-12" id="actualPriceDiv" style="display: none"><strong>Actual Price	: </strong><span id="actualPriceCurrency"></span>&nbsp;<span id="actualPrice"></span></li>
@@ -93,7 +91,7 @@ body {
                                                <li class="col-xl-6 col-lg-6 col-12" style="display: none;" id="artistDiv"><strong>Artist  : </strong><span id="artist"></span></li>
                                                <li class="col-xl-12 col-lg-6 col-12"><strong>Description  : </strong><span id="description"></span></li>
                                              </ul>
-                                 
+                                 			</div>
                                             <div id="packagesMenuList"></div>          
                                              
                                             </div>
@@ -110,6 +108,9 @@ body {
                                             
                                             <div class="modal-footer">
                                                <button type="button" class="footer-btn text-light gradient-orange-peel" id="addToCart"><i class="fa fa-shopping-cart mg-l-10"></i>&nbsp;Add To Cart</button>
+                                               <a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/cart'" class="logina">
+                                               <button type="submit" class="footer-btn text-light gradient-orange-peel"> Check Out </button>
+                                              </a> 
                                                <!-- <button type="button" class="footer-btn text-light gradient-pastel-green" id="placeOrder"><i class="fa fa-save mg-l-10"></i>&nbsp;Place Order</button> 
                                                <button type="button" class="footer-btn bg-gradient-gplus" data-dismiss="modal"><i class="fa fa-times mg-l-10"></i>&nbsp;Close</button>    -->
                                             </div>
@@ -125,12 +126,10 @@ body {
    
    function getSelectedDateFromCalendar(selectedDate) {
 		var date = selectedDate;
-
 		var today = new Date(); 
 	    
 	     var dd = today.getDate(); 
 	     var mm = today.getMonth() + 1; 
-
 	     var yyyy = today.getFullYear(); 
 	     if (dd < 10) { 
 	         dd = '0' + dd; 
@@ -139,7 +138,6 @@ body {
 	         mm = '0' + mm; 
 	     } 
 	     var currentDate = dd + '/' + mm + '/' + yyyy; 
-
 		return currentDate;
 	}
    
@@ -208,7 +206,6 @@ body {
     			    	 	
     			    	 }
     			    	 
-
     			    	 if(response.object.minimumOrder != 0){
 			    			     document.getElementById('minimumOrderDiv').style.display='block'
       			    	    	 
@@ -363,10 +360,12 @@ body {
 		                     result = result +'</div>';
 	    			    	 result = result +'</div>';
 	    			    	 
+	    			    	 $("#servicedetails").css("display","none");
 	    			    	 $("#packagesMenuList").empty();
 	    			    	 $("#packagesMenuList").append(result);
     			    		 
     			    	 }else{
+    			    		 $("#servicedetails").css("display","block");
     			    		 $("#packagesMenuList").empty();
     			    	 }
     			    	 
@@ -417,7 +416,6 @@ body {
        
        function getTimeSlots(serviceUUID){
     	   //var timeslot = $("input[name='timeslot"+serviceUUID+"']:checked").val();
-
 		if($("#selectedFullDaySlot").hasClass('selectedSlot')){
 		   		var timeslot = $("#selectedFullDaySlot").val();
 		   
@@ -432,7 +430,6 @@ body {
        function placeOrder(serviceUUID){
     	   var orderDate = getSelectedDateFromCalendar($("#serviceCalendar"+serviceUUID).val());
     	   //var timeslot = $("#bookedTimeSlot"+serviceUUID).val();
-
 		   if($("#selectedFirstSlot").hasClass('selectedSlot') && $("#selectedSecondSlot").hasClass('selectedSlot')){
 				var timeslot = $("#selectedFirstSlot").val() + ' and ' + $("#selectedSecondSlot").val();
 			}else if($("#selectedFirstSlot").hasClass('selectedSlot')) {
@@ -456,7 +453,6 @@ body {
     	   
     	   var orderDate = getSelectedDateFromCalendar($("#serviceCalendar"+serviceUUID).val());
     	   //var timeslot = $("#bookedTimeSlot"+serviceUUID).val();
-
 		   if($("#selectedFirstSlot").hasClass('selectedSlot') && $("#selectedSecondSlot").hasClass('selectedSlot')){
 				var timeslot = $("#selectedFirstSlot").val() + ' and ' + $("#selectedSecondSlot").val();
 			}else if($("#selectedFirstSlot").hasClass('selectedSlot')) {
@@ -464,8 +460,6 @@ body {
 			}else if($("#selectedSecondSlot").hasClass('selectedSlot')) {
 				var timeslot = $("#selectedSecondSlot").val();
 			}
-
-
 		   var fromDate = $("#startDate").val();
     	   var toDate = '';
     	   
@@ -632,5 +626,3 @@ body {
 	  		return totalAmount;
 	  }
        </script>
-   
-   

@@ -206,7 +206,7 @@
 			<div class = "services">
 				<div>
 					<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/clubs'" class="logina">
-						<img src="/resources/img/venue.jpg" alt="logo" class="serviceimg" style="background: white;margin-right: 16px;">
+						<img src="/resources/img/venue.png" alt="logo" class="serviceimg" style="background: white;margin-right: 16px;">
 					</a>
 					<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/login'" class="logina">
 						<img src="/resources/img/cuisine.jpg" alt="logo" class="serviceimg">
@@ -278,23 +278,11 @@ function initialize(locationId) {
 <script>
   function initFreshChat() {
     window.fcWidget.init({
-      token: "e21a2d3a-7108-4f88-b817-2d4d9fad1247",
+      token: "345d79af-1ff9-40f8-9a36-79882a2edfc6",
       host: "https://wchat.in.freshchat.com"
     });
   }
-  
-  function initializeChatBox(i,t){
-  	var e;
-  	i.getElementById(t)?initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://wchat.in.freshchat.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))
-  	
-  }
-  
-  function initiateCall(){
-  	initializeChatBox(document,"freshchat-js-sdk")
-  }
-  
-  window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
-  
+  function initialize(i,t){var e;i.getElementById(t)?initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://wchat.in.freshchat.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))}function initiateCall(){initialize(document,"Freshchat-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
 </script>
 
 <script>
@@ -345,7 +333,7 @@ function openNewWindow(path){
 	   $("#registeredVendorsLoadingDiv").attr('style','position:absolute; width:100%; height:100%; background-color:rgba(255,255,255,0.8); top:0px; left:0px; z-index:100;background-image:url("/resources/img/preloader.gif"); background-position:center; background-repeat:no-repeat; background-size:75px;');
 	     $.ajax({
 		    	type: "GET",
-		    	 url: appUrl+"/ws/getAllregisteredRestaurantsList?latitude="+latitude+"&longitude="+longitude, 
+		    	url: appUrl+"/ws/getAllregisteredRestaurantsListByRating?latitude="+latitude+"&longitude="+longitude, 
 		        success: function(resultData) {
 		   			
 		        	var result = "";

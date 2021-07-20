@@ -39,6 +39,9 @@
     border-radius: 100px;
     margin-top: -20px;
 }
+.ui-tab-card .card-body .custom-tab .nav-tabs .nav-item .nav-link{
+	color:red;
+}
 @media (max-width: 1199px){
 
 		.card{
@@ -571,5 +574,13 @@ function getCurrency(currency){
 	return currencyType
 }
 </script>
-
+<script>
+  function initFreshChat() {
+    window.fcWidget.init({
+      token: "345d79af-1ff9-40f8-9a36-79882a2edfc6",
+      host: "https://wchat.in.freshchat.com"
+    });
+  }
+  function initialize(i,t){var e;i.getElementById(t)?initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://wchat.in.freshchat.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))}function initiateCall(){initialize(document,"Freshchat-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
+</script>
                         

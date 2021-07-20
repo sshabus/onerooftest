@@ -25,6 +25,7 @@ import org.springframework.stereotype.Service;
 import com.acculytixs.wayuparty.dao.user.UserDao;
 import com.acculytixs.wayuparty.dao.vendor.VendorDao;
 import com.acculytixs.wayuparty.dto.services.ServicesDTO;
+import com.acculytixs.wayuparty.dto.user.PlaceOrderDTO;
 import com.acculytixs.wayuparty.dto.user.VendorPlaceOrdersDTO;
 import com.acculytixs.wayuparty.dto.user.VendorsDashboardCountsDTO;
 import com.acculytixs.wayuparty.dto.vendor.AddSpecialPackageDTO;
@@ -264,6 +265,11 @@ public class VendorServiceImpl implements VendorService{
 		return vendorDao.getRegisteredRestaurantsList(offset, limit, deals);
 	}
 
+	@Override
+	public List<VendorDTO> getRegisteredRestaurantsListByRating(Integer offset, Integer limit, String deals) throws Exception {
+		return vendorDao.getRegisteredRestaurantsListByRating(offset, limit, deals);
+	}
+	
 	@Override
 	public VendorDTO getVendorDetails(String vendorUUID) throws Exception {
 		return vendorDao.getVendorDetails(vendorUUID);
@@ -602,6 +608,12 @@ public class VendorServiceImpl implements VendorService{
 	}
 
 	@Override
+	public List<VendorDTO> getRegisteredRadiusRestaurantsListByRating(Integer offset, Integer limit, Double latitude,
+			Double longitude, String deals) throws Exception {
+		return vendorDao.getRegisteredRadiusRestaurantsListByRating(offset, limit, latitude, longitude, deals);
+	}
+
+	@Override
 	public List<String> getAllcategoriesListByType(String categoryType) throws Exception {
 		return vendorDao.getAllcategoriesListByType(categoryType);
 	}
@@ -757,7 +769,33 @@ public class VendorServiceImpl implements VendorService{
 			vendorRatings.setCreatedTime(fromatedTime);
 			
 			vendorRatings.setUuid(RandomCodeHelper.generateRandomUUID());
+			System.out.println("Vendor Details -- "+vendorRatingsDTO);
 			vendorDao.saveVendorRatings(vendorRatings);
+			
+			Vendors vendors = vendorDao.getVendorByUUID(vendorRatingsDTO.getVendorUUID());
+
+			List<VendorRatingDetailsDTO> vendorRatingDetailsDTOList = getVendorRatingsList(vendorRatings.getVendorUUID(),0,100);
+
+			if(vendorRatingDetailsDTOList != null && !vendorRatingDetailsDTOList.isEmpty()) {
+				double vendorRatingSum = 0; //average will have decimal point
+
+				for(VendorRatingDetailsDTO vendorRatingDetailsDTO : vendorRatingDetailsDTOList) {
+					System.out.println(vendorRatingDetailsDTO.getRating());
+					vendorRatingSum =  vendorRatingSum + vendorRatingDetailsDTO.getRating();
+				}
+
+				System.out.println("RATING -- "+vendorRatingSum);
+				double average = vendorRatingSum/vendorRatingDetailsDTOList.size();
+
+				System.out.println("RATING SUM average-- "+average);
+		        int vendorRatingAvg = (int) Math.round(average);
+
+		        System.out.println("RATING SUM -- "+vendorRatingAvg);
+				vendors.setRating(vendorRatingAvg);
+
+				vendorDao.saveVendor(vendors);
+			}
+			
 			queryExecutionStatus = Constants.QUERY_EXECUTION_STATUS_SUCCESS;
 	}catch (Exception e) {
 		e.printStackTrace();

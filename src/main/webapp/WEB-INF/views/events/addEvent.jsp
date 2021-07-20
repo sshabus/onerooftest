@@ -5,6 +5,17 @@
 <div id="preloader"></div>
 
 <style>
+#wrapper {
+  background-image: url('/resources/img/Oneroof_bg_page.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: 100% 100%;
+  width: 100%;
+} 
 .cardEvent-design-inner-values p { 
 font-size: 14px !important;
 color: #FF0000 !important; 
@@ -19,6 +30,9 @@ color: #FF0000 !important;
 }
 .breadcrumbs-area {
     padding: 35px 40px 35px;
+}
+label {
+	color:white;
 }
 </style>
 
@@ -112,7 +126,7 @@ color: #FF0000 !important;
 								               </div>
 								            
 											<div class="col-xl-12 col-lg-6 col-12 form-group">
-											 		   <label class="text-muted">Start Time / End Time<span class="text-danger">&nbsp;*</span></label>
+											 		   <label class="text-white">Start Time / End Time<span class="text-danger">&nbsp;*</span></label>
 											 		   <div id="timeScheduleList"></div>
 										    </div>
 			                                
@@ -129,14 +143,14 @@ color: #FF0000 !important;
 			                                
 									      <div class="col-xl-12 col-lg-6 col-12 form-group" id="displayImageDiv">
 		                                    <label>Display Image<span class="text-danger">&nbsp;*</span></label>
-		                                    <input type="file" class="form-control-file" id="uploadDisplayImageBtn" field-name="Upload Image"  data-validation="required validateImg" field-name="Display Image">
+		                                    <input type="file" class="form-control-file" id="uploadDisplayImageBtn" field-name="Upload Image"  data-validation="required validateImg" field-name="Display Image"style="color:white;">
 		                                    <input type="text" class="form-control" readonly
 												id="uploadDisplayImageFile" style="display: none;" name="docFile" >
 		                                 </div>
 		                                 
 		                                  <div class="col-xl-12 col-lg-6 col-12 form-group" id="savedDisplayImg" style="display: none">
 						                      <label>Display Image</label>
-						                      <div class="events-image" id="uploadImageBtn">
+						                      <div class="events-image" id="uploadImageBtn" > 
 													<div id="savedImage"></div>			
 											  </div>
 											<div class="clearUpload clearUpload-profile-position" title="Delete Uploaded Photo" onclick="deleteDisplayImage();"></div>
@@ -144,7 +158,7 @@ color: #FF0000 !important;
 		                                 
 		                                 <div class="col-xl-12 col-lg-6 col-12 form-group" id="bannerImageDiv">
 		                                    <label>Banner Image<span class="text-danger">&nbsp;*</span></label>
-		                                    <input type="file" class="form-control-file" id="uploadBannerImageBtn" field-name="Upload Image" data-validation="required validateImg" field-name="Banner Image">
+		                                    <input type="file" class="form-control-file" id="uploadBannerImageBtn" field-name="Upload Image" data-validation="required validateImg" field-name="Banner Image"style="color:white;">
 		                                    <input type="text" class="form-control" readonly
 												id="uploadBannerImageFile" style="display: none;" name="docFile" >
 		                                 </div>

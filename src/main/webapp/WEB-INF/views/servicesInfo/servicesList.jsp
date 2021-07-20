@@ -7,7 +7,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
 
 <style>
-
 .timeslot{
 	display:none;
 }
@@ -21,7 +20,6 @@
 .sidebar-color{
 			padding-bottom: 10px;
 }
-
 img{
 	max-width: 85%;
     height: auto;
@@ -36,6 +34,9 @@ img{
     color: white;
     line-height: 40px;
     font-weight: 100;
+}
+p{
+	color:#fff;
 }
 .p1{
 	color: white;
@@ -54,7 +55,7 @@ img{
   /*  float: inherit; */
 }
 .service_wrap_name {
-    padding: 110px 15px 7px 50px;
+    padding: 130px 15px 7px 89px;
     position: relative;
     font-weight: 600;
     color: white;
@@ -67,6 +68,17 @@ img{
     background: none;
     border-radius: 100px;
     height: 151px;
+}
+.datecalendar{
+float: right;
+    margin-top: -28px;
+    width: 18%;
+}
+.cuisinedate{
+	margin-top: -110px;
+}
+#fc_frame, #fc_frame.fc-widget-normal{
+	right: 65px;
 }
 .service_wrap_name span{
 	font-size: 15px;
@@ -106,7 +118,6 @@ img{
 	display:list-item;
 	margin-top: -36px;
 }
-
 /*new designs*/
 .price{
 	margin: 35px 0px -36px 370px;
@@ -122,11 +133,11 @@ img{
 .row1{
 	display: flex;
     flex-wrap: wrap;
-    margin-right: -30%;
-    margin-left: -3%;
- /*	margin: -155px 0px -70px 335px;	*/
+    margin-right: -20%;
+    margin-left: 53%;
+ /*	margin: -155px 0px -70px 335px;	
  	 margin: -167px -35px 60px 330px; 
-    width: 60%;
+    width: 60%; */
 }
 .modal-footer{
 	margin-top: -55px;
@@ -151,7 +162,6 @@ img{
 	    width: 20%;
 		
 	}
-
 }
 @media (max-width: 1199px){
 	.row1{
@@ -181,9 +191,7 @@ img{
     	margin: 35px 0px -40px 280px;
     }
 }
-
 @media (max-width: 768px){
-
 	.header-main-menu{
 		padding: 0 18px 0 140px;
 	}
@@ -241,7 +249,12 @@ img{
 	
 }
 @media (max-width: 480px){
+
+	.service_wrap_inn{
 	
+		width: 168%;
+    	margin-left: -65px;
+	}
 	.row1{
 		margin-left: 60%;
    		width: 45%;
@@ -393,7 +406,7 @@ img{
 	    			        		  
 	    			        		  if(service.serviceName != 'Events'){
 	    			        			  result = result +'<li class="nav-item">';
-		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\')" role="tab" aria-selected="true" ><img style="max-width: 80px;margin-left: -8px;background-color: white;transition: transform ease-in-out 0.3s;" src="'+service.serviceImage+'"></img></a><span><strong> <div <!--align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;margin-top: 10px;">'+service.serviceName+'</strong></span>';
+		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\')" role="tab" aria-selected="true" ><img style="max-width: 80px;margin-left: -8px;background-color: white;transition: transform ease-in-out 0.3s;" src="'+service.serviceImage+'"></img></a><span><strong> <div <!--align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;margin-top: 10px;color: #c01a6c;">'+service.serviceName+'</strong></span>';
 		    			        		  result = result +'</li>';
 	    			        		  }
 	    			        		  
@@ -512,10 +525,9 @@ function getServiceCategories(serviceUUID,isEntryRatioEnabled){
 /* .datepicker-inline .datepicker {
 width: 250px !important;
 } */
-
 .service_wrap_name span{
-cursor: pointer;
-}
+/*cursor: pointer;
+}*/
 </style>
 
 <script>
@@ -558,6 +570,10 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							  result = result+'<div id="fullDayPrice'+opt.masterServiceUUID+'" style="display:none;" class="service_wrap_top_text">Price :&nbsp;<span>'+currencyCode+' '+opt.actualPrice+'</span></div>';
 							  result = result+'<div id="firstHalfPrice'+opt.masterServiceUUID+'" style="display:none;" class="service_wrap_top_text">Price :&nbsp;<span>'+currencyCode+' '+opt.firstHalfActualPrice+'</span></div>';
 							  result = result+'<div id="secondHalfPrice'+opt.masterServiceUUID+'" style="display:none;" class="service_wrap_top_text">Price :&nbsp;<span>'+currencyCode+' '+opt.secondHalfActualPrice+'</span></div>';
+							  
+							  if(opt.serviceName == 'Cuisine'){
+								  result = result+'<div class="service_wrap_top_text">Price :&nbsp;<span>'+currencyCode+' '+servicePrice+'</span></div>';
+							  }
 							  
 							  result = result+'</div>';
 							  result = result+'<div class="service_wrap_name">';
@@ -606,6 +622,8 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 										  result = result+'<span id="secondHalfOfferPrice'+opt.masterServiceUUID+'"  style="color: gold;margin: 0 0 0 1px;display:none;">Second Half Offer Price :&nbsp;'+currencyCode+' '+opt.secondHalfOfferPrice+' per slot </span>';
 										  
 										  result = result+' </div>';
+										  
+										  
 									  
 								  		result = result+'<div class="col-xl-6 col-lg-6 col-12" style="padding: 0px 0px 0px 0px;">';
 										result = result+'<input type="submit" id="selectedFullDaySlot" value="Full Day" onclick="selectedFullDaySlot(\''+opt.masterServiceUUID+'\')" class="btn btn-success" style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;margin-right:10px;">';
@@ -615,6 +633,9 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 										result = result+'<input type="button"  id="selectedSecondSlot'+opt.masterServiceUUID+'" value="Second Half" onclick="selectedSecondSlot(\''+opt.masterServiceUUID+'\')" class="btn btn-danger"style="margin: 5px 5px 5px 0px;display:none;background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 10px;border: 2px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;">';
 										
 										result = result+' </div>';
+										
+										
+										
 									  }
 							
 							  	  }
@@ -652,7 +673,6 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							// 	  result = result+'</div>';
                               
 							//   }
-
 							  result = result+'<div class="col-xl-6 col-lg-6 col-12 "><span class=" mt-2" data-toggle="modal" data-target="#pop-up-modal" onclick="getTermsAndConditions(\''+opt.termsAndConditions+'\')"style="color: gold;display: inline-block;">Terms & Conditions</span></div>';
 //  result = result+'<span class="col-xl-6 col-lg-6 col-12  mt-2" data-toggle="modal" data-target="#pop-up-modal" onclick="getServiceOffer(\''+opt.serviceOffer+'\')"style="margin: 0 0 0 1px;">Service Offer</span>';
 							  result = result+'</div>';
@@ -670,42 +690,42 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							  result = result+'</div>';
 							  
 							  result = result+'<div class="service_wrap_content">';
-
 								result = result+'<div>';
-
 								// result = result+'<div class="form-group">';
 								// result = result+'<label>From Date</label>';
 								// result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control start-date-datepicker" data-position="bottom right" name="startDate" id="startDate" data-validation="required" field-name="Start Date">';
 								// result = result+'<i class="far fa-calendar-alt"></i>';
 								// result = result+'</div>';
-
-
 								result = result+'<div class="row1" >';
 									if(opt.serviceName == 'Cuisine'){
 									
-										result = result+'<div class="col-xl-12 col-lg-12 col-12 form-group">';
-											result = result+'<label style="color:white;margin-top: -28px;">Start Date<span class="text-danger">&nbsp;*</span></label>';
-											result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control start-date-datepicker" data-position="bottom right" name="startDate" id="startDate" data-validation="required" field-name="Start Date"> ';
-											result = result+'<i class="far fa-calendar-alt"></i>';
+										result = result+'<div class="col-xl-12 col-lg-12 col-12 form-group "style="margin-top:-120px">';
+											result = result+'<label style="color:white;margin-top: -28px;">Booking Date<span class="text-danger">&nbsp;*</span></label>';
+											result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control start-date-datepicker" data-position="bottom right" name="startDate" id="startDate" data-validation="required" field-name="Start Date" readonly="readonly" style="width:30%;"> ';
+											result = result+'<i class="far fa-calendar-alt datecalendar" style="width:75%;"></i>';
 										result = result+'</div>';
 	
 									} else {
 							  		
-							  		result = result+'<div class="col-xl-4 col-lg-6 col-12 form-group" style="display:none"  id="startDateVenue'+opt.masterServiceUUID+'">';
+							  		result = result+'<div class="col-xl-4 col-lg-6 col-12 form-group" style="display:none; margin-top: -25px;"  id="startDateVenue'+opt.masterServiceUUID+'">';
 										result = result+'<label style="color:white;">Start Date<span class="text-danger">&nbsp;*</span></label>';
-										result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control start-date-datepicker" data-position="bottom right" name="startDate" id="startDate" data-validation="required" field-name="Start Date"> ';
-										result = result+'<i class="far fa-calendar-alt"></i>';
+										result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control start-date-datepicker" data-position="bottom right" name="startDate" id="startDate" data-validation="required" field-name="Start Date" readonly="readonly">';
+										result = result+'<i class="far fa-calendar-alt datecalendar"></i>';
 									result = result+'</div>';
-							  	
+									  
+									
+									
 
-									result = result+'<div class="col-xl-4 col-lg-6 col-12 form-group" style="display:none"  id="endDateVenue'+opt.masterServiceUUID+'">';
+									result = result+'<div class="col-xl-4 col-lg-6 col-12 form-group" style="display:none; margin-top: -25px;"  id="endDateVenue'+opt.masterServiceUUID+'">';
 									
 										result = result+'<label style="color:white;">End Date<span class="text-danger">&nbsp;*</span></label>';
-										result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control end-date-datepicker" data-position="bottom right" name="endDate" id="endDate" data-validation="required" field-name="End Date">';
-										result = result+'<i class="far fa-calendar-alt"></i>';
+										result = result+'<input type="text" placeholder="dd/mm/yyyy" class="form-control end-date-datepicker" data-position="bottom right" name="endDate" id="endDate" data-validation="required" field-name="End Date" readonly="readonly">';
+										result = result+'<i class="far fa-calendar-alt datecalendar"></i>';
 										result = result+'</div>';
 									}	
 									result = result+'</div>';
+									
+									 
 									
 								// result = result+'<div class="form-group" style="padding-left: 15px;">';
 								// result = result+'<label>To Date</label>';
@@ -726,20 +746,16 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							//  		timeSlotString = timeSlotString + timeSlots.startTime+' to '+timeSlots.endTime+'/n';
 							//   }
 							//   result = result+'<div id="serviceCalendar'+opt.masterServiceUUID+'" onclick="test(\''+opt.masterServiceUUID+'\', \''+timeSlotString+'\')"></div>';
-
 							 
 							//   result = result+'</div>';
 							//   result = result+'</div>';
 							//   result = result+'</div>';
-
 							  
 							  result = result+'<div class="col-lg-8 col-sm-8 col-12">';
 							  result = result+'<div class="heading-layout1 mg-b-17">';
 							  result = result+'<div class="item-title">';
 							  result = result+'<div id="eventTitleDiv"></div>';
-
 							//   result = result+'<h5>Time Slots</h5>';
-
 							  result = result+'<div class="timeslot-box-wrap">';
 							  
 							//   var count = 0;
@@ -748,7 +764,6 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 				        	//     	var slots = opt.timeSlotList[j];
 							// 		var today = new Date(); 
 				        	//     	result = result +"<ul class='table-light mt-2'>";
-
 							// 			let timeSlotDisplayValue = "First Half";   
 										
 				        	//    			if(getDefaultTimeSlotValidation(opt.masterServiceUUID, slots.startTime+' to '+slots.endTime)){
@@ -795,7 +810,11 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							  result = result+'<div id="firstHalfPrice1'+opt.masterServiceUUID+'" style="display:none;" class="price">PRICE :&nbsp;<span style="color:gold">'+currencyCode+' '+opt.firstHalfOfferPrice+'/-</span></div>';
 							  result = result+'<div id="secondHalfPrice1'+opt.masterServiceUUID+'" style="display:none;" class="price">PRICE :&nbsp;<span style="color:gold">'+currencyCode+' '+opt.secondHalfOfferPrice+'/-</span></div>';
 							 
-							  result = result+'<div class="service_wrap_bot">';
+							  if(opt.serviceName == 'Cuisine'){
+								  result = result+'<div style="margin: 60px 0px -43px 367px;color: white;">PRICE :&nbsp;<span style="color:gold">'+currencyCode+' '+servicePrice+'/-</span></div>';
+							  }
+							  
+							  result = result+'<div class="service_wrap_bot" style="margin-top: 0px;">';
 						 	
 							  
 	 					 	if(opt.serviceName == 'Packages'){
@@ -969,7 +988,6 @@ function platesQuantityInc(masterServiceUUID){
 	var quantity = document.getElementById("platesRatio"+masterServiceUUID);
 	quantity.stepUp(1); 
 }
-
 function platesQuantityDec(masterServiceUUID){
 	var quantity = document.getElementById("platesRatio"+masterServiceUUID);
 	quantity.stepDown(1); 
@@ -982,17 +1000,14 @@ function menQuantityInc(masterServiceUUID){
 	var quantity = document.getElementById("menRatio"+masterServiceUUID);
 	quantity.stepUp(1); 
 }
-
 function menQuantityDec(masterServiceUUID){
 	var quantity = document.getElementById("menRatio"+masterServiceUUID);
 	quantity.stepDown(1); 
 }
-
 function womenQuantityInc(masterServiceUUID){
 	var quantity = document.getElementById("womenRatio"+masterServiceUUID);
 	quantity.stepUp(1); 
 }
-
 function womenQuantityDec(masterServiceUUID){
 	var quantity = document.getElementById("womenRatio"+masterServiceUUID);
 	quantity.stepDown(1); 
@@ -1007,7 +1022,6 @@ function getTimeSlotValidation(serviceUUID){
 		 var today = new Date(); 
 	     var dd = today.getDate(); 
 	     var mm = today.getMonth() + 1; 
-
 	     var yyyy = today.getFullYear(); 
 	     if (dd < 10) { 
 	         dd = '0' + dd; 
@@ -1026,7 +1040,6 @@ function getTimeSlotValidation(serviceUUID){
 				
 			currentTime =  currentTime.split(':');
 			slotTime =  slotTime.split(':');
-
 			currentTimeSeconds = parseInt(currentTime[0] * 3600 + currentTime[1] * 60 + currentTime[0]);
 			slotTimeSeconds = parseInt(slotTime[0] * 3600 + slotTime[1] * 60 + slotTime[0]);
 			if(currDate.valueOf() == selectedDate.valueOf()){
@@ -1039,22 +1052,17 @@ function getTimeSlotValidation(serviceUUID){
 }
 </script> -->
 <script>
-
 function getTimeSlotValidation(serviceUUID){
 		
 		return true;
-
 }
 </script>
 
 <script>
    function getServiceInfo(serviceUUID, service, isEntryRatioEnabled, allowed, serviceName) {
-
-
 		var vendorUUID = '${vendorUUID}';
 		var appUrl = '${appUrl}';
 		var formData = new FormData();
-
 		formData.append("vendorUUID", vendorUUID);
 		formData.append("startDate", $("#startDate").val());
 					
@@ -1063,7 +1071,6 @@ function getTimeSlotValidation(serviceUUID){
 		}else{
 			formData.append("endDate",'');
 		}
-
 		$.ajax({
 			data: formData,
 			contentType: false,
@@ -1074,7 +1081,6 @@ function getTimeSlotValidation(serviceUUID){
 				if (result.response == "INVALID_DATA") {
 					alert("Selected slots are already booked.");
 					$("#alreadyBookSlotErrorMessage" + serviceUUID).css({ display: "block" });
-
 				} else {
 					$("#alreadyBookSlotErrorMessage" + serviceUUID).css({ display: "none" });
 					var orderDate = getSelectedDateFromCalendar($("#serviceCalendar" + serviceUUID).val());
@@ -1101,7 +1107,6 @@ function getTimeSlotValidation(serviceUUID){
 							if (isEntryRatioEnabled == 'Y') {
 								var menRatio = $("#menRatio" + serviceUUID).val();
 								var womenRatio = $("#womenRatio" + serviceUUID).val();
-
 								if (Number(womenRatio) >= 1) {
 									$("#stagsErrorMessage" + serviceUUID).css({ display: "none" });
 									var personEntryCount = Number(menRatio) + Number(womenRatio)
@@ -1121,10 +1126,8 @@ function getTimeSlotValidation(serviceUUID){
 									$("#stagsErrorMessage" + serviceUUID).css({ display: "block" });
 								}
 							} else {
-
 								$("#buyService" + serviceUUID).click();
 							}
-
 						} else {
 							$("#surpriseErrorMessage" + serviceUUID).css({ display: "block" });
 						}
@@ -1135,17 +1138,13 @@ function getTimeSlotValidation(serviceUUID){
 				    	if(serviceName !== "Cuisine"  && ($("#selectedFullDaySlot").hasClass('selectedSlot'))){
 				    		toDate = $("#endDate").val();
 				    	}
-
 						var orderDate = $("#startDate").val();
 						$("#serviceCalendar" + serviceUUID).val(fromDate);
-
 						if (fromDate != '' && fromDate != 'undefined' && ((toDate != '' && toDate != 'undefined') || (serviceName == "Cuisine") || ($("#selectedHalfDaySlot").hasClass('selectedSlot')))) {
 							$("#errorMessage" + serviceUUID).css({ display: "none" });
-
 							if (isEntryRatioEnabled == 'Y') {
 								var menRatio = $("#menRatio" + serviceUUID).val();
 								var womenRatio = $("#womenRatio" + serviceUUID).val();
-
 								if (Number(womenRatio) >= 1) {
 									$("#stagsErrorMessage" + serviceUUID).css({ display: "none" });
 									var personEntryCount = Number(menRatio) + Number(womenRatio)
@@ -1164,21 +1163,17 @@ function getTimeSlotValidation(serviceUUID){
 								} else {
 									$("#stagsErrorMessage" + serviceUUID).css({ display: "block" });
 								}
-
 							} else {
-
 								$("#buyService" + serviceUUID).click();
 							}
 						} else {
 							$("#errorMessage" + serviceUUID).css({ display: "block" });
 						}
 					}
-
 				}
 			},
 		});
 	}  
-
    function isTimeSlotAlreadyBook(startDate, endDate){
 	    	 var vendorUUID = '${vendorUUID}';
     		 var appUrl ='${appUrl}';
@@ -1203,11 +1198,8 @@ function getTimeSlotValidation(serviceUUID){
 	    		},
 	    	});
    }
-
    function getPackagesServiceInfo(serviceUUID,isEntryRatioEnabled,allowed,serviceName){
-
 	   if(getTimeSlotValidation(serviceUUID) || isTimeSlotAlreadyBook($("#startDate").val(), $("#endDate").val())){
-
 		   var orderDate = getSelectedDateFromCalendar($("#serviceCalendar"+serviceUUID).val());
 		   var timeslot = $("input[name='timeslot"+serviceUUID+"']:checked").val();
 		   
@@ -1279,18 +1271,15 @@ function getTermsAndConditions(termsAndConditions){
 	$("#dataTitle").html("Terms & Conditions");
 	
 }
-
 function getServiceOffer(serviceOffer){
 	$("#termsAndConditions").empty();
 	$("#termsAndConditions").html(serviceOffer);
 	$("#dataTitle").html("Service Offer");
 }
-
 function quantityInc(maserServiceUUID){
 	var quantity = document.getElementById("number"+maserServiceUUID);
 	quantity.stepUp(1); 
 }
-
 function quantityDec(maserServiceUUID){
 	var quantity = document.getElementById("number"+maserServiceUUID);
 	quantity.stepDown(1); 
@@ -1307,7 +1296,6 @@ function quantityDec(maserServiceUUID){
 	    
 // 	     var dd = today.getDate(); 
 // 	     var mm = today.getMonth() + 1; 
-
 // 	     var yyyy = today.getFullYear(); 
 // 	     if (dd < 10) { 
 // 	         dd = '0' + dd; 
@@ -1331,7 +1319,6 @@ function quantityDec(maserServiceUUID){
 				
 // 			currentTime =  currentTime.split(':');
 // 			slotTime =  slotTime.split(':');
-
 // 			currentTimeSeconds = parseInt(currentTime[0] * 3600 + currentTime[1] * 60 + currentTime[0]);
 // 			slotTimeSeconds = parseInt(slotTime[0] * 3600 + slotTime[1] * 60 + slotTime[0]);
 // 			if(currDate.valueOf() == selectedDate.valueOf()){
@@ -1342,7 +1329,6 @@ function quantityDec(maserServiceUUID){
 			
 // 			return flag;
 // }
-
 // // function test(serviceUUID,serviceTimeSlots){
 // // 	    var orderDate = $("#serviceCalendar"+serviceUUID).val();
 	   	
@@ -1352,7 +1338,6 @@ function quantityDec(maserServiceUUID){
 	    
 // // 	     var dd = today.getDate(); 
 // // 	     var mm = today.getMonth() + 1; 
-
 // // 	     var yyyy = today.getFullYear(); 
 // // 	     if (dd < 10) { 
 // // 	         dd = '0' + dd; 
@@ -1383,9 +1368,7 @@ function quantityDec(maserServiceUUID){
 // // 		    	}
 		    	
 // // 		    }
-
 // // 	     } else{
-
 // // 			for (var z=0; z<timeSlots.length; z++){
 // // 		    	var slots = timeSlots[z];
 // // 	  		    $(".timeslot_"+serviceUUID+"_"+z).css({ display: "block" });
@@ -1405,9 +1388,7 @@ function quantityDec(maserServiceUUID){
 </script>
 
 <script>
-
 	function selectedFirstSlot(serviceUUID){
-
 		if($("#selectedFirstSlot"+serviceUUID).hasClass('selectedSlot')){
 			$("#selectedFirstSlot"+serviceUUID).removeClass('selectedSlot');
 		}else{
@@ -1432,9 +1413,7 @@ function quantityDec(maserServiceUUID){
 			$("#secondHalfPrice1"+serviceUUID).css({ display: "none" });
 			
 		}
-
 	}
-
 	function selectedSecondSlot(serviceUUID){
 	
 		if($("#selectedSecondSlot"+serviceUUID).hasClass('selectedSlot')){
@@ -1460,7 +1439,6 @@ function quantityDec(maserServiceUUID){
 			$("#firstHalfPrice1"+serviceUUID).css({ display: "none" });
 			$("#secondHalfPrice1"+serviceUUID).css({ display: "block" });
 		}
-
 	}
 	
 	
@@ -1478,7 +1456,6 @@ function quantityDec(maserServiceUUID){
 			$("#selectedFullDaySlot").addClass( 'selectedSlot' );
 			$("#startDateVenue"+serviceUUID).css({ display: "block" });		
 			$("#endDateVenue"+serviceUUID).css({ display: "block" });
-
 			$("#selectedFirstSlot"+serviceUUID).css({ display: "none" });
 			$("#selectedSecondSlot"+serviceUUID).css({ display: "none" });
 			
@@ -1504,23 +1481,19 @@ function quantityDec(maserServiceUUID){
 	}
 	
 	function selectedHalfDaySlot(serviceUUID){
-
 		if($("#selectedFullDaySlot").hasClass('selectedSlot')){
 			$("#selectedFullDaySlot").removeClass('selectedSlot');
 		}
-
 		if($("#selectedHalfDaySlot").hasClass('selectedSlot')){
 			$("#selectedHalfDaySlot").removeClass('selectedSlot');
 			$("#startDateVenue"+serviceUUID).css({ display: "none" });		
 			$("#endDateVenue"+serviceUUID).css({ display: "none" });
-
 			$("#selectedFirstSlot"+serviceUUID).css({ display: "none" });
 			$("#selectedSecondSlot"+serviceUUID).css({ display: "none" });
 		}else{
 			$("#selectedHalfDaySlot").addClass( 'selectedSlot' );
 			$("#startDateVenue"+serviceUUID).css({ display: "block" });
 			$("#endDateVenue"+serviceUUID).css({ display: "none" });
-
 			$("#selectedFirstSlot"+serviceUUID).removeClass('selectedSlot');
 			$("#selectedSecondSlot"+serviceUUID).removeClass('selectedSlot');
 			
@@ -1547,17 +1520,14 @@ function quantityDec(maserServiceUUID){
 		}
 	
 	}
-
 	function getDaysDiff(fromDate, toDate){
 		   
 		 var timeslotCount = 1;
     	 var fromDateParts = fromDate.split('/');
     	 var toDateParts = toDate.split('/');
 		 var daysDiff = toDateParts[0] - fromDateParts[0] + 1;
-
 		 if($("#selectedFirstSlot").hasClass('selectedSlot') && $("#selectedSecondSlot").hasClass('selectedSlot')){
 			timeslotCount = 2;
-
 		}else if($("#selectedFirstSlot").hasClass('selectedSlot')) {
 			timeslotCount = 1;
 		}else if($("#selectedSecondSlot").hasClass('selectedSlot')) {
@@ -1565,8 +1535,15 @@ function quantityDec(maserServiceUUID){
 		}
 		
 		var slotsCount = daysDiff * timeslotCount;
-
 		return slotsCount;
-
 	}
+</script>
+<script>
+  function initFreshChat() {
+    window.fcWidget.init({
+      token: "345d79af-1ff9-40f8-9a36-79882a2edfc6",
+      host: "https://wchat.in.freshchat.com"
+    });
+  }
+  function initialize(i,t){var e;i.getElementById(t)?initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://wchat.in.freshchat.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))}function initiateCall(){initialize(document,"Freshchat-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
 </script>

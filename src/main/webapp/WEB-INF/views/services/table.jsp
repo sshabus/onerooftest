@@ -627,7 +627,7 @@ function addTimeSchedularRow(){
     }
     </script>
     
-    
+<!--      
     <script>
     function validateVendorService(){
     	 var startDate = $('#startDate').val();
@@ -683,7 +683,7 @@ function addTimeSchedularRow(){
     	 
     }
     </script>
-    
+	--> 
  <script>
  function saveTableService(){
 	   if ($('#add_table_service_form').validate(false, validationSettings)){

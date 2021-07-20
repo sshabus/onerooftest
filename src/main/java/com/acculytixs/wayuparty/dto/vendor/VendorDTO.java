@@ -61,6 +61,8 @@ public class VendorDTO implements Serializable {
 	
 	private String isActiveVendor;
 	
+	private Integer rating;
+	
 
 	public BigInteger getVendorId() {
 		return vendorId;
@@ -278,6 +280,12 @@ public class VendorDTO implements Serializable {
 		this.isActiveVendor = isActiveVendor;
 	}
 	
-	
+	public Integer getRating() {
+		return rating;
+	}
+
+	public void setRating(Integer rating) {
+		this.rating = rating;
+	}
 	
 }
