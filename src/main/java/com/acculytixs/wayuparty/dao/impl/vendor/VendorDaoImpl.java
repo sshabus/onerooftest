@@ -400,6 +400,7 @@ public class VendorDaoImpl implements VendorDao{
 				+" vendors.currency AS currency, "
 				+" IFNULL(vendors.location,'') AS location, "
 				+" IFNULL(vendors.best_selling_items,'') AS bestSellingItems, "
+				+" vendors.rating AS rating, "
 				+" vendors.uuid AS vendorUUID "
 				
 			+" FROM "
@@ -521,6 +522,7 @@ public class VendorDaoImpl implements VendorDao{
 				+" IFNULL(vendors.location,'') AS location, "
 				+" IFNULL(vendors.best_selling_items,'') AS bestSellingItems, "
 				+" vendors.uuid AS vendorUUID, "
+				+" vendors.rating AS rating, "
 				+" ROUND(p.distanceUnit "
 				+" * DEGREES(ACOS(COS(RADIANS(p.latpoint)) "
 		             +" * COS(RADIANS(vendors.latitude)) "
