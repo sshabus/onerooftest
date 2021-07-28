@@ -462,7 +462,7 @@ function clearClubSearch(){
 			        		
 			        		currencyCode = getCurrency(opt.currency);
 			        		
-			        	    result = result +'<a href="'+appUrl+'/ws/vendorInfo?vendorUUID='+opt.vendorUUID+'" class="card-link">';
+			        	    result = result +'<a href="'+appUrl+'/vendorInfo?vendorUUID='+opt.vendorUUID+'" class="card-link">';
 			        		result = result +'<div class="col-md-5 mb-5" >';
 			        		result = result +'<div class="vendors-card">';
 			        		result = result +'<div class="cardbody">';

@@ -599,6 +599,12 @@ function clearClubSearch(){
 			        		result = result +'<i class="fa fa-map-marker club-text-black" aria-hidden="true"></i>';
 			        		result = result +'</div>';
 			        		result = result +'<div class="col-sm-11 col-xs-10 club-text-black" >'+location+'</div>';
+			        		
+			        		result = result +'<div style="color:black;font-size:20px;margin-top: -27px;text-align: center;">';
+			        		result = result +opt.rating;
+			        		result = result +'<label style="color:#890052;font-size: 15px;font-weight:bold;">Rating</label>'
+			        		result = result +'</div>';
+			        		
 			        		result = result +'<div class="col-sm-1 col-xs-2">';
 			        		//result = result +'<i class="fa fa-th-list club-text-black" aria-hidden="true"></i>';
 			        		result = result +'</div>';

@@ -17,10 +17,10 @@
 .card{
 	align-items: center;
 }
-.nav{
+/*.nav{
 	padding-left: 174px;
     padding-right: 171px;
-}
+} */
 .row{
 	margin-left: 20px;
 }
@@ -173,7 +173,7 @@
                     <div id="vendorDetailsLoaderDiv"></div>
                         <div class="heading-layout1 mg-b-25">
                            <div class="custom-tab">
-                           <div style="background: white;">
+                           <div style="background: white;padding-left: 140px;padding-right: 100px;">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" data-toggle="tab" href="#basic" role="tab"  aria-selected="true">Basic</a>
