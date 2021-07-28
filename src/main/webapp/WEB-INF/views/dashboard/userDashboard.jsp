@@ -251,7 +251,7 @@
         <!-- Page Area Start Here -->
  <!--      <jsp:include page="../wayupartyMasterSideNav.jsp" />  	-->  
  
- 			<div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color" style="border-left: 1px solid gainsboro;border-bottom: 1px solid gainsboro;">
+ 	<!--  		<div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color" style="border-left: 1px solid gainsboro;border-bottom: 1px solid gainsboro;">
                <div class="mobile-sidebar-header d-md-none">
                     <div class="header-logo">
                         <a href="${Wayuparty_appUrl}/dashboard"><img src="/resources/img/logo.png" alt="logo" class="dashboardLogoImg"></a>
@@ -328,7 +328,7 @@
                             </li>
                             
                     </ul>
-                </div>
+                </div>		-->
             </div>
         
          
@@ -501,16 +501,16 @@ function clearClubSearch(){
 			        		//result = result +'<div class="col-sm-10 col-xs-10 text-black">'+opt.kilometers+' KM</div>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
-			        		result = result +'<div class="card-footer text-muted" style="margin: -14px 10px 0px -17px;">';
+			        		result = result +'<div class="card-footer text-muted" style="    margin: -32px -92px -21px 214px;">';
 			        		result = result +'<div class="container-fluid" style="position: relative; text-align: center; color: white;">';
 			        		result = result +'<div class="bottom_left" style="position: absolute; bottom: -5px; left: 5px;">';
-			        		result = result +'<a href="'+appUrl+'/ws/vendorInfo?vendorUUID='+opt.vendorUUID+'" class="card-link"><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;Explore</a>';
+			        	//	result = result +'<a href="'+appUrl+'/ws/vendorInfo?vendorUUID='+opt.vendorUUID+'" class="card-link"><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;Explore</a>';
 			        		result = result +'</div>';
 			        		result = result +'<div class="bottom_left" style="position: relative; text-align: center;bottom: -5px;right: 5px;">';
-			        		result = result +'<a href="'+appUrl+'/clubEvents?vendorUUID='+opt.vendorUUID+'" class="card-link"><i class="fas fa-music" aria-hidden="true"></i>&nbsp;Events</a>';
+			        	//	result = result +'<a href="'+appUrl+'/clubEvents?vendorUUID='+opt.vendorUUID+'" class="card-link"><i class="fas fa-music" aria-hidden="true"></i>&nbsp;Events</a>';
 			        		result = result +'</div>';
-			        		result = result +'<div class="bottom_left" style="position: absolute; bottom: -5px; right: 5px;">';
-			        		result = result +'<a href="'+appUrl+'/bookService?vendorUUID='+opt.vendorUUID+'" class="card-link"><i class="fas fa-bullhorn" aria-hidden="true"></i>&nbsp;Services</a>';
+			        		result = result +'<div class="bottom_left" style="position: absolute; bottom: -26px; right: 24px;">';
+			        		result = result +'<a href="'+appUrl+'/bookService?vendorUUID='+opt.vendorUUID+'" class="card-link"><i class="fas fa-bullhorn" aria-hidden="true"></i>&nbsp;Get Services</a>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';

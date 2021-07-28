@@ -71,7 +71,7 @@
   <div id="wrapper" class="wrapper bg-ash">
     <jsp:include page="../wayupartyMasterHeader.jsp" />
         <!-- Page Area Start Here -->
-        <jsp:include page="../wayupartyMasterSideNav.jsp" />
+    <!--    <jsp:include page="../wayupartyMasterSideNav.jsp" />    --> 
         <div class="dashboard-page-one">
           
             <div class="dashboard-content-one">

@@ -20,6 +20,9 @@
 .sidebar-color{
 			padding-bottom: 10px;
 }
+.nav-tabs .nav-item {
+    margin-top: 20px;
+}
 img{
 	max-width: 85%;
     height: auto;
@@ -34,6 +37,7 @@ img{
     color: white;
     line-height: 40px;
     font-weight: 100;
+   
 }
 p{
 	color:#fff;
@@ -41,10 +45,11 @@ p{
 .p1{
 	color: white;
 	margin: -7px 0px 0px -38px !important;
+	font-size:15px;
 }
 .btn-toolbar .btn-group a{
 	background: white;
-	font-size: 14px;
+	font-size: 15px;
 }
 .service_wrap_inn{
 	width: 100%;
@@ -113,10 +118,11 @@ float: right;
 .servicesbackground{
 	text-align:center;
 	background: #fff;
-	margin-left: -30px;
+	margin-left: 0px;
 	margin-right: -30px;
 	display:list-item;
 	margin-top: -36px;
+	width:100%;
 }
 /*new designs*/
 .price{
@@ -278,6 +284,11 @@ float: right;
     	margin: 9px 0px 20px 10px;
 	}
 }
+.vendorDescription {
+    margin: 0 0 0px 0 !important;
+    font-size: 15px !important;
+    font-weight: bold !important;
+}
 </style>
 
 <div class="card height-auto" style="align-items: center;top: -30px">
@@ -289,11 +300,11 @@ float: right;
                          <h3 class="text-dark-medium font-medium"><span id="vendorName"></span><br/>
                          <span class="view-subtitle">
                          <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;
-                                        <span id="vendorLocation"></span></span><br/>
+                                     <span id="vendorLocation" style="font-weight: bold;"></span>   <br/>
                                         <span id="directions"></span>
                                         </h3>
                      </div>
-                     <p class="p1"  id="vendorDescription"></p>
+                     <h3 class="p1"  id="vendorDescription"></h3>
                  </div>
              </div>
      </div>
@@ -302,7 +313,7 @@ float: right;
   <div class="card height-auto">   
      <div class="card ui-tab-card">
      <div id="serviceslistLoadingDiv" ></div>
-       <div class="card-body">
+       <div class="card-body" style="background: Transparent;">
 	       <div class="icon-tab">
 	       			<div class="servicebackground">
 	       		
@@ -311,8 +322,11 @@ float: right;
 	       </div>
 	       <div class="servicesbackground"></div>
        </div>
-                 
-      <div class="ui-btn-wrap" >   
+         <div class="ui-btn-wrap">
+            
+            <div id="servicetype"></div>
+         </div>       
+      <div class="ui-btn-wrap" style="margin-top:10px;">   
        <div class="card-body">
           <div id="categoriesListDiv"></div>
         </div> 
@@ -376,7 +390,7 @@ float: right;
 	    			     success :function(response) {
 	    			    	 var serviceUUID = '';
 	    			    	 var isEntryRatioEnabled = '';
-	    			    	 
+	    			    	 var serviceDisplayName = '';
 	    			    	 $("#vendorProfileImage").html('<img src="'+response.object.profileImage+'" onerror="predefineVendorProfileImage(this);" data-id= "vendorProfileImage" style="border-style: solid;margin-top: 50px; height: 210px;" >');
 	    			    	 $("#vendorName").html(response.object.vendorName);
 	    					 $("#vendorLocation").html(response.object.location);
@@ -392,7 +406,7 @@ float: right;
 		 					if(response.object.servicesList != '' && response.object.servicesList.length > 0){
 	    						 
 	    						 var result = "";
-	    						 
+	    						 var result1 = "";
 	    						 result = result +'<ul class="nav nav-tabs vendor-cart" role="tablist">';
 	    						  for (var i=0; i<response.object.servicesList.length; i++)
 	    			   				{ 
@@ -406,18 +420,22 @@ float: right;
 	    			        		  
 	    			        		  if(service.serviceName != 'Events'){
 	    			        			  result = result +'<li class="nav-item">';
-		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\')" role="tab" aria-selected="true" ><img style="max-width: 80px;margin-left: -8px;background-color: white;transition: transform ease-in-out 0.3s;" src="'+service.serviceImage+'"></img></a><span><strong> <div <!--align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;margin-top: 10px;color: #c01a6c;">'+service.serviceName+'</strong></span>';
+		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\',\''+service.serviceDisplayName+'\')" role="tab" aria-selected="true" ><img style="max-width: 80px;margin-left: -8px;background-color: white;transition: transform ease-in-out 0.3s;" src="'+service.serviceImage+'"></img></a><span><strong> <div <!--align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;margin-top: 10px;color: #c01a6c;">'+service.serviceName+'</strong></span>';
 		    			        		  result = result +'</li>';
 	    			        		  }
-	    			        		  
+	    			        		  if(service.serviceName == 'Venue'){
+	    			        			  $("#servicetype").empty();
+	    			        			  result1 = result1 + '<h3 style="font-size: 20px;font-weight: bold;">VENUE CAPACITY</h3>'
+	    			        		  }
 	    			   				} 
 	                               result = result +'</ul>';
 	    			        	  
 	    			        	  $("#servicesListDiv").empty();  
 		    		   	    	  $("#servicesListDiv").append(result);
+		    		   	    	$("#servicetype").append(result1);
 	    						 
 	    					 }
-		 					getServiceCategories(serviceUUID,isEntryRatioEnabled);
+		 					getServiceCategories(serviceUUID,isEntryRatioEnabled,serviceDisplayName);
 	    					 $("#serviceslistLoadingDiv").removeAttr("style");
 	    					},
 	    		});
@@ -485,7 +503,7 @@ function getCurrency(currency){
 
 
 <script>
-function getServiceCategories(serviceUUID,isEntryRatioEnabled){
+function getServiceCategories(serviceUUID,isEntryRatioEnabled,serviceDisplayName){
 	
 	   var appUrl ='${appUrl}';
 	   $("#serviceslistLoadingDiv").attr('style','position:absolute; width:100%; height:100%; background-color:rgba(255,255,255,0.8); top:10px; left:0px; z-index:100;background-image:url("/resources/img/preloader.gif"); background-position:center; background-repeat:no-repeat; background-size:75px;');
@@ -498,7 +516,18 @@ function getServiceCategories(serviceUUID,isEntryRatioEnabled){
 						 
 						 var result = "";
 						 var categoryUUID = "";
-						 
+						 var result1 ="";
+						 if(serviceDisplayName == 'Venue'){
+							 $("#servicetype").empty();
+		        			  result1 = result1 + '<h3 style="font-size: 20px;font-weight: bold;">VENUE CAPACITY</h3>'
+		        		  }
+						 else if(serviceDisplayName == 'Cuisine'){
+							 $("#servicetype").empty();
+		        			  result1 = result1 + '<h3 style="font-size: 20px;font-weight: bold;">CATEGORIES</h3>'
+		        		  }
+						 else{
+							 result1 = result1 + '<h3 style="font-size: 20px;font-weight: bold;"></h3>'
+						 }
 						 result = result +'<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">';
 						 for (var i=0; i<resultData.data.length; i++)
 			   				{ 
@@ -509,7 +538,7 @@ function getServiceCategories(serviceUUID,isEntryRatioEnabled){
 			        		  result = result +'</div>';
 			   				} 
                            result = result +'<div>';
-			        	  
+                           $("#servicetype").append(result1);
 			        	  $("#categoriesListDiv").empty();  
 			        	  $("#categoryServicesListDiv").empty(); 
     		   	    	  $("#categoriesListDiv").append(result);
@@ -806,6 +835,8 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							  
 							  result = result+'<div class="clear"></div>';
 							  result = result+'</div>';
+							  result = result+'<div style="float: right; margin-right: 50px;">';
+							    
 							  result = result+'<div id="fullDayPrice1'+opt.masterServiceUUID+'" style="display:none;" class="price">PRICE :&nbsp;<span style="color:gold">'+currencyCode+' '+opt.offerPrice+'/-</span></div>';
 							  result = result+'<div id="firstHalfPrice1'+opt.masterServiceUUID+'" style="display:none;" class="price">PRICE :&nbsp;<span style="color:gold">'+currencyCode+' '+opt.firstHalfOfferPrice+'/-</span></div>';
 							  result = result+'<div id="secondHalfPrice1'+opt.masterServiceUUID+'" style="display:none;" class="price">PRICE :&nbsp;<span style="color:gold">'+currencyCode+' '+opt.secondHalfOfferPrice+'/-</span></div>';
@@ -833,6 +864,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							  result = result+'<div class="clear"></div>';
 							  result = result+'</div>';
 							  result = result+'</div>';
+							  result = result+'</div>';
 							  
 							  $("#categoryServicesListDiv").empty(); 
 			   	    	      $("#categoryServicesListDiv").append(result);
@@ -854,7 +886,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 						 if(serviceType == 'Book a bottle'){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_bottles_found.jpg" alt=""/></td>';
 						 }else if(serviceType == 'Venue'){
-							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/No_Venue.png" alt=""style="width: 20%;"/></td>';
+							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/No_Venue.png" alt=""style="width: 20%;margin-top: 75px;"/></td>';
 							 result = result+'<a style="color:white;font-size:15px;">sorry..! No Venues Found...</a>'
 						 }else if(serviceType == 'Entry'){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_entry_found.jpg" alt=""/></td>';
@@ -865,8 +897,8 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 						 }else if(serviceType == 'Packages'){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_packages_found.jpg" alt=""/></td>';
 						 }else if(serviceType == 'Cuisine'){
-							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_cuisine.png" alt="" style="width: 20%;"/></td>';
-							 result = result+'<a style="color:white;font-size:15px;">sorry..! No Cuisine Found...</a>'
+							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_cuisine.png" alt="" style="width: 20%;margin: 80px;"/></td>';
+							 result = result+'<a style="color:white;font-size:15px;margin: -65px;">sorry..! No Cuisine Found...</a>'
 						 }
 						
 						 $("#categoryServicesListDiv").empty(); 

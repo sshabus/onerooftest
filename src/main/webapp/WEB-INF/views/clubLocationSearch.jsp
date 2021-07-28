@@ -2,6 +2,9 @@
 .modal-content {
   background-image: url(/resources/img/cities/bg_one_roof.jpg);
 }
+.s-f-right input{
+	background: white;
+}
 </style>
 <div class="ui-modal-box">
   <div class="modal-box">

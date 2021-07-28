@@ -66,6 +66,44 @@
 .item-title .h3{
 	margin: 0 0 10px 0;
 }
+.dropdown {
+  position: relative;
+  display: inline-block;
+  float: right;
+ /*margin: 9px -15px 0 -8px; */
+  /* margin: 22px 6px 0 0px;  */
+ /* margin: 22px 31px 0 0px; */
+}
+.dropbtn {
+  color: lightcyan;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  margin-top: -17px
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #890052;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: black;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.header-main-menu .navbar-nav .header-message {
+    margin-right: 10px;
+}
 </style>
 
 <body>
@@ -108,7 +146,7 @@
                      
                    </li>
                 </ul>
-                <ul class="navbar-nav">
+                <ul class="navbar-nav" style="margin-right: -17px;">
                     <li class="navbar-item dropdown header-admin">
                    
                         <a class="navbar-nav-link" href="#" role="button" data-toggle="dropdown"
@@ -136,6 +174,17 @@
                             <span id="cartCount">${Wayuparty_cartCount}</span>
                         </a>
          		</li>
+         		
+         	<div class="dropdown">
+  				<button class="dropbtn" style="background-color: transparent;">M E N U</button>
+ 			 		<div class="dropdown-content">
+	    				<a href="${Wayuparty_appUrl}/dashboard">HOME</a>
+	    				<a href="${Wayuparty_appUrl}/myOrders">MY ORDERS</a>
+	    				<a href="${Wayuparty_appUrl}/profile">MY PROFILE</a>
+	    				<a href="${Wayuparty_appUrl}/guestClubs">GUEST VENUE</a>
+	    				<a href="${Wayuparty_appUrl}/logout">SIGN OUT</a>
+  			  		</div>
+		 	</div>  
             </sec:authorize>         
                 </ul>
          </div>         

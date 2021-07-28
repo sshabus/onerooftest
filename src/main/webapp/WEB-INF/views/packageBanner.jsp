@@ -285,7 +285,7 @@
    			    	 
    			    	 var result = "";
    			    	 
-   			    	 result = result +'<div id="wayuparty_banner_slide" class="carousel slide" data-ride="carousel">';
+   			    	 result = result +'<div id="wayuparty_banner_slide" class="carousel slide" data-ride="carousel" style="width:100%;height:25%;">';
 			       	 
 			       	 result = result +'<ul class="carousel-indicators">';
 			       	 
