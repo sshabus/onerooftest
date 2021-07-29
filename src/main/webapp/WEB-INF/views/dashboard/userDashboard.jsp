@@ -251,7 +251,7 @@
         <!-- Page Area Start Here -->
  <!--      <jsp:include page="../wayupartyMasterSideNav.jsp" />  	-->  
  
- 	<!--  		<div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color" style="border-left: 1px solid gainsboro;border-bottom: 1px solid gainsboro;">
+ 	  		<div class="sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color" style="border-left: 1px solid gainsboro;border-bottom: 1px solid gainsboro;display: none;">
                <div class="mobile-sidebar-header d-md-none">
                     <div class="header-logo">
                         <a href="${Wayuparty_appUrl}/dashboard"><img src="/resources/img/logo.png" alt="logo" class="dashboardLogoImg"></a>
@@ -328,7 +328,7 @@
                             </li>
                             
                     </ul>
-                </div>		-->
+                </div>		
             </div>
         
          
@@ -355,24 +355,26 @@
 					        <jsp:include page="../packageBanner.jsp" />
 					     </div>
                             
- 							<div id="registeredVendorsList" class="row"></div>
+ 							<div id="registeredVendorsList" class="row" style="margin-right: -160px;margin-left: -84px; margin-top: 100px;"></div>
  							<jsp:include page="../clubLocationSearch.jsp" />
  						</div>
  			</div>  			
                            
        </div>
         
-       <jsp:include page="../wayupartyMasterFooter.jsp" />
-   <!--
+       
+  </div>
+  		<jsp:include page="../wayupartyMasterFooter.jsp" />	
+  		
+ <!-- 	
  <footer class="footer" style="background-color: #890059;">
-      <div align="center">ONEROOF 2021. copyrights all rights reserved. Developed by  BILVIO SOLUTIONS.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-         	<a href="/privacyPolicy" target="_blank" style="color:rgb(212,175,55);">PRIVACY POLICY</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      <div align="center">ONEROOF 2021. copyrights all rights reserved. Developed by  Bivio Solutions Pvt Ltd. &nbsp&nbsp&nbsp
+         	<a href="/privacyPolicy" target="_blank" style="color:rgb(212,175,55);">PRIVACY POLICY</a>&nbsp&nbsp&nbsp
       		<a href="/termsAndConditions" target="_blank" style="color:rgb(212,175,55);">TERMS AND CONDITIONS</a>
       </div>            
-			
-</footer>  
-  --> 
- </div>
+</footer>
+  
+  --> 	
  
 
 
@@ -487,6 +489,12 @@ function clearClubSearch(){
 			        		result = result +'<i  style="color:black;" class="fas fa-map-marker mt-1 text-black" aria-hidden="true"></i>';
 			        		result = result +'</div>';
 			        		result = result +'<div style="color:black;" class="col-sm-10 col-xs-10 text-black">'+location+'</div>';
+			        		
+			        //		result = result +'<div style="color:green;font-size:20px;margin-top: -27px;text-align: center;">';
+			        //		result = result +opt.rating;
+			        //		result = result +'<label style="color:#890052;font-size: 15px;font-weight:bold;margin-left: 97%;margin-top: -11%;">Rating</label>'
+			        //		result = result +'</div>';
+			        		
 			        		result = result +'<div  class="col-sm-1 col-xs-2">';
 			        //		result = result +'<i class="fas fa-th-list mt-1 text-black" aria-hidden="true"></i>';
 			        		result = result +'</div>';
@@ -501,7 +509,7 @@ function clearClubSearch(){
 			        		//result = result +'<div class="col-sm-10 col-xs-10 text-black">'+opt.kilometers+' KM</div>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
-			        		result = result +'<div class="card-footer text-muted" style="    margin: -32px -92px -21px 214px;">';
+			        		result = result +'<div class="card-footer text-muted" style="    margin: -32px -92px -21px 267px;">';
 			        		result = result +'<div class="container-fluid" style="position: relative; text-align: center; color: white;">';
 			        		result = result +'<div class="bottom_left" style="position: absolute; bottom: -5px; left: 5px;">';
 			        	//	result = result +'<a href="'+appUrl+'/ws/vendorInfo?vendorUUID='+opt.vendorUUID+'" class="card-link"><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;Explore</a>';

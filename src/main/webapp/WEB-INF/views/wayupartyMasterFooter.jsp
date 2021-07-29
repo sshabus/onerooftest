@@ -1,7 +1,7 @@
  <link rel="shortcut icon" type="image/x-icon" href="/resources/img/Oneroof_icon.png">               
                
   <footer class="footer" style="background-color: white;">
-            <div class="container" style="color: black;">
+            <div class="container" style="color: black;margin:40px;">
                ONEROOF 2021. Copyrights all rights reserved. Developed by  Bivio Solutions Pvt Ltd.
             </div>
  </footer>

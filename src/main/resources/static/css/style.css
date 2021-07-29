@@ -3623,7 +3623,7 @@ ul {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0 30px;
+ /* padding: 0 30px;*/
 }
 @media only screen and (max-width: 767px) {
   .dashboard-content-one {
@@ -5329,7 +5329,7 @@ color: #FB8C00 !important;
 } */
 
 .table-responsive .dataTables_empty{
-	background-color: #fff; border-radius: 2px; padding: 20px;
+    background-color: #fff; border-radius: 2px; padding: 20px;
 	margin: 0px 0px 0px 0px; background-image: url(../img/no-records.png); background-position: center center;
 	background-repeat: no-repeat; min-height: 200px; height: 200px !important; background-size: 130px;
 	background-color: #eb9b9b2b;;
@@ -6620,7 +6620,7 @@ font-size: 14px;
 .service_tabs_inn_table table tr:nth-child(even) {background: #fff;}
 /* .service_tabs_inn_table table tr:nth-child(odd) {background: transparent;} */
 .service_tabs_inn_table table tr th {
-    background-color:whitesmoke !important; font-weight:500; color:black; padding:0px 10px; height:40px;
+  /*  background-color:whitesmoke !important;*/ font-weight:500; color:white; padding:0px 10px; height:40px;
     border-right:1px solid #989898; font-size:13px; text-align:center; vertical-align: middle;}
 .service_tabs_inn_table table tr th:last-child { text-align:center;}
 .service_tabs_inn_table.service_tabs_inn_table_a table tr th:last-child { text-align:center;}
