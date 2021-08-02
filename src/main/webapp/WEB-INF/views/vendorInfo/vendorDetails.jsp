@@ -173,10 +173,10 @@
                     <div id="vendorDetailsLoaderDiv"></div>
                         <div class="heading-layout1 mg-b-25">
                            <div class="custom-tab">
-                           <div style="background: white;padding-left: 140px;padding-right: 100px;">
+                           <div style="background: white;padding-left: 220px;padding-right: 220px;">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#basic" role="tab"  aria-selected="true">Basic</a>
+                                    <a class="nav-link active" data-toggle="tab" href="#basic" role="tab"  aria-selected="true">Venue Info</a>
                                 </li>
                      <!--             
                                 <li class="nav-item">
@@ -196,10 +196,10 @@
                                 </li>
                        -->            
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#cuisine" role="tab" aria-selected="false" >Cuisine</a>
+                                    <a class="nav-link" data-toggle="tab" href="#cuisine" role="tab" aria-selected="false" >Infrastructure</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#workinghours" role="tab" aria-selected="false" >Scheduling</a>
+                                    <a class="nav-link" data-toggle="tab" href="#workinghours" role="tab" aria-selected="false" >Amenities</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#termsandcondidtions" role="tab" aria-selected="false" >Terms&Conditions</a>
@@ -279,7 +279,7 @@
 	    					 }else{
 	    						 document.getElementById('carouselSlideDiv').style.display='none'
 	    					     document.getElementById('vendorProfileImage').style.display='block'
-	    					     $("#vendorProfileImage").html('<img src="'+response.object.vendorProfileImg+'" onerror="predefineVendorProfileImage(this);" data-id= "vendorProfileImage" >');
+	    					     $("#vendorProfileImage").html('<img src="'+response.object.vendorProfileImg+'" onerror="predefineVendorProfileImage(this);" data-id= "vendorProfileImage" style="border-radius: 129px; margin-top: -26px; border-color: white;border-style: solid;" >');
 	    					 }
 	    					 
 	    					 $("#costForTwo").html(currencyCode+" "+response.object.costForTwoPeople);
@@ -583,4 +583,3 @@ function getCurrency(currency){
   }
   function initialize(i,t){var e;i.getElementById(t)?initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://wchat.in.freshchat.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))}function initiateCall(){initialize(document,"Freshchat-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
 </script>
-                        

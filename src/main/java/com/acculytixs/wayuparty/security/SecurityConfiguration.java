@@ -88,7 +88,7 @@ public class SecurityConfiguration {
 	    	http.csrf().disable();
 	        http.authorizeRequests()
 	                .antMatchers("/home").permitAll()
-	                .antMatchers("/clubs").permitAll()
+	                .antMatchers("/Venues").permitAll()
 	                .antMatchers("/services").permitAll()
 	                .antMatchers("/deals").permitAll()
 	                .antMatchers("/login").permitAll()

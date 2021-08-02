@@ -137,7 +137,8 @@
 	margin-left: -20px;
 	margin-right: 0px;
 	display: list-item;
-	margin-top: -30px;
+	margin-top: -32px;
+    height: 30px;
 }
 @media (max-width: 768px){
 
@@ -189,7 +190,7 @@
 				 
  		<div style="text-align:center;position: relative;">	
  		
- 			<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/clubs'" class="logina">
+ 			<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues'">
 				<img src="/resources/img/One_Roof.png" alt="logo" class="homeHeaderimg"/>
 			</a>	
  		
@@ -197,7 +198,7 @@
 			 <p class="onerooftext" style=" margin: 0 0 -26px 0px;">The most successful event is the one that archives your<p>
 			 <p class="onerooftext" >goals and exceeds your expectations and it happens only with One Roof..!<p>
 		   
-		   <input type="button" value="Get Started" class="btn" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/clubs'"/>
+		   <input type="button" value="Get Started" class="btn" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues'"/>
 		   
 		   <h1 class="text">OUR SERVICES</h1>
 		   
@@ -205,7 +206,7 @@
 		
 			<div class = "services">
 				<div>
-					<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/clubs'" class="logina">
+					<a href="/Venues" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues'" class="logina">
 						<img src="/resources/img/venue.png" alt="logo" class="serviceimg" style="background: white;margin-right: 16px;">
 					</a>
 					<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/login'" class="logina">
@@ -215,11 +216,11 @@
 						<img src="/resources/img/event.jpg" alt="logo" class="serviceimg"style="margin-left:-3px;">	
 					</a>
 					
-					<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/clubs'" class="logina">
-						<p class="servicename" style="margin: 13px 0 0 -250px;">Venue</p>
+					<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues'" class="logina">
+						<p class="servicename" style="margin: 13px 0 1px -250px;">Venue</p>
 					</a>
 					<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/login'" class="logina">
-						<p class="servicename"style="margin: -32px 0 0 -13px;">Cusine</p>
+						<p class="servicename"style="margin: -32px 0 0 -13px;">Caterers</p>
 					</a>
 					<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/login'" class="logina">
 						<p class="servicename"style="margin: -32px 0 0 230px;">Events</p>

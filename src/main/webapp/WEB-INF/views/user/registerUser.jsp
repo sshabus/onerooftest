@@ -216,7 +216,7 @@
 				<div class="login-page-wrap">
 					<div class="login_page_wrap_1">
 					
-						<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/clubs'" class="logina">
+						<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues'" class="logina">
 							<img src="/resources/img/One_Roof.png" alt="Project Logo" class="logo"  />
 						 </a>
 			<!--  		<h1 class = "header" >ONE ROOF</h1>		-->

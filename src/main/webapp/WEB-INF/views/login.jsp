@@ -197,7 +197,7 @@ img:hover {
 				<div style="width: 100%;">
 					<div class="login_page_wrap_1">
 					
-						 <a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/clubs'" class="logina">
+						 <a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues'" class="logina">
 							<img src="/resources/img/One_Roof.png" alt="Project Logo" class="logo"  />
 						 </a>
 				<!-- 	<h1 class = "header" >ONE ROOF</h1>		 -->
@@ -238,7 +238,7 @@ img:hover {
         					</div>
         					
 			        		<div class="form-group align-items-center justify-content-between" style="margin: -30px -130px 0 0;">
-			            		<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/clubs'" class="logina">Venues</a>
+			            		<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues'" class="logina">Venues</a>
 			        		</div>
  						</div>
        
