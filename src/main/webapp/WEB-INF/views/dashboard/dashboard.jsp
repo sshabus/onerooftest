@@ -88,6 +88,7 @@
 		        	result = result +"<thead>";
 		        	result = result +"<tr>";
 		        	result = result +"<th>Photo</th>";
+		        	result = result +"<th>Vendor Type</th>";
 		        	result = result +"<th>Vendor Name</th>";
 		        	result = result +"<th>Vendor Email</th>";
 		        	result = result +"<th>Vendor Mobile</th>";
@@ -117,6 +118,7 @@
 	  		    			result = result +'</div>';
 			        		
 			        		result = result +"</td>";
+			        		result = result +"<td>"+opt.vendorType+"</td>";
 			        		result = result +"<td>"+opt.vendorName+"</td>";
 			        		result = result +"<td>"+opt.vendorEmail+"</td>";
 			        		result = result +"<td>"+opt.vendorMobile+"</td>";

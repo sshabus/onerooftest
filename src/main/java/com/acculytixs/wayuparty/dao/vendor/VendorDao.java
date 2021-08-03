@@ -48,6 +48,8 @@ public interface VendorDao {
 	
 	Long getVendorIdByUUID(String vendorUUID) throws Exception;
 	
+	String getVendorTypeByUUID(String vendorUUID) throws Exception;
+	
 	boolean isVendorExistedByEmailId(String emailId) throws Exception;
 	
 	boolean isVendorExistedByPhoneNumber(String mobileNumber) throws Exception;
@@ -91,5 +93,9 @@ public interface VendorDao {
 
 	List<VendorDTO> getRegisteredRestaurantsListByRating(Integer offset, Integer limit, String deals) throws Exception;
 
+	List<VendorDTO> getRegisteredRadiusRestaurantsListByRatingByVendorType(Integer offset, Integer limit, Double latitude,
+			Double longitude, String deals, String vendorType) throws Exception;
+
+	List<VendorDTO> getRegisteredRestaurantsListByRatingByVendorType(Integer offset, Integer limit, String deals, String vendorType) throws Exception;
 
 }

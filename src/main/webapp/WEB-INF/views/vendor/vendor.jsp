@@ -70,7 +70,16 @@ label {
                     	</div>
                     	
                     	 <form class="new-added-form" id="add_vendor_form" name="add_vendor_form" >
-                    	 	<div class="row">	
+                    	 	<div class="row">
+                    	 		<div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label>Vendor Type<span class="text-danger">&nbsp;*</span></label>
+                                    <select class="select2" name="vendorType" id="vendorType" data-validation="required" field-name="Vendor Type">
+                                        <option value="">Please Select</option>
+                                        <option value="VENUE">Venue</option>
+                                        <option value="CATERING">Catering</option>
+                                    </select>
+                                </div>
+                                	
                     	 		<div class="col-xl-4 col-lg-6 col-12 form-group">
                                     <label>Vendor Name<span class="text-danger">&nbsp;*</span></label>
                                     <input type="text" class="form-control"  name="vendorName" id="vendorName" data-validation="required validate_Space validate_AlphaNumber validate_length length1-250"  field-name="Vendor Name">

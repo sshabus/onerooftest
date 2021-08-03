@@ -62,6 +62,8 @@ public interface VendorService {
 	
 	Long getVendorIdByUUID(String vendorUUID) throws Exception;
 	
+	String getVendorTypeByUUID(String vendorUUID) throws Exception;
+	
 	String saveVendorImages(VendorImagesDTO vendorImagesDTO) throws Exception;
 	
 	boolean isVendorExistedByEmailId(String emailId) throws Exception;
@@ -108,4 +110,9 @@ public interface VendorService {
 
 	List<VendorDTO> getRegisteredRadiusRestaurantsListByRating(Integer offset, Integer limit, Double latitude,
 			Double longitude, String deals) throws Exception;
+	
+	List<VendorDTO> getRegisteredRestaurantsListByRatingByVendorType(Integer offset, Integer limit, String deals, String vendorType) throws Exception;
+
+	List<VendorDTO> getRegisteredRadiusRestaurantsListByRatingByVendorType(Integer offset, Integer limit, Double latitude,
+			Double longitude, String deals, String vendorType) throws Exception;
 }

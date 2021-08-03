@@ -42,7 +42,6 @@
 .breadcrumbs-area {
     padding: 35px 40px 35px;
 }
-<!-- changes made for user dashboard page  -->
 
 .vendors-card .card{
 		width: 67%;
@@ -50,7 +49,7 @@
 		border: none;
 		height: 100%;
 		background-color: initial;
-		ont-size: 13px;
+		font-size: 13px;
 		float: right;
 		/* width: 62%; */
 		left: 33px

@@ -100,6 +100,7 @@ public class VendorServiceImpl implements VendorService{
 		
 		try {
 		Vendors vendors = new Vendors();
+		vendors.setVendorType(addVendorDTO.getVendorType());
 		vendors.setVendorName(addVendorDTO.getVendorName());
 		vendors.setVendorCode(addVendorDTO.getVendorCode());
 		vendors.setVendorMobile(addVendorDTO.getVendorMobile());
@@ -268,6 +269,11 @@ public class VendorServiceImpl implements VendorService{
 	@Override
 	public List<VendorDTO> getRegisteredRestaurantsListByRating(Integer offset, Integer limit, String deals) throws Exception {
 		return vendorDao.getRegisteredRestaurantsListByRating(offset, limit, deals);
+	}
+	
+	@Override
+	public List<VendorDTO> getRegisteredRestaurantsListByRatingByVendorType(Integer offset, Integer limit, String deals, String vendorType) throws Exception {
+		return vendorDao.getRegisteredRestaurantsListByRatingByVendorType(offset, limit, deals, vendorType);
 	}
 	
 	@Override
@@ -508,6 +514,11 @@ public class VendorServiceImpl implements VendorService{
 	public Long getVendorIdByUUID(String vendorUUID) throws Exception {
 		return vendorDao.getVendorIdByUUID(vendorUUID);
 	}
+	
+	@Override
+	public String getVendorTypeByUUID(String vendorUUID) throws Exception {
+		return vendorDao.getVendorTypeByUUID(vendorUUID);
+	}
 
 	@Override
 	public String saveVendorImages(VendorImagesDTO vendorImagesDTO) throws Exception {
@@ -613,6 +624,12 @@ public class VendorServiceImpl implements VendorService{
 		return vendorDao.getRegisteredRadiusRestaurantsListByRating(offset, limit, latitude, longitude, deals);
 	}
 
+	@Override
+	public List<VendorDTO> getRegisteredRadiusRestaurantsListByRatingByVendorType(Integer offset, Integer limit, Double latitude,
+			Double longitude, String deals, String vendorType) throws Exception {
+		return vendorDao.getRegisteredRadiusRestaurantsListByRatingByVendorType(offset, limit, latitude, longitude, deals, vendorType);
+	}
+	
 	@Override
 	public List<String> getAllcategoriesListByType(String categoryType) throws Exception {
 		return vendorDao.getAllcategoriesListByType(categoryType);

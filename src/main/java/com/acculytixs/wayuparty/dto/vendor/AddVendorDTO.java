@@ -10,6 +10,9 @@ public class AddVendorDTO implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
+	@Required(desc="vendorType")
+	private String vendorType;
+	
 	@Required(desc="vendorName")
 	private String vendorName;
 	
@@ -107,6 +110,13 @@ public class AddVendorDTO implements Serializable {
 	private Integer rating;
 	
 	
+	public String getVendorType() {
+		return vendorType;
+	}
+
+	public void setVendorType(String vendorType) {
+		this.vendorType = vendorType;
+	}
 
 	public String getVendorName() {
 		return vendorName;

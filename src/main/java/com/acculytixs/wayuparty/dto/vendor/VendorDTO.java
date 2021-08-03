@@ -9,6 +9,8 @@ public class VendorDTO implements Serializable {
 	
 	private BigInteger vendorId;
 	
+	private String vendorType;
+	
 	private String vendorName;
 	
 	private String vendorEmail;
@@ -70,6 +72,14 @@ public class VendorDTO implements Serializable {
 
 	public void setVendorId(BigInteger vendorId) {
 		this.vendorId = vendorId;
+	}
+	
+	public String getVendorType() {
+		return vendorType;
+	}
+
+	public void setVendorType(String vendorType) {
+		this.vendorType = vendorType;
 	}
 
 	public String getVendorName() {

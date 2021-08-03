@@ -1,0 +1,1 @@
+CALL AlterTableAddColumn ('vendors','vendor_type','VARCHAR(50) DEFAULT NULL AFTER `id`');

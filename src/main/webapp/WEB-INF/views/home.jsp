@@ -106,19 +106,16 @@ body {
 .bottom_left{
 	position: absolute; 
 	bottom: -5px; 
-	right: 9px;"
+	right: 9px;
 }
 .card-link{
  	font-weight: 700;
- 	font-size: 14px;"
+ 	font-size: 14px;
 } 
 .dropdown {
   position: relative;
   display: inline-block;
   float: right;
- /*margin: 9px -15px 0 -8px; */
-  /* margin: 22px 6px 0 0px;  */
- /* margin: 22px 31px 0 0px; */
 }
 .dropbtn {
   color: lightcyan;
@@ -406,6 +403,15 @@ body {
     border-top-left-radius: 13px;
 }
 }
+.selectedSlot{
+	background: #be9c52 !important;
+	color: #fff !important;
+}
+
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+     outline: 0px auto -webkit-focus-ring-color;
+     outline-offset: 0px;
+}
 </style>
 
 <body>
@@ -461,15 +467,22 @@ body {
 	               		   </div>
 	            </div>
 	       </div>
+	       
+	       		
+			<div style="padding: 18px 0px 0px 0px;float:right;">
+				<input type="submit" id="selectedAll" value="ALL" onclick="selectedAll()" class="btn btn-success" style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 0px;border: 3px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;margin-right:-5px;">
+				<input type="button" id="selectedOnlyVenue" value="VENUE" onclick="selectedOnlyVenue()" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 0px;border: 3px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;margin-right:-5px;">
+				<input type="button" id="selectedOnlyCatering" value="CATERING" onclick="selectedOnlyCatering()" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 0px;border: 3px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;margin-right:10px;">
+			</div>
+			
 	    </div>
 	    
 	   <!-- <div>
 	    	<input  type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Function Halls.." title="Type in a Function Halls Name" class="venuesearch" >
-	    	<img src="/resources/img/search-icon.png" alt="Search" class="search_icon" />
+	    	<img src="/resources/img/search-icon.png" alt="Search" class="search_icon" />  --> 
 	    </div>
 	 
-	     </div>  --> 
-	 </div>
+	     </div>
 </nav>
 
 <div class ="venue_container">	
@@ -555,10 +568,20 @@ function clearClubSearch(){
  <script>
  function getRestaurantsList(latitude,longitude){
 	    var appUrl ='${appUrl}';
+	   	var vendorType = getVendorType();
+	   	var apiSignature = '';
+	   	
+
+	   	if(vendorType == 'ALL' || vendorType == ''){
+	    	apiSignature = "/ws/getAllregisteredRestaurantsListByRating?latitude="+latitude+"&longitude="+longitude; 
+	   	}else {
+	    	apiSignature = "/ws/getAllregisteredRestaurantsListByRatingByVendorType?latitude="+latitude+"&longitude="+longitude+"&vendorType="+vendorType; 
+	   	}
+
 	   $("#registeredVendorsLoadingDiv").attr('style','position:absolute; width:100%; height:100%; background-color:rgba(255,255,255,0.8); top:0px; left:0px; z-index:100;background-image:url("/resources/img/preloader.gif"); background-position:center; background-repeat:no-repeat; background-size:75px;');
 	     $.ajax({
 		    	type: "GET",
-		    	url: appUrl+"/ws/getAllregisteredRestaurantsListByRating?latitude="+latitude+"&longitude="+longitude, 
+		    	url: appUrl + apiSignature, 
 		        success: function(resultData) {
 		   			
 		        	var result = "";
@@ -807,7 +830,65 @@ function getCurrency(currency){
   window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
   
 </script>
+<script type="text/javascript">
+	function selectedAll(){
 	
+		if($("#selectedAll").hasClass('selectedSlot')){
+			$("#selectedAll").removeClass('selectedSlot');
+		}else{
+			$("#selectedAll").addClass( 'selectedSlot' );
+			$("#selectedOnlyVenue").removeClass('selectedSlot');
+			$("#selectedOnlyCatering").removeClass('selectedSlot');
+		}
+	
+	}
+	
+	function selectedOnlyVenue(){
+	
+		if($("#selectedOnlyVenue").hasClass('selectedSlot')){
+			$("#selectedOnlyVenue").removeClass('selectedSlot');
+		}else{
+			$("#selectedAll").removeClass( 'selectedSlot' );
+			$("#selectedOnlyVenue").addClass('selectedSlot');
+			$("#selectedOnlyCatering").removeClass('selectedSlot');
+		}
+	
+	}
+	
+	function selectedOnlyCatering(){
+	
+		if($("#selectedOnlyCatering").hasClass('selectedSlot')){
+			$("#selectedOnlyCatering").removeClass('selectedSlot');
+		}else{
+			$("#selectedAll").removeClass( 'selectedSlot' );
+			$("#selectedOnlyVenue").removeClass('selectedSlot');
+			$("#selectedOnlyCatering").addClass('selectedSlot');
+		}
+	
+	}
+	
+	function getVendorType(){
+	
+		var vendorType = '';
+		
+		if($("#selectedAll").hasClass('selectedSlot')){
+			
+			vendorType = 'ALL';
+
+		}else if($("#selectedOnlyVenue").hasClass('selectedSlot')){
+		
+			vendorType = 'VENUE';
+
+		}else if($("#selectedOnlyCatering").hasClass('selectedSlot')){
+		
+			vendorType = 'CATERING';
+
+		}
+		
+		return vendorType;
+	
+	}
+</script>
 
 </body>
 

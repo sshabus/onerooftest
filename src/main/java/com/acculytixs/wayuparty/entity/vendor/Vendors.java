@@ -33,6 +33,10 @@ public class Vendors implements Serializable{
 	@Column(name = "id", nullable = false)
 	private Long id;
 	
+	
+	@Column(name = "vendor_type",columnDefinition = "TEXT default NULL")
+	private String vendorType;
+	
 	@Column(name = "vendor_name",columnDefinition = "TEXT default NULL")
 	private String vendorName;
 	
@@ -162,6 +166,14 @@ public class Vendors implements Serializable{
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public String getVendorType() {
+		return vendorType;
+	}
+
+	public void setVendorType(String vendorType) {
+		this.vendorType = vendorType;
 	}
 
 	public String getVendorName() {

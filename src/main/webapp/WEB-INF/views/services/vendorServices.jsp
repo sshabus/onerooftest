@@ -53,7 +53,7 @@
 	                            <a href="${Wayuparty_appUrl}/dashboard">Home</a>
 	                        </li>
                         
-	                        <li>Vendor Services</li>
+	                        <li>Vendor Services (${vendorType})</li>
 	                    </ul>
 	             </div>
 	             
@@ -76,8 +76,8 @@
                                         <a class="dropdown-item" href="${Wayuparty_appUrl}/bottle?vendorUUID=${vendorUUID}&serviceUUID=${service.serviceUUID}"><img src="/resources/img/bottle.jpg"></img>&nbsp;&nbsp;Book Bottle</a>
                                     </c:if>
                                     
-                                    <c:if test="${service.serviceDisplayName == 'Venue'}">
-                         				<a class="dropdown-item" href="${Wayuparty_appUrl}/table?vendorUUID=${vendorUUID}&serviceUUID=${service.serviceUUID}"><img src="/resources/img/table.jpg"></img>&nbsp;&nbsp;Venue</a>
+                                    <c:if test="${service.serviceDisplayName == 'Venue' && vendorType != 'CATERING'}">
+	                         			<a class="dropdown-item" href="${Wayuparty_appUrl}/table?vendorUUID=${vendorUUID}&serviceUUID=${service.serviceUUID}"><img src="/resources/img/table.jpg"></img>&nbsp;&nbsp;Venue</a>
                                     </c:if>
                                     
                                     <c:if test="${service.serviceDisplayName == 'Entry'}">
@@ -112,11 +112,17 @@
                            <div class="icon-tab">
                             <ul class="nav nav-tabs" role="tablist">
                                  <c:forEach var="service" items="${servicesList}">
-                                   <c:if test="${service.serviceDisplayName != 'Events'}">
-                                    <li class="nav-item mt-2">
-                                    	<a class="nav-link border-pastel-gold ${service.serviceId == 1 ? 'active' : ''}" data-value="${service.serviceDisplayName}" data-toggle="tab" href="#service" role="tab" aria-selected="true" onclick="getVendorServicesList('${service.serviceUUID}','${service.serviceDisplayName}')"><img src="${service.serviceImage}"></img></a>
-                                	</li>
-                                	</c:if>
+                                    	<c:if test="${vendorType == 'CATERING' && service.serviceName == 'Cuisine'}">
+		                                    <li class="nav-item mt-2">
+		                                    	<a class="nav-link border-pastel-gold ${service.serviceId == 1 ? 'active' : ''}" data-value="${service.serviceDisplayName}" data-toggle="tab" href="#service" role="tab" aria-selected="true" onclick="getVendorServicesList('${service.serviceUUID}','${service.serviceDisplayName}')"><img src="${service.serviceImage}"></img></a>
+		                                	</li>
+                                		</c:if>
+                                		
+                                		<c:if test="${vendorType == 'VENUE' && service.serviceName != 'Events'}">
+		                                    <li class="nav-item mt-2">
+		                                    	<a class="nav-link border-pastel-gold ${service.serviceId == 1 ? 'active' : ''}" data-value="${service.serviceDisplayName}" data-toggle="tab" href="#service" role="tab" aria-selected="true" onclick="getVendorServicesList('${service.serviceUUID}','${service.serviceDisplayName}')"><img src="${service.serviceImage}"></img></a>
+		                                	</li>
+                                		</c:if>
                                  </c:forEach>
                             </ul>
                             

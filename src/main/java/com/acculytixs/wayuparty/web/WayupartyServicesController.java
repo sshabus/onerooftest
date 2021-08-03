@@ -60,6 +60,7 @@ public class WayupartyServicesController {
 		ModelAndView model = new ModelAndView();
 	
 			String loginUserRole = (String) SessionManager.getSessionAttribute(request, "loginUserRole");
+			String vendorType = null;
 			
 			SessionMaintainanceData sessionData = (SessionMaintainanceData)request.getSession().getAttribute("sessionData");
 			if(null == sessionData)
@@ -74,6 +75,8 @@ public class WayupartyServicesController {
 			
 			try {
 				Long vendorId = vendorService.getVendorIdByUUID(vendorUUID);
+				vendorType = vendorService.getVendorTypeByUUID(vendorUUID);
+				
 				model.addObject("vendorId", vendorId);
 				
 				List<ServicesDTO> servicesList = vendorService.getVendorServices();
@@ -86,6 +89,8 @@ public class WayupartyServicesController {
 			request.getSession().setAttribute("sessionData",sessionData);
 			model.addObject("appUrl", appUrl);
 			model.addObject("vendorUUID", vendorUUID);
+			model.addObject("vendorType", vendorType);
+
 			model.setViewName("services/vendorServices");
 		
 		    return model;
@@ -96,15 +101,21 @@ public class WayupartyServicesController {
 	public ModelAndView bottleSettings(@RequestParam(value = "vendorUUID", required = true) String vendorUUID,
 			HttpServletRequest request) {
 		ModelAndView model = new ModelAndView();
-	
+
+		String vendorType = null;
+
 			try {
 				List<ServicesCategoryDTO> serviceCategoryList = vendorServicesService.getServiceCategoriesByServiceId(Constants.VENDOR_SERVICES_BOTTLE);
+
+				vendorType = vendorService.getVendorTypeByUUID(vendorUUID);
+
 				model.addObject("serviceCategoryList", serviceCategoryList);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			model.addObject("appUrl", appUrl);
 			model.addObject("vendorUUID", vendorUUID);
+			model.addObject("vendorType", vendorType);
 			model.setViewName("services/bottleSettings");
 		
 		    return model;
@@ -117,6 +128,8 @@ public class WayupartyServicesController {
 			@RequestParam(value = "bottleUUID", required = false) String bottleUUID,
 			HttpServletRequest request) {
 			
+			String vendorType = null;
+
 			ModelAndView model = new ModelAndView();
 			model.addObject("appUrl", appUrl);
 			model.addObject("vendorUUID", vendorUUID);
@@ -124,11 +137,13 @@ public class WayupartyServicesController {
 			model.addObject("bottleUUID", bottleUUID);
 			try {
 				Long vendorId = vendorService.getVendorIdByUUID(vendorUUID);
+				vendorType = vendorService.getVendorTypeByUUID(vendorUUID);
+
 				model.addObject("vendorId", vendorId);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			
+			model.addObject("vendorType", vendorType);
 			model.setViewName("services/bottle");
 		
 		    return model;
@@ -144,6 +159,13 @@ public class WayupartyServicesController {
 			if(null == sessionData)
 			{
 				sessionData = new SessionMaintainanceData();
+			}
+			try {
+				String vendorType = vendorService.getVendorTypeByUUID(vendorUUID);
+
+				model.addObject("vendorType", vendorType);
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 			sessionData.setNav(Constants.DASHBOARD);
 			request.getSession().setAttribute("sessionData",sessionData);
@@ -164,6 +186,13 @@ public class WayupartyServicesController {
 			{
 				sessionData = new SessionMaintainanceData();
 			}
+			try {
+				String vendorType = vendorService.getVendorTypeByUUID(vendorUUID);
+				model.addObject("vendorType", vendorType);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
 			sessionData.setNav(Constants.DASHBOARD);
 			request.getSession().setAttribute("sessionData",sessionData);
 			model.addObject("appUrl", appUrl);
@@ -189,6 +218,10 @@ public class WayupartyServicesController {
 			try {
 				Long vendorId = vendorService.getVendorIdByUUID(vendorUUID);
 				model.addObject("vendorId", vendorId);
+				
+				String vendorType = vendorService.getVendorTypeByUUID(vendorUUID);
+				model.addObject("vendorType", vendorType);
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -213,6 +246,10 @@ public class WayupartyServicesController {
 			try {
 				Long vendorId = vendorService.getVendorIdByUUID(vendorUUID);
 				model.addObject("vendorId", vendorId);
+				
+				String vendorType = vendorService.getVendorTypeByUUID(vendorUUID);
+				model.addObject("vendorType", vendorType);
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -269,6 +306,10 @@ public class WayupartyServicesController {
 				Long vendorId = vendorService.getVendorIdByUUID(vendorUUID);
 				List<PackageMenuOfferingDTO> menuList = packageService.getMenuOfferingList(vendorId);
 				model.addObject("menuList", menuList);
+				
+				String vendorType = vendorService.getVendorTypeByUUID(vendorUUID);
+				model.addObject("vendorType", vendorType);
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -299,6 +340,9 @@ public class WayupartyServicesController {
 			try {
 				Long vendorId = vendorService.getVendorIdByUUID(vendorUUID);
 				model.addObject("vendorId", vendorId);
+				
+				String vendorType = vendorService.getVendorTypeByUUID(vendorUUID);
+				model.addObject("vendorType", vendorType);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -326,6 +370,10 @@ public class WayupartyServicesController {
 			try {
 				PackageMenuOfferingDTO menuOfferingDTO = packageService.getPackMenuOfferingByUUID(menuItemUUID);
 				model.addObject("menuItem", menuOfferingDTO.getMenuItem());
+				
+				String vendorType = vendorService.getVendorTypeByUUID(vendorUUID);
+				model.addObject("vendorType", vendorType);
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -354,6 +402,10 @@ public class WayupartyServicesController {
 			try {
 				Long vendorId = vendorService.getVendorIdByUUID(vendorUUID);
 				model.addObject("vendorId", vendorId);
+				
+				String vendorType = vendorService.getVendorTypeByUUID(vendorUUID);
+				model.addObject("vendorType", vendorType);
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -379,6 +431,11 @@ public class WayupartyServicesController {
 			try {
 				Long vendorId = vendorService.getVendorIdByUUID(vendorUUID);
 				model.addObject("vendorId", vendorId);
+				
+				String vendorType = vendorService.getVendorTypeByUUID(vendorUUID);
+				model.addObject("vendorType", vendorType);
+				
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -403,6 +460,10 @@ public class WayupartyServicesController {
 			try {
 				Long vendorId = vendorService.getVendorIdByUUID(vendorUUID);
 				model.addObject("vendorId", vendorId);
+				
+				String vendorType = vendorService.getVendorTypeByUUID(vendorUUID);
+				model.addObject("vendorType", vendorType);
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

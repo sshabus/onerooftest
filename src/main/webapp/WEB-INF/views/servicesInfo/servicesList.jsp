@@ -412,20 +412,35 @@ float: right;
 	    			   				{ 
 	    			        		  var service = response.object.servicesList[i];
 	    			        		  var active = '';
-	    			        		  if(i == 0){
-	    			        			  active = 'active';
-	    			        			  serviceUUID = service.serviceUUID;
-	    			        			  isEntryRatioEnabled = service.isEntryRatioEnabled;
-	    			        		  }
+	    			        		  var vendorType = '${vendorType}';
 	    			        		  
-	    			        		  if(service.serviceName != 'Events'){
+	    			        		  if(vendorType == "CATERING" && service.serviceName == 'Cuisine' && service.serviceName != 'Events'){
+	    			        		  	  active = 'active';
+		    			        		  serviceUUID = service.serviceUUID;
+		    			        		  isEntryRatioEnabled = service.isEntryRatioEnabled;
+	    			        		  	  result = result +'<li class="nav-item">';
+		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\',\''+service.serviceDisplayName+'\')" role="tab" aria-selected="true" ><img style="max-width: 80px;margin-left: -8px;background-color: white;transition: transform ease-in-out 0.3s;" src="'+service.serviceImage+'"></img></a><span><strong> <div <!--align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;margin-top: 10px;color: #c01a6c;">'+service.serviceName+'</strong></span>';
+		    			        		  result = result +'</li>';
+		    			        		  
+		    			        		  $("#servicetype").empty();
+		    			        		  result1 = result1 + '<h3 style="font-size: 20px;font-weight: bold;">CATEGORIES</h3>';
+		    			        			  
+	    			        		  }
+	    			        		  if(vendorType == "VENUE" && service.serviceName != 'Events'){
+		    			        		  if(i == 0){
+		    			        			  active = 'active';
+		    			        			  serviceUUID = service.serviceUUID;
+		    			        			  isEntryRatioEnabled = service.isEntryRatioEnabled;
+		    			        		  }
+	    			        			 
 	    			        			  result = result +'<li class="nav-item">';
 		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\',\''+service.serviceDisplayName+'\')" role="tab" aria-selected="true" ><img style="max-width: 80px;margin-left: -8px;background-color: white;transition: transform ease-in-out 0.3s;" src="'+service.serviceImage+'"></img></a><span><strong> <div <!--align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;margin-top: 10px;color: #c01a6c;">'+service.serviceName+'</strong></span>';
 		    			        		  result = result +'</li>';
-	    			        		  }
-	    			        		  if(service.serviceName == 'Venue'){
-	    			        			  $("#servicetype").empty();
-	    			        			  result1 = result1 + '<h3 style="font-size: 20px;font-weight: bold;">VENUE CAPACITY</h3>'
+
+		    			        		  if(service.serviceName == 'Venue'){
+		    			        			  $("#servicetype").empty();
+		    			        			  result1 = result1 + '<h3 style="font-size: 20px;font-weight: bold;">VENUE CAPACITY</h3>';
+		    			        		  }
 	    			        		  }
 	    			   				} 
 	                               result = result +'</ul>';
