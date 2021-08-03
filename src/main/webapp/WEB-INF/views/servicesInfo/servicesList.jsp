@@ -116,13 +116,14 @@ float: right;
 	padding-bottom: 15px;
 }
 .servicesbackground{
-	text-align:center;
-	background: #fff;
-	margin-left: 0px;
-	margin-right: -30px;
-	display:list-item;
-	margin-top: -36px;
-	width:100%;
+	text-align: center;
+    background: #fff;
+    margin-left: -29px;
+    margin-right: -35px;
+    display: list-item;
+    margin-top: -37px;
+    width: 104%;
+
 }
 /*new designs*/
 .price{

@@ -31,7 +31,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 body {
     position: absolute;
-    font-family: 'Poppins', 'Roboto';
+    
 }
 .navbar-default .navbar-nav>li>a {
     color: white !important;
@@ -91,7 +91,7 @@ body {
 	margin-left: -14px;
 }
 .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group {
-    margin-left: -9px;
+    margin-left: -7px;
 }
 .container-fluid a{
 	color: white;
@@ -192,22 +192,29 @@ body {
 	float: right;
 }
 .venue_container{
-	background: white; 
-	border-top-left-radius: 70px;
-	margin-top: 170px;
+	background-image: url(/resources/img/bg.jpg);
+	background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-size: 100% 100%;
+    width: 100%;
+	border-top-left-radius: 110px;
+	
 }
 .offers{
 	color: black;
-	font-weight: 100;
+	font-weight: bold;
 }	    
 .halls{
 	margin-bottom: 19px; 
 	color: black;
-	font-weight: 100;
+	font-weight: bold;
 }
 .vendors-card .card{
 		width: 67%;
-		
 		padding-bottom: 0px;
 		border: none;
 		height: 100%;
@@ -218,6 +225,21 @@ body {
 		left: 33px
 
 }
+.background{
+    background: transparent;
+}
+.bg{
+	background-image: url('/resources/img/Oneroof_bg_page.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: 100% 100%;
+  width: 100%;
+}
+
 @media (max-width: 1199px){
 
 		.vendors-card .cardbody img{
@@ -415,15 +437,16 @@ body {
 </style>
 
 <body>
-<nav class="navbar navbar-default navbar-fixed-top">
-	  	<div class="clearfix">
+
+<div  class="bg">
+		<div class="clearfix">
 	    	<div class="navbar-header">
 	    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         				<span class="icon-bar"></span>
         				<span class="icon-bar"></span>
         				<span class="icon-bar"></span>                        
       			</button>
-	      			 <a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/clubs'" class="logina">
+	      			 <a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues'" class="logina">
 		      				<img src="/resources/img/One_Roof.png" alt="logo" class="homeHeaderimg">
 		      		</a>		
 	    	</div>
@@ -445,7 +468,7 @@ body {
             <div class="dropdown">
   				<button class="dropbtn" style="background-color: transparent;">M E N U</button>
  			 		<div class="dropdown-content">
-	    				<a href="/clubs">VENUE</a>
+	    				<a href="/Venues">VENUE</a>
 	    				<a href="/services" target="_blank">SERVICES</a>
 	    				<a href="/deals">DEALS</a>
 	    				<a href="/login">LOGIN</a>
@@ -453,7 +476,7 @@ body {
 		 	</div>  
 	      
 		    <div>
-		     	<input type="image"  src="/resources/img/DEALS_ICON.png" alt="Offers" class="dealsimg" />
+		     	<input type="image"  src="/resources/img/DEALS_ICON.png" alt="Offers" class="dealsimg"  />
 		    </div>
 	     
 	     	<div class="card mb-3 search_blo" >
@@ -477,15 +500,26 @@ body {
 			
 	    </div>
 	    
-	   <!-- <div>
+	   <!--  <div>
 	    	<input  type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Function Halls.." title="Type in a Function Halls Name" class="venuesearch" >
-	    	<img src="/resources/img/search-icon.png" alt="Search" class="search_icon" />  --> 
-	    </div>
+	    	<img src="/resources/img/search-icon.png" alt="Search" class="search_icon" />
+	    </div>   -->
 	 
-	     </div>
-</nav>
+	<!--  <div>
+	 	<input type="button" value="Both" class="btn btn-success" onClick=" " /> 
+	 	<input type="button" value="Venue" class="btn btn-success" onClick="" /> 
+	 	<input type="button" value="Catagories" class="btn btn-success" onClick="" /> 
+	 	
+	 	
+	 
+	 
+	 </div>   -->
+	 
+	     </div>   
+	 </div> 
 
 <div class ="venue_container">	
+
 	 <div class="container mt-10">
 	 
 <!--  	 
@@ -502,8 +536,9 @@ body {
  				<div id="registeredVendorsList" class="row"></div>
  					<jsp:include page="clubLocationSearch.jsp" />
  		</div>
+ 		</div>
  </div>
- <footer class="footer" style="background-color: #890059;">
+ <footer class="footer" style="background-color: #890059;margin-top: 0px;">
       <div align="center">ONEROOF 2021. copyrights all rights reserved. Developed by  Bivio Solutions Pvt Ltd. &nbsp&nbsp&nbsp
          	<a href="/privacyPolicy" target="_blank" style="color:rgb(212,175,55);">PRIVACY POLICY</a>&nbsp&nbsp&nbsp
       		<a href="/termsAndConditions" target="_blank" style="color:rgb(212,175,55);">TERMS AND CONDITIONS</a>
@@ -612,7 +647,7 @@ function clearClubSearch(){
 			        		result = result +'<div class="card">';
 			        		result = result +'<div class="card-footer">';
 			        		result = result +'<div class="clearfix vendors-title text-success">';
-			        		result = result +'<h5 >';
+			        		result = result +'<h5 style="margin: 0px 5px 13px -15px;">';
 			        		result = result +opt.vendorName;
 			        		result = result +'</h5>';
 			        		result = result +'</div>';
@@ -623,7 +658,7 @@ function clearClubSearch(){
 			        		result = result +'</div>';
 			        		result = result +'<div class="col-sm-11 col-xs-10 club-text-black" >'+location+'</div>';
 			        		
-			        		result = result +'<div style="color:black;font-size:20px;margin-top: -27px;text-align: center;">';
+			        		result = result +'<div style="color:green;font-size:23px;margin-top: -27px;text-align: center;">';
 			        		result = result +opt.rating;
 			        		result = result +'<label style="color:#890052;font-size: 15px;font-weight:bold;">Rating</label>'
 			        		result = result +'</div>';
@@ -674,7 +709,7 @@ function clearClubSearch(){
 			        		
 		   				}
 		        	}else{
-	   					result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/No_Venue.png" alt=""style="background: #880052;width: 18%;"/></td>';
+	   					result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/No_Venue.png" alt=""style="width: 18%;"/></td>';
 	   					result = result+'<p style="color:black;">Venues Coming Soon...</p>'
 	   				}
 		        	
@@ -812,7 +847,7 @@ function getCurrency(currency){
 <script>
   function initFreshChat() {
     window.fcWidget.init({
-      token: "e21a2d3a-7108-4f88-b817-2d4d9fad1247",
+      token: "345d79af-1ff9-40f8-9a36-79882a2edfc6",
       host: "https://wchat.in.freshchat.com"
     });
   }

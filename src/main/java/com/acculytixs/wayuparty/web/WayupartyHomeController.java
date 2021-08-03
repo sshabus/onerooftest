@@ -79,7 +79,7 @@ public class WayupartyHomeController {
 		return model; 
 	}
 	
-	@RequestMapping(value = "/clubs")
+	@RequestMapping(value = "/Venues")
 	public ModelAndView homePage(HttpServletRequest request) {
 		ModelAndView model = new ModelAndView();
 		model.addObject("appUrl", appUrl);

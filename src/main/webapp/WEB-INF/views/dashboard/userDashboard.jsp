@@ -79,9 +79,16 @@
 }    
 .venuesservices{
 	margin-top: 27px;
-	background: white;
 	border-top-left-radius: 90px;
-	/*margin-right: 210px;*/
+	margin-right: 210px;
+	background-image: url(/resources/img/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    left: 0;
+    right: 0;
+    background-size: 100% 100%;
+    width: 100%; 
+   /* background:white;	*/
 }
 .mb-5{
 	margin-left: 60px;
@@ -91,6 +98,10 @@
     background: transparent;
     border: 1px solid white;
  }
+.container{
+	margin-top: 150px;
+}
+
  .modal-title{
 				color: white;
 			}
@@ -333,9 +344,9 @@
          
                     
                <div class="venuesservices" >   
-               		  <div class="dashboard-page-one">
+               		  <div class="dashboard-page-one" style="padding-bottom: 170px;">
                			<div id="registeredVendorsLoadingDiv"></div>
-                          <div class="container mt-5">
+                          <div class="container mt-10">
         <!--                 
 					         <div class="card mb-3 search_blo">
 					            <div class="input-group search-blo">
@@ -354,18 +365,18 @@
 					        <jsp:include page="../packageBanner.jsp" />
 					     </div>
                             
- 							<div id="registeredVendorsList" class="row" style="margin-right: -160px;margin-left: -84px; margin-top: 100px;"></div>
+ 							<div id="registeredVendorsList" class="row" style="margin-right: -150px;margin-left: -150px; margin-top: 100px;"></div>
  							<jsp:include page="../clubLocationSearch.jsp" />
  						</div>
  			</div>  			
                            
        </div>
-        
-       
+         
   </div>
-  		<jsp:include page="../wayupartyMasterFooter.jsp" />	
-  		
- <!-- 	
+  <div style="margin-top: -150px;">
+  		<jsp:include page="../wayupartyMasterFooter.jsp" />
+  </div>		
+  	<!-- 
  <footer class="footer" style="background-color: #890059;">
       <div align="center">ONEROOF 2021. copyrights all rights reserved. Developed by  Bivio Solutions Pvt Ltd. &nbsp&nbsp&nbsp
          	<a href="/privacyPolicy" target="_blank" style="color:rgb(212,175,55);">PRIVACY POLICY</a>&nbsp&nbsp&nbsp
@@ -373,7 +384,7 @@
       </div>            
 </footer>
   
-  --> 	
+   -->	
  
 
 
@@ -489,10 +500,10 @@ function clearClubSearch(){
 			        		result = result +'</div>';
 			        		result = result +'<div style="color:black;" class="col-sm-10 col-xs-10 text-black">'+location+'</div>';
 			        		
-			        //		result = result +'<div style="color:green;font-size:20px;margin-top: -27px;text-align: center;">';
-			        //		result = result +opt.rating;
-			        //		result = result +'<label style="color:#890052;font-size: 15px;font-weight:bold;margin-left: 97%;margin-top: -11%;">Rating</label>'
-			        //		result = result +'</div>';
+			        		result = result +'<div style="color:green;font-size:22px;font-weight:bold;margin-top: -20%;text-align: center; margin-left: 95%;">';
+			        		result = result +opt.rating;
+			        		result = result +'<label style="color:#890052;font-size: 17px;font-weight:bold;">Rating</label>'
+			        		result = result +'</div>';
 			        		
 			        		result = result +'<div  class="col-sm-1 col-xs-2">';
 			        //		result = result +'<i class="fas fa-th-list mt-1 text-black" aria-hidden="true"></i>';
@@ -508,7 +519,7 @@ function clearClubSearch(){
 			        		//result = result +'<div class="col-sm-10 col-xs-10 text-black">'+opt.kilometers+' KM</div>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
-			        		result = result +'<div class="card-footer text-muted" style="    margin: -32px -92px -21px 267px;">';
+			        		result = result +'<div class="card-footer text-muted" style="    margin: -31px -88px -21px 281px;">';
 			        		result = result +'<div class="container-fluid" style="position: relative; text-align: center; color: white;">';
 			        		result = result +'<div class="bottom_left" style="position: absolute; bottom: -5px; left: 5px;">';
 			        	//	result = result +'<a href="'+appUrl+'/ws/vendorInfo?vendorUUID='+opt.vendorUUID+'" class="card-link"><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;Explore</a>';
@@ -530,7 +541,7 @@ function clearClubSearch(){
 			        	
 		   				}
 		        	}else{
-		        		result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/No_Venue.png" alt="" style="background: #880052;width: 37%;"/></td>';
+		        		result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/No_Venue.png" alt="" style="width: 37%;"/></td>';
 		        		result = result+'<p style="color:black;">Venues Coming Soon...</p>'
 	   				}
 		        	

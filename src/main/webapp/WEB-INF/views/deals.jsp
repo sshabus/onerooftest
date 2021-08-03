@@ -5,6 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
       <link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
     <title>ONEROOF | DEALS</title>
     <meta name="description" content="">
@@ -353,4 +354,3 @@ function getCurrency(currency){
 </body>
 
 </html>
-
