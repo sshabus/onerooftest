@@ -1,10 +1,29 @@
 <!--   <link rel="shortcut icon" type="image/x-icon" href="/resources/img/Oneroof_icon.png">      -->         
                
-  <footer class="footer" style="background-color: white;">
-            <div class="container" style="color: black;">
-               ONEROOF 2021. Copyrights all rights reserved. Developed by  Bivio Solutions Pvt Ltd.
-            </div>
- </footer>
+  <footer class="footer" style="background-color: #f5f5f5;">
+		
+      <div style="color: black; ">
+      		<img src="/resources/img/Oneroof_logo_text_footer.png" alt="Logo" style="width:8%">
+      		@ Copyrights 2021. All Rights Reserved Developed by  Bivio Solutions Pvt Ltd. &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      	
+      	<a href="/privacyPolicy" target="_blank" style="font-size:13px;color:black;">Stay in Touch With</a>&nbsp&nbsp&nbsp
+      		<a href = "https://www.facebook.com" target = "_self"> 
+      			<img src="/resources/img/facebook.png" style="width:2%">&nbsp
+      		</a>
+      		<a href = "https://www.instagram.com" target = "_self"> 	
+      			<img src="/resources/img/insta.png" style="width:2%">&nbsp
+      		</a>
+      		<a href = "https://www.twitter.com" target = "_self"> 	
+      			<img src="/resources/img/twitter.png" style="width:2%">&nbsp
+      		</a>
+      		<a href = "https://oneroof.asia" target = "_self"> 		
+      			<img src="/resources/img/web.png" style="width:2%">
+      		</a>
+      		
+         <!--  <a href="/privacyPolicy" target="_blank" style="color:rgb(212,175,55);">PRIVACY POLICY</a>&nbsp&nbsp&nbsp
+      		<a href="/termsAndConditions" target="_blank" style="color:rgb(212,175,55);">TERMS AND CONDITIONS</a>	 -->
+      </div>            
+</footer>
   
   
    <script src="/resources/js/jquery-3.3.1.min.js"></script>

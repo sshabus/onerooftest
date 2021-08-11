@@ -41,7 +41,7 @@ body {
     width: 10.666667%;
 }
 .btn-vendor-search {
-    color: #fff;
+  color: #890059 !important;
 }
 .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group {
     margin-left: 0px;
@@ -76,7 +76,7 @@ body {
 }
 .club-text-black{
  	font-weight: 600; 
- 	color: black;
+ 	color:black;
  	width: 60%;
  /*	margin-left: 6px; */
  	font-size: 12px;
@@ -86,6 +86,7 @@ body {
 }
 .col-md-6{
 	height: 250px;
+	margin-top: 70px;
 }
 .card-footer .divpadding{
 	margin-left: -14px;
@@ -98,11 +99,16 @@ body {
 }
 .card-footer.text-muted{
 	background-color: #890052;
-	width: 34%;
+	width: 21%;
     float: right;
-    margin-right:-5px;
-    margin-top: -70px;
+    margin-right: 264px;
+    margin-top: -20px;
+    border-bottom-left-radius: 17px;
+    border-top-left-radius: 17px;
+    border-bottom-right-radius: 17px;
+    border-top-right-radius: 17px;
 }
+
 .bottom_left{
 	position: absolute; 
 	bottom: -5px; 
@@ -118,7 +124,7 @@ body {
   float: right;
 }
 .dropbtn {
-  color: lightcyan;
+  color: white;
   padding: 16px;
   font-size: 16px;
   border: none;
@@ -151,6 +157,7 @@ body {
 	max-width: 150px;
     height: 156px;
     width: 176px;
+    margin-left: 110px;
 }
 .btn-vendor-search span{
 	padding: 0px 0 0;
@@ -162,11 +169,11 @@ body {
 	margin-top: 10px;
 }
 .card.mb-3{
-	width: 313px;
-	float: right;
-	margin-right: 14px;
-	margin-top: 17px;
-}
+    width: 514px;
+    float: right;
+    margin-right: -207px;
+    margin-top: 90px;
+    }
 #myInput{
 	border-radius: 20px;
 	width: 85%;
@@ -192,16 +199,9 @@ body {
 	float: right;
 }
 .venue_container{
-	background-image: url(/resources/img/bg.jpg);
-	background-repeat: no-repeat;
-    background-position: center;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-size: 100% 100%;
-    width: 100%;
+	
 	border-top-left-radius: 110px;
+	margin-top: 160px;
 	
 }
 .offers{
@@ -239,6 +239,10 @@ body {
   background-size: 100% 100%;
   width: 100%;
 }
+.vendors-card .cardbody img{
+box-shadow:-16px -16px 0px -4px #890059;
+margin-top:19px;
+}
 
 @media (max-width: 1199px){
 
@@ -256,7 +260,8 @@ body {
 			width: 62%;
 		}
 		.vendors-title h5{
-			font-size: 25px	
+			font-size: 25px;
+			
 			}
 		.club-text-black{
 			font-size: 14px;
@@ -311,6 +316,18 @@ body {
 		}
 		.offers{
 			font-size: 30px;
+		}
+		.Venues{
+		width: 55%;
+        margin-right: 95px;
+        margin-top: -3px;
+		}
+		.Cuisines{
+		width: 55%;
+   
+    margin-right: -7%;
+    margin-top: -35px;
+
 		}
 }
 @media (max-width: 480px){
@@ -371,6 +388,7 @@ body {
 			.vendors-card .cardbody img{
 				width: 75%;
 				height: auto;
+				
 			}
 			.card.mb-3{
 				width: 280px;
@@ -434,10 +452,88 @@ body {
      outline: 0px auto -webkit-focus-ring-color;
      outline-offset: 0px;
 }
+.fa-map-marker:before{
+    content: "\f041";
+    color: #890059;
+}
+}
 </style>
 
 <body>
+<nav class="navbar navbar-default navbar-fixed-top">
+	  	<div class="clearfix">
+	    	<div class="navbar-header">
+	    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        				<span class="icon-bar"></span>
+        				<span class="icon-bar"></span>
+        				<span class="icon-bar"></span>                        
+      			</button>
+	      			 <a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues'" class="logina">
+		      				<img src="/resources/img/One_Roof.png" alt="logo" class="homeHeaderimg">
+		      		</a>		
+	    	</div>
+	    	
+	    	
+	      	<div class="collapse navbar-collapse" id="myNavbar">
+	      <div>
+	      	<div class="nav-bar-header-one" style="float: right;width: 5%;margin-right: 126px;">  
+              	<div class="toggle-button sidebar-toggle">
+                    <button type="button" class="item-link">
+                        	<span class="btn-icon-wrap">
+	                            <span></span>
+	                            <span></span>
+	                            <span></span>
+                        	</span>
+                    </button>
+                </div>               
+            </div>
+            
+            <div class="dropdown">
+  				<button class="dropbtn" style="background-color: transparent;width:124px;">M E N U</button>
+ 			 		<div class="dropdown-content">
+	    				<a href="/Venues">VENUE</a>
+	    				<a href="/services" target="_blank">SERVICES</a>
+	    				<a href="/deals">DEALS</a>
+	    				<a href="/deals">GUEST USER</a>
+	    				<a href="/login">LOGIN</a>
+  			  		</div>
+		 	</div>  
+	      
+		    <div>
+		     	<input type="image"  src="/resources/img/DEALS_ICON.png" alt="Offers" class="dealsimg"  />
+		    </div>
+	     
+	     	<div class="card mb-3 search_blo" >
+	            <div class="input-group search-blo">
+	        
+	                	<input  name="vendors_txtSearch" type="text"  id="vendors_txtSearch" class="form-control"  placeholder="">
+	                	
+	                		<div class="input-group-btn">
+	                    			<a class="btn btn-vendor-search" style="border-bottom-right-radius: 0px !important;border-top-right-radius: 0px !important;"><span class="fa fa-refresh" onclick="clearClubSearch();"></span></a>
+	                     			<a href="#" class="btn btn-vendor-search" data-toggle="modal" data-target="#large-modal" onclick="getPopularCities()" style="margin-top: -3px;position: initial;">
+			            				<img src="/resources/img/cities/Locate_icon_1.png" alt="locate" style="width: 9%;float: left;margin-top:-3px; "/>Search for Venues,Caterers Or Events
+			          				</a>
+	               		   </div>
+	            </div>
+	       </div>
+	       
+	       		
+		  	<div style="padding: 18px 0px 0px 0px;float:right;">
+				<input type="submit" id="selectedAll" value="ALL" onclick="selectedAll()" class="btn btn-success" style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 0px;border: 3px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;margin-right:-5px;">
+				<input type="button" id="selectedOnlyVenue" value="VENUE" onclick="selectedOnlyVenue()" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 0px;border: 3px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;margin-right:-5px;">
+				<input type="button" id="selectedOnlyCatering" value="CATERING" onclick="selectedOnlyCatering()" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 0px;border: 3px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;margin-right:10px;">
+			</div>   
+			
+	    </div>   
+	   
+	     </div>  
+	 </div>
+</nav> 
 
+
+
+
+<!--  
 <div  class="bg">
 		<div class="clearfix">
 	    	<div class="navbar-header">
@@ -451,9 +547,10 @@ body {
 		      		</a>		
 	    	</div>
 	    	
+	    	
 	      	<div class="collapse navbar-collapse" id="myNavbar">
 	      <div>
-	      	<div class="nav-bar-header-one" style="float: right;width: 5%;">  
+	      	<div class="nav-bar-header-one" style="float: right;width: 5%;margin-right: 126px;">  
               	<div class="toggle-button sidebar-toggle">
                     <button type="button" class="item-link">
                         	<span class="btn-icon-wrap">
@@ -466,11 +563,12 @@ body {
             </div>
             
             <div class="dropdown">
-  				<button class="dropbtn" style="background-color: transparent;">M E N U</button>
+  				<button class="dropbtn" style="background-color: transparent;width:124px;">M E N U</button>
  			 		<div class="dropdown-content">
 	    				<a href="/Venues">VENUE</a>
 	    				<a href="/services" target="_blank">SERVICES</a>
 	    				<a href="/deals">DEALS</a>
+	    				<a href="/deals">GUEST USER</a>
 	    				<a href="/login">LOGIN</a>
   			  		</div>
 		 	</div>  
@@ -481,43 +579,35 @@ body {
 	     
 	     	<div class="card mb-3 search_blo" >
 	            <div class="input-group search-blo">
-	                	<input name="vendors_txtSearch" type="text"  id="vendors_txtSearch" class="form-control"  placeholder="Search Venues">
+	                	<input name="vendors_txtSearch" type="text"  id="vendors_txtSearch" class="form-control"  placeholder="">
 	                		<div class="input-group-btn">
 	                    			<a class="btn btn-vendor-search" style="border-bottom-right-radius: 0px !important;border-top-right-radius: 0px !important;"><span class="fa fa-refresh" onclick="clearClubSearch();"></span></a>
 	                     			<a href="#" class="btn btn-vendor-search" data-toggle="modal" data-target="#large-modal" onclick="getPopularCities()" style="margin-top: -3px;position: initial;">
-			            				<img src="/resources/img/cities/Locate_icon_1.png" alt="locate" style="width: 30%;float: left;"/>Cities
+			            				<img src="/resources/img/cities/Locate_icon_1.png" alt="locate" style="width: 9%;float: left;margin-top:-3px; "/>Search for Venues,Caterers Or Events
 			          				</a>
 	               		   </div>
 	            </div>
 	       </div>
 	       
 	       		
-			<div style="padding: 18px 0px 0px 0px;float:right;">
+		  	<div style="padding: 18px 0px 0px 0px;float:right;">
 				<input type="submit" id="selectedAll" value="ALL" onclick="selectedAll()" class="btn btn-success" style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 0px;border: 3px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;margin-right:-5px;">
 				<input type="button" id="selectedOnlyVenue" value="VENUE" onclick="selectedOnlyVenue()" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 0px;border: 3px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;margin-right:-5px;">
 				<input type="button" id="selectedOnlyCatering" value="CATERING" onclick="selectedOnlyCatering()" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 0px;border: 3px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;margin-right:10px;">
 			</div>
 			
-	    </div>
+	    </div>   
 	    
-	   <!--  <div>
+	     <div>
 	    	<input  type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Function Halls.." title="Type in a Function Halls Name" class="venuesearch" >
 	    	<img src="/resources/img/search-icon.png" alt="Search" class="search_icon" />
-	    </div>   -->
+	    </div>  
 	 
-	<!--  <div>
-	 	<input type="button" value="Both" class="btn btn-success" onClick=" " /> 
-	 	<input type="button" value="Venue" class="btn btn-success" onClick="" /> 
-	 	<input type="button" value="Catagories" class="btn btn-success" onClick="" /> 
-	 	
-	 	
-	 
-	 
-	 </div>   -->
+	
 	 
 	     </div>   
 	 </div> 
-
+-->
 <div class ="venue_container">	
 
 	 <div class="container mt-10">
@@ -531,19 +621,42 @@ body {
 						<h4 class ="offers">OFFERS</h4>
 		 	       		<jsp:include page="packageBanner.jsp" />
 				</div>
+				
+				
 						<h4 class = "halls" >Party Halls</h4>  
-					      
+					      	
  				<div id="registeredVendorsList" class="row"></div>
  					<jsp:include page="clubLocationSearch.jsp" />
+ 					
+ 				
  		</div>
  		</div>
  </div>
- <footer class="footer" style="background-color: #890059;margin-top: 0px;">
-      <div align="center">ONEROOF 2021. copyrights all rights reserved. Developed by  Bivio Solutions Pvt Ltd. &nbsp&nbsp&nbsp
-         	<a href="/privacyPolicy" target="_blank" style="color:rgb(212,175,55);">PRIVACY POLICY</a>&nbsp&nbsp&nbsp
-      		<a href="/termsAndConditions" target="_blank" style="color:rgb(212,175,55);">TERMS AND CONDITIONS</a>
+<footer class="footer" style="background-color: #f5f5f5;">
+		
+      <div style="color: black; ">
+      		<img src="/resources/img/Oneroof_logo_text_footer.png" alt="Logo" style="width:8%">
+      		@ Copyrights 2021. All Rights Reserved Developed by  Bivio Solutions Pvt Ltd. &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      	
+      	<a href="/privacyPolicy" target="_blank" style="font-size:13px;color:black;">Stay in Touch With</a>&nbsp&nbsp&nbsp
+      		<a href = "https://www.facebook.com" target = "_self"> 
+      			<img src="/resources/img/facebook.png" style="width:2%">&nbsp
+      		</a>
+      		<a href = "https://www.instagram.com" target = "_self"> 	
+      			<img src="/resources/img/insta.png" style="width:2%">&nbsp
+      		</a>
+      		<a href = "https://www.twitter.com" target = "_self"> 	
+      			<img src="/resources/img/twitter.png" style="width:2%">&nbsp
+      		</a>
+      		<a href = "https://oneroof.asia" target = "_self"> 		
+      			<img src="/resources/img/web.png" style="width:2%">
+      		</a>
+      		
+         <!--  <a href="/privacyPolicy" target="_blank" style="color:rgb(212,175,55);">PRIVACY POLICY</a>&nbsp&nbsp&nbsp
+      		<a href="/termsAndConditions" target="_blank" style="color:rgb(212,175,55);">TERMS AND CONDITIONS</a>	 -->
       </div>            
 </footer>
+	
  <script>
 getSpecialPackageBannersList();
 function googleApiLocation(locationId) {
@@ -647,22 +760,36 @@ function clearClubSearch(){
 			        		result = result +'<div class="card">';
 			        		result = result +'<div class="card-footer">';
 			        		result = result +'<div class="clearfix vendors-title text-success">';
-			        		result = result +'<h5 style="margin: 0px 5px 13px -15px;">';
+			        		result = result +'<h5 style="margin: 0px 0px -6px -14px;">';
 			        		result = result +opt.vendorName;
 			        		result = result +'</h5>';
 			        		result = result +'</div>';
 			        		result = result +'<div class="divpadding">';
 			        		result = result +'<div class="clearfix row">';
 			        		result = result +'<div class="col-sm-1 col-xs-2">';
-			        		result = result +'<i class="fa fa-map-marker club-text-black" aria-hidden="true"></i>';
+			        		result = result +'<i class="fa fa-map-marker club-text-black" style="font-size: 22px;" aria-hidden="true"></i>';
 			        		result = result +'</div>';
-			        		result = result +'<div class="col-sm-11 col-xs-10 club-text-black" >'+location+'</div>';
+			        		result = result +'<div class="col-sm-11 col-xs-10 club-text-black" style="font-size: 15px;width: 75%;margin-left: -3px; padding: 5px; margin-top: -4px;" >'+location+'</div>';
 			        		
-			        		result = result +'<div style="color:green;font-size:23px;margin-top: -27px;text-align: center;">';
+			        		result = result +'<div   style="color:#890052;font-size:30px; ">';
+			        		
+			        		result = result +'<ul style="font-size:30px; width: 70%;">';
 			        		result = result +opt.rating;
-			        		result = result +'<label style="color:#890052;font-size: 15px;font-weight:bold;">Rating</label>'
+			        		result = result +'&nbsp;';
+			        		result = result +'&nbsp;';
+			        		result = result +'&nbsp;';
+			        		 for(var j=0; j<5; j++){
+			        			 if(j < opt.rating){
+			        				 result = result +'<li class="fa fa-star textStarFilling" ></li>';
+			        			 }else{
+			        				 result = result +'<li class="fa fa-star text-muted"></li>';
+			        			 }
+			        		 }
+			        		result = result +'</ul>'; 
 			        		result = result +'</div>';
-			        		
+			       // 		result = result +'<label style="color:#890052;font-size: 15px;font-weight:bold;">Rating</label>'
+			        		result = result +'</div>';
+			      	
 			        		result = result +'<div class="col-sm-1 col-xs-2">';
 			        		//result = result +'<i class="fa fa-th-list club-text-black" aria-hidden="true"></i>';
 			        		result = result +'</div>';
@@ -677,33 +804,47 @@ function clearClubSearch(){
 			        		//result = result +'<div class="col-sm-11 col-xs-10 club-text-black">'+opt.kilometers+' KM</div>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
-			        		result = result +'<div class="card-footer text-muted">';
+			        		result = result +'<div class="card-footer text-muted" style="width:25%;float: right; margin-right: 239px;margin-top: -3px;">';
 			        		result = result +'&nbsp;';
 			        		result = result +'<div class="container-fluid" style="position: relative; text-align: center; color: white;">';
 			        		result = result +'<div class="bottom_left" style="position: absolute; bottom: -5px;">';
 			        		//result = result +'<a href="'+appUrl+'/ws/vendorInfo?vendorUUID='+opt.vendorUUID+'" class="card-link" style="font-weight: 700;"><span class="fa fa-search-plus">&nbsp;</span>Explore</a>';
 			        		result = result +'</div>';
-			        		result = result +'<div class="bottom_left">';
-			        		result = result +'<a href="'+appUrl+'/ws/bookService?vendorUUID='+opt.vendorUUID+'" class="card-link" ><i class="fa fa-bullhorn" aria-hidden="true"></i>&nbsp; Get Services </a>';
+			        		result = result +'<div class="bottom_left" style="bottom: -4px;right: 41px;">';
+			        		result = result +'<a href="'+appUrl+'/ws/bookService?vendorUUID='+opt.vendorUUID+'" class="card-link" ><i class="" aria-hidden="true"></i>&nbsp;Venues </a>';
+			        		result = result +'</div>';
+			        		
+			        		result = result +'</div>';
+			        		result = result +'</div>';
+			        		
+			        		
+			        		
+			        		result = result +'<div class="card-footer text-muted" style="width: 25%;float: right;margin-right: 15%;margin-top: -30px;">';
+			        		result = result +'&nbsp;';
+			        		result = result +'<div class="container-fluid" style="position: relative; text-align: center; color: white;">';
+			        		result = result +'<div class="bottom_left" style="bottom: -4px;right: 32px;">';
+			        		result = result +'<a href="'+appUrl+'/ws/bookService?vendorUUID='+opt.vendorUUID+'" class="card-link" ><i class="" aria-hidden="true"></i>&nbsp;Cuisines </a>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
+			        		
+			        		
+			        		
 			        		result = result +'</div>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
 			        		result = result +'</div></a>';
 			        		
 			        		
-			        		
-			        		if( ( ( (i+1) % 4 ) == 0 ) && ( resultData.data.length > ( i+1 ) ) ){
+			        		if( ( ( (i+1) % 2 ) == 0 ) && ( resultData.data.length > ( i+1 ) ) ){
 			        			
-			        			if(bannerIndex >= 4){
+			        			if(bannerIndex >= 2){
 			        			 	bannerIndex = 0;
 			        			}
 			        			
 			        			bannerIndex++;
-			        			
-				        		result = result+'<br><div class=" row noRecords-dashboard-portlets"><img style="height: 150px; width: 85%; margin-top: -59px;" src="/resources/img/addBanners/adv_banner_0'+bannerIndex+'.jpg" alt=""/></div>';
+
+			        			result = result+'<br><div class=" row noRecords-dashboard-portlets"><img style="height: 150px; width: 85%; margin-top: -10px;" src="/resources/img/banners/web_Banner_'+bannerIndex+'.jpg" alt=""/></div>';
 			        		}
 			        		
 			        		
