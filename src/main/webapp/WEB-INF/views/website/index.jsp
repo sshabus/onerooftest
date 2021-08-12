@@ -536,7 +536,7 @@ body{
 					<div class="servicesblock">
 						<div class="servicesblock1">
 							<div>
-								<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues'">
+								<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues?vendorType=VENUE'">
 									<img src="/resources/img/venue_icon.png" alt="logo" class="serviceimg"/>
 								</a>
 							</div>
@@ -548,7 +548,7 @@ body{
 									
 						<div class="servicesblock1">
 							<div>
-								<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues'">
+								<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues?vendorType=CATERING'">
 									<img src="/resources/img/catering_icon.png" alt="logo" class="serviceimg"/>
 								</a>
 							</div>

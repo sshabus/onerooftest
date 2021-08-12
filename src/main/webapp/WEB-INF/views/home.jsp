@@ -1045,8 +1045,8 @@ function getCurrency(currency){
 	
 	function getVendorType(){
 	
-		var vendorType = '';
-		
+		var vendorType = '${vendorType}';
+	 
 		if($("#selectedAll").hasClass('selectedSlot')){
 			
 			vendorType = 'ALL';

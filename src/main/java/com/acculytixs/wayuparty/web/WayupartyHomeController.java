@@ -80,11 +80,12 @@ public class WayupartyHomeController {
 	}
 	
 	@RequestMapping(value = "/Venues")
-	public ModelAndView homePage(HttpServletRequest request) {
+	public ModelAndView homePage(@RequestParam(value = "vendorType", required = false) String vendorType,
+			HttpServletRequest request)  {
 		ModelAndView model = new ModelAndView();
 		model.addObject("appUrl", appUrl);
 		model.addObject("googleMapsLocationApiKey", googleMapsLocationApiKey);
-
+		model.addObject("vendorType", vendorType);
 //			try {
 //				List<SpecialPackageDetailsDTO> specialPackageList = vendorService.getSpecialPackageList();
 //				model.addObject("specialPackageList", specialPackageList);
@@ -92,7 +93,6 @@ public class WayupartyHomeController {
 //			} catch (Exception e) {
 //				e.printStackTrace();
 //			}
-			
 		model.setViewName("home"); 
 		return model; 
 	}
