@@ -804,18 +804,22 @@ function clearClubSearch(){
 			        		//result = result +'<div class="col-sm-11 col-xs-10 club-text-black">'+opt.kilometers+' KM</div>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
-			        		result = result +'<div class="card-footer text-muted" style="width:25%;float: right; margin-right: 239px;margin-top: -3px;">';
-			        		result = result +'&nbsp;';
-			        		result = result +'<div class="container-fluid" style="position: relative; text-align: center; color: white;">';
-			        		result = result +'<div class="bottom_left" style="position: absolute; bottom: -5px;">';
-			        		//result = result +'<a href="'+appUrl+'/ws/vendorInfo?vendorUUID='+opt.vendorUUID+'" class="card-link" style="font-weight: 700;"><span class="fa fa-search-plus">&nbsp;</span>Explore</a>';
-			        		result = result +'</div>';
-			        		result = result +'<div class="bottom_left" style="bottom: -4px;right: 41px;">';
-			        		result = result +'<a href="'+appUrl+'/ws/bookService?vendorUUID='+opt.vendorUUID+'" class="card-link" ><i class="" aria-hidden="true"></i>&nbsp;Venues </a>';
-			        		result = result +'</div>';
+			        		if(opt.vendorType !== 'CATERING'){
+				        		result = result +'<div class="card-footer text-muted" style="width:25%;float: right; margin-right: 239px;margin-top: -3px;">';
+				        		result = result +'&nbsp;';
+				        		result = result +'<div class="container-fluid" style="position: relative; text-align: center; color: white;">';
+				        		result = result +'<div class="bottom_left" style="position: absolute; bottom: -5px;">';
+				        		//result = result +'<a href="'+appUrl+'/ws/vendorInfo?vendorUUID='+opt.vendorUUID+'&serviceType=venue" class="card-link" style="font-weight: 700;"><span class="fa fa-search-plus">&nbsp;</span>Explore</a>';
+				        		result = result +'</div>';
+			        		
+			        		
+				        		result = result +'<div class="bottom_left" style="bottom: -4px;right: 41px;">';
+				        		result = result +'<a href="'+appUrl+'/ws/bookService?vendorUUID='+opt.vendorUUID+'&serviceType=venue" class="card-link" ><i class="" aria-hidden="true"></i>&nbsp;Venues </a>';
+				        		result = result +'</div>';
 			        		
 			        		result = result +'</div>';
 			        		result = result +'</div>';
+			        		}
 			        		
 			        		
 			        		
@@ -823,7 +827,7 @@ function clearClubSearch(){
 			        		result = result +'&nbsp;';
 			        		result = result +'<div class="container-fluid" style="position: relative; text-align: center; color: white;">';
 			        		result = result +'<div class="bottom_left" style="bottom: -4px;right: 32px;">';
-			        		result = result +'<a href="'+appUrl+'/ws/bookService?vendorUUID='+opt.vendorUUID+'" class="card-link" ><i class="" aria-hidden="true"></i>&nbsp;Cuisines </a>';
+			        		result = result +'<a href="'+appUrl+'/ws/bookService?vendorUUID='+opt.vendorUUID+'&serviceType=cuisine" class="card-link" ><i class="" aria-hidden="true"></i>&nbsp;Cuisines </a>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';

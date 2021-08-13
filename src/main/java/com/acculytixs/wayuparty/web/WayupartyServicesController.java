@@ -152,6 +152,7 @@ public class WayupartyServicesController {
 	
 	@RequestMapping("/bookService")
 	public ModelAndView bookService(@RequestParam(value = "vendorUUID", required = true) String vendorUUID,
+			@RequestParam(value = "serviceType", required = false) String serviceType,
 			HttpServletRequest request) {
 		ModelAndView model = new ModelAndView();
 	
@@ -171,6 +172,7 @@ public class WayupartyServicesController {
 			request.getSession().setAttribute("sessionData",sessionData);
 			model.addObject("appUrl", appUrl);
 			model.addObject("vendorUUID", vendorUUID);
+			model.addObject("serviceType", serviceType);
 			model.setViewName("servicesInfo/bookService");
 		
 		    return model;
@@ -178,6 +180,7 @@ public class WayupartyServicesController {
 	
 	@RequestMapping("/ws/bookService")
 	public ModelAndView bookVendorService(@RequestParam(value = "vendorUUID", required = true) String vendorUUID,
+			@RequestParam(value = "serviceType", required = false) String serviceType,
 			HttpServletRequest request) {
 		ModelAndView model = new ModelAndView();
 	
@@ -197,6 +200,7 @@ public class WayupartyServicesController {
 			request.getSession().setAttribute("sessionData",sessionData);
 			model.addObject("appUrl", appUrl);
 			model.addObject("vendorUUID", vendorUUID);
+			model.addObject("serviceType", serviceType);
 			model.setViewName("servicesInfo/bookVendorService");
 		
 		    return model;
