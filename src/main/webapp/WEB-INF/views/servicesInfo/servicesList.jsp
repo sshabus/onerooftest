@@ -1217,6 +1217,15 @@ function getTimeSlotValidation(serviceUUID){
 						$("#serviceCalendar" + serviceUUID).val(fromDate);
 						if (fromDate != '' && fromDate != 'undefined' && ((toDate != '' && toDate != 'undefined') || (serviceName == "Cuisine") || ($("#selectedHalfDaySlot").hasClass('selectedSlot')))) {
 							$("#errorMessage" + serviceUUID).css({ display: "none" });
+							
+							var fullday = $("#selectedFullDaySlot").hasClass('selectedSlot');
+							var halfday = $("#selectedHalfDaySlot").hasClass('selectedSlot');
+							var firsthalf = $("#selectedFirstSlot" + serviceUUID).hasClass('selectedSlot');
+							var secondhalf = $("#selectedSecondSlot" + serviceUUID).hasClass('selectedSlot');
+							if ((serviceName == "Cuisine") || (fullday == true || halfday == true && (firsthalf == true || secondhalf == true))) {
+							
+							
+							
 							if (isEntryRatioEnabled == 'Y') {
 								var menRatio = $("#menRatio" + serviceUUID).val();
 								var womenRatio = $("#womenRatio" + serviceUUID).val();
@@ -1240,6 +1249,9 @@ function getTimeSlotValidation(serviceUUID){
 								}
 							} else {
 								$("#buyService" + serviceUUID).click();
+							}
+							}else{
+								alert("Select Either First Half or Second Half");
 							}
 						} else {
 							$("#errorMessage" + serviceUUID).css({ display: "block" });
