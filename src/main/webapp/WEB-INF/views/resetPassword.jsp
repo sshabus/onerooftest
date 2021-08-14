@@ -28,6 +28,12 @@
   img:hover {
     cursor: pointer;
   }
+  .login-page-content{
+  	width: 100%;
+  }
+  .login-page-content .login-box{
+  	margin-bottom: 0px; 
+}
   </style>  
 </head>
 
@@ -48,7 +54,7 @@
              </div>
             <div class="login-box">
                 <div class="item-logo">
-                    <img src="/resources/img/logo.png" alt="logo" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/home'" style="width: 250px; height: auto">
+                    <img src="/resources/img/One_Roof.png" alt="logo" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/home'" style="width: 200px; height: auto">
                 </div>
                 
                  <form class="loginForm" id="reset_password_form"  name="reset_password_form">

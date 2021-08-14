@@ -83,6 +83,19 @@ max-width: 150px !important;
 .dropdown-toggle{
 	color: white;
 }
+.footerlogo{
+	width:8%;
+}
+.socialwebsites{
+	width:2%;
+}
+.stayin{
+	font-size:13px;
+	color:black;
+}
+.footer{
+	 background-color: #f5f5f5;
+}
 /*.dashboard-content-one{
 	align-items: center;
 }
@@ -109,7 +122,7 @@ max-width: 150px !important;
 
 <div id="wrapper" class="wrapper bg-ash mt-5">
 
-		<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/clubs'" class="logina">
+		<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues'" class="logina">
 			<img id="Image1" src="/resources/img/One_Roof.png" class="headerimg">
 		</a>	
 		
@@ -117,7 +130,7 @@ max-width: 150px !important;
 				<div class="dropdown">
   					<button class="dropbtn" style="background-color: transparent;">M E N U</button>
  			 			<div class="dropdown-content">
-		    				<a href="/clubs">VENUE</a>
+		    				<a href="/Venues">VENUE</a>
 		    				<a href="/services" target="_blank">SERVICES</a>
 		    				<a href="/deals">DEALS</a>
 		    				<a href="/login">LOGIN</a>
@@ -142,11 +155,30 @@ max-width: 150px !important;
 	             </div>
 	     </div>
  </div>
-  <footer class="footer" style="background-color: white;">
-            <div class="container" style="color:black">
-               ONEROOF 2021. copyrights all rights reserved. Developed by   Bivio Solutions Pvt Ltd.
-            </div>
- </footer>
+  <footer class="footer">
+		
+      <div style="color: black; ">
+      		<img class="footerlogo" src="/resources/img/Oneroof_logo_text_footer.png" alt="Logo"/>
+      		Copyrights 2021. All Rights Reserved Developed by  Bivio Solutions Pvt Ltd. &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      	
+      	<a class="stayin" href="/privacyPolicy" target="_blank" >Stay in Touch With</a>&nbsp&nbsp&nbsp
+      		<a  href = "https://www.facebook.com" target = "_self"> 
+      			<img class="socialwebsites" src="/resources/img/facebook.png" />&nbsp
+      		</a>
+      		<a href = "https://www.instagram.com" target = "_self"> 	
+      			<img class="socialwebsites" src="/resources/img/insta.png" />&nbsp
+      		</a>
+      		<a href = "https://www.twitter.com" target = "_self"> 	
+      			<img class="socialwebsites" src="/resources/img/twitter.png" />&nbsp
+      		</a>
+      		<a href = "https://oneroof.asia" target = "_self"> 		
+      			<img class="socialwebsites" src="/resources/img/web.png" />
+      		</a>
+        <!-- 		
+      <a href="/privacyPolicy" target="_blank" style="color:rgb(212,175,55);">PRIVACY POLICY</a>&nbsp&nbsp&nbsp
+      		<a href="/termsAndConditions" target="_blank" style="color:rgb(212,175,55);">TERMS AND CONDITIONS</a>    	-->
+      </div>            
+</footer>
   <script src="/resources/js/datepicker.min.js"></script>
   <script src="/resources/js/common.js" type="text/javascript"></script>
   <script src="/resources/js/formvalidator.js" type="text/javascript"></script>

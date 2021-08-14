@@ -3,7 +3,7 @@
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <head>
 <link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
-<div id="preloader"></div>
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 <style>
 #wrapper {
   background-image: url('/resources/img/Oneroof_bg_page.jpg');
@@ -68,6 +68,7 @@
 
 </style>
 </head>
+<div id="preloader"></div>
   <div id="wrapper" class="wrapper bg-ash">
     <jsp:include page="../wayupartyMasterHeader.jsp" />
         <!-- Page Area Start Here 

@@ -3,7 +3,7 @@
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <head>
 <link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
-<div id="preloader"></div>
+
 
  <style>
  #wrapper {
@@ -157,6 +157,7 @@
 }
 </style>
 </head>
+
    <div id="wrapper" class="wrapper bg-ash">
     <jsp:include page="../wayupartyMasterHeader.jsp" />
         <!-- Page Area Start Here 
@@ -272,7 +273,7 @@
 		        			 result = result +'<a  href="#" data-toggle="modal" data-target="#rating-modal" onclick="placeOrderRating(\''+opt.placeOrderCode+'\',);"><i class="fas fa-plus text-dark-pastel-green"></i>&nbsp;Rate Your Order</a>';
 		        			 result = result +'</div>';
 		        		 }else{
-		        			 result = result +'<ul>';
+		        			 result = result +'<ul style="padding: 7px;background: white;text-align: center;">';
 			        		 for(var j=0; j<5; j++){
 			        			 if(j < opt.rating){
 			        				 result = result +'<li class="fa fa-star textStarFilling"></li>';

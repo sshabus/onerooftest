@@ -150,7 +150,7 @@
                   </div>
                  </div>
                  <div class="vendor_images_img item-img"  style="display: none" id="vendorProfileImage" class="mb-3"></div>
-                 <div class="item-content">
+                 <div class="item-content" style="text-align: justify;">
                      <div class="header-inline item-header">
                          <h3 class="text-dark-medium font-medium"><span id="vendorName"></span><br/>
                          <span class="view-subtitle" style="font-size: 15px;">
@@ -279,7 +279,7 @@
 	    					 }else{
 	    						 document.getElementById('carouselSlideDiv').style.display='none'
 	    					     document.getElementById('vendorProfileImage').style.display='block'
-	    					     $("#vendorProfileImage").html('<img src="'+response.object.vendorProfileImg+'" onerror="predefineVendorProfileImage(this);" data-id= "vendorProfileImage" style="border-radius: 129px; margin-top: -26px; border-color: white;border-style: solid;" >');
+	    					     $("#vendorProfileImage").html('<img src="'+response.object.vendorProfileImg+'" onerror="predefineVendorProfileImage(this);" data-id= "vendorProfileImage" style="border-radius: 129px;margin-top: -12px; border-color: white;border-style: solid;width: 90%;height: 100%;"" >');
 	    					 }
 	    					 
 	    					 $("#costForTwo").html(currencyCode+" "+response.object.costForTwoPeople);

@@ -1,5 +1,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
 
 <style>
 
@@ -20,11 +22,12 @@
 	margin-top: 7px;
 }
 .MpanNav ul.topSection li a{
-	
-}
+	margin-top: 0px;
+    height: 81px;
+   } 
 </style>
 
-
+</head>
 <div class="breadcrumbs-area">
 	                    <h3>Profile</h3>
 	                    <ul>

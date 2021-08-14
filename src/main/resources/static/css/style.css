@@ -3625,7 +3625,7 @@ ul {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
- /* padding: 0 30px; */
+  padding: 0 30px; 
 }
 @media only screen and (max-width: 767px) {
   .dashboard-content-one {
@@ -6600,9 +6600,9 @@ font-size: 14px;
   display:none;
 }
 .datatable_filter .dataTables_info {
-    padding-left:148px !important;
+    padding-left:160px !important;
     color: white;
-    margin: 15px 0px 0px 6px;
+    margin: 17px 0px 0px 6px;
  
 }
 @media screen and (max-width: 767px){

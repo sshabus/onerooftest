@@ -30,6 +30,15 @@
   img:hover {
     cursor: pointer;
   }
+  .login-page-content{
+  	width: 100%;
+  }
+  .login-page-content .login-box{
+  	margin-bottom: 0px; 
+}
+
+  	
+  }
   </style>  
 <body>
     <div id="preloader"></div>
@@ -43,7 +52,7 @@
                                    <span id="invalidMsg" style="color: white;"></span> 
              </div>
                 <div class="item-logo">
-                    <img src="/resources/img/logo.png" alt="logo" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/home'" style="width: 250px; height: auto">
+                    <img src="/resources/img/One_Roof.png" alt="logo" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/home'" style="width: 250px; height: auto">
                 </div>
                <form class="loginForm" name="forgotPassword_form" id="forgotPassword_form">
                     <div class="form-group" id="emailDiv">

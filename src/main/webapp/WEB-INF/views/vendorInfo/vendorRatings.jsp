@@ -1,7 +1,13 @@
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<style>
+.heading-layout1{
+	justify-content: center;
+}
+
+</style>
 <div class="tab-pane fade show" id="ratings" role="tabpanel">
 	<div class="row">	
-		<div class="modal-body">
+		<div class="modal-body" style="text-align: center;">
 			<div class="heading-layout1">
                 <div class="dropdown">
                 <sec:authorize access="hasRole('ROLE_USER')"> 

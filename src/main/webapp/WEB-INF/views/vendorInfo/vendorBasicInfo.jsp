@@ -1,6 +1,6 @@
 <div class="tab-pane fade show active" id="basic" role="tabpanel">
 	<div class="row">	
-		<div class="modal-body" style="color: white;">
+		<div class="modal-body" style="color: white; text-align: center;">
 	          <ul>    
 	         <li class="mt-3"><strong style="color:gold;"> Min Cost  		: </strong>&nbsp;<span id="costForTwo"></span></li>
 	             <li class="mt-3"><strong style="color:gold;"> Max Capacity  			: </strong>&nbsp;<span id="vendorCapacity"></span></li>

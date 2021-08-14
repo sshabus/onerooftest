@@ -68,14 +68,14 @@
 }
 
 .input-box input{
-	width: 90%;
+	width: 93%;
 	border: none;
 	outline: none;
 	background: none;
 	color: black;
 	background-color: white;
 	margin: -21px 0 0px 28px;
-	font-size: small;
+	font-size: 16px;
 }
   .checkmark{
   	top: 3px;
@@ -85,7 +85,7 @@
   
 }  
 .loginForm{
-/*	width: 357px;	*/
+	width: 100%;	
 	padding: 3rem;
 	margin-top: -30px;
 }
@@ -121,7 +121,7 @@
 	background-color: #ffffff;
 	position: relative;
 	bottom: -60px;
-	width: 33%;
+	width: 20%;
     float: right;
     height: 100%;
 }
@@ -318,7 +318,7 @@
                         
                     </div>
                     
-                    <div style="margin-left: 8px; font-size:11px;" class="input-button" >
+                    <div style="margin-left: 16px; font-size:11px;" class="input-button" >
                     	<div onload="disableSubmit()">
  							<input type="checkbox" name="terms" id="terms" onchange="activateButton(this)"> <a style=" margin-left:10px;font-weight: bold;" > I Accept the <span><a style="font-weight: bold;" href="/termsAndConditions">Terms of Use & Privacy Policy</a></span> </a>
 										<div class="modal-footer">

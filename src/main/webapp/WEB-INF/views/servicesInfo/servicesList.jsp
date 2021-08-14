@@ -46,6 +46,8 @@ p{
 	color: white;
 	margin: -7px 0px 0px -38px !important;
 	font-size:15px;
+	width: 510px;
+    text-align: justify;
 }
 .btn-toolbar .btn-group a{
 	background: white;
@@ -110,19 +112,18 @@ float: right;
 .servicebackground{
 	text-align:center;
 	background: #eb9b9b2b;
-	padding-left: 46%;
-	margin-left: -72px;
-	margin-right: -30px;
+	padding-left: 45%;
+/*	margin-left: -72px;
+	margin-right: -30px; */
 	padding-bottom: 15px;
+	width: 100%;
 }
 .servicesbackground{
 	text-align: center;
     background: #fff;
-    margin-left: -29px;
-    margin-right: -35px;
     display: list-item;
-    margin-top: -37px;
-    width: 104%;
+    margin-top: -38px;
+    width: 100%;
 
 }
 /*new designs*/
@@ -434,7 +435,7 @@ float: right;
 		    			        		  serviceUUID = service.serviceUUID;
 		    			        		  isEntryRatioEnabled = service.isEntryRatioEnabled;
 	    			        		  	  result = result +'<li class="nav-item">';
-		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\',\''+service.serviceDisplayName+'\')" role="tab" aria-selected="true" ><img style="max-width: 80px;margin-left: -8px;background-color: white;transition: transform ease-in-out 0.3s;" src="'+service.serviceImage+'"></img></a><span><strong> <div <!--align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;margin-top: 10px;color: #c01a6c;">'+service.serviceName+'</strong></span>';
+		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\',\''+service.serviceDisplayName+'\')" role="tab" aria-selected="true" ><img style="max-width: 100px;margin-left: -8px;background-color: white;transition: transform ease-in-out 0.3s;" src="'+service.serviceImage+'"></img></a><span><strong> <div <!--align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;margin-top: 10px;color: #c01a6c;font-size: large;">'+service.serviceName+'</strong></span>';
 		    			        		  result = result +'</li>';
 		    			        		  
 		    			        		  $("#servicetype").empty();
@@ -1289,47 +1290,47 @@ function getTimeSlotValidation(serviceUUID){
 		   
 		   if(orderDate != '' && orderDate != 'undefined' && timeslot !=  '' && typeof(timeslot) != 'undefined'){
 			   $("#errorMessage"+serviceUUID).css({ display: "none" });
-			   alert(2)
+			   
 			   if(isEntryRatioEnabled == 'Y'){
 				   var menRatio = $("#menRatio"+serviceUUID).val();
 				   var womenRatio = $("#womenRatio"+serviceUUID).val();
-				   alert(3)
+				   
 		   		   
 				   if(Number(womenRatio) >= 1){
 					   $("#stagsErrorMessage"+serviceUUID).css({ display: "none" });
 					   var personEntryCount = Number(menRatio) + Number(womenRatio);
-					   alert(4)
+					   
 					   if(personEntryCount == 0 || (Number(personEntryCount) > Number(totalAllowed))){
 						   $("#personsErrorMessage"+serviceUUID).css({ display: "block" });
-						   alert(5)
+						   
 					   }else{
 						   $("#personsErrorMessage"+serviceUUID).css({ display: "none" });
 						   var enabledRatio = Number(menRatio) - Number(womenRatio);
-						   alert(6)
+						   
 						   if((parseInt(womenRatio) >= parseInt(enabledRatio)) || Number(menRatio) == 1){
 							   $("#entryErrorMessage"+serviceUUID).css({ display: "none" });
 							   $("#customizeService"+serviceUUID).click();
-							   alert(7)
+							  
 						   }else{
 							   $("#entryErrorMessage"+serviceUUID).css({ display: "block" });
-							   alert(8)
+							   
 						   }
 					   }
 				   }else{
-					   alert(9)
+					   
 					   $("#stagsErrorMessage"+serviceUUID).css({ display: "block" });
 				   }
 			
 			   }else{
-				   alert(10)
+				   
 				   $("#customizeService"+serviceUUID).click();
 			   }
 		   }else{
-			   alert(11)
+			   
 			   $("#errorMessage"+serviceUUID).css({ display: "block" });
 		   }
 	   }else{
-		   alert(12)
+		   
 		   alert("Invalid time slot. Choose another time slot");
 	   }
 	   

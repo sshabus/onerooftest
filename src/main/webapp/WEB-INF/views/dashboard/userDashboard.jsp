@@ -81,14 +81,14 @@
 	margin-top: 27px;
 	border-top-left-radius: 90px;
 	margin-right: 210px;
-	background-image: url(/resources/img/bg.jpg);
+/*	background-image: url(/resources/img/bg.jpg); */
     background-repeat: no-repeat;
     background-position: center;
     left: 0;
     right: 0;
     background-size: 100% 100%;
     width: 100%; 
-   /* background:white;	*/
+    background:white;	
 }
 .mb-5{
 	margin-left: 60px;
@@ -371,9 +371,9 @@
  			</div>  			
                            
        </div>
-         
+         <!--   style="margin-top: -150px;" -->
   </div>
-  <div style="margin-top: -150px;">
+  <div>
   		<jsp:include page="../wayupartyMasterFooter.jsp" />
   </div>		
   	<!-- 
@@ -446,6 +446,7 @@ function clearClubSearch(){
    function getRestaurantsList(latitude,longitude){
 	   
 	    var appUrl ='${appUrl}';
+	    
 	    var formData = new FormData();
 		formData.append("latitude", latitude);
 		formData.append("longitude", longitude);
@@ -498,12 +499,26 @@ function clearClubSearch(){
 			        		result = result +'<div class="col-sm-1 col-xs-2">';
 			        		result = result +'<i  style="color:black;" class="fas fa-map-marker mt-1 text-black" aria-hidden="true"></i>';
 			        		result = result +'</div>';
-			        		result = result +'<div style="color:black;" class="col-sm-10 col-xs-10 text-black">'+location+'</div>';
+			        		result = result +'<div style="color:black;padding-bottom: 12px;" class="col-sm-10 col-xs-10 text-black">'+location+'</div>';
+			        		//result = result +opt.rating;
+							result = result +'<div   style="color:#890052;margin-left: 18px;font-size: 18px; ">';
 			        		
-			        		result = result +'<div style="color:green;font-size:22px;font-weight:bold;margin-top: -20%;text-align: center; margin-left: 95%;">';
+			        	//	result = result +'<ul >';
 			        		result = result +opt.rating;
-			        		result = result +'<label style="color:#890052;font-size: 17px;font-weight:bold;">Rating</label>'
+			        		result = result +'&nbsp;';
+			        		result = result +'&nbsp;';
+			        		result = result +'&nbsp;';
+			        		 for(var j=0; j<5; j++){
+			        			 if(j < opt.rating){
+			        				 result = result +'<li class="fa fa-star textStarFilling" ></li>';
+			        			 }else{
+			        				 result = result +'<li class="fa fa-star text-muted"></li>';
+			        			 }
+			        		 }
+			        	//	result = result +'</ul>'; 
 			        		result = result +'</div>';
+			       // 		result = result +'<label style="color:#890052;font-size: 15px;font-weight:bold;">Rating</label>'
+			        	//	result = result +'</div>';		
 			        		
 			        		result = result +'<div  class="col-sm-1 col-xs-2">';
 			        //		result = result +'<i class="fas fa-th-list mt-1 text-black" aria-hidden="true"></i>';
@@ -519,19 +534,38 @@ function clearClubSearch(){
 			        		//result = result +'<div class="col-sm-10 col-xs-10 text-black">'+opt.kilometers+' KM</div>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
-			        		result = result +'<div class="card-footer text-muted" style="    margin: -31px -88px -21px 281px;">';
-			        		result = result +'<div class="container-fluid" style="position: relative; text-align: center; color: white;">';
-			        		result = result +'<div class="bottom_left" style="position: absolute; bottom: -5px; left: 5px;">';
-			        	//	result = result +'<a href="'+appUrl+'/ws/vendorInfo?vendorUUID='+opt.vendorUUID+'" class="card-link"><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;Explore</a>';
+			        		
+			        		
+			        		if(opt.vendorType !== 'CATERING'){
+			        			result = result +'<div class="card-footer text-muted" style="width: 35%;float: right;margin-right: 23%;margin-top: -16px;">';
+				        		result = result +'&nbsp;';
+				        		result = result +'<div class="container-fluid" style="position: relative; text-align: center; color: white;margin-top: -13px;">';
+				        		result = result +'<div class="bottom_left" style="position: absolute; bottom: -5px;">';
+				        		//result = result +'<a href="'+appUrl+'/ws/vendorInfo?vendorUUID='+opt.vendorUUID+'&serviceType=venue" class="card-link" style="font-weight: 700;"><span class="fa fa-search-plus">&nbsp;</span>Explore</a>';
+				        		result = result +'</div>';
+			        		
+			        		
+				        		result = result +'<div class="bottom_left" style="bottom: -4px;right: 41px;">';
+				        		result = result +'<a href="'+appUrl+'/ws/bookService?vendorUUID='+opt.vendorUUID+'&serviceType=venue" class="card-link" style="margin-left: auto;"><i class="" aria-hidden="true"></i>&nbsp;Venue </a>'; 
+				        		result = result +'</div>';
+			        		
 			        		result = result +'</div>';
-			        		result = result +'<div class="bottom_left" style="position: relative; text-align: center;bottom: -5px;right: 5px;">';
-			        	//	result = result +'<a href="'+appUrl+'/clubEvents?vendorUUID='+opt.vendorUUID+'" class="card-link"><i class="fas fa-music" aria-hidden="true"></i>&nbsp;Events</a>';
 			        		result = result +'</div>';
-			        		result = result +'<div class="bottom_left" style="position: absolute; bottom: -26px; right: 24px;">';
-			        		result = result +'<a href="'+appUrl+'/bookService?vendorUUID='+opt.vendorUUID+'" class="card-link"><i class="fas fa-bullhorn" aria-hidden="true"></i>&nbsp;Get Services</a>';
+			        		}
+			        		
+			        		
+			        		
+			        		result = result +'<div class="card-footer text-muted" style="width:35%;float: right; margin-right: 239px;margin-top: -29px;">';
+			        		result = result +'&nbsp;';
+			        		result = result +'<div class="container-fluid" style="position: relative; text-align: center; color: white;margin-top: -13px;">';
+			        		result = result +'<div class="bottom_left" style="bottom: -4px;right: 34px;">';
+			        		result = result +'<a href="'+appUrl+'/ws/bookService?vendorUUID='+opt.vendorUUID+'&serviceType=cuisine" class="card-link" ><i class="" aria-hidden="true"></i>&nbsp;Cuisine </a>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
+			        		
+			        		
+			        		
 			        		result = result +'</div>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';

@@ -506,11 +506,11 @@ margin-top:19px;
 	     	<div class="card mb-3 search_blo" >
 	            <div class="input-group search-blo">
 	        
-	                	<input  name="vendors_txtSearch" type="text"  id="vendors_txtSearch" class="form-control"  placeholder="">
+	                	<input  name="vendors_txtSearch" type="text"  id="vendors_txtSearch" class="form-control"  placeholder="Search with Locations">
 	                	
 	                		<div class="input-group-btn">
 	                    			<a class="btn btn-vendor-search" style="border-bottom-right-radius: 0px !important;border-top-right-radius: 0px !important;"><span class="fa fa-refresh" onclick="clearClubSearch();"></span></a>
-	                     			<a href="#" class="btn btn-vendor-search" data-toggle="modal" data-target="#large-modal" onclick="getPopularCities()" style="margin-top: -3px;position: initial;">
+	                     			<a href="#" class="btn btn-vendor-search" data-toggle="modal" data-target="#large-modal" onclick="getPopularCities()" style="margin-top: -2px;position: initial;">
 			            				<img src="/resources/img/cities/Locate_icon_1.png" alt="locate" style="width: 9%;float: left;margin-top:-3px; "/>Search for Venues,Caterers Or Events
 			          				</a>
 	               		   </div>
@@ -518,11 +518,11 @@ margin-top:19px;
 	       </div>
 	       
 	       		
-		  	<div style="padding: 18px 0px 0px 0px;float:right;">
+		<!--   	<div style="padding: 18px 0px 0px 0px;float:right;">
 				<input type="submit" id="selectedAll" value="ALL" onclick="selectedAll()" class="btn btn-success" style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 0px;border: 3px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;margin-right:-5px;">
 				<input type="button" id="selectedOnlyVenue" value="VENUE" onclick="selectedOnlyVenue()" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 0px;border: 3px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;margin-right:-5px;">
 				<input type="button" id="selectedOnlyCatering" value="CATERING" onclick="selectedOnlyCatering()" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 0px;border: 3px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;margin-right:10px;">
-			</div>   
+			</div>      -->
 			
 	    </div>   
 	   
@@ -623,7 +623,7 @@ margin-top:19px;
 				</div>
 				
 				
-						<h4 class = "halls" >Party Halls</h4>  
+						<h4 class = "halls" >Venues</h4>  
 					      	
  				<div id="registeredVendorsList" class="row"></div>
  					<jsp:include page="clubLocationSearch.jsp" />
@@ -769,11 +769,11 @@ function clearClubSearch(){
 			        		result = result +'<div class="col-sm-1 col-xs-2">';
 			        		result = result +'<i class="fa fa-map-marker club-text-black" style="font-size: 22px;" aria-hidden="true"></i>';
 			        		result = result +'</div>';
-			        		result = result +'<div class="col-sm-11 col-xs-10 club-text-black" style="font-size: 15px;width: 75%;margin-left: -3px; padding: 5px; margin-top: -4px;" >'+location+'</div>';
+			        		result = result +'<div class="col-sm-11 col-xs-10 club-text-black" style="font-size: 14px;width: 90%;margin-left: -3px; padding: 5px; margin-top: -4px;" >'+location+'</div>';
 			        		
 			        		result = result +'<div   style="color:#890052;font-size:30px; ">';
 			        		
-			        		result = result +'<ul style="font-size:30px; width: 70%;">';
+			        		result = result +'<ul style="font-size:20px; width: 70%;">';
 			        		result = result +opt.rating;
 			        		result = result +'&nbsp;';
 			        		result = result +'&nbsp;';
@@ -804,8 +804,9 @@ function clearClubSearch(){
 			        		//result = result +'<div class="col-sm-11 col-xs-10 club-text-black">'+opt.kilometers+' KM</div>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
+			        		
 			        		if(opt.vendorType !== 'CATERING'){
-				        		result = result +'<div class="card-footer text-muted" style="width:25%;float: right; margin-right: 239px;margin-top: -3px;">';
+			        			result = result +'<div class="card-footer text-muted" style="width: 25%;float: right;margin-right: 16%;margin-top: -16px;">';
 				        		result = result +'&nbsp;';
 				        		result = result +'<div class="container-fluid" style="position: relative; text-align: center; color: white;">';
 				        		result = result +'<div class="bottom_left" style="position: absolute; bottom: -5px;">';
@@ -813,8 +814,8 @@ function clearClubSearch(){
 				        		result = result +'</div>';
 			        		
 			        		
-				        		result = result +'<div class="bottom_left" style="bottom: -4px;right: 41px;">';
-				        		result = result +'<a href="'+appUrl+'/ws/bookService?vendorUUID='+opt.vendorUUID+'&serviceType=venue" class="card-link" ><i class="" aria-hidden="true"></i>&nbsp;Venues </a>';
+				        		result = result +'<div class="bottom_left" style="bottom: -4px;right: 42px;">';
+				        		result = result +'<a href="'+appUrl+'/ws/bookService?vendorUUID='+opt.vendorUUID+'&serviceType=venue" class="card-link" ><i class="" aria-hidden="true"></i>&nbsp;Venue </a>'; 
 				        		result = result +'</div>';
 			        		
 			        		result = result +'</div>';
@@ -823,15 +824,14 @@ function clearClubSearch(){
 			        		
 			        		
 			        		
-			        		result = result +'<div class="card-footer text-muted" style="width: 25%;float: right;margin-right: 15%;margin-top: -30px;">';
+			        		result = result +'<div class="card-footer text-muted" style="width:25%;float: right; margin-right: 239px;margin-top: -29px;">';
 			        		result = result +'&nbsp;';
 			        		result = result +'<div class="container-fluid" style="position: relative; text-align: center; color: white;">';
-			        		result = result +'<div class="bottom_left" style="bottom: -4px;right: 32px;">';
-			        		result = result +'<a href="'+appUrl+'/ws/bookService?vendorUUID='+opt.vendorUUID+'&serviceType=cuisine" class="card-link" ><i class="" aria-hidden="true"></i>&nbsp;Cuisines </a>';
+			        		result = result +'<div class="bottom_left" style="bottom: -4px;right: 42px;">';
+			        		result = result +'<a href="'+appUrl+'/ws/bookService?vendorUUID='+opt.vendorUUID+'&serviceType=cuisine" class="card-link" ><i class="" aria-hidden="true"></i>&nbsp;Cuisine </a>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
-			        		
 			        		
 			        		
 			        		result = result +'</div>';
