@@ -109,7 +109,7 @@
 
  <!-- Header Menu Area Start Here -->
  <div class="header-logo">
-                    <a href="${Wayuparty_appUrl}/dashboard">
+                    <a href="${Wayuparty_appUrl}/home">
                         <img src="/resources/img/One_Roof.png" alt="logo" class="dashboardLogoImg">
                     </a>
                 </div>

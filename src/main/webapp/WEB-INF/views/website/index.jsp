@@ -503,8 +503,9 @@ css for automatic navgation-->.navigation-auto {
 					M E N U <i class="fa fa-caret-down"></i>
 				</button>
 				<div class="dropdown-content">
-					<a href="/Venues">HOME</a> <a href="/services" target="_blank">SERVICES</a>
-					<a href="/deals">GUEST USERS</a> <a href="/login">LOGIN</a>
+					<a href="/Venues">HOME</a> 
+					<a href="/deals">GUEST USERS</a> 
+					<a href="/login">LOGIN</a>
 				</div>
 			</div>
 		</div>
@@ -563,7 +564,7 @@ css for automatic navgation-->.navigation-auto {
 				<div class="servicesblock1">
 					<div>
 						<a href="#"
-							onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues?vendorType=VENUE'">
+							onClick="javascript:window.location.href = '${Wayuparty_appUrl}/home?vendorType=VENUE'">
 							<img src="/resources/img/venue_icon.png" alt="logo"
 							class="serviceimg" />
 						</a>

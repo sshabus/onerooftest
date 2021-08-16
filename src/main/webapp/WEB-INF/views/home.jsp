@@ -468,7 +468,7 @@ margin-top:19px;
         				<span class="icon-bar"></span>
         				<span class="icon-bar"></span>                        
       			</button>
-	      			 <a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues'" class="logina">
+	      			 <a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/home'" class="logina">
 		      				<img src="/resources/img/One_Roof.png" alt="logo" class="homeHeaderimg">
 		      		</a>		
 	    	</div>
@@ -492,7 +492,7 @@ margin-top:19px;
   				<button class="dropbtn" style="background-color: transparent;width:124px;">M E N U</button>
  			 		<div class="dropdown-content">
 	    				<a href="/Venues">VENUE</a>
-	    				<a href="/services" target="_blank">SERVICES</a>
+	    		<!-- 		<a href="/services" target="_blank">SERVICES</a>   -->
 	    				<a href="/deals">DEALS</a>
 	    				<a href="/deals">GUEST USER</a>
 	    				<a href="/login">LOGIN</a>

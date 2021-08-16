@@ -365,7 +365,7 @@
 					        <jsp:include page="../packageBanner.jsp" />
 					     </div>
                             
- 							<div id="registeredVendorsList" class="row" style="margin-right: -150px;margin-left: -150px; margin-top: 100px;"></div>
+ 							<div id="registeredVendorsList" class="row" style="margin-right: -150px;margin-left: -150px; margin-top: 60px;"></div>
  							<jsp:include page="../clubLocationSearch.jsp" />
  						</div>
  			</div>  			
@@ -495,13 +495,13 @@ function clearClubSearch(){
 			        		result = result +'</div>';
 			        		
 			        		result = result +'<div class="divpadding">';
-			        		result = result +'<div class="clearfix row">';
+			        		result = result +'<div class="clearfix row" style="margin-left:-46px;">';
 			        		result = result +'<div class="col-sm-1 col-xs-2">';
-			        		result = result +'<i  style="color:black;" class="fas fa-map-marker mt-1 text-black" aria-hidden="true"></i>';
+			        		result = result +'<i  style="color:#890059;" class="fas fa-map-marker mt-1 text-black" aria-hidden="true"></i>';
 			        		result = result +'</div>';
-			        		result = result +'<div style="color:black;padding-bottom: 12px;" class="col-sm-10 col-xs-10 text-black">'+location+'</div>';
+			        		result = result +'<div style="color:black;padding-bottom: 12px;font-size:14px;" class="col-sm-10 col-xs-10 text-black">'+location+'</div>';
 			        		//result = result +opt.rating;
-							result = result +'<div   style="color:#890052;margin-left: 18px;font-size: 18px; ">';
+							result = result +'<div   style="color:#890052;margin-left: 12px;font-size: 20px; ">';
 			        		
 			        	//	result = result +'<ul >';
 			        		result = result +opt.rating;
@@ -537,7 +537,7 @@ function clearClubSearch(){
 			        		
 			        		
 			        		if(opt.vendorType !== 'CATERING'){
-			        			result = result +'<div class="card-footer text-muted" style="width: 35%;float: right;margin-right: 23%;margin-top: -16px;">';
+			        			result = result +'<div class="card-footer text-muted" style="width: 30%;float: right;margin-right: 45%;margin-top: -29px;border-bottom-left-radius: 17px; border-top-left-radius: 17px;   border-bottom-right-radius: 17px; border-top-right-radius: 17px;">';
 				        		result = result +'&nbsp;';
 				        		result = result +'<div class="container-fluid" style="position: relative; text-align: center; color: white;margin-top: -13px;">';
 				        		result = result +'<div class="bottom_left" style="position: absolute; bottom: -5px;">';
@@ -555,7 +555,7 @@ function clearClubSearch(){
 			        		
 			        		
 			        		
-			        		result = result +'<div class="card-footer text-muted" style="width:35%;float: right; margin-right: 239px;margin-top: -29px;">';
+			        		result = result +'<div class="card-footer text-muted" style="width:30%;float: right; margin-right: 287px;margin-top: -31px;border-bottom-left-radius: 17px;border-top-left-radius: 17px;  border-bottom-right-radius: 17px;border-top-right-radius: 17px;">';
 			        		result = result +'&nbsp;';
 			        		result = result +'<div class="container-fluid" style="position: relative; text-align: center; color: white;margin-top: -13px;">';
 			        		result = result +'<div class="bottom_left" style="bottom: -4px;right: 34px;">';
@@ -563,9 +563,6 @@ function clearClubSearch(){
 			        		result = result +'</div>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';
-			        		
-			        		
-			        		
 			        		result = result +'</div>';
 			        		result = result +'</div>';
 			        		result = result +'</div>';

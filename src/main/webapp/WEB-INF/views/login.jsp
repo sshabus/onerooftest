@@ -197,11 +197,11 @@ img:hover {
 				<div style="width: 100%;">
 					<div class="login_page_wrap_1">
 					
-						 <a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues'" class="logina">
+						 <a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/home'" class="logina">
 							<img src="/resources/img/One_Roof.png" alt="Project Logo" class="logo"  />
 						 </a>
 				<!-- 	<h1 class = "header" >ONE ROOF</h1>		 -->
-						<p  class="mainline" style=" margin: 3px 0 -6px 0;">The luxury, quality and innovative Venues.<p>
+						<p  class="mainline" style=" margin: 3px 0 -6px 0;">The luxury, quality and innovative .<p>
 						<p  class="text" style=" margin: 0 0 -21px 0px;">The most successful event is the one that archives your<p>
 						<p  class="text" style=" margin: 0 0 -11px -3px;">goals and exceeds your expectations and it happens only with One Roof..!<p>
 					</div>
@@ -233,13 +233,13 @@ img:hover {
  						<div class="flag">
  		 						<p style="color:black;margin-top: 100px;">Don't have an account?</p>
  		 		
- 		 					<div class="form-group align-items-center justify-content-between" style="margin-right: 130px;">
+ 		 					<div class="form-group align-items-center justify-content-between" style="margin-right: 35px;">
             					<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/registerUser'" class="logina">Sign up</a>
         					</div>
         					
-			        		<div class="form-group align-items-center justify-content-between" style="margin: -30px -130px 0 0;">
-			            		<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues'" class="logina">Venues</a>
-			        		</div>
+			        <!--  	<div class="form-group align-items-center justify-content-between" style="margin: -30px -130px 0 0;">
+			            		<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/'" class="logina"></a>   
+			        		</div>   -->
  						</div>
        
                    
