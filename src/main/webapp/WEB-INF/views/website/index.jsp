@@ -116,8 +116,9 @@
 	text-align: center;
 	background-color: #f5f5f5;
 	width: 100%;
-	overflow: auto;
-	height: 95%;
+	overflow: auto;  
+/*	height: 95%; */
+	padding-bottom: 75px;
 }
 
 .services {
@@ -214,7 +215,8 @@ img {
 }
 
 .serviceon {
-	font-size: 15px
+	font-size: 15px;
+	padding-top: 20px;
 }
 
 h2 {
@@ -228,7 +230,7 @@ h3 {
 
 .dashline {
 	width: 35px;
-	padding-bottom: 100px;
+	padding-bottom: 50px;
 }
 
 .footerlogo {
@@ -247,6 +249,9 @@ h3 {
 .footer {
 	background-color: #f5f5f5;
 }
+a:hover, a:focus{
+	color: black;
+}
 
 <!--
 silder banner styles -->body {
@@ -258,7 +263,7 @@ silder banner styles -->body {
 	align-items: center;
 }
 
-.slider {
+.sliders {
 	width: 100%;
 	height: 100%;
 	/*	border-radius:10px; */
@@ -266,7 +271,7 @@ silder banner styles -->body {
 	background: transparent;
 }
 
-.slider:before {
+.sliders:before {
 	display: none;
 }
 
@@ -380,6 +385,57 @@ css for automatic navgation-->.navigation-auto {
 	transition: background-color 200ms linear;
 }
 
+.popup .overlay {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100vw;
+  height:100vh;
+  background:rgba(0,0,0,0.7);
+  z-index:1;
+  display:none;
+}
+ 
+.popup .content {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) scale(0);
+  background:#fff;
+  width:95%;
+  max-width:500px;
+/*  height:250px;  */
+  z-index:2;
+  text-align:center;
+  padding:20px;
+  box-sizing:border-box;
+}
+ 
+.popup .close-btn {
+  cursor:pointer;
+  position:absolute;
+  right:20px;
+  top:20px;
+  width:30px;
+  height:30px;
+  background:#222;
+  color:#fff;
+  font-size:25px;
+  font-weight:600;
+  line-height:30px;
+  text-align:center;
+  border-radius:50%;
+}
+ 
+.popup.active .overlay {
+  display:block;
+}
+ 
+.popup.active .content {
+  transition:all 300ms ease-in-out;
+  transform:translate(-50%,-50%) scale(1);
+}
+ 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
 	.logo {
 		width: 25%;
@@ -405,9 +461,9 @@ css for automatic navgation-->.navigation-auto {
 	.serviceimg {
 		width: 90%;
 	}
-	.oneroofservices {
+/*	.oneroofservices {
 		height: 55%;
-	}
+	} */
 	.serviceinfo {
 		font-size: 28px;
 	}
@@ -448,9 +504,9 @@ css for automatic navgation-->.navigation-auto {
 	.serviceimg {
 		width: 90%;
 	}
-	.oneroofservices {
+/*	.oneroofservices {
 		height: 70%;
-	}
+	} */
 	.serviceinfo {
 		font-size: 14px;
 	}
@@ -503,15 +559,15 @@ css for automatic navgation-->.navigation-auto {
 					M E N U <i class="fa fa-caret-down"></i>
 				</button>
 				<div class="dropdown-content">
-					<a href="/Venues">HOME</a> 
-					<a href="/deals">GUEST USERS</a> 
-					<a href="/login">LOGIN</a>
+					<a href="/Venues">HOME</a> <a href="/services" target="_blank">SERVICES</a>
+					<a href="/deals">GUEST USERS</a> <a href="/login">LOGIN</a>
 				</div>
 			</div>
 		</div>
 	</nav>
+	
 	<div class="banner">
-		<div class="slider">
+		<div class="sliders">
 			<div class="slides">
 				<input type="radio" name="radio-btn" id="radio1"> <input
 					type="radio" name="radio-btn" id="radio2"> <input
@@ -551,7 +607,8 @@ css for automatic navgation-->.navigation-auto {
 			</div>
 		</div>
 	</div>
-	<div class="oneroofservices">
+	
+<div class="oneroofservices">
 		<div class="services">
 
 			<h3>SERVICES</h3>
@@ -564,48 +621,50 @@ css for automatic navgation-->.navigation-auto {
 				<div class="servicesblock1">
 					<div>
 						<a href="#"
-							onClick="javascript:window.location.href = '${Wayuparty_appUrl}/home?vendorType=VENUE'">
-							<img src="/resources/img/venue_icon.png" alt="logo"
-							class="serviceimg" />
+							onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues?vendorType=VENUE'">
+							<img src="/resources/img/venue_icon.png" alt="logo" class="serviceimg" />
 						</a>
 					</div>
 					<div>
-						<p class="servicename">Venue</p>
-						<p class="serviceon">Click Here To Get Service</p>
+						<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues?vendorType=VENUE'" class="servicename">Venue</a>	
+						 <p class="serviceon">Click Here To Get Service</p>
+					</div>	
+				</div>
+
+				<div class="servicesblock1">
+					<div>
+						<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues?vendorType=CATERING'">
+							<img src="/resources/img/catering_icon.png" alt="logo" class="serviceimg" />
+						</a>
+					</div>
+					<div>
+						<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues?vendorType=CATERING'" class="servicename">Caterers</a>
+							<p class="serviceon">Click Here To Get Service</p>
 					</div>
 				</div>
 
 				<div class="servicesblock1">
 					<div>
-						<a href="#"
-							onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues?vendorType=CATERING'">
-							<img src="/resources/img/catering_icon.png" alt="logo"
-							class="serviceimg" />
+						<a href="#" onclick="togglePopup()">
+							<img src="/resources/img/events_icon.png" alt="logo" class="serviceimg" />
 						</a>
-					</div>
+						<div class="popup" id="popup-1">
+							<div class="overlay"></div>
+							  <div class="content">
+							    	<div class="close-btn" onclick="togglePopup()">×</div>
+							    		<h1>OneRoof Events</h1>
+							   			 <p style="font-weight:bold;">Coming Soon...!</p>
+							  </div>
+						</div>
 					<div>
-						<p class="servicename">Caterers</p>
+						<a onclick="togglePopup()" class="servicename">Events</a>
 						<p class="serviceon">Click Here To Get Service</p>
 					</div>
-				</div>
-
-				<div class="servicesblock1">
-					<div>
-						<a href="#"
-							onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues'">
-							<img src="/resources/img/events_icon.png" alt="logo"
-							class="serviceimg" />
-						</a>
-					</div>
-					<div>
-						<p class="servicename">Events</p>
-						<p class="serviceon">Click Here To Get Service</p>
-					</div>
-				</div>
+				</div>	
 			</div>
 		</div>
 	</div>
-
+</div>
 	<div>
 		<div class="containerblock">
 			<div class="container">
@@ -647,7 +706,6 @@ css for automatic navgation-->.navigation-auto {
 					in our directory of thousands of venues across India.</p>
 			</div>
 		</div>
-
 	</div>
 
 	<footer class="footer">
@@ -676,7 +734,8 @@ css for automatic navgation-->.navigation-auto {
 		</div>
 	</footer>
 
-	<script>
+<script>
+		
 		$(function() {
 			$(document).scroll(
 					function() {
@@ -685,9 +744,10 @@ css for automatic navgation-->.navigation-auto {
 								.height());
 					});
 		});
-	</script>
+		
+</script>
 
-	<script>
+<script>
 		var counter = 1;
 		setInterval(function() {
 			document.getElementById('radio' + counter).checked = true;
@@ -696,10 +756,16 @@ css for automatic navgation-->.navigation-auto {
 				counter = 1;
 			}
 		}, 3000);
-	</script>
+	
+</script>
+
+<script>
+
+function togglePopup(){
+	  document.getElementById("popup-1").classList.toggle("active");
+	}
+
+</script>
 
 </body>
 </html>
-<!--  
-
-	-->
