@@ -920,7 +920,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 						 
 					 }else{
 						 
-						 var serviceType = '';
+						 var serviceType = '${serviceType}';
 						   $('.nav-item a').each(function(){
 							   if($(this).hasClass('active'))
 								   serviceType = $(this).attr('data-value');
@@ -928,7 +928,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 						   
 						 if(serviceType == 'Book a bottle'){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_bottles_found.jpg" alt=""/></td>';
-						 }else if(serviceType == 'Venue'){
+						 }else if(serviceType == 'venue'){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/No_Venue.png" alt=""style="width: 20%;margin-top: 75px;"/></td>';
 							 result = result+'<a style="color:white;font-size:15px;">sorry..! No Venues Found...</a>'
 						 }else if(serviceType == 'Entry'){
@@ -939,7 +939,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_deals_found.jpg" alt=""/></td>';
 						 }else if(serviceType == 'Packages'){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_packages_found.jpg" alt=""/></td>';
-						 }else if(serviceType == 'Cuisine'){
+						 }else if(serviceType == 'cuisine'){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_cuisine.png" alt="" style="width: 20%;margin: 80px;"/></td>';
 							 result = result+'<a style="color:white;font-size:15px;margin: -65px;">sorry..! No Cuisine Found...</a>'
 						 }
@@ -1163,6 +1163,7 @@ function getTimeSlotValidation(serviceUUID){
 					var timeslot = $("input[name='timeslot" + serviceUUID + "']:checked").val();
 					
 					var quantity = $("#platesRatio"+serviceUUID).val();
+					if((serviceName == "Venue") || (quantity >= 1)){
 					if(serviceName !== "Cuisine"  && ($("#selectedFullDaySlot").hasClass('selectedSlot'))){
 						$("#number" + serviceUUID).val(getDaysDiff($("#startDate").val(), $("#endDate").val()));
 						quantity = $("#number"+serviceUUID).val();
@@ -1258,6 +1259,9 @@ function getTimeSlotValidation(serviceUUID){
 							$("#errorMessage" + serviceUUID).css({ display: "block" });
 						}
 					}
+				}else{
+					  alert("Select Plates Count");
+				  }
 				}
 			},
 		});

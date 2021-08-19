@@ -453,13 +453,29 @@ body {
     	   
     	   var orderDate = getSelectedDateFromCalendar($("#serviceCalendar"+serviceUUID).val());
     	   //var timeslot = $("#bookedTimeSlot"+serviceUUID).val();
-		   if($("#selectedFirstSlot").hasClass('selectedSlot') && $("#selectedSecondSlot").hasClass('selectedSlot')){
-				var timeslot = $("#selectedFirstSlot").val() + ' and ' + $("#selectedSecondSlot").val();
-			}else if($("#selectedFirstSlot").hasClass('selectedSlot')) {
-				var timeslot = $("#selectedFirstSlot").val();
-			}else if($("#selectedSecondSlot").hasClass('selectedSlot')) {
-				var timeslot = $("#selectedSecondSlot").val();
-			}
+    	   
+    	   if($("#selectedFullDaySlot").hasClass('selectedSlot')){
+				var timeslot = $("#selectedFullDaySlot").val();
+	   	   }else{
+  		  if($("#selectedFirstSlot"+serviceUUID).hasClass('selectedSlot')){
+  	   			var timeslot = 'Half Day(First Half)';
+  	   		}else{
+  	   			var timeslot = 'Half Day(Second Half)';
+  	   		}    
+	   	   }
+	   	   if(service == "Cuisine" ){
+	   		   var timeslot = 'Cuisine';
+	   	   }
+    	   
+    	   
+		//   if($("#selectedFirstSlot").hasClass('selectedSlot') && $("#selectedSecondSlot").hasClass('selectedSlot')){
+		//		var timeslot = $("#selectedFirstSlot").val() + ' and ' + $("#selectedSecondSlot").val();
+		//	}else if($("#selectedFirstSlot").hasClass('selectedSlot')) {
+		//		var timeslot = $("#selectedFirstSlot").val();
+		//	}else if($("#selectedSecondSlot").hasClass('selectedSlot')) {
+		//		var timeslot = $("#selectedSecondSlot").val();
+		//	}
+		
 		   var fromDate = $("#startDate").val();
     	   var toDate = '';
     	   
