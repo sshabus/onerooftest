@@ -1138,6 +1138,9 @@ function getTimeSlotValidation(serviceUUID){
 		var vendorUUID = '${vendorUUID}';
 		var appUrl = '${appUrl}';
 		var formData = new FormData();
+		var startDate = $("#startDate").val();
+		var endDate = $("#endDate").val();
+		
 		formData.append("vendorUUID", vendorUUID);
 		formData.append("startDate", $("#startDate").val());
 					
@@ -1145,13 +1148,11 @@ function getTimeSlotValidation(serviceUUID){
 			formData.append("endDate", $("#endDate").val());
 		}else{
 			formData.append("endDate",'');
+			endDate = '';
 		}
 		$.ajax({
-			data: formData,
-			contentType: false,
-			processData: false,
-			type: "POST",
-			url: appUrl + "/validateVendorTimeSlot?${_csrf.parameterName}=${_csrf.token}",
+			type: "GET",
+			url: appUrl + "/ws/validateVendorTimeSlot?${_csrf.parameterName}=${_csrf.token}&startDate="+startDate+"&endDate="+endDate+"&vendorUUID="+vendorUUID,
 			success: function (result) {
 				if (result.response == "INVALID_DATA") {
 					alert("Selected slots are already booked.");
@@ -1261,7 +1262,7 @@ function getTimeSlotValidation(serviceUUID){
 			},
 		});
 	}  
-   function isTimeSlotAlreadyBook(startDate, endDate){
+   function isTimeSlotAlreadyBook(startDate, endDate, serviceName){
 	    	 var vendorUUID = '${vendorUUID}';
     		 var appUrl ='${appUrl}';
     		 var formData = new FormData();
@@ -1269,13 +1270,15 @@ function getTimeSlotValidation(serviceUUID){
     		 formData.append("vendorUUID", vendorUUID);
     		 formData.append("startDate", startDate);
     		 formData.append("endDate", endDate);
-    		 
+    		 var startDate = $("#startDate").val();
+			 var endDate = $("#endDate").val();
+
+			 if(serviceName == "Cuisine"){
+				endDate = '';
+			 }
     		 $.ajax({
-    	   		data: formData,
-   	    	    contentType: false,
-		   	    processData: false,
-    		   	type: "POST",
-    			url: appUrl+"/validateVendorTimeSlot?${_csrf.parameterName}=${_csrf.token}", 
+    		   	type: "GET",
+				   url: appUrl + "/ws/validateVendorTimeSlot?${_csrf.parameterName}=${_csrf.token}&startDate="+startDate+"&endDate="+endDate+"&vendorUUID="+vendorUUID,
     				success: function(result) {
 	    		    	 if(result.response == "INVALID_DATA"){
 	    		    	 	   		return false;
@@ -1286,7 +1289,7 @@ function getTimeSlotValidation(serviceUUID){
 	    	});
    }
    function getPackagesServiceInfo(serviceUUID,isEntryRatioEnabled,allowed,serviceName){
-	   if(getTimeSlotValidation(serviceUUID) || isTimeSlotAlreadyBook($("#startDate").val(), $("#endDate").val())){
+	   if(getTimeSlotValidation(serviceUUID) || isTimeSlotAlreadyBook($("#startDate").val(), $("#endDate").val(),serviceName)){
 		   var orderDate = getSelectedDateFromCalendar($("#serviceCalendar"+serviceUUID).val());
 		   var timeslot = $("input[name='timeslot"+serviceUUID+"']:checked").val();
 		   

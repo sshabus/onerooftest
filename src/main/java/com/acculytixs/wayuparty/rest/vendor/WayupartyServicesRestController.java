@@ -734,7 +734,7 @@ public class WayupartyServicesRestController {
 		return response;
 	}
 	
-	@RequestMapping(value = { "/validateVendorTimeSlot", "/rest/validateVendorTimeSlot" }, method = RequestMethod.POST)
+	@RequestMapping(value = { "/validateVendorTimeSlot","/ws/validateVendorTimeSlot", "/rest/validateVendorTimeSlot" }, method = RequestMethod.GET)
 	public  Response<String> validateVendorTimeSlot(
 			@RequestParam(value = "startDate", required = true) String startDate,
 			@RequestParam(value = "endDate", required = true) String endDate,
@@ -743,7 +743,7 @@ public class WayupartyServicesRestController {
 		Response<String> response = new Response<>();
 
 		try {
-			Long vendorId = vendorService.getVendorIdByUUID(vendorUUID);
+//			Long vendorId = vendorService.getVendorIdByUUID(vendorUUID);
 			Date serviceStartDate = new SimpleDateFormat("dd/MM/yyyy").parse(startDate);
 			Date serviceEndDate = null;
 
