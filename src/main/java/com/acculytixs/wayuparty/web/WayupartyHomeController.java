@@ -63,6 +63,7 @@ public class WayupartyHomeController {
 	@Autowired
 	EventsService eventService;
 	
+	public static boolean isLoggedinUserName = false;
 	
 	@GetMapping("favicon.ico")
 	@ResponseBody
@@ -75,6 +76,7 @@ public class WayupartyHomeController {
 		ModelAndView model = new ModelAndView();
 		model.addObject("appUrl", appUrl);
 		model.addObject("googleMapsLocationApiKey", googleMapsLocationApiKey);
+		model.addObject("isLoggedinUserName", getLoggedinUserId());
 		model.setViewName("website/index"); 
 		return model; 
 	}
@@ -86,6 +88,7 @@ public class WayupartyHomeController {
 		model.addObject("appUrl", appUrl);
 		model.addObject("googleMapsLocationApiKey", googleMapsLocationApiKey);
 		model.addObject("vendorType", vendorType);
+		model.addObject("isLoggedinUserName", getLoggedinUserId());
 //			try {
 //				List<SpecialPackageDetailsDTO> specialPackageList = vendorService.getSpecialPackageList();
 //				model.addObject("specialPackageList", specialPackageList);
@@ -101,6 +104,8 @@ public class WayupartyHomeController {
 	public ModelAndView loginPage(HttpServletRequest request) {
 		ModelAndView model = new ModelAndView();
 		model.addObject("appUrl", appUrl);
+		setLoggedinUser(false);
+		model.addObject("isLoggedinUserName", getLoggedinUserId());
 		model.setViewName("login"); 
 		return model; 
 	}
@@ -110,6 +115,7 @@ public class WayupartyHomeController {
 		ModelAndView model = new ModelAndView();
 		model.addObject("appUrl", appUrl);
 		model.addObject("googleMapsLocationApiKey", googleMapsLocationApiKey);
+		model.addObject("isLoggedinUserName", getLoggedinUserId());
 		model.setViewName("deals"); 
 		return model; 
 	}
@@ -117,6 +123,7 @@ public class WayupartyHomeController {
 	public ModelAndView services(HttpServletRequest request) {
 		ModelAndView model = new ModelAndView();
 		model.addObject("appUrl", appUrl);
+		model.addObject("isLoggedinUserName", getLoggedinUserId());
 		model.setViewName("services"); 
 		return model; 
 	}
@@ -124,6 +131,7 @@ public class WayupartyHomeController {
 	public ModelAndView privacyPolicy(HttpServletRequest request) {
 		ModelAndView model = new ModelAndView();
 		model.addObject("appUrl", appUrl);
+		model.addObject("isLoggedinUserName", getLoggedinUserId());
 		model.setViewName("privacyPolicy"); 
 		return model; 
 	}
@@ -131,12 +139,14 @@ public class WayupartyHomeController {
 	public ModelAndView termsAndConditions(HttpServletRequest request) {
 		ModelAndView model = new ModelAndView();
 		model.addObject("appUrl", appUrl);
+		model.addObject("isLoggedinUserName", getLoggedinUserId());
 		model.setViewName("termsAndConditions"); 
 		return model; 
 	}
 	@RequestMapping(value = "/errorPage", method = RequestMethod.GET)
 	public ModelAndView displayErrorPage() {
 		ModelAndView model = new ModelAndView();
+		model.addObject("isLoggedinUserName", getLoggedinUserId());
 		model.setViewName("errorPage");
 		return model;
 
@@ -146,6 +156,7 @@ public class WayupartyHomeController {
 		ModelAndView model = new ModelAndView();
 		model.addObject("appUrl", appUrl);
 		model.addObject("googleMapsLocationApiKey", googleMapsLocationApiKey);
+		model.addObject("isLoggedinUserName", getLoggedinUserId());
 		model.setViewName("createCoupon"); 
 		return model; 
 	}
@@ -154,6 +165,7 @@ public class WayupartyHomeController {
 	public ModelAndView accesssDenied() {
 
 		ModelAndView model = new ModelAndView();
+		model.addObject("isLoggedinUserName", getLoggedinUserId());
 		model.setViewName("accessDenied");
 		return model;
 
@@ -163,6 +175,7 @@ public class WayupartyHomeController {
 	public ModelAndView permissionDenied() {
 
 		ModelAndView model = new ModelAndView();
+		model.addObject("isLoggedinUserName", getLoggedinUserId());
 		model.setViewName("accessDenied");
 		return model;
 
@@ -172,6 +185,7 @@ public class WayupartyHomeController {
 	public ModelAndView forgotPassword(HttpServletRequest request) {
 		ModelAndView model = new ModelAndView();
 		model.addObject("appUrl", appUrl);
+		model.addObject("isLoggedinUserName", getLoggedinUserId());
 		model.setViewName("forgotPassword"); 
 		return model; 
 	}
@@ -188,6 +202,7 @@ public class WayupartyHomeController {
 		}
 		
 		model.addObject("appUrl", appUrl);
+		model.addObject("isLoggedinUserName", getLoggedinUserId());
 		model.setViewName("resetPassword"); 
 		return model; 
 	}
@@ -196,6 +211,7 @@ public class WayupartyHomeController {
 	public ModelAndView registerUser(HttpServletRequest request) {
 		ModelAndView model = new ModelAndView();
 		model.addObject("appUrl", appUrl);
+		model.addObject("isLoggedinUserName", getLoggedinUserId());
 		model.setViewName("user/registerUser"); 
 		return model; 
 	}
@@ -215,6 +231,7 @@ public class WayupartyHomeController {
 		}
 		
 		model.addObject("appUrl", appUrl);
+		model.addObject("isLoggedinUserName", getLoggedinUserId());
 		model.setViewName("verifyAccount"); 
 		return model; 
 	}
@@ -230,11 +247,13 @@ public class WayupartyHomeController {
 		ModelAndView model = new ModelAndView();
 		if(authentication == null || (authentication != null && authentication.getPrincipal() == null)) {
 			model.setViewName("login");
+			setLoggedinUser(false);
 		}else {
 			String userName =  (String) authentication.getPrincipal();
 			UserDTO userDTO = wayupartyLoginService.getLoggedInUserDetailsByUserName(userName);
 			SessionManager.setSessionAttribute(request, "userId",userDTO.getUserId());
 			SessionManager.setSessionAttribute(request, "appUrl",appUrl);
+			setLoggedinUser(true);
 			
 			SessionMaintainanceData sessionData = (SessionMaintainanceData)request.getSession().getAttribute("sessionData");
 			if(null == sessionData)
@@ -286,6 +305,7 @@ public class WayupartyHomeController {
 			
 			request.getSession().setAttribute("sessionData",sessionData);
 			model.addObject("appUrl", appUrl);
+			model.addObject("isLoggedinUserName", getLoggedinUserId());
 			model.setViewName("vendor/vendor");
 		
 		    return model;
@@ -319,6 +339,7 @@ public class WayupartyHomeController {
 			request.getSession().setAttribute("sessionData",sessionData);
 			model.addObject("appUrl", appUrl);
 			model.addObject("vendorUUID", vendorUUID);
+			model.addObject("isLoggedinUserName", getLoggedinUserId());
 			model.setViewName("vendor/specialPackage");
 		
 		    return model;
@@ -361,6 +382,7 @@ public class WayupartyHomeController {
 			request.getSession().setAttribute("sessionData",sessionData);
 			model.addObject("appUrl", appUrl);
 			model.addObject("vendorUUID", vendorUUID);
+			model.addObject("isLoggedinUserName", getLoggedinUserId());
 			model.setViewName("vendor/vendorProfileDetails");
 		
 		    return model;
@@ -382,6 +404,7 @@ public class WayupartyHomeController {
 			request.getSession().setAttribute("sessionData",sessionData);
 			model.addObject("appUrl", appUrl);
 			model.addObject("vendorUUID", vendorUUID);
+			model.addObject("isLoggedinUserName", getLoggedinUserId());
 			model.setViewName("vendorInfo/vendorInfo");
 		
 		    return model;
@@ -402,6 +425,7 @@ public class WayupartyHomeController {
 			request.getSession().setAttribute("sessionData",sessionData);
 			model.addObject("appUrl", appUrl);
 			model.addObject("vendorUUID", vendorUUID);
+			model.addObject("isLoggedinUserName", getLoggedinUserId());
 			model.setViewName("vendorInfo/vendorInfoDetails");
 		
 		    return model;
@@ -420,7 +444,8 @@ public class WayupartyHomeController {
 			e.printStackTrace();
 		}
 		
-	    model.setViewName("vendorInfo/termsAndConditions");
+		model.addObject("isLoggedinUserName", getLoggedinUserId());
+		model.setViewName("vendorInfo/termsAndConditions");
 		return model;
 	}
 	
@@ -467,6 +492,7 @@ public class WayupartyHomeController {
 			request.getSession().setAttribute("sessionData",sessionData);
 			model.addObject("appUrl", appUrl);
 			model.addObject("userUUID", userUUID);
+			model.addObject("isLoggedinUserName", getLoggedinUserId());
 			model.setViewName("user/profile");
 		
 		    return model;
@@ -500,6 +526,7 @@ public class WayupartyHomeController {
 			
 			model.addObject("appUrl", appUrl);
 			model.addObject("vendorUUID", vendorUUID);
+			model.addObject("isLoggedinUserName", getLoggedinUserId());
 			model.setViewName("vendor/orders");
 		
 		    return model;
@@ -517,6 +544,7 @@ public class WayupartyHomeController {
 		}
 		
 		model.addObject("appUrl", appUrl);
+		model.addObject("isLoggedinUserName", getLoggedinUserId());
 		model.setViewName("user/ordersQR"); 
 		return model; 
 	}
@@ -537,6 +565,7 @@ public class WayupartyHomeController {
 			
 			model.addObject("appUrl", appUrl);
 			model.addObject("loginUserUUId", loginUserUUId);
+			model.addObject("isLoggedinUserName", getLoggedinUserId());
 			model.setViewName("user/myOrders");
 		
 		    return model;
@@ -558,6 +587,7 @@ public class WayupartyHomeController {
 			
 			model.addObject("appUrl", appUrl);
 			model.addObject("vendorUUID", vendorUUID);
+			model.addObject("isLoggedinUserName", getLoggedinUserId());
 			model.setViewName("guest/guests");
 		
 		    return model;
@@ -578,6 +608,7 @@ public class WayupartyHomeController {
 			
 			model.addObject("appUrl", appUrl);
 			model.addObject("vendorUUID", vendorUUID);
+			model.addObject("isLoggedinUserName", getLoggedinUserId());
 			model.setViewName("guest/addGuest");
 		
 		    return model;
@@ -599,6 +630,7 @@ public class WayupartyHomeController {
 			
 			model.addObject("appUrl", appUrl);
 			model.addObject("userUUID", userUUID);
+			model.addObject("isLoggedinUserName", getLoggedinUserId());
 			model.setViewName("user/guestClubs");
 		
 		    return model;
@@ -615,6 +647,7 @@ public class WayupartyHomeController {
 		}
 		
 		model.addObject("appUrl", appUrl);
+		model.addObject("isLoggedinUserName", getLoggedinUserId());
 		model.setViewName("user/guestQR"); 
 		return model; 
 	}
@@ -635,6 +668,7 @@ public class WayupartyHomeController {
 			
 			model.addObject("appUrl", appUrl);
 			model.addObject("vendorUUID", vendorUUID);
+			model.addObject("isLoggedinUserName", getLoggedinUserId());
 			model.setViewName("events/events");
 		
 		    return model;
@@ -661,6 +695,7 @@ public class WayupartyHomeController {
 			}
 			model.addObject("appUrl", appUrl);
 			model.addObject("vendorUUID", vendorUUID);
+			model.addObject("isLoggedinUserName", getLoggedinUserId());
 			model.setViewName("events/addEvent");
 		
 		    return model;
@@ -691,6 +726,7 @@ public class WayupartyHomeController {
 			model.addObject("appUrl", appUrl);
 			model.addObject("vendorUUID", vendorUUID);
 			model.addObject("eventUUID", eventUUID);
+			model.addObject("isLoggedinUserName", getLoggedinUserId());
 			model.setViewName("events/addEvent");
 		
 		    return model;
@@ -719,6 +755,7 @@ public class WayupartyHomeController {
 			
 			model.addObject("appUrl", appUrl);
 			model.addObject("vendorUUID", vendorUUID);
+			model.addObject("isLoggedinUserName", getLoggedinUserId());
 			model.setViewName("events/eventSettings");
 		
 		    return model;
@@ -738,6 +775,7 @@ public class WayupartyHomeController {
 			request.getSession().setAttribute("sessionData",sessionData);
 			model.addObject("appUrl", appUrl);
 			model.addObject("vendorUUID", vendorUUID);
+			model.addObject("isLoggedinUserName", getLoggedinUserId());
 			model.setViewName("events/clubEvents");
 		
 		    return model;
@@ -756,6 +794,7 @@ public class WayupartyHomeController {
 			sessionData.setNav(Constants.USERS);
 			request.getSession().setAttribute("sessionData",sessionData);
 			model.addObject("appUrl", appUrl);
+			model.addObject("isLoggedinUserName", getLoggedinUserId());
 			model.setViewName("user/users");
 		
 		    return model;
@@ -777,6 +816,7 @@ public class WayupartyHomeController {
 			model.addObject("appUrl", appUrl);
 			model.addObject("eventUUID", eventUUID);
 			model.addObject("vendorUUID", vendorUUID);
+			model.addObject("isLoggedinUserName", getLoggedinUserId());
 			model.setViewName("events/eventDetails");
 		
 		    return model;
@@ -798,6 +838,7 @@ public class WayupartyHomeController {
 			model.addObject("appUrl", appUrl);
 			model.addObject("eventUUID", eventUUID);
 			model.addObject("vendorUUID", vendorUUID);
+			model.addObject("isLoggedinUserName", getLoggedinUserId());
 			model.setViewName("events/eventBookings");
 		
 		    return model;
@@ -815,9 +856,17 @@ public class WayupartyHomeController {
 		}
 		
 		model.addObject("appUrl", appUrl);
+		model.addObject("isLoggedinUserName", getLoggedinUserId());
 		model.setViewName("events/eventsQR"); 
 		return model; 
 	}
-	
+ 
+	private void setLoggedinUser(boolean userId) {
+		isLoggedinUserName = userId;
+	}
+
+	public boolean getLoggedinUserId(){
+		return isLoggedinUserName;
+	}
 	
 }

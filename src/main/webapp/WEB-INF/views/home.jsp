@@ -495,7 +495,7 @@ margin-top:19px;
 	    		<!-- 		<a href="/services" target="_blank">SERVICES</a>   -->
 	    				<a href="/deals">DEALS</a>
 	    				<a href="/deals">GUEST USER</a>
-	    				<a href="/login">LOGIN</a>
+	    				<div id="menuDropDown"></div>
   			  		</div>
 		 	</div>  
 	      
@@ -618,6 +618,18 @@ function clearClubSearch(){
 
   <script type="text/javascript">
 		window.onload = function () {
+		
+		var isLoggedinUserName ='${isLoggedinUserName}';
+		var result= "";
+		
+		if(isLoggedinUserName == 'true'){
+			result = "<a href='/logout'>LOGOUT</a>";
+		}else{
+			result = "<a href='/login'>LOGIN</a>";
+		}
+		
+		$("#menuDropDown").append(result);
+
 			var latitude = '';
 			var longitude = '';
 			 if (navigator.geolocation) {

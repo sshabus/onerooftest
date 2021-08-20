@@ -559,8 +559,11 @@ css for automatic navgation-->.navigation-auto {
 					M E N U <i class="fa fa-caret-down"></i>
 				</button>
 				<div class="dropdown-content">
-					<a href="/Venues">HOME</a> <a href="/services" target="_blank">SERVICES</a>
-					<a href="/deals">GUEST USERS</a> <a href="/login">LOGIN</a>
+					<a href="/Venues">HOME</a> 
+					<a href="/services" target="_blank">SERVICES</a>
+					<a href="/deals">GUEST USERS</a> 
+					<div id="menuDropDown"></div>
+
 				</div>
 			</div>
 		</div>
@@ -651,7 +654,7 @@ css for automatic navgation-->.navigation-auto {
 						<div class="popup" id="popup-1">
 							<div class="overlay"></div>
 							  <div class="content">
-							    	<div class="close-btn" onclick="togglePopup()">×</div>
+							    	<div class="close-btn" onclick="togglePopup()">ï¿½</div>
 							    		<h1>OneRoof Events</h1>
 							   			 <p style="font-weight:bold;">Coming Soon...!</p>
 							  </div>
@@ -734,6 +737,21 @@ css for automatic navgation-->.navigation-auto {
 		</div>
 	</footer>
 
+<script type="text/javascript">
+	window.onload = function () {
+		
+		var isLoggedinUserName ='${isLoggedinUserName}';
+		var result= "";
+		
+		if(isLoggedinUserName == 'true'){
+			result = "<a href='/logout'>LOGOUT</a>";
+		}else{
+			result = "<a href='/login'>LOGIN</a>";
+		}
+		
+		$("#menuDropDown").append(result);
+	}
+</script>
 <script>
 		
 		$(function() {

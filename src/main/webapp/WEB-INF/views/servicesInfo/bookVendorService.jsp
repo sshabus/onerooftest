@@ -133,7 +133,7 @@ max-width: 150px !important;
 		    				<a href="/Venues">VENUE</a>
 		    				<a href="/services" target="_blank">SERVICES</a>
 		    				<a href="/deals">DEALS</a>
-		    				<a href="/login">LOGIN</a>
+							<div id="menuDropDown"></div>
   			  			</div>
 			    </div>
 		
@@ -184,6 +184,20 @@ max-width: 150px !important;
   <script src="/resources/js/formvalidator.js" type="text/javascript"></script>
 </body>
 
+<script type="text/javascript">
+	window.onload = function () {
+		var isLoggedinUserName ='${isLoggedinUserName}';
+		var result= "";
+		
+		if(isLoggedinUserName == 'true'){
+			result = "<a href='/logout'>LOGOUT</a>";
+		}else{
+			result = "<a href='/login'>LOGIN</a>";
+		}
+		
+		$("#menuDropDown").append(result);
+	}
+</script>
  <script type="text/javascript">
 		 
 	 $(document).bind("contextmenu",function(e){

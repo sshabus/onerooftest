@@ -106,8 +106,8 @@
 		    				<a href="/Venues">VENUE</a>
 		    				<a href="/services" target="_blank">SERVICES</a>
 		    				<a href="/deals">DEALS</a>
-		    				<a href="/login">LOGIN</a>
-  			  			</div>
+                <div id="menuDropDown"></div>
+            </div>
 			    </div>
 			    
 			    <ul style="float: right;margin-top: 27px;">
@@ -155,5 +155,21 @@
       </div>            
 </footer>
 </body>
+
+<script type="text/javascript">
+	window.onload = function () {
+		
+		var isLoggedinUserName ='${isLoggedinUserName}';
+		var result= "";
+		
+		if(isLoggedinUserName == 'true'){
+			result = "<a href='/logout'>LOGOUT</a>";
+		}else{
+			result = "<a href='/login'>LOGIN</a>";
+		}
+		
+		$("#menuDropDown").append(result);
+	}
+</script>
 
 </html>
