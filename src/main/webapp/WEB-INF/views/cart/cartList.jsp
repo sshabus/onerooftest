@@ -17,7 +17,7 @@
  font-size: 14px;
 }
 .cart_widget{
-		background-color: #eb9b9b2b;
+		background-color: #890052;
 }
 .cart_widget h4{
 		border-bottom: 2px solid #ccc;

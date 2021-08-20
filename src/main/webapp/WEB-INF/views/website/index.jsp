@@ -116,9 +116,8 @@
 	text-align: center;
 	background-color: #f5f5f5;
 	width: 100%;
-	overflow: auto;  
-/*	height: 95%; */
-	padding-bottom: 75px;
+	overflow: auto;
+	height: 95%;
 }
 
 .services {
@@ -215,8 +214,7 @@ img {
 }
 
 .serviceon {
-	font-size: 15px;
-	padding-top: 20px;
+	font-size: 15px
 }
 
 h2 {
@@ -230,7 +228,7 @@ h3 {
 
 .dashline {
 	width: 35px;
-	padding-bottom: 50px;
+	padding-bottom: 100px;
 }
 
 .footerlogo {
@@ -249,9 +247,6 @@ h3 {
 .footer {
 	background-color: #f5f5f5;
 }
-a:hover, a:focus{
-	color: black;
-}
 
 <!--
 silder banner styles -->body {
@@ -263,7 +258,7 @@ silder banner styles -->body {
 	align-items: center;
 }
 
-.sliders {
+.slider {
 	width: 100%;
 	height: 100%;
 	/*	border-radius:10px; */
@@ -271,7 +266,7 @@ silder banner styles -->body {
 	background: transparent;
 }
 
-.sliders:before {
+.slider:before {
 	display: none;
 }
 
@@ -385,57 +380,6 @@ css for automatic navgation-->.navigation-auto {
 	transition: background-color 200ms linear;
 }
 
-.popup .overlay {
-  position:fixed;
-  top:0px;
-  left:0px;
-  width:100vw;
-  height:100vh;
-  background:rgba(0,0,0,0.7);
-  z-index:1;
-  display:none;
-}
- 
-.popup .content {
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%) scale(0);
-  background:#fff;
-  width:95%;
-  max-width:500px;
-/*  height:250px;  */
-  z-index:2;
-  text-align:center;
-  padding:20px;
-  box-sizing:border-box;
-}
- 
-.popup .close-btn {
-  cursor:pointer;
-  position:absolute;
-  right:20px;
-  top:20px;
-  width:30px;
-  height:30px;
-  background:#222;
-  color:#fff;
-  font-size:25px;
-  font-weight:600;
-  line-height:30px;
-  text-align:center;
-  border-radius:50%;
-}
- 
-.popup.active .overlay {
-  display:block;
-}
- 
-.popup.active .content {
-  transition:all 300ms ease-in-out;
-  transform:translate(-50%,-50%) scale(1);
-}
- 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
 	.logo {
 		width: 25%;
@@ -461,9 +405,9 @@ css for automatic navgation-->.navigation-auto {
 	.serviceimg {
 		width: 90%;
 	}
-/*	.oneroofservices {
+	.oneroofservices {
 		height: 55%;
-	} */
+	}
 	.serviceinfo {
 		font-size: 28px;
 	}
@@ -504,9 +448,9 @@ css for automatic navgation-->.navigation-auto {
 	.serviceimg {
 		width: 90%;
 	}
-/*	.oneroofservices {
+	.oneroofservices {
 		height: 70%;
-	} */
+	}
 	.serviceinfo {
 		font-size: 14px;
 	}
@@ -542,7 +486,7 @@ css for automatic navgation-->.navigation-auto {
 
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="clearfix">
-			<a href="/Venues" target="_self"> <img class="logo"
+			<a href="/home" target="_self"> <img class="logo"
 				src="/resources/img/Oneroof_logo_text.png" alt="Logo" />
 			</a>
 			<div class="nav-bar-header-one" style="float: right;">
@@ -560,17 +504,14 @@ css for automatic navgation-->.navigation-auto {
 				</button>
 				<div class="dropdown-content">
 					<a href="/Venues">HOME</a> 
-					<a href="/services" target="_blank">SERVICES</a>
 					<a href="/deals">GUEST USERS</a> 
 					<div id="menuDropDown"></div>
-
 				</div>
 			</div>
 		</div>
 	</nav>
-	
 	<div class="banner">
-		<div class="sliders">
+		<div class="slider">
 			<div class="slides">
 				<input type="radio" name="radio-btn" id="radio1"> <input
 					type="radio" name="radio-btn" id="radio2"> <input
@@ -610,8 +551,7 @@ css for automatic navgation-->.navigation-auto {
 			</div>
 		</div>
 	</div>
-	
-<div class="oneroofservices">
+	<div class="oneroofservices">
 		<div class="services">
 
 			<h3>SERVICES</h3>
@@ -625,13 +565,14 @@ css for automatic navgation-->.navigation-auto {
 					<div>
 						<a href="#"
 							onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues?vendorType=VENUE'">
-							<img src="/resources/img/venue_icon.png" alt="logo" class="serviceimg" />
+							<img src="/resources/img/venue_icon.png" alt="logo"
+							class="serviceimg" />
 						</a>
 					</div>
 					<div>
-						<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues?vendorType=VENUE'" class="servicename">Venue</a>	
-						 <p class="serviceon">Click Here To Get Service</p>
-					</div>	
+						<p class="servicename">Venue</p>
+						<p class="serviceon">Click Here To Get Service</p>
+					</div>
 				</div>
 
 				<div class="servicesblock1">
@@ -641,15 +582,17 @@ css for automatic navgation-->.navigation-auto {
 						</a>
 					</div>
 					<div>
-						<a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues?vendorType=CATERING'" class="servicename">Caterers</a>
-							<p class="serviceon">Click Here To Get Service</p>
+						<p class="servicename">Caterers</p>
+						<p class="serviceon">Click Here To Get Service</p>
 					</div>
 				</div>
 
 				<div class="servicesblock1">
 					<div>
-						<a href="#" onclick="togglePopup()">
-							<img src="/resources/img/events_icon.png" alt="logo" class="serviceimg" />
+						<a href="#"
+							onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues'">
+							<img src="/resources/img/events_icon.png" alt="logo"
+							class="serviceimg" />
 						</a>
 						<div class="popup" id="popup-1">
 							<div class="overlay"></div>
@@ -660,14 +603,14 @@ css for automatic navgation-->.navigation-auto {
 							  </div>
 						</div>
 					<div>
-						<a onclick="togglePopup()" class="servicename">Events</a>
+						<p class="servicename">Events</p>
 						<p class="serviceon">Click Here To Get Service</p>
 					</div>
-				</div>	
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+
 	<div>
 		<div class="containerblock">
 			<div class="container">
@@ -709,6 +652,7 @@ css for automatic navgation-->.navigation-auto {
 					in our directory of thousands of venues across India.</p>
 			</div>
 		</div>
+
 	</div>
 
 	<footer class="footer">
@@ -737,6 +681,28 @@ css for automatic navgation-->.navigation-auto {
 		</div>
 	</footer>
 
+	<script>
+		$(function() {
+			$(document).scroll(
+					function() {
+						var $nav = $(".navbar-fixed-top");
+						$nav.toggleClass('scrolled', $(this).scrollTop() > $nav
+								.height());
+					});
+		});
+	</script>
+
+	<script>
+		var counter = 1;
+		setInterval(function() {
+			document.getElementById('radio' + counter).checked = true;
+			counter++;
+			if (counter > 4) {
+				counter = 1;
+			}
+		}, 3000);
+	</script>
+
 <script type="text/javascript">
 	window.onload = function () {
 		
@@ -752,38 +718,9 @@ css for automatic navgation-->.navigation-auto {
 		$("#menuDropDown").append(result);
 	}
 </script>
-<script>
-		
-		$(function() {
-			$(document).scroll(
-					function() {
-						var $nav = $(".navbar-fixed-top");
-						$nav.toggleClass('scrolled', $(this).scrollTop() > $nav
-								.height());
-					});
-		});
-		
-</script>
-
-<script>
-		var counter = 1;
-		setInterval(function() {
-			document.getElementById('radio' + counter).checked = true;
-			counter++;
-			if (counter > 4) {
-				counter = 1;
-			}
-		}, 3000);
-	
-</script>
-
-<script>
-
-function togglePopup(){
-	  document.getElementById("popup-1").classList.toggle("active");
-	}
-
-</script>
 
 </body>
 </html>
+<!--  
+
+	-->

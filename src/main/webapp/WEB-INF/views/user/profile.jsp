@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-
+<link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
 <div id="preloader"></div>
 
 <style>
@@ -43,7 +43,7 @@
   <jsp:include page="../wayupartyMasterHeader.jsp" />
         <!-- Page Area Start Here 
         <jsp:include page="../wayupartyMasterSideNav.jsp" /> 	-->
-        	<div class="dashboard-page-one">
+        	<div class="dashboard-page-one"style="background-color:white;border-top-left-radius: 115px;margin-top: 20px;">
            
 	          <div class="dashboard-content-one">
 	   <!--         <div class="breadcrumbs-area">
@@ -167,8 +167,11 @@ function validate_doc_fileupload(fileName)
  
  <style>
  .leftTabSection.active.show{
- 	color: #fea801;
+ 	color: white;
     margin-top: 2px;
+ }
+ .MpanNav ul.topSection li a{
+ 	color:white;
  }
  .row {
     margin-right: -30px !important;

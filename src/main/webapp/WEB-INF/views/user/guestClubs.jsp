@@ -27,6 +27,7 @@
 }
 
 
+
 @media (max-width: 786px){
 	.sidebar-menu-one .mobile-sidebar-header{
 		display: none;
@@ -62,6 +63,7 @@
 	}
 	.dataTables_wrapper .dataTables_paginate{
 		float:right;
+		
 	}
 	
 }
@@ -73,7 +75,7 @@
     <jsp:include page="../wayupartyMasterHeader.jsp" />
         <!-- Page Area Start Here 
         <jsp:include page="../wayupartyMasterSideNav.jsp" /> -->
-        <div class="dashboard-page-one">
+        <div class="dashboard-page-one"style="background-color:white;border-top-left-radius: 115px;margin-top:20px;">
           
             <div class="dashboard-content-one">
                 <div class="breadcrumbs-area">

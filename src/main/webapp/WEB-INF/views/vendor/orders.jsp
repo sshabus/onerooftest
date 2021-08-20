@@ -1,7 +1,7 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-
+<link rel="shortcut icon" type="image/x-icon" href="/resources/img/fav-icon.jpeg">
 <div id="preloader"></div>
 <style>
 .wrapper {
@@ -33,7 +33,7 @@
     <jsp:include page="../wayupartyMasterHeader.jsp" />
         <!-- Page Area Start Here -->
         <jsp:include page="../wayupartyMasterSideNav.jsp" />
-        <div class="dashboard-page-one">
+        <div class="dashboard-page-one"style="background-color:white;border-top-left-radius: 115px;">
           
             <div class="dashboard-content-one">
                 <div class="breadcrumbs-area">
@@ -54,8 +54,8 @@
 	                    <div class="icon-tab">
 	                            <ul class="nav nav-tabs" role="tablist">
 	                                 <c:forEach var="service" items="${servicesList}">
-	                                    <li class="nav-item mt-2">
-	                                    	<a class="nav-link border-pastel-gold ${service.serviceId == 1 ? 'active' : ''}" data-value="${service.serviceDisplayName}" data-toggle="tab" href="#orders" role="tab" aria-selected="true" onclick="getOrdersList('${service.serviceUUID}')"><img src="${service.serviceImage}"></img></a>
+	                                    <li class="nav-item mt-2" >
+	                                    	<a class="nav-link border-pastel-gold ${service.serviceId == 1 ? 'active' : ''}" data-value="${service.serviceDisplayName}" data-toggle="tab" href="#orders" role="tab" aria-selected="true" onclick="getOrdersList('${service.serviceUUID}')"style="background-color:#890052;"><img src="${service.serviceImage}"></img></a>
 	                                	</li>
 	                                 </c:forEach>
 	                            </ul>

@@ -530,6 +530,84 @@ margin-top:19px;
 	 </div>
 </nav> 
 
+
+
+
+<!--  
+<div  class="bg">
+		<div class="clearfix">
+	    	<div class="navbar-header">
+	    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        				<span class="icon-bar"></span>
+        				<span class="icon-bar"></span>
+        				<span class="icon-bar"></span>                        
+      			</button>
+	      			 <a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/Venues'" class="logina">
+		      				<img src="/resources/img/One_Roof.png" alt="logo" class="homeHeaderimg">
+		      		</a>		
+	    	</div>
+	    	
+	    	
+	      	<div class="collapse navbar-collapse" id="myNavbar">
+	      <div>
+	      	<div class="nav-bar-header-one" style="float: right;width: 5%;margin-right: 126px;">  
+              	<div class="toggle-button sidebar-toggle">
+                    <button type="button" class="item-link">
+                        	<span class="btn-icon-wrap">
+	                            <span></span>
+	                            <span></span>
+	                            <span></span>
+                        	</span>
+                    </button>
+                </div>               
+            </div>
+            
+            <div class="dropdown">
+  				<button class="dropbtn" style="background-color: transparent;width:124px;">M E N U</button>
+ 			 		<div class="dropdown-content">
+	    				<a href="/Venues">VENUE</a>
+	    				<a href="/services" target="_blank">SERVICES</a>
+	    				<a href="/deals">DEALS</a>
+	    				<a href="/deals">GUEST USER</a>
+	    				<a href="/login">LOGIN</a>
+  			  		</div>
+		 	</div>  
+	      
+		    <div>
+		     	<input type="image"  src="/resources/img/DEALS_ICON.png" alt="Offers" class="dealsimg"  />
+		    </div>
+	     
+	     	<div class="card mb-3 search_blo" >
+	            <div class="input-group search-blo">
+	                	<input name="vendors_txtSearch" type="text"  id="vendors_txtSearch" class="form-control"  placeholder="">
+	                		<div class="input-group-btn">
+	                    			<a class="btn btn-vendor-search" style="border-bottom-right-radius: 0px !important;border-top-right-radius: 0px !important;"><span class="fa fa-refresh" onclick="clearClubSearch();"></span></a>
+	                     			<a href="#" class="btn btn-vendor-search" data-toggle="modal" data-target="#large-modal" onclick="getPopularCities()" style="margin-top: -3px;position: initial;">
+			            				<img src="/resources/img/cities/Locate_icon_1.png" alt="locate" style="width: 9%;float: left;margin-top:-3px; "/>Search for Venues,Caterers Or Events
+			          				</a>
+	               		   </div>
+	            </div>
+	       </div>
+	       
+	       		
+		  	<div style="padding: 18px 0px 0px 0px;float:right;">
+				<input type="submit" id="selectedAll" value="ALL" onclick="selectedAll()" class="btn btn-success" style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 0px;border: 3px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;margin-right:-5px;">
+				<input type="button" id="selectedOnlyVenue" value="VENUE" onclick="selectedOnlyVenue()" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 0px;border: 3px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;margin-right:-5px;">
+				<input type="button" id="selectedOnlyCatering" value="CATERING" onclick="selectedOnlyCatering()" class="btn btn-danger"style="background: transparent;color: #be9c52;font-weight: 600;text-transform: uppercase;font-size: 14px;padding: 5px 10px;border-radius: 0px;border: 3px solid #be9c52 !important;box-shadow: 0px 0px 5px rgb(0 0 0 / 0%) !important;margin-right:10px;">
+			</div>
+			
+	    </div>   
+	    
+	     <div>
+	    	<input  type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Function Halls.." title="Type in a Function Halls Name" class="venuesearch" >
+	    	<img src="/resources/img/search-icon.png" alt="Search" class="search_icon" />
+	    </div>  
+	 
+	
+	 
+	     </div>   
+	 </div> 
+-->
 <div class ="venue_container">	
 
 	 <div class="container mt-10">
@@ -540,12 +618,12 @@ margin-top:19px;
 		   
 -->
 				<div class="mg-bt-20">
-						<h4 class ="offers">OFFERS</h4>
+					<!--  <h4 class ="offers">OFFERS</h4>   -->	
 		 	       		<jsp:include page="packageBanner.jsp" />
 				</div>
 				
 				
-						<h4 class = "halls" >Venues</h4>  
+					<!--	<h4 class = "halls" >Venues</h4>   -->	
 					      	
  				<div id="registeredVendorsList" class="row"></div>
  					<jsp:include page="clubLocationSearch.jsp" />

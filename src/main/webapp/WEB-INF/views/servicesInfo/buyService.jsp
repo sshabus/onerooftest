@@ -108,8 +108,8 @@ body {
                                             
                                             <div class="modal-footer">
                                                <button type="button" class="footer-btn text-light gradient-orange-peel" id="addToCart"><i class="fa fa-shopping-cart mg-l-10"></i>&nbsp;Add To Cart</button>
-                                               <a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/cart'" class="logina">
-                                               <button type="submit" class="footer-btn text-light gradient-orange-peel"> Check Out </button>
+                                                <a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/cart'" class="logina"> 
+                                               <button type="submit" class="footer-btn text-light gradient-orange-peel" > Check Out </button>
                                               </a> 
                                                <!-- <button type="button" class="footer-btn text-light gradient-pastel-green" id="placeOrder"><i class="fa fa-save mg-l-10"></i>&nbsp;Place Order</button> 
                                                <button type="button" class="footer-btn bg-gradient-gplus" data-dismiss="modal"><i class="fa fa-times mg-l-10"></i>&nbsp;Close</button>    -->

@@ -46,6 +46,7 @@
 	}
 	.col-sm-12 .col-md-8{
 		width:150%;
+		background-color:#890052;
 	}
 	.col-sm-12 .col-md-4{
 		margin-left: 45%;
@@ -71,7 +72,7 @@
   <jsp:include page="../wayupartyMasterHeader.jsp" />
    <!-- Page Area Start Here 
     <jsp:include page="../wayupartyMasterSideNav.jsp" />    -->
-        <div class="dashboard-page-one">
+        <div class="dashboard-page-one" style="background-color:white;border-top-left-radius: 115px;">
 	          <div class="dashboard-content-one">
 	            <div class="breadcrumbs-area">
 	                    <h3>Cart</h3>
