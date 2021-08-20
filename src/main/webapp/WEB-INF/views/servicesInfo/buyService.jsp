@@ -108,8 +108,8 @@ body {
                                             
                                             <div class="modal-footer">
                                                <button type="button" class="footer-btn text-light gradient-orange-peel" id="addToCart"><i class="fa fa-shopping-cart mg-l-10"></i>&nbsp;Add To Cart</button>
-                                               <a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/cart'" class="logina">
-                                               <button type="submit" class="footer-btn text-light gradient-orange-peel"> Check Out </button>
+                                                <a href="#" onClick="javascript:window.location.href = '${Wayuparty_appUrl}/cart'" class="logina"> 
+                                               <button type="submit" class="footer-btn text-light gradient-orange-peel" > Check Out </button>
                                               </a> 
                                                <!-- <button type="button" class="footer-btn text-light gradient-pastel-green" id="placeOrder"><i class="fa fa-save mg-l-10"></i>&nbsp;Place Order</button> 
                                                <button type="button" class="footer-btn bg-gradient-gplus" data-dismiss="modal"><i class="fa fa-times mg-l-10"></i>&nbsp;Close</button>    -->
@@ -453,29 +453,13 @@ body {
     	   
     	   var orderDate = getSelectedDateFromCalendar($("#serviceCalendar"+serviceUUID).val());
     	   //var timeslot = $("#bookedTimeSlot"+serviceUUID).val();
-    	   
-    	   if($("#selectedFullDaySlot").hasClass('selectedSlot')){
-				var timeslot = $("#selectedFullDaySlot").val();
-	   	   }else{
-  		  if($("#selectedFirstSlot"+serviceUUID).hasClass('selectedSlot')){
-  	   			var timeslot = 'Half Day(First Half)';
-  	   		}else{
-  	   			var timeslot = 'Half Day(Second Half)';
-  	   		}    
-	   	   }
-	   	   if(service == "Cuisine" ){
-	   		   var timeslot = 'Cuisine';
-	   	   }
-    	   
-    	   
-		//   if($("#selectedFirstSlot").hasClass('selectedSlot') && $("#selectedSecondSlot").hasClass('selectedSlot')){
-		//		var timeslot = $("#selectedFirstSlot").val() + ' and ' + $("#selectedSecondSlot").val();
-		//	}else if($("#selectedFirstSlot").hasClass('selectedSlot')) {
-		//		var timeslot = $("#selectedFirstSlot").val();
-		//	}else if($("#selectedSecondSlot").hasClass('selectedSlot')) {
-		//		var timeslot = $("#selectedSecondSlot").val();
-		//	}
-		
+		   if($("#selectedFirstSlot").hasClass('selectedSlot') && $("#selectedSecondSlot").hasClass('selectedSlot')){
+				var timeslot = $("#selectedFirstSlot").val() + ' and ' + $("#selectedSecondSlot").val();
+			}else if($("#selectedFirstSlot").hasClass('selectedSlot')) {
+				var timeslot = $("#selectedFirstSlot").val();
+			}else if($("#selectedSecondSlot").hasClass('selectedSlot')) {
+				var timeslot = $("#selectedSecondSlot").val();
+			}
 		   var fromDate = $("#startDate").val();
     	   var toDate = '';
     	   

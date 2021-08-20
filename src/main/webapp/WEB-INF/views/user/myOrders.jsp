@@ -34,7 +34,7 @@
 /* my orders changes  */
 
 .myorders_background{
-	background: #eb9b9b45;
+/*	background: white;  */
 	margin-left: 10%;
 	margin-right: 10%;
 }
@@ -162,7 +162,7 @@
     <jsp:include page="../wayupartyMasterHeader.jsp" />
         <!-- Page Area Start Here 
         <jsp:include page="../wayupartyMasterSideNav.jsp" />		-->
-        <div class="dashboard-page-one">
+        <div class="dashboard-page-one"style="background-color:white;border-top-left-radius: 115px;margin-top: 20px;">
           
             <div class="dashboard-content-one">
                 <div class="breadcrumbs-area">
@@ -183,7 +183,7 @@
                     
 						 <div class="row">
 						    <div class="col-sm-12 col-md-12">
-					  	    <h4 style="color:white;margin-left: 40px;">Orders</h4>            
+					  	    <h4 style="color:#890052;margin-left: 40px;">Orders</h4>            
 						    <div class="cart_widget">
 						    <div class="myorders_background">
 								<div id="ordersListDiv"></div>

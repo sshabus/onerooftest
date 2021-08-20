@@ -35,7 +35,7 @@
 		padding-bottom: 2px;	
 }
 .table{
-	color: white;
+	color: #890052;
 }
 
 </style>
@@ -43,7 +43,7 @@
     <jsp:include page="../wayupartyMasterHeader.jsp" />
         <!-- Page Area Start Here -->
           <jsp:include page="../wayupartyMasterSideNav.jsp" />
-        <div class="dashboard-page-one">
+        <div class="dashboard-page-one"style="background-color:white;border-top-left-radius: 115px;">
         
             <div class="dashboard-content-one">
                 <div class="breadcrumbs-area">
@@ -114,7 +114,7 @@
                                  <c:forEach var="service" items="${servicesList}">
                                     	<c:if test="${vendorType == 'CATERING' && service.serviceName == 'Cuisine'}">
 		                                    <li class="nav-item mt-2">
-		                                    	<a class="nav-link border-pastel-gold ${service.serviceId == 1 ? 'active' : ''}" data-value="${service.serviceDisplayName}" data-toggle="tab" href="#service" role="tab" aria-selected="true" onclick="getVendorServicesList('${service.serviceUUID}','${service.serviceDisplayName}')"><img src="${service.serviceImage}"></img></a>
+		                                    	<a class="nav-link border-pastel-gold ${service.serviceId == 1 ? 'active' : ''}" data-value="${service.serviceDisplayName}" data-toggle="tab" href="#service" role="tab" aria-selected="true" onclick="getVendorServicesList('${service.serviceUUID}','${service.serviceDisplayName}') "><img src="${service.serviceImage}"></img></a>
 		                                	</li>
                                 		</c:if>
                                 		

@@ -145,7 +145,7 @@ max-width: 150px !important;
                         </a>
          		</li>
               </ul >
-		 	
+		 	<div style="background: white;border-top-left-radius: 121px;">
         <div class="dashboard-page-one">
 	          <div class="dashboard-content-one">
 	           <div class="dashboard-content-one">
@@ -153,6 +153,7 @@ max-width: 150px !important;
 	              <jsp:include page="servicesList.jsp" />
 	              </div>
 	             </div>
+	     </div>
 	     </div>
  </div>
   <footer class="footer">

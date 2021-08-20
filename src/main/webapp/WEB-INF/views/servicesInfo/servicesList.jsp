@@ -43,20 +43,21 @@ p{
 	color:#fff;
 }
 .p1{
-	color: white;
+	color: black;
 	margin: -7px 0px 0px -38px !important;
-	font-size:15px;
+	font-size:14px;
 	width: 510px;
     text-align: justify;
 }
 .btn-toolbar .btn-group a{
-	background: white;
+	background:#890052;
 	font-size: 15px;
 }
 .service_wrap_inn{
 	width: 100%;
- /*   margin: 2.5% 2.1% 1.5% 18.9%; 	*/
-    background-color: #eb9b9b2b;
+ /*   margin: 2.5% 2.1% 1.5% 18.9%; 	
+    background-color: #eb9b9b2b; */
+    background-color: #890052;
     border-radius: 5px;
     box-shadow: 0px 0px 8px rgb(0 0 0 / 30%);
   /*  float: inherit; */
@@ -111,7 +112,7 @@ float: right;
 }*/
 .servicebackground{
 	text-align:center;
-	background: #eb9b9b2b;
+	background: #b38b6d1f;
 	padding-left: 45%;
 /*	margin-left: -72px;
 	margin-right: -30px; */
@@ -120,7 +121,7 @@ float: right;
 }
 .servicesbackground{
 	text-align: center;
-    background: #fff;
+    background: #890052;
     display: list-item;
     margin-top: -38px;
     width: 100%;
@@ -299,10 +300,10 @@ float: right;
                  <div class="vendor_images_img item-img"  id="vendorProfileImage" class="mb-3"></div>
                  <div class="item-content">
                      <div class="header-inline item-header">
-                         <h3 class="text-dark-medium font-medium"><span id="vendorName"></span><br/>
-                         <span class="view-subtitle">
-                         <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;
-                                     <span id="vendorLocation" style="font-weight: bold;"></span>   <br/>
+                         <h3 class="text-dark-medium font-medium"><span id="vendorName"style="color: #890052;font-size:25px;"></span><br/>
+                         <span class="view-subtitle"></span>
+                         <i class="fa fa-map-marker" aria-hidden="true"style="color:#890052;"></i>&nbsp;
+                                     <span id="vendorLocation" style="font-weight: bold;color:black;font-size:14px;"></span>   <br/>
                                         <span id="directions"></span>
                                         </h3>
                      </div>
@@ -315,7 +316,7 @@ float: right;
   <div class="card height-auto">   
      <div class="card ui-tab-card">
      <div id="serviceslistLoadingDiv" ></div>
-       <div class="card-body" style="background: Transparent;">
+       <div class="card-body">
 	       <div class="icon-tab">
 	       			<div class="servicebackground">
 	       		
@@ -398,7 +399,7 @@ float: right;
 	    					 $("#vendorLocation").html(response.object.location);
 	    					 if(response.object.latitude != '' && response.object.longitude != ''){
 	    						var cordinates =  response.object.latitude+","+response.object.longitude;
-	    						var directions = '<a class="view-subtitle" style="font-size: 15px; font-weight: normal; color: white;" id="vendorDirections" href="https://www.google.com/maps/place/'+cordinates+'" target="_blank">Get Directions</a>';
+	    						var directions = '<a class="view-subtitle" style="font-size: 14px; font-weight: normal; color: black;" id="vendorDirections" href="https://www.google.com/maps/place/'+cordinates+'" target="_blank">Get Directions</a>';
 	    						$("#directions").append(directions);
 	    					 }
 	    					 $("#vendorDescription").html(response.object.description);
@@ -422,7 +423,7 @@ float: right;
 		    			        		  serviceUUID = service.serviceUUID;
 		    			        		  isEntryRatioEnabled = service.isEntryRatioEnabled;
 	    			        		  	  result = result +'<li class="nav-item">';
-		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\',\''+service.serviceDisplayName+'\')" role="tab" aria-selected="true" ><img style="max-width: 80px;margin-left: -8px;background-color: white;transition: transform ease-in-out 0.3s;" src="'+service.serviceImage+'"></img></a><span><strong> <div <!--align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;margin-top: 10px;color: #c01a6c;">'+service.serviceName+'</strong></span>';
+		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\',\''+service.serviceDisplayName+'\')" role="tab" aria-selected="true" ><img style="max-width: 80px;margin-left: -8px;background-color: white;transition: transform ease-in-out 0.3s;box-shadow: -8px -8px 0px 0px #890059;" src="'+service.serviceImage+'"></img></a><span><strong> <div <!--align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;margin-top: 10px;color: #c01a6c;">'+service.serviceName+'</strong></span>';
 		    			        		  result = result +'</li>';
 		    			        		  
 		    			        		  $("#servicetype").empty();
@@ -435,7 +436,7 @@ float: right;
 		    			        		  serviceUUID = service.serviceUUID;
 		    			        		  isEntryRatioEnabled = service.isEntryRatioEnabled;
 	    			        		  	  result = result +'<li class="nav-item">';
-		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\',\''+service.serviceDisplayName+'\')" role="tab" aria-selected="true" ><img style="max-width: 100px;margin-left: -8px;background-color: white;transition: transform ease-in-out 0.3s;" src="'+service.serviceImage+'"></img></a><span><strong> <div <!--align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;margin-top: 10px;color: #c01a6c;font-size: large;">'+service.serviceName+'</strong></span>';
+		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\',\''+service.serviceDisplayName+'\')" role="tab" aria-selected="true" ><img style="max-width: 100px;margin-left: -8px;background-color: white;transition: transform ease-in-out 0.3s;box-shadow: -8px -8px 0px 0px #890059;" src="'+service.serviceImage+'"></img></a><span><strong> <div <!--align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;margin-top: 10px;color: white;font-size: large;">'+service.serviceName+'</strong></span>';
 		    			        		  result = result +'</li>';
 		    			        		  
 		    			        		  $("#servicetype").empty();
@@ -447,7 +448,7 @@ float: right;
 		    			        		  serviceUUID = service.serviceUUID;
 		    			        		  isEntryRatioEnabled = service.isEntryRatioEnabled;
 	    			        		  	  result = result +'<li class="nav-item">';
-		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\',\''+service.serviceDisplayName+'\')" role="tab" aria-selected="true" ><img style="max-width: 80px;margin-left: -8px;background-color: white;transition: transform ease-in-out 0.3s;" src="'+service.serviceImage+'"></img></a><span><strong> <div <!--align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;margin-top: 10px;color: #c01a6c;">'+service.serviceName+'</strong></span>';
+		    			        		  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\',\''+service.serviceDisplayName+'\')" role="tab" aria-selected="true" ><img style="max-width: 80px;margin-left: -8px;background-color: white;transition: transform ease-in-out 0.3s;box-shadow: -8px -8px 0px 0px #890059;" src="'+service.serviceImage+'"></img></a><span><strong> <div <!--align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;margin-top: 10px;color: white;">'+service.serviceName+'</strong></span>';
 		    			        		  result = result +'</li>';
 		    			        		  
 		    			        		  $("#servicetype").empty();
@@ -462,7 +463,7 @@ float: right;
 //										  }
 //	 
 //										  result = result +'<li class="nav-item">';
-//										  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\',\''+service.serviceDisplayName+'\')" role="tab" aria-selected="true" ><img style="max-width: 80px;margin-left: -8px;background-color: white;transition: transform ease-in-out 0.3s;" src="'+service.serviceImage+'"></img></a><span><strong> <div <!--align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;margin-top: 10px;color: #c01a6c;">'+service.serviceName+'</strong></span>';
+//										  result = result +'<a  style="margin: 5px 15px 5px 15px !important;"  data-value="'+service.serviceDisplayName+'" data-toggle="tab" href="#service"  onclick="getServiceCategories(\''+service.serviceUUID+'\',\''+service.isEntryRatioEnabled+'\',\''+service.serviceDisplayName+'\')" role="tab" aria-selected="true" ><img style="max-width: 80px;margin-left: -8px;background-color: white;transition: transform ease-in-out 0.3s;" src="'+service.serviceImage+'"></img></a><span><strong> <div <!--align="center" style="margin-right: 47px;margin-left: 40px;text-align: -webkit-match-parent;margin-top: 10px;color:white;">'+service.serviceName+'</strong></span>';
 //										  result = result +'</li>';
 //
 //		    			        		  if(service.serviceName == 'Venue'){
@@ -920,7 +921,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 						 
 					 }else{
 						 
-						 var serviceType = '${serviceType}';
+						 var serviceType = '';
 						   $('.nav-item a').each(function(){
 							   if($(this).hasClass('active'))
 								   serviceType = $(this).attr('data-value');
@@ -928,7 +929,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 						   
 						 if(serviceType == 'Book a bottle'){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_bottles_found.jpg" alt=""/></td>';
-						 }else if(serviceType == 'venue'){
+						 }else if(serviceType == 'Venue'){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/No_Venue.png" alt=""style="width: 20%;margin-top: 75px;"/></td>';
 							 result = result+'<a style="color:white;font-size:15px;">sorry..! No Venues Found...</a>'
 						 }else if(serviceType == 'Entry'){
@@ -939,7 +940,7 @@ function getCategoryServices(categoryUUID,isEntryRatioEnabled){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_deals_found.jpg" alt=""/></td>';
 						 }else if(serviceType == 'Packages'){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_packages_found.jpg" alt=""/></td>';
-						 }else if(serviceType == 'cuisine'){
+						 }else if(serviceType == 'Cuisine'){
 							 result = result+'<div class="noRecords-dashboard-portlets"><img src="/resources/img/services/no_cuisine.png" alt="" style="width: 20%;margin: 80px;"/></td>';
 							 result = result+'<a style="color:white;font-size:15px;margin: -65px;">sorry..! No Cuisine Found...</a>'
 						 }
@@ -1138,9 +1139,6 @@ function getTimeSlotValidation(serviceUUID){
 		var vendorUUID = '${vendorUUID}';
 		var appUrl = '${appUrl}';
 		var formData = new FormData();
-		var startDate = $("#startDate").val();
-		var endDate = $("#endDate").val();
-		
 		formData.append("vendorUUID", vendorUUID);
 		formData.append("startDate", $("#startDate").val());
 					
@@ -1148,11 +1146,13 @@ function getTimeSlotValidation(serviceUUID){
 			formData.append("endDate", $("#endDate").val());
 		}else{
 			formData.append("endDate",'');
-			endDate = '';
 		}
 		$.ajax({
-			type: "GET",
-			url: appUrl + "/ws/validateVendorTimeSlot?${_csrf.parameterName}=${_csrf.token}&startDate="+startDate+"&endDate="+endDate+"&vendorUUID="+vendorUUID,
+			data: formData,
+			contentType: false,
+			processData: false,
+			type: "POST",
+			url: appUrl + "/validateVendorTimeSlot?${_csrf.parameterName}=${_csrf.token}",
 			success: function (result) {
 				if (result.response == "INVALID_DATA") {
 					alert("Selected slots are already booked.");
@@ -1163,7 +1163,6 @@ function getTimeSlotValidation(serviceUUID){
 					var timeslot = $("input[name='timeslot" + serviceUUID + "']:checked").val();
 					
 					var quantity = $("#platesRatio"+serviceUUID).val();
-					if((serviceName == "Venue") || (quantity >= 1)){
 					if(serviceName !== "Cuisine"  && ($("#selectedFullDaySlot").hasClass('selectedSlot'))){
 						$("#number" + serviceUUID).val(getDaysDiff($("#startDate").val(), $("#endDate").val()));
 						quantity = $("#number"+serviceUUID).val();
@@ -1259,14 +1258,11 @@ function getTimeSlotValidation(serviceUUID){
 							$("#errorMessage" + serviceUUID).css({ display: "block" });
 						}
 					}
-				}else{
-					  alert("Select Plates Count");
-				  }
 				}
 			},
 		});
 	}  
-   function isTimeSlotAlreadyBook(startDate, endDate, serviceName){
+   function isTimeSlotAlreadyBook(startDate, endDate){
 	    	 var vendorUUID = '${vendorUUID}';
     		 var appUrl ='${appUrl}';
     		 var formData = new FormData();
@@ -1274,15 +1270,13 @@ function getTimeSlotValidation(serviceUUID){
     		 formData.append("vendorUUID", vendorUUID);
     		 formData.append("startDate", startDate);
     		 formData.append("endDate", endDate);
-    		 var startDate = $("#startDate").val();
-			 var endDate = $("#endDate").val();
-
-			 if(serviceName == "Cuisine"){
-				endDate = '';
-			 }
+    		 
     		 $.ajax({
-    		   	type: "GET",
-				   url: appUrl + "/ws/validateVendorTimeSlot?${_csrf.parameterName}=${_csrf.token}&startDate="+startDate+"&endDate="+endDate+"&vendorUUID="+vendorUUID,
+    	   		data: formData,
+   	    	    contentType: false,
+		   	    processData: false,
+    		   	type: "POST",
+    			url: appUrl+"/validateVendorTimeSlot?${_csrf.parameterName}=${_csrf.token}", 
     				success: function(result) {
 	    		    	 if(result.response == "INVALID_DATA"){
 	    		    	 	   		return false;
@@ -1293,7 +1287,7 @@ function getTimeSlotValidation(serviceUUID){
 	    	});
    }
    function getPackagesServiceInfo(serviceUUID,isEntryRatioEnabled,allowed,serviceName){
-	   if(getTimeSlotValidation(serviceUUID) || isTimeSlotAlreadyBook($("#startDate").val(), $("#endDate").val(),serviceName)){
+	   if(getTimeSlotValidation(serviceUUID) || isTimeSlotAlreadyBook($("#startDate").val(), $("#endDate").val())){
 		   var orderDate = getSelectedDateFromCalendar($("#serviceCalendar"+serviceUUID).val());
 		   var timeslot = $("input[name='timeslot"+serviceUUID+"']:checked").val();
 		   

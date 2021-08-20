@@ -48,7 +48,7 @@
     <jsp:include page="../wayupartyMasterHeader.jsp" />
         <!-- Page Area Start Here -->
         <jsp:include page="../wayupartyMasterSideNav.jsp" />
-        <div class="dashboard-page-one">
+        <div class="dashboard-page-one"style="background-color:white;border-top-left-radius: 115px;">
           
             <div class="dashboard-content-one">
                 <div class="breadcrumbs-area">
@@ -111,7 +111,7 @@
                                 </sec:authorize>
                             </ul>
                             
-                            <div class="tab-content">
+                            <div class="tab-content"style="background-color:#890052;">
                                     
                                 <jsp:include page="vendorBasicDetails.jsp" />
                                 <jsp:include page="vendorBankDetails.jsp" />

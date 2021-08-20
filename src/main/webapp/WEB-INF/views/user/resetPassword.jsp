@@ -3,11 +3,11 @@
 	<form class="new-added-form" id="reset_password_form" name="reset_password_form" >
  	 	<div style="color: white;margin: 0 -145px 0 285px;" id="profilePasswordDiv">
               <div class="col-xl-4 col-lg-6 col-12 form-group" style="margin-bottom: 5.2rem;">
-                  <label style="background: #9b0b6a; width: 146px;">Current Password<span class="text-danger">&nbsp;*</span></label>
-                  <input type="password" class="form-control" name="profileCurrentPassword" id="profileCurrentPassword"  field-name="Current Password"  onblur="validateCurrentPassword();" data-validation="required" >
+                  <label style="background: #9b0b6a;color:white; width: 66%;margin-top: 15px;padding: 5px 13px;">Current Password<span class="text-danger">&nbsp;*</span></label>
+                  <input type="password" class="form-control" name="profileCurrentPassword" id="profileCurrentPassword"  field-name="Current Password"  onblur="validateCurrentPassword();" data-validation="required" placeholder="Enter Current password" >
               </div>
                <div class="col-xl-4 col-lg-6 col-12 passwordConditions form-group" style="margin-bottom: 5.2rem;">
-                   <label style="background: #850167;width: 122px;">New Password<span class="text-danger">&nbsp;*</span></label>
+                   <label style="background: #850167;color:white; width: 66%;padding: 5px 13px;">New Password<span class="text-danger">&nbsp;*</span></label>
                    <input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d.*)(?=.*\W.*)[a-zA-Z0-9\S]{8,}$" field-name="Password" onblur="checkPasswords();" data-validation="required validate_length length8-15" placeholder="Enter password" class="form-control" name="password" value="${password}" id="password"  onkeydown="$(this).clear();" onkeyup="passwordValidation('password','fp_letter','fp_capital','fp_number','fp_special','fp_length');">
 					<i class="fa fa-eye" onclick="showPassword();" onmouseover="" style="cursor: pointer;top: 17px;color:white"></i>
 					<div id="fp_message" class="passHint" style="left:-260px; margin-top: -5px 0px; box-shadow: 1px 1px 1px 2px #ddd; top:-10px;">
@@ -20,8 +20,8 @@
                
                </div>
                 <div class="col-xl-4 col-lg-6 col-12 form-group" style="margin-bottom: 5.2rem;">
-                    <label style="background: #7b0068;width: 146px;">Confirm Password<span class="text-danger">&nbsp;*</span></label>
-                    <input type="password" class="form-control" name="confirmPassword" id="confirmPassword"  field-name="Confirm Password" onblur="checkPasswords();" data-validation="required validate_Space" >
+                    <label style="background: #7b0068;color:white; width: 66%;padding: 5px 13px;">Confirm Password<span class="text-danger">&nbsp;*</span></label>
+                    <input type="password" class="form-control" name="confirmPassword" id="confirmPassword"  field-name="Confirm Password" onblur="checkPasswords();" data-validation="required validate_Space" placeholder="Enter Confirm password" >
                     <i class="fa fa-eye" onclick="showConfirmPassword();" onmouseover="" style="cursor: pointer;top: 17px;color:white"></i>
                 </div>
                            

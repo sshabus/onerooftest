@@ -9,6 +9,9 @@
 .sidebar-color{
 			padding-bottom: 305px;
 }
+.datatable_filter .dataTables_info{
+	margin: 16px 0px 0px 6px;
+}
 @media (max-width: 768px){
 
 	.dashboard-content-one {

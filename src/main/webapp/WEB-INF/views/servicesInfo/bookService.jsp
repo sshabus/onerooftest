@@ -48,8 +48,8 @@ max-width: 120px !important;
   <jsp:include page="../wayupartyMasterHeader.jsp" />
 <!--   	<jsp:include page="../wayupartyMasterSideNav.jsp" />   -->
         <div class="dashboard-page-one">
-	          <div class="dashboard-content-one">
-	            <div class="breadcrumbs-area">
+	          <div class="dashboard-content-one"  style="background-color:white;">
+	            <div class="breadcrumbs-area" >
 	                    <h3>Vendor Services</h3>
 	                    <ul>
 	                        <li>

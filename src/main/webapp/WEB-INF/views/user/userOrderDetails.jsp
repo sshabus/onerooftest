@@ -6,10 +6,7 @@
 .sidebar-color{
 		padding-bottom: 257px;
 }
-.noRecords-dashboard-portlets{
-		background-color: #eb9b9b2b;
-    	
-}
+
 </style>
 
 

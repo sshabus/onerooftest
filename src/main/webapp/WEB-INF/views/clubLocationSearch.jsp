@@ -5,6 +5,9 @@
 .s-f-right input{
 	background: white;
 }
+.bg-gradient-gplus{
+	background: white;
+}
 </style>
 <div class="ui-modal-box">
   <div class="modal-box">

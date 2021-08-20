@@ -10,7 +10,7 @@
     	top: -14px;
     }
 .new-added-form .form-group label{
-	color: white;
+	color: #890052;
 }
 .Mpan.MpanSection .MpanBody {
     width: 80%;
@@ -41,14 +41,14 @@
 <div class="tab-pane fade show active" id="userProfile" role="tabpanel">
 	<form class="new-added-form" id="user_profile_form" name="user_profile_form" >
  	 	<div class="row">
-	 	 	<div class="col-xl-4 col-lg-6 col-12 form-group">
+	 	 	<div class="col-xl-4 col-lg-6 col-12 form-group" >
                        <label>First Name<span class="text-danger">&nbsp;*</span></label>
                        <input type="text" class="form-control"  name="firstName" id="firstName" data-validation="required validate_Space validate_AlphaNumber validate_length length1-100"  field-name="First Name">
 	        </div>
 	        
 	        <div class="col-xl-4 col-lg-6 col-12 form-group">
                        <label>Last Name<span class="text-danger"></span></label>
-                       <input type="text" class="form-control"  name="lastName" id="lastName" data-validation-optional="true" data-validation="validate_Space validate_AlphaNumber validate_length length1-100"  field-name="Last Name">
+                       <input type="text" class="form-control"  name="lastName" id="lastName" data-validation-optional="true" data-validation="validate_Space validate_AlphaNumber validate_length length1-100"  field-name="Last Name" placeholder="Enter Last Name" >
 	        </div>
 	        
        		<div class="col-xl-4 col-lg-6 col-12 form-group" id="emailDiv">
